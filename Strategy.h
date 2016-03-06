@@ -36,6 +36,8 @@ public:
 
   /**
    * Clean up programs/memory objects from gpu.
+   * (Things that don't need to be done if the gpu later would process another
+   * image similarly)
    */
   virtual void clean_gpu();
 };
