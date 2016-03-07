@@ -3,6 +3,7 @@
 
 #include <CL/cl.hpp>
 #include "LabelData.h"
+#include <queue>
 
 /**
  * Shouldn't need to allocate anything.
@@ -32,7 +33,7 @@ public:
    * The algorithm, compute labels for the binary image and put labels in the
    * same buffer.
    */
-  virtual void execute(LabelData *data) = 0;
+  virtual void execute(LabelData *l) = 0;
 
   /**
    * Clean up programs/memory objects from gpu.
@@ -47,12 +48,28 @@ public:
 
 /**
  * Strategy that doesn't modify the data.
+ * For testing thresholding.
  */
 class IdStrategy : public Strategy {
 public:
   IdStrategy(){};
-  virtual std::string name(){ return "Identity Strat";}
-  virtual void execute(LabelData *){}
+  virtual std::string name() { return "Identity Strat"; }
+  virtual void execute(LabelData *) {}
+};
+
+struct XY {
+  unsigned int x, y;
+  XY(unsigned int x, unsigned int y) : x(x), y(y) {}
+};
+
+class CPUOnePass : public Strategy {
+private:
+  void explore_component(unsigned int x, unsigned int y, LabelData *l,
+                         unsigned int nr);
+
+public:
+  virtual std::string name() { return "CPU one-pass"; }
+  virtual void execute(LabelData *l);
 };
 
 #endif /* end of include guard: STRATEGY_H */

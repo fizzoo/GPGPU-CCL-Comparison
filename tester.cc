@@ -1,5 +1,6 @@
 #include <CL/cl.hpp>
 #include <iostream>
+#include <iomanip>
 #include "Image.h"
 #include "Strategy.h"
 #include "LabelData.h"
@@ -86,8 +87,8 @@ int main(int argc, const char *argv[]) {
   LabelData output(input);
 
   std::vector<Strategy*> strats;
+  strats.push_back(new CPUOnePass);
   strats.push_back(new IdStrategy);
-  // TODO: Put a known good one in front
   {
     auto &strat = strats[0];
     strat->prepare_gpu(&context, &devices, &input);
@@ -95,16 +96,18 @@ int main(int argc, const char *argv[]) {
     strat->clean_gpu();
   }
 
+  std::cerr << "(Name of file)           -- (Name of strategy)       -- (Times in microseconds)" << std::endl;
+
+
   for (auto *strat : strats) {
-    strat->prepare_gpu(&context, &devices, &input);
+    strat->prepare_gpu(&context, &devices, &output);
     auto start = std::chrono::high_resolution_clock::now();
     strat->execute(&output);
     auto end = std::chrono::high_resolution_clock::now();
     strat->clean_gpu();
-    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start)
+    auto ms = std::chrono::duration_cast<std::chrono::microseconds>(end - start)
                   .count();
-    std::cout << argv[1] << " -- " << strat->name() << ": " << ms << " ms."
-              << std::endl;
+    std::cout << std::left << std::setw(24) << argv[1] << " -- " << std::setw(24) << strat->name() << " -- " << std::setw(10) << ms << std::endl;
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;
     }
