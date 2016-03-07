@@ -118,4 +118,8 @@ int main(int argc, const char *argv[]) {
     std::string outname = "out/" + strat->name() + ".png";
     iml::writepng(outname, &out);
   }
+
+  for (auto *strat : strats) {
+    delete strat;
+  }
 }
