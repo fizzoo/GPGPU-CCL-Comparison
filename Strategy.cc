@@ -1,1 +1,2 @@
-//TODO: allt
+#include "Strategy.h"
+

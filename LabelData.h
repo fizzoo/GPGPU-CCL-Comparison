@@ -3,6 +3,10 @@
 
 #include "Image.h"
 
+struct RGBA {
+  unsigned char r, g, b, a;
+};
+
 /**
  * Containing a 2D structure where each element is a single value, such as a
  * label or 0/1 for a binary image.
@@ -12,7 +16,7 @@ public:
   using label_type = unsigned char;
   size_t width;
   size_t height;
-  label_type *data;
+  label_type *data = nullptr;
 
   /**
    * Allocate data, copy over from image by thresholding.
@@ -25,6 +29,12 @@ public:
    * Copy everything, allocate anew.
    */
   LabelData(const LabelData &rhs);
+
+  /**
+   * Copies the label data to an images data with a function deciding the
+   * resulting values. Assumes equally sized data portions, in elements.
+   */
+  void copy_to_image(unsigned char *img_data, RGBA (*img_fun)(label_type in));
 
   /**
    * Deallocate data.

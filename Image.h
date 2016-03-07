@@ -36,6 +36,11 @@ public:
   Image(const std::string &filename);
 
   /**
+   * Just allocate.
+   */
+  Image(size_t width, size_t height);
+
+  /**
    * Deallocates data.
    */
   ~Image();

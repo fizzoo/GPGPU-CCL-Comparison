@@ -4,6 +4,7 @@
 #include "Strategy.h"
 #include "LabelData.h"
 #include <chrono>
+#include <sys/stat.h>
 
 template <class T> void fail(T message, cl_int err = 0) {
   std::cerr << message;
@@ -38,14 +39,26 @@ std::vector<cl::Device> load_devices(cl::Context *context) {
   return devices;
 }
 
-bool equivalent_result(LabelData *a, LabelData *b);
+bool equivalent_result(LabelData *a, LabelData *b){ return true; } //TODO
+
+bool valid_result(LabelData *l) { return true; } //TODO
 
 bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
-                   unsigned char a) {
+                   unsigned char) {
   if (r > 100 && g > 100 && b > 100) {
     return true;
   }
   return false;
+}
+
+RGBA max_if_nonzero(LabelData::label_type in){
+  RGBA out;
+  if (in) {
+    out.r = out.g = out.b = out.a = 255;
+  } else {
+    out.r = out.g = out.b = out.a = 0;
+  }
+  return out;
 }
 
 int main(int argc, const char *argv[]) {
@@ -53,7 +66,7 @@ int main(int argc, const char *argv[]) {
   std::vector<cl::Device> devices = load_devices(&context);
 
   if (argc != 2) {
-    std::cerr << "Usage: " << argv[1] << " filename" << std::endl;
+    std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
     return 0;
   }
   iml::Image rgba_image(argv[1]);
@@ -61,32 +74,48 @@ int main(int argc, const char *argv[]) {
     fail("Image not loaded correctly, aborting.");
   }
 
+  {
+    int err = mkdir("out", 0777);
+    if (err && err != EEXIST) {
+      fail("Couldn't creat output directory 'out'.");
+    }
+  }
+
   LabelData input(&rgba_image, rgb_above_100);
   LabelData correct(input);
   LabelData output(input);
 
-  std::vector<Strategy> strats = {};
+  std::vector<Strategy*> strats;
+  strats.push_back(new IdStrategy);
   // TODO: Put a known good one in front
   {
     auto &strat = strats[0];
-    strat.prepare_gpu(&context, &devices, &input);
-    strat.execute(&correct);
-    strat.clean_gpu();
+    strat->prepare_gpu(&context, &devices, &input);
+    strat->execute(&correct);
+    strat->clean_gpu();
   }
 
-  for (auto &strat : strats) {
-    strat.prepare_gpu(&context, &devices, &input);
+  for (auto *strat : strats) {
+    strat->prepare_gpu(&context, &devices, &input);
     auto start = std::chrono::high_resolution_clock::now();
-    strat.execute(&output);
+    strat->execute(&output);
     auto end = std::chrono::high_resolution_clock::now();
-    strat.clean_gpu();
+    strat->clean_gpu();
     auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start)
                   .count();
-    std::cout << "Strategy '" << strat.name << "' finished in " << ms << "ms."
+    std::cout << argv[1] << " -- " << strat->name() << ": " << ms << " ms."
               << std::endl;
-    if (memcmp(input.data, output.data,
-               input.width * input.height * sizeof(LabelData::label_type))) {
+    if (!valid_result(&output)) {
+      std::cerr << "Strategy returned an invalid labeling" << std::endl;
+    }
+    if (!equivalent_result(&input, &output)) {
       std::cerr << "Strategy returned an unexpected labeling." << std::endl;
     }
+
+    //Write to file
+    iml::Image out(output.width, output.height);
+    output.copy_to_image(out.data, max_if_nonzero);
+    std::string outname = "out/" + strat->name() + ".png";
+    iml::writepng(outname, &out);
   }
 }

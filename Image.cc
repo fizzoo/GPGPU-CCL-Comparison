@@ -81,6 +81,10 @@ Image::Image(const std::string &filename) {
   }
 }
 
+Image::Image(size_t width, size_t height) : _width(width), _height(height){
+  data = new unsigned char[width*height*4];
+}
+
 bool iml::writepng(const std::string &filename, Image *img) {
   return writepng(filename, img->width(), img->height(), img->data);
 }

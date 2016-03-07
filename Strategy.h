@@ -19,27 +19,40 @@ public:
   /**
    * Name for identification
    */
-  std::string name;
+  virtual std::string name() = 0;
 
   /**
    * Memory transfer, things we shouldn't time.
    * CPU algorithms can just return.
    */
-  virtual void prepare_gpu(cl::Context *context,
-                           std::vector<cl::Device> *devices, LabelData *data);
+  virtual void prepare_gpu(cl::Context *, std::vector<cl::Device> *,
+                           LabelData *) {}
 
   /**
    * The algorithm, compute labels for the binary image and put labels in the
    * same buffer.
    */
-  virtual void execute(LabelData *data);
+  virtual void execute(LabelData *data) = 0;
 
   /**
    * Clean up programs/memory objects from gpu.
    * (Things that don't need to be done if the gpu later would process another
    * image similarly)
    */
-  virtual void clean_gpu();
+  virtual void clean_gpu() {}
+
+  Strategy(){};
+  virtual ~Strategy() {}
+};
+
+/**
+ * Strategy that doesn't modify the data.
+ */
+class IdStrategy : public Strategy {
+public:
+  IdStrategy(){};
+  virtual std::string name(){ return "Identity Strat";}
+  virtual void execute(LabelData *){}
 };
 
 #endif /* end of include guard: STRATEGY_H */
