@@ -40,9 +40,9 @@ std::vector<cl::Device> load_devices(cl::Context *context) {
   return devices;
 }
 
-bool equivalent_result(LabelData *a, LabelData *b){ return true; } //TODO
+bool equivalent_result(LabelData *a, LabelData *b) { return true; } // TODO
 
-bool valid_result(LabelData *l) { return true; } //TODO
+bool valid_result(LabelData *l) { return true; } // TODO
 
 bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
                    unsigned char) {
@@ -52,7 +52,7 @@ bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
   return false;
 }
 
-RGBA max_if_nonzero(LabelData::label_type in){
+RGBA max_if_nonzero(LabelData::label_type in) {
   RGBA out;
   if (in) {
     out.r = out.g = out.b = out.a = 255;
@@ -86,7 +86,7 @@ int main(int argc, const char *argv[]) {
   LabelData correct(input);
   LabelData output(input);
 
-  std::vector<Strategy*> strats;
+  std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
   strats.push_back(new IdStrategy);
   {
@@ -96,8 +96,9 @@ int main(int argc, const char *argv[]) {
     strat->clean_gpu();
   }
 
-  std::cerr << "(Name of file)           -- (Name of strategy)       -- (Times in microseconds)" << std::endl;
-
+  std::cerr << "(Name of file)           -- (Name of strategy)       -- (Times "
+               "in microseconds)"
+            << std::endl;
 
   for (auto *strat : strats) {
     strat->prepare_gpu(&context, &devices, &output);
@@ -107,19 +108,25 @@ int main(int argc, const char *argv[]) {
     strat->clean_gpu();
     auto ms = std::chrono::duration_cast<std::chrono::microseconds>(end - start)
                   .count();
-    std::cout << std::left << std::setw(24) << argv[1] << " -- " << std::setw(24) << strat->name() << " -- " << std::setw(10) << ms << std::endl;
+    std::cout << std::left << std::setw(24) << argv[1] << " -- "
+              << std::setw(24) << strat->name() << " -- " << std::setw(10) << ms
+              << std::endl;
+#ifndef NDEBUG
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;
     }
     if (!equivalent_result(&input, &output)) {
       std::cerr << "Strategy returned an unexpected labeling." << std::endl;
     }
+#endif /* NDEBUG */
 
-    //Write to file
+#ifndef NDEBUG
+    // Write to file
     iml::Image out(output.width, output.height);
     output.copy_to_image(out.data, max_if_nonzero);
     std::string outname = "out/" + strat->name() + ".png";
     iml::writepng(outname, &out);
+#endif /* NDEBUG */
   }
 
   for (auto *strat : strats) {
