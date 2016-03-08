@@ -62,6 +62,27 @@ void CPUOnePass::execute(LabelData *l) {
 #define CHECKERR
 #endif /* NDEBUG */
 
+void GPUBase::clean_gpu() {
+  delete buf;
+  delete queue;
+}
+
+void GPUBase::prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
+                          LabelData *l) {
+  context = c;
+  device = d;
+  program = p;
+
+  auto size = l->width * l->height * sizeof(LabelData::label_type);
+  cl_int err;
+  buf = new cl::Buffer(*c, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, size,
+                       l->data, &err);
+  CHECKERR
+
+  queue = new cl::CommandQueue(*context, *device, 0, &err);
+  CHECKERR
+}
+
 void GPUNeighbourPropagation::execute(LabelData *l) {
   cl_int err;
 
@@ -74,31 +95,12 @@ void GPUNeighbourPropagation::execute(LabelData *l) {
   err = kernel.setArg(1, (cl_int)l->width);
   CHECKERR
 
-  cl::CommandQueue queue(*context, *device, 0, &err);
-  CHECKERR
-
   cl::Event event;
-  err = queue.enqueueNDRangeKernel(kernel, cl::NullRange,
-                                   cl::NDRange(l->width, l->height),
-                                   cl::NDRange(1, 1), NULL, &event);
+  err = queue->enqueueNDRangeKernel(kernel, cl::NullRange,
+                                    cl::NDRange(l->width, l->height),
+                                    cl::NDRange(1, 1), NULL, &event);
   CHECKERR
 
   event.wait();
 }
-void GPUNeighbourPropagation::clean_gpu() { delete buf; }
-void GPUNeighbourPropagation::prepare_gpu(cl::Context *c, cl::Device *d,
-                                          cl::Program *p, LabelData *data) {
-  context = c;
-  device = d;
-  program = p;
 
-  auto size = data->width * data->height * sizeof(LabelData::label_type);
-  cl_int err;
-  buf = new cl::Buffer(*c, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, size,
-                       data->data, &err);
-#ifndef NDEBUG
-  if (err) {
-    std::cerr << "Couldn't allocate/copy to buffer, err:" << err << std::endl;
-  }
-#endif /* NDEBUG */
-}

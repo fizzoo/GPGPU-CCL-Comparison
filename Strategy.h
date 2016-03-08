@@ -26,8 +26,8 @@ public:
    * Memory transfer, things we shouldn't time.
    * CPU algorithms can just return.
    */
-  virtual void prepare_gpu(cl::Context *, cl::Device *,
-                           cl::Program *, LabelData *) {}
+  virtual void prepare_gpu(cl::Context *, cl::Device *, cl::Program *,
+                           LabelData *) {}
 
   /**
    * The algorithm, compute labels for the binary image and put labels in the
@@ -72,17 +72,24 @@ public:
   virtual void execute(LabelData *l);
 };
 
-class GPUNeighbourPropagation : public Strategy {
-private:
+class GPUBase : public Strategy {
+protected:
   cl::Buffer *buf = nullptr;
   cl::Context *context = nullptr;
   cl::Device *device = nullptr;
   cl::Program *program = nullptr;
+  cl::CommandQueue *queue = nullptr;
+
+public:
+  virtual void clean_gpu();
+  virtual void prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
+                           LabelData *l);
+};
+
+class GPUNeighbourPropagation : public GPUBase {
 public:
   virtual std::string name() { return "GPU neighbour propagation"; }
   virtual void execute(LabelData *l);
-  virtual void clean_gpu();
-  virtual void prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p, LabelData *data);
 };
 
 #endif /* end of include guard: STRATEGY_H */
