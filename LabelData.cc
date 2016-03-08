@@ -21,6 +21,17 @@ LabelData::LabelData(const LabelData &rhs)
   std::copy(rhs.data, rhs.data + height * width, data);
 }
 
+LabelData& LabelData::operator=(const LabelData &rhs) noexcept {
+  if (this != &rhs) {
+    delete data;
+    width = rhs.width;
+    height = rhs.height;
+    data = new label_type[height * width];
+    std::copy(rhs.data, rhs.data + height * width, data);
+  }
+  return *this;
+}
+
 LabelData::~LabelData() { delete[] data; }
 
 void LabelData::copy_to_image(unsigned char *img_data,

@@ -37,16 +37,11 @@ void CPUOnePass::explore_component(unsigned int xinit, unsigned int yinit,
 
 void CPUOnePass::execute(LabelData *l) {
   unsigned int nr = 2;
-  for (unsigned int x = 0; x < l->width; ++x) {
-    for (unsigned int y = 0; y < l->height; ++y) {
+  for (unsigned int y = 0; y < l->height; ++y) {
+    for (unsigned int x = 0; x < l->width; ++x) {
       if (l->data[l->width * y + x] == 1) {
         explore_component(x, y, l, nr);
         ++nr;
-#ifndef NDEBUG
-        if (nr > 1 << 15) {
-          std::cerr << "Labelnr close to max!" << std::endl;
-        }
-#endif /* NDEBUG */
       }
     }
   }

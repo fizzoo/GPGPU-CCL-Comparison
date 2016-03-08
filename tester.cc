@@ -80,9 +80,55 @@ cl::Program load_cl_program(cl::Context *context, cl::Device *device) {
   return prog;
 }
 
+/**
+ * Returns whether the labeldatas are equivalent, where labels may correspond to
+ * a different number in the other labeldata.
+ */
 bool equivalent_result(LabelData *a, LabelData *b) { return true; } // TODO
 
-bool valid_result(LabelData *l) { return true; } // TODO
+/**
+ * Checks for internal consistency of component labeling.
+ */
+bool valid_result(LabelData *l) {
+  auto w = l->width;
+  auto h = l->height;
+  auto *d = l->data;
+  for (unsigned int y = 0; y < h; ++y) {
+    for (unsigned int x = 0; x < w; ++x) {
+      auto curlabel = d[w * y + x];
+
+      if (curlabel > 1 << 14) {
+        std::cerr << "Labelnr above 1 << 14!" << std::endl;
+      }
+
+      if (curlabel == 1) {
+        std::cerr << "Unlabeled pixel at x:" << x << " y:" << y << std::endl;
+        return false;
+      }
+
+      if (curlabel != 0) {
+        bool closefault = false;
+        closefault |= x + 1 < w && d[w * (y) + (x + 1)] != 0 &&
+                      d[w * (y) + (x + 1)] != curlabel;
+        closefault |= x - 1 < w && d[w * (y) + (x - 1)] != 0 &&
+                      d[w * (y) + (x - 1)] != curlabel;
+        closefault |= y + 1 < h && d[w * (y + 1) + (x)] != 0 &&
+                      d[w * (y + 1) + (x)] != curlabel;
+        closefault |= y - 1 < h && d[w * (y - 1) + (x)] != 0 &&
+                      d[w * (y - 1) + (x)] != curlabel;
+
+        if (closefault) {
+          std::cerr << "Connected components with different labels at x:" << x
+                    << " y:" << y << std::endl;
+          return false;
+        }
+      }
+    }
+  }
+
+  // TODO: same-label disconnected components
+  return true;
+}
 
 bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
                    unsigned char) {
@@ -144,6 +190,7 @@ int main(int argc, const char *argv[]) {
             << std::endl;
 
   for (auto *strat : strats) {
+    output = input;
     strat->prepare_gpu(&context, &device, &program, &output);
     auto start = std::chrono::high_resolution_clock::now();
     strat->execute(&output);
@@ -158,7 +205,7 @@ int main(int argc, const char *argv[]) {
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;
     }
-    if (!equivalent_result(&input, &output)) {
+    if (!equivalent_result(&correct, &output)) {
       std::cerr << "Strategy returned an unexpected labeling." << std::endl;
     }
 #endif /* NDEBUG */

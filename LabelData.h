@@ -29,6 +29,7 @@ public:
    * Copy everything, allocate anew.
    */
   LabelData(const LabelData &rhs);
+  LabelData& operator=(const LabelData &rhs) noexcept;
 
   /**
    * Copies the label data to an images data with a function deciding the
