@@ -51,3 +51,54 @@ void CPUOnePass::execute(LabelData *l) {
     }
   }
 }
+
+#ifndef NDEBUG
+#define CHECKERR                                                               \
+  if (err) {                                                                   \
+    std::cerr << "UNEXPECTED ERROR (" << err << ") on " << __FILE__ << ":"     \
+              << __LINE__ << std::endl;                                        \
+  }
+#else
+#define CHECKERR
+#endif /* NDEBUG */
+
+void GPUNeighbourPropagation::execute(LabelData *l) {
+  cl_int err;
+
+  cl::Kernel kernel(*program, "label_with_id", &err);
+  CHECKERR
+
+  err = kernel.setArg(0, *buf);
+  CHECKERR
+
+  err = kernel.setArg(1, (cl_int)l->width);
+  CHECKERR
+
+  cl::CommandQueue queue(*context, *device, 0, &err);
+  CHECKERR
+
+  cl::Event event;
+  err = queue.enqueueNDRangeKernel(kernel, cl::NullRange,
+                                   cl::NDRange(l->width, l->height),
+                                   cl::NDRange(1, 1), NULL, &event);
+  CHECKERR
+
+  event.wait();
+}
+void GPUNeighbourPropagation::clean_gpu() { delete buf; }
+void GPUNeighbourPropagation::prepare_gpu(cl::Context *c, cl::Device *d,
+                                          cl::Program *p, LabelData *data) {
+  context = c;
+  device = d;
+  program = p;
+
+  auto size = data->width * data->height * sizeof(LabelData::label_type);
+  cl_int err;
+  buf = new cl::Buffer(*c, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, size,
+                       data->data, &err);
+#ifndef NDEBUG
+  if (err) {
+    std::cerr << "Couldn't allocate/copy to buffer, err:" << err << std::endl;
+  }
+#endif /* NDEBUG */
+}

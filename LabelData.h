@@ -13,7 +13,7 @@ struct RGBA {
  */
 class LabelData {
 public:
-  using label_type = unsigned short;
+  using label_type = int32_t;
   size_t width;
   size_t height;
   label_type *data = nullptr;

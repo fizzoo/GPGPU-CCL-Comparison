@@ -1,4 +1,5 @@
 #include <CL/cl.hpp>
+#include <fstream>
 #include <iostream>
 #include <iomanip>
 #include "Image.h"
@@ -16,6 +17,9 @@ template <class T> void fail(T message, cl_int err = 0) {
   exit(-1);
 }
 
+/**
+ * Attempts to find a suitable context, and loads that.
+ */
 cl::Context load_context() {
   cl_int err;
 
@@ -32,12 +36,48 @@ cl::Context load_context() {
   return context;
 }
 
-std::vector<cl::Device> load_devices(cl::Context *context) {
+/**
+ * Loads available devices.
+ */
+cl::Device load_device(cl::Context *context) {
   std::vector<cl::Device> devices = context->getInfo<CL_CONTEXT_DEVICES>();
   if (devices.size() == 0) {
     fail("Found no devices");
   }
-  return devices;
+
+  // Potentially compare available devices.
+  return devices[0];
+}
+
+/**
+ * If build fails, print the compilation output and exit.
+ */
+void checkBuildErr(cl_int err, cl::Device *d, cl::Program *p) {
+  if (err != CL_SUCCESS) {
+    std::cerr << "ERROR: Building OpenCL program failed!\n";
+    std::string log;
+    p->getBuildInfo(*d, (cl_program_build_info)CL_PROGRAM_BUILD_LOG, &log);
+    std::cerr << log << std::endl;
+    exit(-1);
+  }
+}
+
+/**
+ * Tries to load the opencl program.
+ */
+cl::Program load_cl_program(cl::Context *context, cl::Device *device) {
+  std::ifstream file("kernel.cl");
+  if (!file) {
+    std::cerr << "Kernel source file not opened correctly" << std::endl;
+    exit(-1);
+  }
+  std::string source{std::istreambuf_iterator<char>(file),
+                     std::istreambuf_iterator<char>()};
+
+  cl_int err;
+  cl::Program prog(*context, source, CL_TRUE, &err);
+  checkBuildErr(err, device, &prog);
+  return prog;
 }
 
 bool equivalent_result(LabelData *a, LabelData *b) { return true; } // TODO
@@ -63,8 +103,10 @@ RGBA max_if_nonzero(LabelData::label_type in) {
 }
 
 int main(int argc, const char *argv[]) {
+  // Should RVO, want them as locals.
   cl::Context context = load_context();
-  std::vector<cl::Device> devices = load_devices(&context);
+  cl::Device device = load_device(&context);
+  cl::Program program = load_cl_program(&context, &device);
 
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
@@ -89,9 +131,10 @@ int main(int argc, const char *argv[]) {
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
   strats.push_back(new IdStrategy);
+  strats.push_back(new GPUNeighbourPropagation);
   {
     auto &strat = strats[0];
-    strat->prepare_gpu(&context, &devices, &input);
+    strat->prepare_gpu(&context, &device, &program, &input);
     strat->execute(&correct);
     strat->clean_gpu();
   }
@@ -101,7 +144,7 @@ int main(int argc, const char *argv[]) {
             << std::endl;
 
   for (auto *strat : strats) {
-    strat->prepare_gpu(&context, &devices, &output);
+    strat->prepare_gpu(&context, &device, &program, &output);
     auto start = std::chrono::high_resolution_clock::now();
     strat->execute(&output);
     auto end = std::chrono::high_resolution_clock::now();
@@ -124,7 +167,8 @@ int main(int argc, const char *argv[]) {
     // Write to file
     iml::Image out(output.width, output.height);
     output.copy_to_image(out.data, max_if_nonzero);
-    std::string outname = "out/" + strat->name() + ".png";
+    std::string outname =
+        "out/" + std::string(argv[1]) + " - " + strat->name() + ".png";
     iml::writepng(outname, &out);
 #endif /* NDEBUG */
   }

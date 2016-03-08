@@ -8,3 +8,6 @@ tester: $(SRC)
 fasts:  $(SRC)
 	g++ -DNDEBUG $(CXXFLAGS) -O3 $(SRC) $(LDLIBS) -o $@
 
+clean:
+	rm -f tester fasts
+	rm -rf out
