@@ -6,7 +6,7 @@ void mark_explore(unsigned int xinit, unsigned int yinit, LabelData *l,
   auto h = l->height;
   auto d = l->data;
 
-  if (d[w*yinit + xinit] != from) {
+  if (d[w * yinit + xinit] != from) {
     return;
   }
   d[w * yinit + xinit] = to;
@@ -120,8 +120,6 @@ void GPUNeighbourPropagation::execute(LabelData *l) {
 
   event.wait();
 
-
-
   /**
    * TODO: figure out why this takes a fraction of the above codes time
    */
@@ -130,12 +128,12 @@ void GPUNeighbourPropagation::execute(LabelData *l) {
     CHECKERR
     err = kernel.setArg(1, (cl_int)l->width);
     CHECKERR
-    
+
     err = queue->enqueueNDRangeKernel(kernel, cl::NullRange,
                                       cl::NDRange(l->width, l->height),
                                       cl::NDRange(1, 1), NULL, &event);
     CHECKERR
-    
+
     event.wait();
   }
 }

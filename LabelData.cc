@@ -21,7 +21,7 @@ LabelData::LabelData(const LabelData &rhs)
   std::copy(rhs.data, rhs.data + height * width, data);
 }
 
-LabelData& LabelData::operator=(const LabelData &rhs) noexcept {
+LabelData &LabelData::operator=(const LabelData &rhs) noexcept {
   if (this != &rhs) {
     delete data;
     width = rhs.width;

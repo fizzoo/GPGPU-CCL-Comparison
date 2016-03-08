@@ -8,6 +8,9 @@ tester: $(SRC)
 fasts:  $(SRC)
 	g++ -DNDEBUG $(CXXFLAGS) -O3 $(SRC) $(LDLIBS) -o $@
 
+format:
+	zsh -c 'for f in *.cc *.h; do clang-format -i $$f; done'
+
 clean:
 	rm -f tester fasts
 	rm -rf out

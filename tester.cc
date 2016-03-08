@@ -138,7 +138,8 @@ bool valid_result(LabelData *l) {
       if (curlabel > 1) {
         // Another component already used the label
         if (prev.count(curlabel)) {
-          std::cerr << "Multiple components with same label: " << curlabel << std::endl;
+          std::cerr << "Multiple components with same label: " << curlabel
+                    << std::endl;
           return false;
         }
 
