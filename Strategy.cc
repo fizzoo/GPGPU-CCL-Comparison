@@ -73,14 +73,17 @@ void GPUBase::prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
   device = d;
   program = p;
 
-  auto size = l->width * l->height * sizeof(LabelData::label_type);
   cl_int err;
-  buf = new cl::Buffer(*c, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, size,
-                       l->data, &err);
+  auto size = l->width * l->height * sizeof(LabelData::label_type);
+  buf = new cl::Buffer(*c, CL_MEM_READ_WRITE, size, nullptr, &err);
   CHECKERR
 
   queue = new cl::CommandQueue(*context, *device, 0, &err);
   CHECKERR
+
+  cl::Event event;
+  err = queue->enqueueWriteBuffer(*buf, CL_FALSE, 0, size, l->data, 0, &event);
+  event.wait();
 }
 
 void GPUNeighbourPropagation::execute(LabelData *l) {
@@ -103,4 +106,3 @@ void GPUNeighbourPropagation::execute(LabelData *l) {
 
   event.wait();
 }
-
