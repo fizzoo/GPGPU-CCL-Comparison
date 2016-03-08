@@ -7,6 +7,7 @@
 #include "LabelData.h"
 #include <chrono>
 #include <sys/stat.h>
+#include <set>
 
 template <class T> void fail(T message, cl_int err = 0) {
   std::cerr << message;
@@ -92,7 +93,8 @@ bool equivalent_result(LabelData *a, LabelData *b) { return true; } // TODO
 bool valid_result(LabelData *l) {
   auto w = l->width;
   auto h = l->height;
-  auto *d = l->data;
+  const LabelData::label_type *d = l->data;
+
   for (unsigned int y = 0; y < h; ++y) {
     for (unsigned int x = 0; x < w; ++x) {
       auto curlabel = d[w * y + x];
@@ -126,7 +128,29 @@ bool valid_result(LabelData *l) {
     }
   }
 
-  // TODO: same-label disconnected components
+  LabelData tmp(*l);
+  std::set<LabelData::label_type> prev;
+  for (unsigned int y = 0; y < h; ++y) {
+    for (unsigned int x = 0; x < w; ++x) {
+      auto curlabel = tmp.data[w * y + x];
+
+      // Only do anything if it's some component
+      if (curlabel > 1) {
+        // Another component already used the label
+        if (prev.count(curlabel)) {
+          std::cerr << "Multiple components with same label: " << curlabel << std::endl;
+          return false;
+        }
+
+        // Record that this component uses this label
+        prev.insert(curlabel);
+
+        // Set to zero to ignore this component in next iteration
+        mark_explore(x, y, &tmp, curlabel, 0);
+      }
+    }
+  }
+
   return true;
 }
 

@@ -5,6 +5,13 @@
 #include "LabelData.h"
 #include <queue>
 
+/////////////////
+//   UTILITY   //
+/////////////////
+
+void mark_explore(unsigned int x, unsigned int y, LabelData *l,
+                  LabelData::label_type from, LabelData::label_type to);
+
 /**
  * Shouldn't need to allocate anything.
  * As we want to store a few objects, constructor/destructor shouldn't do much.
@@ -64,9 +71,6 @@ struct XY {
 
 class CPUOnePass : public Strategy {
 private:
-  void explore_component(unsigned int x, unsigned int y, LabelData *l,
-                         unsigned int nr);
-
 public:
   virtual std::string name() { return "CPU one-pass"; }
   virtual void execute(LabelData *l);
