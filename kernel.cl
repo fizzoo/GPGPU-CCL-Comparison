@@ -22,25 +22,25 @@ kernel void neighbour_propagate(global int *data, unsigned int w, unsigned int h
 
   if (y + 1 < h) {
     otherlabel = data[w * (y + 1) + (x)];
-    if (otherlabel > curlabel) {
+    if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
     }
   }
   if (y - 1 < h) {
     otherlabel = data[w * (y - 1) + (x)];
-    if (otherlabel > curlabel) {
+    if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
     }
   }
   if (x + 1 < w) {
     otherlabel = data[w * (y) + (x + 1)];
-    if (otherlabel > curlabel) {
+    if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
     }
   }
   if (x - 1 < w) {
     otherlabel = data[w * (y) + (x - 1)];
-    if (otherlabel > curlabel) {
+    if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
     }
   }
