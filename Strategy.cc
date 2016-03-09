@@ -5,7 +5,7 @@ void CPUBase::copy_to(const LabelData *in, cl::Context *, cl::Program *,
   l = *in;
 }
 
-LabelData CPUBase::copy_from() { return l; }
+LabelData CPUBase::copy_from() { return std::move(l); }
 
 void CPUOnePass::execute() {
   unsigned int nr = 2;

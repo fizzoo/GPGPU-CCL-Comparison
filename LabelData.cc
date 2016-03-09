@@ -32,6 +32,27 @@ LabelData &LabelData::operator=(const LabelData &rhs) noexcept {
   return *this;
 }
 
+LabelData::LabelData(LabelData &&rhs) {
+  width = rhs.width;
+  height = rhs.height;
+  data = rhs.data;
+  rhs.width = 0;
+  rhs.height = 0;
+  rhs.data = 0;
+}
+
+LabelData &LabelData::operator=(LabelData &&rhs) noexcept {
+  if (this != &rhs) {
+    width = rhs.width;
+    height = rhs.height;
+    data = rhs.data;
+    rhs.width = 0;
+    rhs.height = 0;
+    rhs.data = 0;
+  }
+  return *this;
+}
+
 LabelData::LabelData(size_t width, size_t height)
     : width(width), height(height) {
   data = new LABELTYPE[width * height];

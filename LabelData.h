@@ -30,6 +30,12 @@ public:
   LabelData &operator=(const LabelData &rhs) noexcept;
 
   /**
+   * Steal data.
+   */
+  LabelData(LabelData && rhs);
+  LabelData& operator=(LabelData && rhs) noexcept;
+
+  /**
    * Just allocate.
    */
   LabelData(size_t width, size_t height);
