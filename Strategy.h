@@ -3,7 +3,6 @@
 
 #include <CL/cl.hpp>
 #include "LabelData.h"
-#include <queue>
 
 /**
  * Shouldn't need to allocate anything.
@@ -23,67 +22,88 @@ public:
   virtual std::string name() = 0;
 
   /**
-   * Memory transfer, things we shouldn't time.
-   * CPU algorithms can just return.
-   * Last parameter is only guaranteed to have the correct width/height.
+   * Memory transfer which we shouldn't time.
+   * CPU algorithms aswell should make a copy in order to not edit our input.
    */
-  virtual void prepare_gpu(cl::Context *, cl::Device *, cl::Program *,
-                           LabelData *) {}
+  virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
+                       cl::CommandQueue *) = 0;
 
   /**
-   * The algorithm, compute labels for the binary image and put labels in the
-   * same buffer. Should be able to perform several times in a row on possibly
-   * different datasets, with the same width/height.
+   * The algorithm, compute labels for the binary image and save the result
+   * somewhere.
    */
-  virtual void execute(LabelData *l) = 0;
+  virtual void execute() = 0;
 
   /**
-   * Clean up programs/memory objects from gpu.
-   * (Things that don't need to be done if the gpu later would process another
-   * image similarly)
+   * Clean up memory objects and return the results.
    */
-  virtual void clean_gpu() {}
+  virtual LabelData copy_from() = 0;
 
   Strategy(){};
   virtual ~Strategy() {}
 };
 
 /**
+ * ABC for cpu algorithms that simply keep a local LabelData.
+ */
+class CPUBase : public Strategy {
+protected:
+  LabelData l;
+
+public:
+  virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
+                       cl::CommandQueue *);
+  virtual LabelData copy_from();
+};
+
+/**
  * Strategy that doesn't modify the data.
  * For testing thresholding.
  */
-class IdStrategy : public Strategy {
+class IdStrategy : public CPUBase {
 public:
   IdStrategy(){};
   virtual std::string name() { return "Identity Strat"; }
-  virtual void execute(LabelData *) {}
+  virtual void execute() {}
 };
 
-class CPUOnePass : public Strategy {
-private:
+/**
+ * One-pass algorithm, explores entire components at a time.
+ */
+class CPUOnePass : public CPUBase {
 public:
   virtual std::string name() { return "CPU one-pass"; }
-  virtual void execute(LabelData *l);
+  virtual void execute();
 };
 
+/**
+ * ABC for GPU algorithms that keep a cl::Buffer.
+ */
 class GPUBase : public Strategy {
 protected:
+  /**
+   * Data corresponding to a LabelData, but in gpu.
+   */
   cl::Buffer *buf = nullptr;
-  cl::Context *context = nullptr;
-  cl::Device *device = nullptr;
+  size_t width;
+  size_t height;
+
+  /**
+   * Necessary to create kernel and queue work.
+   */
   cl::Program *program = nullptr;
   cl::CommandQueue *queue = nullptr;
 
 public:
-  virtual void clean_gpu();
-  virtual void prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
-                           LabelData *l);
+  virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
+                       cl::CommandQueue *);
+  virtual LabelData copy_from();
 };
 
 class GPUNeighbourPropagation : public GPUBase {
 public:
   virtual std::string name() { return "GPU neighbour propagation"; }
-  virtual void execute(LabelData *l);
+  virtual void execute();
 };
 
 #endif /* end of include guard: STRATEGY_H */

@@ -32,10 +32,17 @@ LabelData &LabelData::operator=(const LabelData &rhs) noexcept {
   return *this;
 }
 
+LabelData::LabelData(size_t width, size_t height)
+    : width(width), height(height) {
+  data = new LABELTYPE[width * height];
+}
+
+LabelData::LabelData() : width(0), height(0) {}
+
 LabelData::~LabelData() { delete[] data; }
 
 void LabelData::copy_to_image(unsigned char *img_data,
-                              RGBA (*img_fun)(LABELTYPE in)) {
+                              RGBA (*img_fun)(LABELTYPE in)) const {
   auto *in = data;
   auto *end = data + width * height;
   auto *out = img_data;

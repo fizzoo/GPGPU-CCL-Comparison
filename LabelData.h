@@ -30,10 +30,21 @@ public:
   LabelData &operator=(const LabelData &rhs) noexcept;
 
   /**
+   * Just allocate.
+   */
+  LabelData(size_t width, size_t height);
+
+  /**
+   * Do nothing.
+   */
+  LabelData();
+
+  /**
    * Copies the label data to an images data with a function deciding the
    * resulting values. Assumes equally sized data portions, in elements.
    */
-  void copy_to_image(unsigned char *img_data, RGBA (*img_fun)(LABELTYPE in));
+  void copy_to_image(unsigned char *img_data,
+                     RGBA (*img_fun)(LABELTYPE in)) const;
 
   /**
    * Resets data to 0.

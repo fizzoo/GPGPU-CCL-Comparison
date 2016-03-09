@@ -33,19 +33,14 @@ int main(int argc, const char *argv[]) {
   }
 
   LabelData input(&rgba_image, rgb_above_100);
-  LabelData correct(input);
-  LabelData output(input);
 
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
   strats.push_back(new IdStrategy);
   strats.push_back(new GPUNeighbourPropagation);
-  {
-    auto &strat = strats[0];
-    strat->prepare_gpu(&context, &device, &program, &input);
-    strat->execute(&correct);
-    strat->clean_gpu();
-  }
+  strats[0]->copy_to(&input, &context, &program, &queue);
+  strats[0]->execute();
+  LabelData correct = strats[0]->copy_from();
 
   std::cerr << "(Name of file)                   -- (Name of strategy)         "
                "      -- (Times "
@@ -58,27 +53,25 @@ int main(int argc, const char *argv[]) {
   // Ensures kernel and queue is ready, as they would only be created once in
   // a usual program.
   for (auto &strat : strats) {
-    // Make warmup not be exactly the same as output for risk of
-    // optimization, a clear image is safe for labeling.
+    // Make warmup not be exactly the same as input for risk of
+    // optimization. A clear image is safe for labeling.
     LabelData warmup(input);
     warmup.clear();
 
-    strat->prepare_gpu(&context, &device, &program, &warmup);
-    strat->execute(&warmup);
-    strat->clean_gpu();
+    strat->copy_to(&warmup, &context, &program, &queue);
+    strat->execute();
+    strat->copy_from();
   }
 
   for (auto *strat : strats) {
-    output = input;
-
     auto startwithprep = std::chrono::high_resolution_clock::now();
-    strat->prepare_gpu(&context, &device, &program, &output);
+    strat->copy_to(&input, &context, &program, &queue);
 
     auto start = std::chrono::high_resolution_clock::now();
-    strat->execute(&output);
+    strat->execute();
     auto end = std::chrono::high_resolution_clock::now();
 
-    strat->clean_gpu();
+    LabelData output = strat->copy_from();
     auto endwithprep = std::chrono::high_resolution_clock::now();
 
     auto ms = std::chrono::duration_cast<std::chrono::microseconds>(end - start)
