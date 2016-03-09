@@ -6,7 +6,6 @@ kernel void label_with_id(global int *data, int width) {
   data[loc] = loc + 2;
 }
 
-
 kernel void id_accessor(global int *data, int width) {
   size_t x = get_global_id(0);
   size_t y = get_global_id(1);

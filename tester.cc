@@ -210,22 +210,41 @@ int main(int argc, const char *argv[]) {
     strat->clean_gpu();
   }
 
-  std::cerr << "(Name of file)           -- (Name of strategy)       -- (Times "
-               "in microseconds)"
-            << std::endl;
+  std::cerr << "(Name of file)                   -- (Name of strategy)         "
+               "      -- (Times "
+               "in microseconds)";
+#ifndef NDEBUG
+  std::cerr << " -- (Times with prep/cleanup)";
+#endif /* NDEBUG */
+  std::cerr << std::endl;
 
   for (auto *strat : strats) {
     output = input;
+
+    auto startwithprep = std::chrono::high_resolution_clock::now();
     strat->prepare_gpu(&context, &device, &program, &output);
+
     auto start = std::chrono::high_resolution_clock::now();
     strat->execute(&output);
     auto end = std::chrono::high_resolution_clock::now();
+
     strat->clean_gpu();
+    auto endwithprep = std::chrono::high_resolution_clock::now();
+
     auto ms = std::chrono::duration_cast<std::chrono::microseconds>(end - start)
                   .count();
-    std::cout << std::left << std::setw(24) << argv[1] << " -- "
-              << std::setw(24) << strat->name() << " -- " << std::setw(10) << ms
-              << std::endl;
+    auto mswithprep = std::chrono::duration_cast<std::chrono::microseconds>(
+                          endwithprep - startwithprep)
+                          .count();
+
+    std::cout << std::left << std::setw(32) << argv[1] << " -- "
+              << std::setw(32) << strat->name() << " -- " << std::setw(23)
+              << ms;
+#ifndef NDEBUG
+    std::cout << " -- " << mswithprep;
+#endif /* NDEBUG */
+    std::cout << std::endl;
+
 #ifndef NDEBUG
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;

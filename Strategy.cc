@@ -82,23 +82,6 @@ void GPUBase::prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
   cl::Event event;
   err = queue->enqueueWriteBuffer(*buf, CL_FALSE, 0, size, l->data, 0, &event);
   event.wait();
-
-  // Force the memory to truly be ready.
-  // (Doesn't seem to have an effect on tested setup)
-  cl::Kernel kernel(*program, "id_accessor", &err);
-  CHECKERR
-
-  err = kernel.setArg(0, *buf);
-  CHECKERR
-  err = kernel.setArg(1, (cl_int)l->width);
-  CHECKERR
-
-  err = queue->enqueueNDRangeKernel(kernel, cl::NullRange,
-                                    cl::NDRange(l->width, l->height),
-                                    cl::NDRange(1, 1), NULL, &event);
-  CHECKERR
-
-  event.wait();
 }
 
 void GPUNeighbourPropagation::execute(LabelData *l) {
@@ -119,21 +102,4 @@ void GPUNeighbourPropagation::execute(LabelData *l) {
   CHECKERR
 
   event.wait();
-
-  /**
-   * TODO: figure out why this takes a fraction of the above codes time
-   */
-  for (int i = 0; i < 100; ++i) {
-    err = kernel.setArg(0, *buf);
-    CHECKERR
-    err = kernel.setArg(1, (cl_int)l->width);
-    CHECKERR
-
-    err = queue->enqueueNDRangeKernel(kernel, cl::NullRange,
-                                      cl::NDRange(l->width, l->height),
-                                      cl::NDRange(1, 1), NULL, &event);
-    CHECKERR
-
-    event.wait();
-  }
 }
