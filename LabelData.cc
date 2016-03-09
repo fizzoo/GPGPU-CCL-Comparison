@@ -23,7 +23,7 @@ LabelData::LabelData(const LabelData &rhs)
 
 LabelData &LabelData::operator=(const LabelData &rhs) noexcept {
   if (this != &rhs) {
-    delete data;
+    delete[] data;
     width = rhs.width;
     height = rhs.height;
     data = new label_type[height * width];
@@ -47,5 +47,14 @@ void LabelData::copy_to_image(unsigned char *img_data,
     out[3] = rgba.a;
     in += 1;
     out += 4;
+  }
+}
+
+void LabelData::clear() {
+  auto *in = data;
+  auto *end = data + width * height;
+  while (in != end) {
+    *in = 0;
+    ++in;
   }
 }

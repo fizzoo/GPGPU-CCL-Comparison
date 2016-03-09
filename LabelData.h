@@ -38,6 +38,11 @@ public:
   void copy_to_image(unsigned char *img_data, RGBA (*img_fun)(label_type in));
 
   /**
+   * Resets data to 0.
+   */
+  void clear();
+
+  /**
    * Deallocate data.
    */
   ~LabelData();

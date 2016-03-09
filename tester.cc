@@ -218,6 +218,19 @@ int main(int argc, const char *argv[]) {
 #endif /* NDEBUG */
   std::cerr << std::endl;
 
+  // Ensures kernel and queue is ready, as they would only be created once in
+  // a usual program.
+  for (auto &strat : strats) {
+    // Make warmup not be exactly the same as output for risk of
+    // optimization, a clear image is safe for labeling.
+    LabelData warmup(input);
+    warmup.clear();
+
+    strat->prepare_gpu(&context, &device, &program, &warmup);
+    strat->execute(&warmup);
+    strat->clean_gpu();
+  }
+
   for (auto *strat : strats) {
     output = input;
 

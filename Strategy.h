@@ -32,13 +32,15 @@ public:
   /**
    * Memory transfer, things we shouldn't time.
    * CPU algorithms can just return.
+   * Last parameter is only guaranteed to have the correct width/height.
    */
   virtual void prepare_gpu(cl::Context *, cl::Device *, cl::Program *,
                            LabelData *) {}
 
   /**
    * The algorithm, compute labels for the binary image and put labels in the
-   * same buffer.
+   * same buffer. Should be able to perform several times in a row on possibly
+   * different datasets, with the same width/height.
    */
   virtual void execute(LabelData *l) = 0;
 
