@@ -1,14 +1,11 @@
 #include "Strategy.h"
 
 void CPUBase::copy_to(const LabelData *in, cl::Context *, cl::Program *,
-                      cl::CommandQueue *){
+                      cl::CommandQueue *) {
   l = *in;
 }
 
-LabelData CPUBase::copy_from() {
-  return l;
-}
-
+LabelData CPUBase::copy_from() { return l; }
 
 void CPUOnePass::execute() {
   unsigned int nr = 2;
