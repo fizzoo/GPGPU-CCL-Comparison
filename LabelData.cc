@@ -116,8 +116,8 @@ bool valid_result(LabelData *l) {
     for (size_t x = 0; x < w; ++x) {
       auto curlabel = d[w * y + x];
 
-      if (curlabel > 1 << 14) {
-        std::cerr << "Labelnr above 1 << 14!" << std::endl;
+      if (curlabel > 1 << 24) {
+        std::cerr << "Labelnr above 1 << 24!" << std::endl;
       }
 
       if (curlabel == 1) {

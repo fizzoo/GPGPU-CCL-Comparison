@@ -100,7 +100,7 @@ int main(int argc, const char *argv[]) {
 #ifndef NDEBUG
     // Write to file
     iml::Image out(output.width, output.height);
-    output.copy_to_image(out.data, max_if_nonzero);
+    output.copy_to_image(out.data, mod8);
     std::string outname =
         "out/" + std::string(argv[1]) + " - " + strat->name() + ".png";
     iml::writepng(outname, &out);

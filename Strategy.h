@@ -89,8 +89,9 @@ protected:
   size_t height;
 
   /**
-   * Necessary to create kernel and queue work.
+   * Necessary to create kernel, buffer and queue work.
    */
+  cl::Context *context = nullptr;
   cl::Program *program = nullptr;
   cl::CommandQueue *queue = nullptr;
 

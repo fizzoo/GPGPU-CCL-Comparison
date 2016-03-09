@@ -21,6 +21,7 @@ void CPUOnePass::execute() {
 
 void GPUBase::copy_to(const LabelData *l, cl::Context *c, cl::Program *p,
                       cl::CommandQueue *q) {
+  context = c;
   queue = q;
   program = p;
   width = l->width;
@@ -29,29 +30,9 @@ void GPUBase::copy_to(const LabelData *l, cl::Context *c, cl::Program *p,
   cl_int err;
   auto size = width * height * sizeof(LABELTYPE);
   buf = new cl::Buffer(*c, CL_MEM_READ_WRITE, size, nullptr, &err);
-  CHECKERR
+  CHECKERR;
 
   err = queue->enqueueWriteBuffer(*buf, CL_TRUE, 0, size, l->data);
-}
-
-void GPUNeighbourPropagation::execute() {
-  cl_int err;
-
-  cl::Kernel kernel(*program, "label_with_id", &err);
-  CHECKERR
-
-  err = kernel.setArg(0, *buf);
-  CHECKERR
-  err = kernel.setArg(1, (cl_int)width);
-  CHECKERR
-
-  cl::Event event;
-  err = queue->enqueueNDRangeKernel(kernel, cl::NullRange,
-                                    cl::NDRange(width, height),
-                                    cl::NDRange(1, 1), NULL, &event);
-  CHECKERR
-
-  event.wait();
 }
 
 LabelData GPUBase::copy_from() {
@@ -63,4 +44,49 @@ LabelData GPUBase::copy_from() {
   delete buf;
 
   return ret;
+}
+
+void GPUNeighbourPropagation::execute() {
+  cl_int err;
+
+  cl::Kernel startlabel(*program, "label_with_id", &err);
+  CHECKERR;
+  cl::Kernel propagate(*program, "neighbour_propagate", &err);
+  CHECKERR;
+
+  err = startlabel.setArg(0, *buf);
+  CHECKERR;
+  err = startlabel.setArg(1, (cl_uint)width);
+  CHECKERR;
+
+  char changed = 1;
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+  queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+
+  err = propagate.setArg(0, *buf);
+  CHECKERR;
+  err = propagate.setArg(1, (cl_uint)width);
+  CHECKERR;
+  err = propagate.setArg(2, (cl_uint)height);
+  CHECKERR;
+  err = propagate.setArg(3, chan);
+  CHECKERR;
+
+  std::vector<cl::Event> events(1);
+  std::vector<cl::Event> writtenevents(1);
+  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
+                                    cl::NDRange(width, height),
+                                    cl::NDRange(1, 1), NULL, &events[0]);
+  CHECKERR;
+
+  while (true) {
+    //CPU-GPU sync, sadly
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    if (changed == false) {
+      break;
+    }
+    changed = false;
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &writtenevents[0]);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange, cl::NDRange(width, height), cl::NDRange(1,1), &writtenevents, &events[0]);
+  }
 }

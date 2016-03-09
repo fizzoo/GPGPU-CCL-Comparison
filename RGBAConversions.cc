@@ -17,3 +17,58 @@ RGBA max_if_nonzero(LABELTYPE in) {
   }
   return out;
 }
+
+RGBA mod8(LABELTYPE in){
+  RGBA out;
+  out.a = 255;
+  if (in == 1) {
+    out.r = out.g = out.b = 255;
+  } else if (in == 0) {
+    out.r = out.g = out.b = 0;
+  } else {
+    char choice = in % 8;
+    switch (choice) {
+      case 0:
+        out.r = 255;
+        out.g = 0;
+        out.b = 0;
+        break;
+      case 1:
+        out.r = 0;
+        out.g = 255;
+        out.b = 0;
+        break;
+      case 2:
+        out.r = 0;
+        out.g = 0;
+        out.b = 255;
+        break;
+      case 3:
+        out.r = 255;
+        out.g = 255;
+        out.b = 0;
+        break;
+      case 4:
+        out.r = 255;
+        out.g = 0;
+        out.b = 255;
+        break;
+      case 5:
+        out.r = 0;
+        out.g = 255;
+        out.b = 255;
+        break;
+      case 6:
+        out.r = 100;
+        out.g = 160;
+        out.b = 255;
+        break;
+      case 7:
+        out.r = 255;
+        out.g = 80;
+        out.b = 80;
+        break;
+    }
+  }
+  return out;
+}

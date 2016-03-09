@@ -14,4 +14,9 @@ bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
  */
 RGBA max_if_nonzero(LABELTYPE in);
 
+/**
+ * Cyclically picks some colors.
+ */
+RGBA mod8(LABELTYPE in);
+
 #endif /* end of include guard: RGBACONVERSIONS_H */
