@@ -5,13 +5,6 @@
 #include "LabelData.h"
 #include <queue>
 
-/////////////////
-//   UTILITY   //
-/////////////////
-
-void mark_explore(unsigned int x, unsigned int y, LabelData *l,
-                  LabelData::label_type from, LabelData::label_type to);
-
 /**
  * Shouldn't need to allocate anything.
  * As we want to store a few objects, constructor/destructor shouldn't do much.
@@ -64,11 +57,6 @@ public:
   IdStrategy(){};
   virtual std::string name() { return "Identity Strat"; }
   virtual void execute(LabelData *) {}
-};
-
-struct XY {
-  unsigned int x, y;
-  XY(unsigned int x, unsigned int y) : x(x), y(y) {}
 };
 
 class CPUOnePass : public Strategy {

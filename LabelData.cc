@@ -4,7 +4,7 @@ LabelData::LabelData(iml::Image *img, bool (*threshold_function)(
                                           unsigned char r, unsigned char g,
                                           unsigned char b, unsigned char a))
     : width(img->width()), height(img->height()) {
-  data = new label_type[height * width];
+  data = new LABELTYPE[height * width];
   auto *in = img->data;
   auto *end = img->data + height * width * 4;
   auto *out = data;
@@ -17,7 +17,7 @@ LabelData::LabelData(iml::Image *img, bool (*threshold_function)(
 
 LabelData::LabelData(const LabelData &rhs)
     : width(rhs.width), height(rhs.height) {
-  data = new label_type[height * width];
+  data = new LABELTYPE[height * width];
   std::copy(rhs.data, rhs.data + height * width, data);
 }
 
@@ -26,7 +26,7 @@ LabelData &LabelData::operator=(const LabelData &rhs) noexcept {
     delete[] data;
     width = rhs.width;
     height = rhs.height;
-    data = new label_type[height * width];
+    data = new LABELTYPE[height * width];
     std::copy(rhs.data, rhs.data + height * width, data);
   }
   return *this;
@@ -35,7 +35,7 @@ LabelData &LabelData::operator=(const LabelData &rhs) noexcept {
 LabelData::~LabelData() { delete[] data; }
 
 void LabelData::copy_to_image(unsigned char *img_data,
-                              RGBA (*img_fun)(label_type in)) {
+                              RGBA (*img_fun)(LABELTYPE in)) {
   auto *in = data;
   auto *end = data + width * height;
   auto *out = img_data;
@@ -56,5 +56,110 @@ void LabelData::clear() {
   while (in != end) {
     *in = 0;
     ++in;
+  }
+}
+
+bool equivalent_result(LabelData *a, LabelData *b) { return true; } // TODO
+
+bool valid_result(LabelData *l) {
+  auto w = l->width;
+  auto h = l->height;
+  const LABELTYPE *d = l->data;
+
+  for (unsigned int y = 0; y < h; ++y) {
+    for (unsigned int x = 0; x < w; ++x) {
+      auto curlabel = d[w * y + x];
+
+      if (curlabel > 1 << 14) {
+        std::cerr << "Labelnr above 1 << 14!" << std::endl;
+      }
+
+      if (curlabel == 1) {
+        std::cerr << "Unlabeled pixel at x:" << x << " y:" << y << std::endl;
+        return false;
+      }
+
+      if (curlabel != 0) {
+        bool closefault = false;
+        closefault |= x + 1 < w && d[w * (y) + (x + 1)] != 0 &&
+                      d[w * (y) + (x + 1)] != curlabel;
+        closefault |= x - 1 < w && d[w * (y) + (x - 1)] != 0 &&
+                      d[w * (y) + (x - 1)] != curlabel;
+        closefault |= y + 1 < h && d[w * (y + 1) + (x)] != 0 &&
+                      d[w * (y + 1) + (x)] != curlabel;
+        closefault |= y - 1 < h && d[w * (y - 1) + (x)] != 0 &&
+                      d[w * (y - 1) + (x)] != curlabel;
+
+        if (closefault) {
+          std::cerr << "Connected components with different labels at x:" << x
+                    << " y:" << y << std::endl;
+          return false;
+        }
+      }
+    }
+  }
+
+  LabelData tmp(*l);
+  std::set<LABELTYPE> prev;
+  for (unsigned int y = 0; y < h; ++y) {
+    for (unsigned int x = 0; x < w; ++x) {
+      auto curlabel = tmp.data[w * y + x];
+
+      // Only do anything if it's some component
+      if (curlabel > 1) {
+        // Another component already used the label
+        if (prev.count(curlabel)) {
+          std::cerr << "Multiple components with same label: " << curlabel
+                    << std::endl;
+          return false;
+        }
+
+        // Record that this component uses this label
+        prev.insert(curlabel);
+
+        // Set to zero to ignore this component in next iteration
+        mark_explore(x, y, &tmp, curlabel, 0);
+      }
+    }
+  }
+
+  return true;
+}
+
+void mark_explore(unsigned int xinit, unsigned int yinit, LabelData *l,
+                  LABELTYPE from, LABELTYPE to) {
+  auto w = l->width;
+  auto h = l->height;
+  auto d = l->data;
+
+  if (d[w * yinit + xinit] != from) {
+    return;
+  }
+  d[w * yinit + xinit] = to;
+
+  std::vector<XY> xys;
+  xys.emplace_back(xinit, yinit);
+  while (!xys.empty()) {
+    auto xy = xys.back();
+    xys.pop_back();
+    auto x = xy.x;
+    auto y = xy.y;
+
+    if (x + 1 < w && d[w * y + (x + 1)] == from) {
+      d[w * y + (x + 1)] = to;
+      xys.emplace_back(x + 1, y);
+    }
+    if (x - 1 < w && d[w * y + (x - 1)] == from) {
+      d[w * y + (x - 1)] = to;
+      xys.emplace_back(x - 1, y);
+    }
+    if (y + 1 < h && d[w * (y + 1) + x] == from) {
+      d[w * (y + 1) + x] = to;
+      xys.emplace_back(x, y + 1);
+    }
+    if (y - 1 < h && d[w * (y - 1) + x] == from) {
+      d[w * (y - 1) + x] = to;
+      xys.emplace_back(x, y - 1);
+    }
   }
 }

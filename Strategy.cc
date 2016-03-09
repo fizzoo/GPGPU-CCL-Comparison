@@ -1,43 +1,5 @@
 #include "Strategy.h"
 
-void mark_explore(unsigned int xinit, unsigned int yinit, LabelData *l,
-                  LabelData::label_type from, LabelData::label_type to) {
-  auto w = l->width;
-  auto h = l->height;
-  auto d = l->data;
-
-  if (d[w * yinit + xinit] != from) {
-    return;
-  }
-  d[w * yinit + xinit] = to;
-
-  std::vector<XY> xys;
-  xys.emplace_back(xinit, yinit);
-  while (!xys.empty()) {
-    auto xy = xys.back();
-    xys.pop_back();
-    auto x = xy.x;
-    auto y = xy.y;
-
-    if (x + 1 < w && d[w * y + (x + 1)] == from) {
-      d[w * y + (x + 1)] = to;
-      xys.emplace_back(x + 1, y);
-    }
-    if (x - 1 < w && d[w * y + (x - 1)] == from) {
-      d[w * y + (x - 1)] = to;
-      xys.emplace_back(x - 1, y);
-    }
-    if (y + 1 < h && d[w * (y + 1) + x] == from) {
-      d[w * (y + 1) + x] = to;
-      xys.emplace_back(x, y + 1);
-    }
-    if (y - 1 < h && d[w * (y - 1) + x] == from) {
-      d[w * (y - 1) + x] = to;
-      xys.emplace_back(x, y - 1);
-    }
-  }
-}
-
 void CPUOnePass::execute(LabelData *l) {
   unsigned int nr = 2;
   for (unsigned int y = 0; y < l->height; ++y) {
@@ -50,20 +12,7 @@ void CPUOnePass::execute(LabelData *l) {
   }
 }
 
-#ifndef NDEBUG
-#define CHECKERR                                                               \
-  if (err) {                                                                   \
-    std::cerr << "UNEXPECTED ERROR (" << err << ") on " << __FILE__ << ":"     \
-              << __LINE__ << std::endl;                                        \
-  }
-#else
-#define CHECKERR
-#endif /* NDEBUG */
-
-void GPUBase::clean_gpu() {
-  delete buf;
-  delete queue;
-}
+void GPUBase::clean_gpu() { delete buf; }
 
 void GPUBase::prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
                           LabelData *l) {
@@ -72,11 +21,11 @@ void GPUBase::prepare_gpu(cl::Context *c, cl::Device *d, cl::Program *p,
   program = p;
 
   cl_int err;
-  auto size = l->width * l->height * sizeof(LabelData::label_type);
+  auto size = l->width * l->height * sizeof(LABELTYPE);
   buf = new cl::Buffer(*c, CL_MEM_READ_WRITE, size, nullptr, &err);
   CHECKERR
 
-  queue = new cl::CommandQueue(*context, *device, 0, &err);
+  queue = new cl::CommandQueue(*c, *d, 0, &err);
   CHECKERR
 
   cl::Event event;

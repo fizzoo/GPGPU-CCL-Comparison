@@ -1,6 +1,6 @@
 CXXFLAGS=-Wall -Wextra -pedantic -std=c++14
 LDLIBS=-lOpenCL -lpng
-SRC=tester.cc Image.cc LabelData.cc Strategy.cc
+SRC=tester.cc Image.cc LabelData.cc Strategy.cc RGBAConversions.cc utilityCL.cc
 
 tester: $(SRC)
 	g++ $(CXXFLAGS) -g -Og $(SRC) $(LDLIBS) -o $@
