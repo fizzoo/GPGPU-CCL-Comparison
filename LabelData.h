@@ -3,6 +3,7 @@
 
 #include <set>
 #include <vector>
+#include <map>
 #include "Image.h"
 #include "defines.h"
 
@@ -32,8 +33,8 @@ public:
   /**
    * Steal data.
    */
-  LabelData(LabelData && rhs);
-  LabelData& operator=(LabelData && rhs) noexcept;
+  LabelData(LabelData &&rhs);
+  LabelData &operator=(LabelData &&rhs) noexcept;
 
   /**
    * Just allocate.
@@ -67,12 +68,13 @@ public:
 //   UTILITY concerning labeldatas   //
 ///////////////////////////////////////
 
-void mark_explore(unsigned int x, unsigned int y, LabelData *l, LABELTYPE from,
+void mark_explore(size_t x, size_t y, LabelData *l, LABELTYPE from,
                   LABELTYPE to);
 
 /**
- * Returns whether the labeldatas are equivalent, where labels may correspond to
- * a different number in the other labeldata.
+ * Returns whether the components of the two are at the same location.
+ * If both pass valid_result, their data is equivalent aside from label numbers
+ * if it passes this.
  */
 bool equivalent_result(LabelData *a, LabelData *b);
 

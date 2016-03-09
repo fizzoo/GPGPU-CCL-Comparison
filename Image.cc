@@ -60,7 +60,7 @@ bool Image::loadpng(const std::string &filename) {
   data = new unsigned char[rowbytes * _height];
 
   // Have row_pointers point into data sequentially, read into data
-  for (unsigned int i = 0; i < _height; ++i) {
+  for (size_t i = 0; i < _height; ++i) {
     row_pointers[i] = data + i * rowbytes;
   }
   png_read_image(pngp, row_pointers);

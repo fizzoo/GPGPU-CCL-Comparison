@@ -29,8 +29,8 @@ struct RGBA {
 };
 
 struct XY {
-  unsigned int x, y;
-  XY(unsigned int x, unsigned int y) : x(x), y(y) {}
+  size_t x, y;
+  XY(size_t x, size_t y) : x(x), y(y) {}
 };
 
 #endif /* end of include guard: DEFINES_H */

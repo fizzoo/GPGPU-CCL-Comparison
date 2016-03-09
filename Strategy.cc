@@ -8,9 +8,9 @@ void CPUBase::copy_to(const LabelData *in, cl::Context *, cl::Program *,
 LabelData CPUBase::copy_from() { return std::move(l); }
 
 void CPUOnePass::execute() {
-  unsigned int nr = 2;
-  for (unsigned int y = 0; y < l.height; ++y) {
-    for (unsigned int x = 0; x < l.width; ++x) {
+  size_t nr = 2;
+  for (size_t y = 0; y < l.height; ++y) {
+    for (size_t x = 0; x < l.width; ++x) {
       if (l.data[l.width * y + x] == 1) {
         mark_explore(x, y, &l, 1, nr);
         ++nr;

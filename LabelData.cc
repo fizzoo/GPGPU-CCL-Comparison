@@ -87,15 +87,33 @@ void LabelData::clear() {
   }
 }
 
-bool equivalent_result(LabelData *a, LabelData *b) { return true; } // TODO
+bool equivalent_result(LabelData *a, LabelData *b) { 
+  if (a->width != b->width || a->height != b->height) {
+    std::cerr << "Mismatched sizes" << std::endl;
+    return false;
+  }
+
+  for (size_t y = 0; y < a->height; ++y) {
+    for (size_t x = 0; x < a->width; ++x) {
+      auto cura = a->data[a->width*y+x];
+      auto curb = b->data[b->width*y+x];
+      if ((cura == 0 && curb != 0) || (curb == 0 && cura != 0)) {
+        std::cerr << "Component on one labeling but none on the other" << std::endl;
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
 
 bool valid_result(LabelData *l) {
   auto w = l->width;
   auto h = l->height;
   const LABELTYPE *d = l->data;
 
-  for (unsigned int y = 0; y < h; ++y) {
-    for (unsigned int x = 0; x < w; ++x) {
+  for (size_t y = 0; y < h; ++y) {
+    for (size_t x = 0; x < w; ++x) {
       auto curlabel = d[w * y + x];
 
       if (curlabel > 1 << 14) {
@@ -129,8 +147,8 @@ bool valid_result(LabelData *l) {
 
   LabelData tmp(*l);
   std::set<LABELTYPE> prev;
-  for (unsigned int y = 0; y < h; ++y) {
-    for (unsigned int x = 0; x < w; ++x) {
+  for (size_t y = 0; y < h; ++y) {
+    for (size_t x = 0; x < w; ++x) {
       auto curlabel = tmp.data[w * y + x];
 
       // Only do anything if it's some component
@@ -154,7 +172,7 @@ bool valid_result(LabelData *l) {
   return true;
 }
 
-void mark_explore(unsigned int xinit, unsigned int yinit, LabelData *l,
+void mark_explore(size_t xinit, size_t yinit, LabelData *l,
                   LABELTYPE from, LABELTYPE to) {
   auto w = l->width;
   auto h = l->height;
