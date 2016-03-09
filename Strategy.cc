@@ -31,12 +31,7 @@ void GPUBase::copy_to(const LabelData *l, cl::Context *c, cl::Program *p,
   buf = new cl::Buffer(*c, CL_MEM_READ_WRITE, size, nullptr, &err);
   CHECKERR
 
-  /**
-   * TODO: check if blocking read does this correctly itself
-   */
-  cl::Event event;
-  err = queue->enqueueWriteBuffer(*buf, CL_FALSE, 0, size, l->data, 0, &event);
-  event.wait();
+  err = queue->enqueueWriteBuffer(*buf, CL_TRUE, 0, size, l->data);
 }
 
 void GPUNeighbourPropagation::execute() {
