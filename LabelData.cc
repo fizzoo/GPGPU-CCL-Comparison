@@ -87,7 +87,7 @@ void LabelData::clear() {
   }
 }
 
-bool equivalent_result(LabelData *a, LabelData *b) { 
+bool equivalent_result(LabelData *a, LabelData *b) {
   if (a->width != b->width || a->height != b->height) {
     std::cerr << "Mismatched sizes" << std::endl;
     return false;
@@ -95,10 +95,11 @@ bool equivalent_result(LabelData *a, LabelData *b) {
 
   for (size_t y = 0; y < a->height; ++y) {
     for (size_t x = 0; x < a->width; ++x) {
-      auto cura = a->data[a->width*y+x];
-      auto curb = b->data[b->width*y+x];
+      auto cura = a->data[a->width * y + x];
+      auto curb = b->data[b->width * y + x];
       if ((cura == 0 && curb != 0) || (curb == 0 && cura != 0)) {
-        std::cerr << "Component on one labeling but none on the other" << std::endl;
+        std::cerr << "Component on one labeling but none on the other"
+                  << std::endl;
         return false;
       }
     }
@@ -172,8 +173,8 @@ bool valid_result(LabelData *l) {
   return true;
 }
 
-void mark_explore(size_t xinit, size_t yinit, LabelData *l,
-                  LABELTYPE from, LABELTYPE to) {
+void mark_explore(size_t xinit, size_t yinit, LabelData *l, LABELTYPE from,
+                  LABELTYPE to) {
   auto w = l->width;
   auto h = l->height;
   auto d = l->data;

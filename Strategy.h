@@ -119,4 +119,13 @@ public:
   virtual void execute();
 };
 
+/**
+ * Traverses row/column forward/backwards and edits at the same time.
+ */
+class GPULineEditing : public GPUBase {
+public:
+  virtual std::string name() { return "GPU line editing"; }
+  virtual void execute();
+};
+
 #endif /* end of include guard: STRATEGY_H */

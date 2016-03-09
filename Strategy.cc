@@ -80,14 +80,17 @@ void GPUNeighbourPropagation::execute() {
   CHECKERR;
 
   while (true) {
-    //CPU-GPU sync, sadly
+    // CPU-GPU sync, sadly
     queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &writtenevents[0]);
-    queue->enqueueNDRangeKernel(propagate, cl::NullRange, cl::NDRange(width, height), cl::NDRange(1,1), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
+                              &writtenevents[0]);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(width, height), cl::NDRange(1, 1),
+                                &writtenevents, &events[0]);
   }
 }
 
@@ -125,13 +128,102 @@ void GPUPlusPropagation::execute() {
   CHECKERR;
 
   while (true) {
-    //CPU-GPU sync, sadly
+    // CPU-GPU sync, sadly
     queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &writtenevents[0]);
-    queue->enqueueNDRangeKernel(propagate, cl::NullRange, cl::NDRange(width, height), cl::NDRange(1,1), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
+                              &writtenevents[0]);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(width, height), cl::NDRange(1, 1),
+                                &writtenevents, &events[0]);
+  }
+}
+
+void GPULineEditing::execute() {
+  cl_int err;
+
+  cl::Kernel startlabel(*program, "label_with_id", &err);
+  CHECKERR;
+  cl::Kernel up(*program, "lineedit_up", &err);
+  CHECKERR;
+  cl::Kernel down(*program, "lineedit_down", &err);
+  CHECKERR;
+  cl::Kernel left(*program, "lineedit_left", &err);
+  CHECKERR;
+  cl::Kernel right(*program, "lineedit_right", &err);
+  CHECKERR;
+
+  err = startlabel.setArg(0, *buf);
+  CHECKERR;
+  err = startlabel.setArg(1, (cl_uint)width);
+  CHECKERR;
+
+  char changed = 1;
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+  queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+
+  err = up.setArg(0, *buf);
+  CHECKERR;
+  err = up.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = up.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = up.setArg(3, chan);
+  CHECKERR;
+
+  err = down.setArg(0, *buf);
+  CHECKERR;
+  err = down.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = down.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = down.setArg(3, chan);
+  CHECKERR;
+
+  err = left.setArg(0, *buf);
+  CHECKERR;
+  err = left.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = left.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = left.setArg(3, chan);
+  CHECKERR;
+
+  err = right.setArg(0, *buf);
+  CHECKERR;
+  err = right.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = right.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = right.setArg(3, chan);
+  CHECKERR;
+
+  std::vector<cl::Event> events(4);
+  std::vector<cl::Event> writtenevents(1);
+  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
+                                    cl::NDRange(width, height),
+                                    cl::NDRange(1, 1), NULL, &events[0]);
+  CHECKERR;
+
+  while (true) {
+    // CPU-GPU sync, sadly
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    if (changed == false) {
+      break;
+    }
+    changed = false;
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
+                              &writtenevents[0]);
+    queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(height),
+                                cl::NDRange(1), &writtenevents, &events[0]);
+    queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(width),
+                                cl::NDRange(1), &writtenevents, &events[1]);
+    queue->enqueueNDRangeKernel(left, cl::NullRange, cl::NDRange(height),
+                                cl::NDRange(1), &writtenevents, &events[2]);
+    queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
+                                cl::NDRange(1), &writtenevents, &events[3]);
   }
 }

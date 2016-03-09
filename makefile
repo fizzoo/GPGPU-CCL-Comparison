@@ -9,7 +9,7 @@ fasts:  $(SRC)
 	g++ -DNDEBUG $(CXXFLAGS) -O3 $(SRC) $(LDLIBS) -o $@
 
 format:
-	zsh -c 'for f in *.cc *.h; do clang-format -i $$f; done'
+	zsh -c 'for f in *.cc *.h kernel.cl; do clang-format -i $$f; done'
 
 clean:
 	rm -f tester fasts

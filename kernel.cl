@@ -129,6 +129,101 @@ kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
   }
 }
 
+kernel void lineedit_right(global int *data, int w, int h,
+                           global char *changed) {
+  int x = 0;
+  int y = get_global_id(0);
+  int lowest = 1 << 30;
+
+  while (x < w) {
+    int curlabel = data[w * y + x];
+
+    if (curlabel == 0) {
+      lowest = 1 << 30;
+    } else {
+      if (curlabel < lowest) {
+        lowest = curlabel;
+      } else if (curlabel > lowest) {
+        data[w * y + x] = lowest;
+        *changed = 1;
+      }
+    }
+
+    ++x;
+  }
+}
+
+kernel void lineedit_left(global int *data, int w, int h,
+                          global char *changed) {
+  int x = w - 1;
+  int y = get_global_id(0);
+  int lowest = 1 << 30;
+
+  while (x >= 0) {
+    int curlabel = data[w * y + x];
+
+    if (curlabel == 0) {
+      lowest = 1 << 30;
+    } else {
+      if (curlabel < lowest) {
+        lowest = curlabel;
+      } else if (curlabel > lowest) {
+        data[w * y + x] = lowest;
+        *changed = 1;
+      }
+    }
+
+    --x;
+  }
+}
+
+kernel void lineedit_up(global int *data, int w, int h, global char *changed) {
+  int x = get_global_id(0);
+  int y = 0;
+  int lowest = 1 << 30;
+
+  while (y < h) {
+    int curlabel = data[w * y + x];
+
+    if (curlabel == 0) {
+      lowest = 1 << 30;
+    } else {
+      if (curlabel < lowest) {
+        lowest = curlabel;
+      } else if (curlabel > lowest) {
+        data[w * y + x] = lowest;
+        *changed = 1;
+      }
+    }
+
+    ++y;
+  }
+}
+
+kernel void lineedit_down(global int *data, int w, int h,
+                          global char *changed) {
+  int x = get_global_id(0);
+  int y = h - 1;
+  int lowest = 1 << 30;
+
+  while (y >= 0) {
+    int curlabel = data[w * y + x];
+
+    if (curlabel == 0) {
+      lowest = 1 << 30;
+    } else {
+      if (curlabel < lowest) {
+        lowest = curlabel;
+      } else if (curlabel > lowest) {
+        data[w * y + x] = lowest;
+        *changed = 1;
+      }
+    }
+
+    --y;
+  }
+}
+
 kernel void id_accessor(global int *data, int w) {
   unsigned int x = get_global_id(0);
   unsigned int y = get_global_id(1);
