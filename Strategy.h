@@ -101,9 +101,21 @@ public:
   virtual LabelData copy_from();
 };
 
+/**
+ * Neighbour propagation using only the closest connected pixels.
+ */
 class GPUNeighbourPropagation : public GPUBase {
 public:
   virtual std::string name() { return "GPU neighbour propagation"; }
+  virtual void execute();
+};
+
+/**
+ * Looks at pixels straight up/down/left/right while inside a component.
+ */
+class GPUPlusPropagation : public GPUBase {
+public:
+  virtual std::string name() { return "GPU plus propagation"; }
   virtual void execute();
 };
 

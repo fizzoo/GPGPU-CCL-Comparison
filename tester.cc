@@ -37,6 +37,7 @@ int main(int argc, const char *argv[]) {
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
   strats.push_back(new GPUNeighbourPropagation);
+  strats.push_back(new GPUPlusPropagation);
   strats[0]->copy_to(&input, &context, &program, &queue);
   strats[0]->execute();
   LabelData correct = strats[0]->copy_from();

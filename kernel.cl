@@ -8,7 +8,8 @@ kernel void label_with_id(global int *data, unsigned int w) {
   }
 }
 
-kernel void neighbour_propagate(global int *data, unsigned int w, unsigned int h, global char *changed) {
+kernel void neighbour_propagate(global int *data, unsigned int w,
+                                unsigned int h, global char *changed) {
   unsigned int x = get_global_id(0);
   unsigned int y = get_global_id(1);
 
@@ -43,6 +44,83 @@ kernel void neighbour_propagate(global int *data, unsigned int w, unsigned int h
     if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
     }
+  }
+
+  if (curlabel < oldlabel) {
+    *changed = 1;
+    data[w * y + x] = curlabel;
+  }
+}
+
+kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
+                           global char *changed) {
+  unsigned int x = get_global_id(0);
+  unsigned int y = get_global_id(1);
+
+  int oldlabel = data[w * y + x];
+  int curlabel = oldlabel;
+  int otherlabel = 0;
+  int diff;
+
+  if (curlabel == 0) {
+    return;
+  }
+
+  diff = 1;
+  while (true) {
+    if (y + diff >= h) {
+      break;
+    }
+    otherlabel = data[w * (y + diff) + (x)];
+    if (otherlabel == 0) {
+      break;
+    }
+    if (otherlabel < curlabel) {
+      curlabel = otherlabel;
+    }
+    ++diff;
+  }
+  diff = 1;
+  while (true) {
+    if (y - diff >= h) {
+      break;
+    }
+    otherlabel = data[w * (y - diff) + (x)];
+    if (otherlabel == 0) {
+      break;
+    }
+    if (otherlabel < curlabel) {
+      curlabel = otherlabel;
+    }
+    ++diff;
+  }
+  diff = 1;
+  while (true) {
+    if (x + diff >= w) {
+      break;
+    }
+    otherlabel = data[w * y + (x + diff)];
+    if (otherlabel == 0) {
+      break;
+    }
+    if (otherlabel < curlabel) {
+      curlabel = otherlabel;
+    }
+    ++diff;
+  }
+  diff = 1;
+  while (true) {
+    if (x - diff >= w) {
+      break;
+    }
+    otherlabel = data[w * y + (x - diff)];
+    if (otherlabel == 0) {
+      break;
+    }
+    if (otherlabel < curlabel) {
+      curlabel = otherlabel;
+    }
+    ++diff;
   }
 
   if (curlabel < oldlabel) {
