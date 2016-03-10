@@ -238,7 +238,7 @@ kernel void gpu_label_mask_naive(global int *d, int w, int h) {
 
     int loc = (y * w) + x;
 
-    //west o north pos
+    //west and north pixel position
     int checkW = (y * w) + (x - 1);
     int checkN = ((y - 1) * w) + x;
 
@@ -251,9 +251,10 @@ kernel void gpu_label_mask_naive(global int *d, int w, int h) {
 
 
     //Scan phase
+    //check if the init label-value can be improved (=lowered)
     int scanTmp = d[loc]; 
 
-//första koll om man kan minska labeln
+    
     if (scanTmp != 0) {
         if (checkN >= 0 && checkN < w * h && d[checkN] > 0 
                    && d[checkN] < scanTmp) {
@@ -267,8 +268,8 @@ kernel void gpu_label_mask_naive(global int *d, int w, int h) {
     d[loc] = scanTmp;
 }
 
-//är datarace kanske problemet? borde tänkt på det innan kanske
-//finns väligt många index kontroller
+
+//datarace a likely problem, lots of index checks included 
 
 kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, global int *rLD) {
     unsigned int x = get_global_id(0);
@@ -292,13 +293,10 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
 
     //Analysis phase
 
-    //man ska hitta en rot pixel, vilket är en pixel vars label är samma som 
-    //dess init värde. här är då mitt fulhack jag skrev igår när jag 
-    //var ledsen där man väntar på att att detta värde ska nå sig själv
-    //istället för att leta upp det själv. antagligen det som går fel
-
-    //tanken är att en rotpixel sprider sig från sig själv till pixlar omkring sig,
-    //lite som cancer vilket var min inspiration 
+    //every pixel is supposed to find a root-pixel, which is a pixel whose
+    //label is the same as its init value. The following is a bad 
+    //implementation where instead the root-pixel value is spread from the 
+    //root to the other pixels in the component
 
     if (d[loc] > 0 && rLD[loc] != loc) {
         while(true) 
@@ -320,7 +318,7 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
     }
 
 
-    //hittar man en rotpixel så tar man dess värde
+    //after the root has been found the you take on it's value
     if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size 
                && d[rLD[loc]] > 0) {
         d[loc] = d[rLD[loc]];
@@ -328,8 +326,9 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
 
 
     //Link phase
-    //man kollar de två pixlarna till höger o vänster. Om de har en bättre
-    //rotpixel så ändrar man sin egen rotpixels värde till något av deras
+    //checking the left and right pixels, comparing root-pixel value.
+    //if any of the others have a lower value, update your own root
+    //with that value
 
     int linkTmp = -1;
 
@@ -337,9 +336,10 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
                && d[rLD[loc]] > 0) {
         int linkTmp = rLD[loc];
 
-        //i pdfen säger författarna att på cuda fanns det ett atomicMin
-        //kommando som kunde undvika datarace för denna del, de säger inget om 
-        //de andra dock
+
+        //the article points to this section proclaiming that it has a 
+        //datarace, however it can be solved using the cuda function 
+        //atomicMin
 
         if (lW >= 0 && lW < size && rLD[lW] != -1 && rLD[lW] >= 0 
                && rLD[lW] < size && d[lW] > 0 && d[linkTmp] < d[rLD[lW]]) {
@@ -359,7 +359,7 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
     }
 
     //Label phase
-    //man tar de det uppdaterade värde från sin rotpixel
+    //You take on the (maybe) updated root-value
 
     if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size && 
                d[rLD[loc]] > 0) {
@@ -367,7 +367,7 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
     }
 
     //Rescan phase
-    //gör om gör rätt
+    //check if the process is complete, otherwise itterate
 
     if (d[loc] > 0) {
         if ((lN >= 0 && d[lN] > 0 && d[lN] != d[loc]) ||

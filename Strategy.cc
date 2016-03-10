@@ -231,10 +231,10 @@ void GPULineEditing::execute() {
 void GPUKR::execute() {
     cl_int err;
 
-    //preprocess grejen för KR
+    //preprocessing, init values and simple scan 
     cl::Kernel init(*program, "gpu_label_mask_naive", &err);
     CHECKERR;
-    //denna ska köras flera ggr
+    //this one will itterate until wanted result is reached
     cl::Kernel propagate(*program, "gpu_label_mask_two", &err);
     CHECKERR;
 
@@ -247,7 +247,7 @@ void GPUKR::execute() {
 
     char iterate = 1;
 
-    //spara pos av rot-pixlar
+    //save the position of the rootpixels
 
     LABELTYPE *repLabels = new LABELTYPE[width * height];
     auto size = width * height * sizeof(LABELTYPE);
@@ -282,7 +282,8 @@ void GPUKR::execute() {
 
     int i = 0;
 
-    //eftersom kernel ej konvergerar så loppar man bara något fåtal ggr
+    //since the kernel does't work yet just itterate a few times to compare
+    //results
     while(i < 10) 
     {
         i++;
