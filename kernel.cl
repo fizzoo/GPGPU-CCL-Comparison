@@ -56,6 +56,9 @@ kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
                            global char *changed) {
   unsigned int x = get_global_id(0);
   unsigned int y = get_global_id(1);
+  if (x >= w || y >= h) {
+    return;
+  }
 
   int oldlabel = data[w * y + x];
   int curlabel = oldlabel;
