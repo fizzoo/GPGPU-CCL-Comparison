@@ -163,7 +163,7 @@ void GPULineEditing::execute() {
 
   char changed = 1;
   cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
-  queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+  queue->enqueueWriteBuffer(chan, CL_TRUE, 0, 1, &changed);
 
   err = up.setArg(0, *buf);
   CHECKERR;
@@ -201,29 +201,29 @@ void GPULineEditing::execute() {
   err = right.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(4);
-  std::vector<cl::Event> writtenevents(1);
+  std::vector<cl::Event> event1(1);
+  std::vector<cl::Event> event2(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(width, height),
-                                    cl::NDRange(1, 1), NULL, &events[0]);
+                                    cl::NDRange(1, 1), NULL, &event1[0]);
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &event1, NULL);
     if (changed == false) {
       break;
     }
     changed = false;
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
+                              &event1[0]);
     queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(height),
-                                cl::NDRange(1), &writtenevents, &events[0]);
+                                cl::NDRange(1), &event1, &event2[0]);
     queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(width),
-                                cl::NDRange(1), &writtenevents, &events[1]);
+                                cl::NDRange(1), &event2, &event1[0]);
     queue->enqueueNDRangeKernel(left, cl::NullRange, cl::NDRange(height),
-                                cl::NDRange(1), &writtenevents, &events[2]);
+                                cl::NDRange(1), &event1, &event2[0]);
     queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
-                                cl::NDRange(1), &writtenevents, &events[3]);
+                                cl::NDRange(1), &event2, &event1[0]);
   }
 }
