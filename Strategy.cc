@@ -227,3 +227,76 @@ void GPULineEditing::execute() {
                                 cl::NDRange(1), &event2, &event1[0]);
   }
 }
+
+void GPUKR::execute() {
+    cl_int err;
+
+    //preprocess grejen för KR
+    cl::Kernel init(*program, "gpu_label_mask_naive", &err);
+    CHECKERR;
+    //denna ska köras flera ggr
+    cl::Kernel propagate(*program, "gpu_label_mask_two", &err);
+    CHECKERR;
+
+    err = init.setArg(0, *buf);
+    CHECKERR;
+    err = init.setArg(1, (cl_int)width);
+    CHECKERR;
+    err = init.setArg(2, (cl_int)height);
+    CHECKERR;
+
+    char iterate = 1;
+
+    //spara pos av rot-pixlar
+
+    LABELTYPE *repLabels = new LABELTYPE[width * height];
+    auto size = width * height * sizeof(LABELTYPE);
+    cl::Buffer iter(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+    CHECKERR;
+    cl::Buffer repLabelBuf(*context, CL_MEM_READ_WRITE, size, nullptr, &err);
+    CHECKERR;
+
+    err = queue->enqueueWriteBuffer(iter, CL_FALSE, 0, 1, &iterate);
+    CHECKERR
+    err = queue->enqueueWriteBuffer(repLabelBuf, CL_TRUE, 0, size, repLabels);
+    CHECKERR;
+
+    err = propagate.setArg(0, *buf);
+    CHECKERR;
+    err = propagate.setArg(1, (cl_int)width);
+    CHECKERR;
+    err = propagate.setArg(2, (cl_int)height);
+    CHECKERR;
+    err = propagate.setArg(3, iter);
+    CHECKERR;
+    err = propagate.setArg(4, repLabelBuf);
+    CHECKERR;
+
+    std::vector<cl::Event> events(1);
+    std::vector<cl::Event> writtenevents(1);
+
+    err = queue->enqueueNDRangeKernel(init, cl::NullRange,
+            cl::NDRange(width, height), 
+            cl::NDRange(1, 1), NULL, &events[0]);
+    CHECKERR;
+
+    int i = 0;
+
+    //eftersom kernel ej konvergerar så loppar man bara något fåtal ggr
+    while(i < 10) 
+    {
+        i++;
+        queue->enqueueReadBuffer(iter, CL_TRUE, 0, 1, &iterate, &events, NULL);
+        if (iterate == false) {
+            break;
+        }
+        iterate = false;
+        queue->enqueueWriteBuffer(iter, CL_FALSE, 0, 1, &iterate, NULL, &writtenevents[0]);
+        queue->enqueueNDRangeKernel(propagate, cl::NullRange, 
+                cl::NDRange(width, height), 
+                cl::NDRange(1,1), 
+                &writtenevents, &events[0]);
+    }
+
+    delete repLabels;
+}
