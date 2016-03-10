@@ -97,6 +97,18 @@ void GPUNeighbourPropagation::execute() {
 void GPUPlusPropagation::execute() {
   cl_int err;
 
+  int wsize, hsize;
+  if (width % 16) {
+    wsize = width + 16 - (width % 16);
+  } else {
+    wsize = width;
+  }
+  if (height % 8) {
+    hsize = height + 8 - (height % 8);
+  } else {
+    hsize = height;
+  }
+
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
   cl::Kernel propagate(*program, "plus_propagate", &err);
@@ -123,8 +135,8 @@ void GPUPlusPropagation::execute() {
   std::vector<cl::Event> events(1);
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
-                                    cl::NDRange(width, height),
-                                    cl::NDRange(10, 10), NULL, &events[0]);
+                                    cl::NDRange(wsize, hsize),
+                                    cl::NDRange(16, 8), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -137,7 +149,7 @@ void GPUPlusPropagation::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(width, height), cl::NDRange(10, 10),
+                                cl::NDRange(wsize, hsize), cl::NDRange(16, 8),
                                 &writtenevents, &events[0]);
   }
 }
@@ -215,8 +227,7 @@ void GPULineEditing::execute() {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &event1[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &event1[0]);
     queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(height),
                                 cl::NDRange(1), &event1, &event2[0]);
     queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(width),
