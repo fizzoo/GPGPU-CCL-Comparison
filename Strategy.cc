@@ -124,7 +124,7 @@ void GPUPlusPropagation::execute() {
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(width, height),
-                                    cl::NDRange(1, 1), NULL, &events[0]);
+                                    cl::NDRange(10, 10), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -137,7 +137,7 @@ void GPUPlusPropagation::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(width, height), cl::NDRange(1, 1),
+                                cl::NDRange(width, height), cl::NDRange(10, 10),
                                 &writtenevents, &events[0]);
   }
 }
