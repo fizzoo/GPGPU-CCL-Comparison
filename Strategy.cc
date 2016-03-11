@@ -49,6 +49,18 @@ LabelData GPUBase::copy_from() {
 void GPUNeighbourPropagation::execute() {
   cl_int err;
 
+  int wsize, hsize;
+  if (width % 16) {
+    wsize = width + 16 - (width % 16);
+  } else {
+    wsize = width;
+  }
+  if (height % 8) {
+    hsize = height + 8 - (height % 8);
+  } else {
+    hsize = height;
+  }
+
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
   cl::Kernel propagate(*program, "neighbour_propagate", &err);
@@ -77,8 +89,8 @@ void GPUNeighbourPropagation::execute() {
   std::vector<cl::Event> events(1);
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
-                                    cl::NDRange(width, height),
-                                    cl::NDRange(1, 1), NULL, &events[0]);
+                                    cl::NDRange(wsize, hsize),
+                                    cl::NDRange(16, 8), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -91,7 +103,7 @@ void GPUNeighbourPropagation::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(width, height), cl::NDRange(1, 1),
+                                cl::NDRange(wsize, hsize), cl::NDRange(16, 8),
                                 &writtenevents, &events[0]);
   }
 }
