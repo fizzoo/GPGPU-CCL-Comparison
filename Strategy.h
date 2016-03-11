@@ -2,6 +2,8 @@
 #define STRATEGY_H
 
 #include <CL/cl.hpp>
+#include <boost/pending/disjoint_sets.hpp>
+#include <boost/property_map/property_map.hpp>
 #include "LabelData.h"
 
 /**
@@ -73,6 +75,15 @@ public:
 class CPUOnePass : public CPUBase {
 public:
   virtual std::string name() { return "CPU one-pass"; }
+  virtual void execute();
+};
+
+/**
+ * Two-pass algorithm, using union-find for the equivalence.
+ */
+class CPUUnionFind : public CPUBase {
+public:
+  virtual std::string name() { return "CPU union-find"; }
   virtual void execute();
 };
 
