@@ -20,6 +20,8 @@ int main(int argc, const char *argv[]) {
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
     return 0;
+  } else {
+    std::cerr << std::endl;
   }
 
   std::string filename = argv[1];
@@ -37,16 +39,17 @@ int main(int argc, const char *argv[]) {
   }
 
   LabelData input(&rgba_image, rgb_above_100);
-  std::cerr << "\nLoaded input image '" << filename << "' into a LabelData"
+  std::cerr << "Loaded input image '" << filename << "' into a LabelData"
             << std::endl;
 
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
-  //strats.push_back(new CPUUnionFind);
-  //strats.push_back(new GPUNeighbourPropagation);
-  //strats.push_back(new GPUPlusPropagation);
-  //strats.push_back(new GPULineEditing);
-  strats.push_back(new GPUKR);
+  strats.push_back(new CPUUnionFind);
+  strats.push_back(new GPUNeighbourPropagation);
+  strats.push_back(new GPUUnionFind);
+  strats.push_back(new GPUPlusPropagation);
+  strats.push_back(new GPULineEditing);
+  // strats.push_back(new GPUKR);
 
   strats[0]->copy_to(&input, &context, &program, &queue);
   strats[0]->execute();
@@ -88,8 +91,7 @@ int main(int argc, const char *argv[]) {
 
     std::cout << std::left << std::setw(32) << argv[1] << " -- "
               << std::setw(32) << strat->name() << " -- " << std::setw(23) << ms
-              << " -- " << mswithprep;
-    std::cout << std::endl;
+              << " -- " << mswithprep << std::endl;
 
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;
