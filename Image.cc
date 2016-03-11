@@ -125,7 +125,7 @@ bool Image::loadpng(const std::string &filename) {
 }
 
 Image::Image(const std::string &filename) {
-  auto pos = filename.find(".png");
+  auto pos = filename.rfind(".png");
   if (pos == filename.length() - 4) {
     ok = loadpng(filename);
     return;
@@ -161,8 +161,8 @@ bool iml::writepng(const std::string &filename, size_t width, size_t height,
   png_init_io(pngp, fp);
 
   png_set_IHDR(pngp, pngi, width, height, 8, PNG_COLOR_TYPE_RGB_ALPHA,
-               PNG_INTERLACE_NONE, PNG_COMPRESSION_TYPE_DEFAULT,
-               PNG_FILTER_TYPE_DEFAULT);
+               PNG_INTERLACE_NONE, PNG_COMPRESSION_TYPE_BASE,
+               PNG_FILTER_TYPE_BASE);
 
   png_write_info(pngp, pngi);
 
