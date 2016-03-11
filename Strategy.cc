@@ -353,5 +353,5 @@ void GPUKR::execute() {
                                 &writtenevents, &events[0]);
   }
 
-  delete repLabels;
+  delete[] repLabels;
 }
