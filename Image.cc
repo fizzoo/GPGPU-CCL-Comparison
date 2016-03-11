@@ -55,7 +55,6 @@ bool Image::loadpng(const std::string &filename) {
     png_set_filler(pngp, 255, PNG_FILLER_BEFORE);
   }
 
-
   // Get length of row for allocation, allocate
   int rowbytes = png_get_rowbytes(pngp, pngi);
   unsigned char **row_pointers = new unsigned char *[_height];
@@ -76,24 +75,24 @@ bool Image::loadpng(const std::string &filename) {
   // Should now atleast be 8bit each, not palette.
   if (channels == 1 || channels == 3) {
     unsigned char *tmp = data;
-    data = new unsigned char[_width*_height*4];
+    data = new unsigned char[_width * _height * 4];
     if (channels == 1) {
-      #ifndef NDEBUG
+#ifndef NDEBUG
       std::cerr << "G -> RGBA performed" << std::endl;
-      #endif /* NDEBUG */
-      for (size_t i = 0; i < _width*_height; ++i) {
-        data[i*4+0] = tmp[i];
-        data[i*4+1] = tmp[i];
-        data[i*4+2] = tmp[i];
-        data[i*4+3] = 255;
+#endif /* NDEBUG */
+      for (size_t i = 0; i < _width * _height; ++i) {
+        data[i * 4 + 0] = tmp[i];
+        data[i * 4 + 1] = tmp[i];
+        data[i * 4 + 2] = tmp[i];
+        data[i * 4 + 3] = 255;
       }
     } else if (channels == 3) {
-      #ifndef NDEBUG
+#ifndef NDEBUG
       std::cerr << "RGB -> RGBA performed" << std::endl;
-      #endif /* NDEBUG */
+#endif /* NDEBUG */
       auto *in = tmp;
       auto *out = data;
-      while (in != tmp+_height*_width*3) {
+      while (in != tmp + _height * _width * 3) {
         out[0] = in[0];
         out[1] = in[1];
         out[2] = in[2];

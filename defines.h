@@ -28,9 +28,4 @@ struct RGBA {
   unsigned char r, g, b, a;
 };
 
-struct XY {
-  size_t x, y;
-  XY(size_t x, size_t y) : x(x), y(y) {}
-};
-
 #endif /* end of include guard: DEFINES_H */

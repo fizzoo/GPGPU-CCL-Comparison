@@ -34,16 +34,16 @@ int main(int argc, const char *argv[]) {
   }
 
   LabelData input(&rgba_image, rgb_above_100);
-  #ifndef NDEBUG
+#ifndef NDEBUG
   std::cerr << "Loaded input image into a LabelData" << std::endl;
-  #endif /* NDEBUG */
+#endif /* NDEBUG */
 
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
-  //strats.push_back(new GPUNeighbourPropagation);
+  // strats.push_back(new GPUNeighbourPropagation);
   strats.push_back(new GPUPlusPropagation);
   strats.push_back(new GPULineEditing);
-  //strats.push_back(new GPUKR);
+  // strats.push_back(new GPUKR);
 
   strats[0]->copy_to(&input, &context, &program, &queue);
   strats[0]->execute();
@@ -57,9 +57,9 @@ int main(int argc, const char *argv[]) {
     LabelData warmup(input);
     warmup.clear();
 
-    #ifndef NDEBUG
+#ifndef NDEBUG
     std::cerr << "Warmup with: " << strat->name() << std::endl;
-    #endif /* NDEBUG */
+#endif /* NDEBUG */
     strat->copy_to(&warmup, &context, &program, &queue);
     strat->execute();
     strat->copy_from();
@@ -112,9 +112,8 @@ int main(int argc, const char *argv[]) {
     iml::Image out(output.width, output.height);
     output.copy_to_image(out.data, mod8);
     std::string cleaninput = argv[1];
-    std::replace( cleaninput.begin(), cleaninput.end(), '/', '-');
-    std::string outname =
-        "out/" + cleaninput + " - " + strat->name() + ".png";
+    std::replace(cleaninput.begin(), cleaninput.end(), '/', '-');
+    std::string outname = "out/" + cleaninput + " - " + strat->name() + ".png";
     iml::writepng(outname, &out);
 #endif /* NDEBUG */
   }
