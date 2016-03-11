@@ -33,7 +33,7 @@ kernel void neighbour_propagate(global int *data, int w, int h,
       curlabel = otherlabel;
     }
   }
-  if (y - 1 < h) {
+  if (y - 1 >= 0) {
     otherlabel = data[w * (y - 1) + (x)];
     if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
@@ -45,7 +45,7 @@ kernel void neighbour_propagate(global int *data, int w, int h,
       curlabel = otherlabel;
     }
   }
-  if (x - 1 < w) {
+  if (x - 1 >= 0) {
     otherlabel = data[w * (y) + (x - 1)];
     if (otherlabel && otherlabel < curlabel) {
       curlabel = otherlabel;
