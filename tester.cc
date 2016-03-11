@@ -40,7 +40,7 @@ int main(int argc, const char *argv[]) {
 
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
-  strats.push_back(new GPUNeighbourPropagation);
+  //strats.push_back(new GPUNeighbourPropagation);
   //strats.push_back(new GPUPlusPropagation);
   strats.push_back(new GPULineEditing);
   //strats.push_back(new GPUKR);

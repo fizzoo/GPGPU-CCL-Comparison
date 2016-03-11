@@ -38,9 +38,10 @@ bool Image::loadpng(const std::string &filename) {
     return false;
   }
 
-  // Try to expand to rgba. May change the space required.
+  // Try to expand to rgba.
   int bit_depth = png_get_bit_depth(pngp, pngi);
   int color_type = png_get_color_type(pngp, pngi);
+  int channels = png_get_channels(pngp, pngi);
   if (color_type == PNG_COLOR_TYPE_PALETTE) {
     png_set_palette_to_rgb(pngp);
   }
@@ -53,6 +54,7 @@ bool Image::loadpng(const std::string &filename) {
   if (color_type == PNG_COLOR_TYPE_RGB) {
     png_set_filler(pngp, 255, PNG_FILLER_BEFORE);
   }
+
 
   // Get length of row for allocation, allocate
   int rowbytes = png_get_rowbytes(pngp, pngi);
@@ -69,6 +71,39 @@ bool Image::loadpng(const std::string &filename) {
   // Cleanup
   png_destroy_read_struct(&pngp, &pngi, nullptr);
   fclose(fp);
+
+  // Try again to get 8bit RGBA if we were unsuccessful.
+  // Should now atleast be 8bit each, not palette.
+  if (channels == 1 || channels == 3) {
+    unsigned char *tmp = data;
+    data = new unsigned char[_width*_height*4];
+    if (channels == 1) {
+      #ifndef NDEBUG
+      std::cerr << "G -> RGBA performed" << std::endl;
+      #endif /* NDEBUG */
+      for (size_t i = 0; i < _width*_height; ++i) {
+        data[i*4+0] = tmp[i];
+        data[i*4+1] = tmp[i];
+        data[i*4+2] = tmp[i];
+        data[i*4+3] = 255;
+      }
+    } else if (channels == 3) {
+      #ifndef NDEBUG
+      std::cerr << "RGB -> RGBA performed" << std::endl;
+      #endif /* NDEBUG */
+      auto *in = tmp;
+      auto *out = data;
+      while (in != tmp+_height*_width*3) {
+        out[0] = in[0];
+        out[1] = in[1];
+        out[2] = in[2];
+        out[3] = 255;
+        in += 3;
+        out += 4;
+      }
+    }
+    delete tmp;
+  }
 
   return true;
 }
