@@ -54,8 +54,8 @@ kernel void neighbour_propagate(global int *data, unsigned int w,
 
 kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
                            global char *changed) {
-  unsigned int x = get_global_id(0);
-  unsigned int y = get_global_id(1);
+  int x = get_global_id(0);
+  int y = get_global_id(1);
   if (x >= w || y >= h) {
     return;
   }
@@ -71,7 +71,7 @@ kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
 
   diff = 1;
   while (true) {
-    if (y + diff >= h) {
+    if (y + diff < 0 || y + diff >= h) {
       break;
     }
     otherlabel = data[w * (y + diff) + (x)];
@@ -85,7 +85,7 @@ kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
   }
   diff = 1;
   while (true) {
-    if (y - diff >= h) {
+    if (y - diff < 0 || y - diff >= h) {
       break;
     }
     otherlabel = data[w * (y - diff) + (x)];
@@ -99,7 +99,7 @@ kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
   }
   diff = 1;
   while (true) {
-    if (x + diff >= w) {
+    if (x + diff < 0 || x + diff >= w) {
       break;
     }
     otherlabel = data[w * y + (x + diff)];
@@ -113,7 +113,7 @@ kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
   }
   diff = 1;
   while (true) {
-    if (x - diff >= w) {
+    if (x - diff < 0 || x - diff >= w) {
       break;
     }
     otherlabel = data[w * y + (x - diff)];
