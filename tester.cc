@@ -122,4 +122,7 @@ int main(int argc, const char *argv[]) {
   for (auto *strat : strats) {
     delete strat;
   }
+
+  std::cerr << std::endl;
+  return 0;
 }

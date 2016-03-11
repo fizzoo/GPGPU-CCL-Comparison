@@ -13,11 +13,30 @@ bool Image::loadpng(const std::string &filename) {
   // Handles for settings for reading
   png_structp pngp =
       png_create_read_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
+  if (!pngp) {
+    std::cerr << "Couldn't create png struct" << std::endl;
+    fclose(fp);
+    return false;
+  }
 
   png_infop pngi = png_create_info_struct(pngp);
+  if (!pngi) {
+    std::cerr << "Couldn't create png/info struct" << std::endl;
+    png_destroy_read_struct(&pngp, (png_infopp)0, (png_infopp)0);
+    fclose(fp);
+    return false;
+  }
+
+  png_infop pngend = png_create_info_struct(pngp);
   if (!pngp || !pngi) {
     std::cerr << "Couldn't create png/info struct" << std::endl;
-    png_destroy_read_struct(&pngp, &pngi, nullptr);
+    png_destroy_read_struct(&pngp, &pngi, (png_infopp)0);
+    fclose(fp);
+    return false;
+  }
+
+  if (setjmp(png_jmpbuf(pngp))) {
+    png_destroy_read_struct(&pngp, &pngi, &pngend);
     fclose(fp);
     return false;
   }
@@ -33,7 +52,7 @@ bool Image::loadpng(const std::string &filename) {
   _width = png_get_image_width(pngp, pngi);
   if (_height <= 0 || _width <= 0) {
     std::cerr << "Found no image data, zero dimension" << std::endl;
-    png_destroy_read_struct(&pngp, &pngi, nullptr);
+    png_destroy_read_struct(&pngp, &pngi, &pngend);
     fclose(fp);
     return false;
   }
@@ -67,8 +86,10 @@ bool Image::loadpng(const std::string &filename) {
   png_read_image(pngp, row_pointers);
   delete[] row_pointers;
 
+  png_read_end(pngp, pngend);
+
   // Cleanup
-  png_destroy_read_struct(&pngp, &pngi, nullptr);
+  png_destroy_read_struct(&pngp, &pngi, &pngend);
   fclose(fp);
 
   // Try again to get 8bit RGBA if we were unsuccessful.
