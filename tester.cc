@@ -91,8 +91,7 @@ int main(int argc, const char *argv[]) {
 
     std::cout << std::left << std::setw(32) << argv[1] << " -- "
               << std::setw(32) << strat->name() << " -- " << std::setw(23) << ms
-              << " -- " << mswithprep;
-    std::cout << std::endl;
+              << " -- " << mswithprep << std::endl;
 
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;

@@ -173,16 +173,16 @@ kernel void union_find(global int *data, int w, int h, global char *changed) {
   int root_W = 1 << 30;
 
   if (ok_N) {
-    root_N = find_set(data, w*(y-1)+(x));
+    root_N = find_set(data, w * (y - 1) + (x));
   }
   if (ok_E) {
-    root_E = find_set(data, w*(y)+(x+1));
+    root_E = find_set(data, w * (y) + (x + 1));
   }
   if (ok_S) {
-    root_S = find_set(data, w*(y+1)+(x));
+    root_S = find_set(data, w * (y + 1) + (x));
   }
   if (ok_W) {
-    root_W = find_set(data, w*(y)+(x-1));
+    root_W = find_set(data, w * (y) + (x - 1));
   }
 
   if (root_N < lowest) {
