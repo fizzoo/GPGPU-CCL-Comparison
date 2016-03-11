@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <chrono>
 #include <sys/stat.h>
+#include <algorithm>
 
 #include "Image.h"
 #include "Strategy.h"
@@ -33,25 +34,20 @@ int main(int argc, const char *argv[]) {
   }
 
   LabelData input(&rgba_image, rgb_above_100);
+  #ifndef NDEBUG
+  std::cerr << "Loaded input image into a LabelData" << std::endl;
+  #endif /* NDEBUG */
 
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
   strats.push_back(new GPUNeighbourPropagation);
   //strats.push_back(new GPUPlusPropagation);
   strats.push_back(new GPULineEditing);
-  strats.push_back(new GPUKR);
+  //strats.push_back(new GPUKR);
 
   strats[0]->copy_to(&input, &context, &program, &queue);
   strats[0]->execute();
   LabelData correct = strats[0]->copy_from();
-
-  std::cerr << "(Name of file)                   -- (Name of strategy)         "
-               "      -- (Times "
-               "in microseconds)";
-#ifndef NDEBUG
-  std::cerr << " -- (Times with prep/cleanup)";
-#endif /* NDEBUG */
-  std::cerr << std::endl;
 
   // Ensures kernel and queue is ready, as they would only be created once in
   // a usual program.
@@ -61,10 +57,21 @@ int main(int argc, const char *argv[]) {
     LabelData warmup(input);
     warmup.clear();
 
+    #ifndef NDEBUG
+    std::cerr << "Warmup with: " << strat->name() << std::endl;
+    #endif /* NDEBUG */
     strat->copy_to(&warmup, &context, &program, &queue);
     strat->execute();
     strat->copy_from();
   }
+
+  std::cerr << "(Name of file)                   -- (Name of strategy)         "
+               "      -- (Times "
+               "in microseconds)";
+#ifndef NDEBUG
+  std::cerr << " -- (Times with prep/cleanup)";
+#endif /* NDEBUG */
+  std::cerr << std::endl;
 
   for (auto *strat : strats) {
     auto startwithprep = std::chrono::high_resolution_clock::now();
@@ -104,8 +111,10 @@ int main(int argc, const char *argv[]) {
     // Write to file
     iml::Image out(output.width, output.height);
     output.copy_to_image(out.data, mod8);
+    std::string cleaninput = argv[1];
+    std::replace( cleaninput.begin(), cleaninput.end(), '/', '-');
     std::string outname =
-        "out/" + std::string(argv[1]) + " - " + strat->name() + ".png";
+        "out/" + cleaninput + " - " + strat->name() + ".png";
     iml::writepng(outname, &out);
 #endif /* NDEBUG */
   }
