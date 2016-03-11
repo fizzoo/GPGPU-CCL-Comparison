@@ -20,6 +20,8 @@ int main(int argc, const char *argv[]) {
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
     return 0;
+  } else {
+    std::cerr << std::endl;
   }
 
   std::string filename = argv[1];
@@ -37,7 +39,7 @@ int main(int argc, const char *argv[]) {
   }
 
   LabelData input(&rgba_image, rgb_above_100);
-  std::cerr << "\nLoaded input image '" << filename << "' into a LabelData"
+  std::cerr << "Loaded input image '" << filename << "' into a LabelData"
             << std::endl;
 
   std::vector<Strategy *> strats;
