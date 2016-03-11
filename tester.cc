@@ -43,7 +43,7 @@ int main(int argc, const char *argv[]) {
   strats.push_back(new GPUNeighbourPropagation);
   strats.push_back(new GPUPlusPropagation);
   strats.push_back(new GPULineEditing);
-  //strats.push_back(new GPUKR);
+  // strats.push_back(new GPUKR);
 
   strats[0]->copy_to(&input, &context, &program, &queue);
   strats[0]->execute();

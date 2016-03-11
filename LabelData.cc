@@ -175,8 +175,8 @@ bool valid_result(LabelData *l) {
 
 void mark_explore(size_t xinit, size_t yinit, LabelData *l, LABELTYPE from,
                   LABELTYPE to) {
-  auto maxloc = l->width * l->height;
   auto w = l->width;
+  auto h = l->height;
   auto d = l->data;
 
   if (d[w * yinit + xinit] != from) {
@@ -184,27 +184,29 @@ void mark_explore(size_t xinit, size_t yinit, LabelData *l, LABELTYPE from,
   }
   d[w * yinit + xinit] = to;
 
-  std::vector<size_t> locs;
-  locs.emplace_back(w * yinit + xinit);
-  while (!locs.empty()) {
-    auto loc = locs.back();
-    locs.pop_back();
+  std::vector<XY> xys;
+  xys.emplace_back(xinit, yinit);
+  while (!xys.empty()) {
+    auto xy = xys.back();
+    xys.pop_back();
+    auto x = xy.x;
+    auto y = xy.y;
 
-    if (loc + 1 < maxloc && d[loc + 1] == from) {
-      d[loc + 1] = to;
-      locs.emplace_back(loc + 1);
+    if (x + 1 < w && d[w * y + (x + 1)] == from) {
+      d[w * y + (x + 1)] = to;
+      xys.emplace_back(x + 1, y);
     }
-    if (loc - 1 < maxloc && d[loc - 1] == from) {
-      d[loc - 1] = to;
-      locs.emplace_back(loc - 1);
+    if (x - 1 < w && d[w * y + (x - 1)] == from) {
+      d[w * y + (x - 1)] = to;
+      xys.emplace_back(x - 1, y);
     }
-    if (loc + w < maxloc && d[loc + w] == from) {
-      d[loc + w] = to;
-      locs.emplace_back(loc + w);
+    if (y + 1 < h && d[w * (y + 1) + x] == from) {
+      d[w * (y + 1) + x] = to;
+      xys.emplace_back(x, y + 1);
     }
-    if (loc - w < maxloc && d[loc - w] == from) {
-      d[loc - w] = to;
-      locs.emplace_back(loc - w);
+    if (y - 1 < h && d[w * (y - 1) + x] == from) {
+      d[w * (y - 1) + x] = to;
+      xys.emplace_back(x, y - 1);
     }
   }
 }
