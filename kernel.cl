@@ -138,6 +138,84 @@ kernel void plus_propagate(global int *data, int w, int h,
   }
 }
 
+int find_set(global int *data, int loc) {
+  // All loc of found elements should be in range.
+  // Also assuming there are no cycles in the links.
+  while (loc != data[loc] - 2) {
+    loc = data[loc] - 2;
+  }
+
+  // +2 is the correct LABEL of root at LOCATION loc
+  return loc + 2;
+}
+
+kernel void union_find(global int *data, int w, int h, global char *changed) {
+  int x = get_global_id(0);
+  int y = get_global_id(1);
+  if (x >= w || y >= h) {
+    return;
+  }
+
+  int oldlabel = data[w * y + x];
+  int lowest = oldlabel;
+
+  if (oldlabel == 0) {
+    return;
+  }
+
+  bool ok_N = y - 1 >= 0 && data[w * (y - 1) + (x)];
+  bool ok_E = x + 1 < w && data[w * (y) + (x + 1)];
+  bool ok_S = y + 1 < h && data[w * (y + 1) + (x)];
+  bool ok_W = x - 1 >= 0 && data[w * (y) + (x - 1)];
+  int root_N = 1 << 30;
+  int root_E = 1 << 30;
+  int root_S = 1 << 30;
+  int root_W = 1 << 30;
+
+  if (ok_N) {
+    root_N = find_set(data, w*(y-1)+(x));
+  }
+  if (ok_E) {
+    root_E = find_set(data, w*(y)+(x+1));
+  }
+  if (ok_S) {
+    root_S = find_set(data, w*(y+1)+(x));
+  }
+  if (ok_W) {
+    root_W = find_set(data, w*(y)+(x-1));
+  }
+
+  if (root_N < lowest) {
+    lowest = root_N;
+  }
+  if (root_E < lowest) {
+    lowest = root_E;
+  }
+  if (root_S < lowest) {
+    lowest = root_S;
+  }
+  if (root_W < lowest) {
+    lowest = root_W;
+  }
+
+  if (lowest < oldlabel) {
+    *changed = 1;
+    data[w * y + x] = lowest;
+    if (ok_N && root_N > lowest) {
+      data[root_N - 2] = lowest;
+    }
+    if (ok_E && root_E > lowest) {
+      data[root_E - 2] = lowest;
+    }
+    if (ok_S && root_S > lowest) {
+      data[root_S - 2] = lowest;
+    }
+    if (ok_W && root_W > lowest) {
+      data[root_W - 2] = lowest;
+    }
+  }
+}
+
 kernel void lineedit_right(global int *data, int w, int h,
                            global char *changed) {
   int x = 0;

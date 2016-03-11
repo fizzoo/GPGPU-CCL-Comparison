@@ -131,6 +131,16 @@ public:
 };
 
 /**
+ * Union-Find, sort of like neighbourpropagation except you keep following the
+ * neighbours until you find a root that's low.
+ */
+class GPUUnionFind : public GPUBase {
+public:
+  virtual std::string name() { return "GPU Union-find"; }
+  virtual void execute();
+};
+
+/**
  * Traverses row/column forward/backwards and edits at the same time.
  */
 class GPULineEditing : public GPUBase {
