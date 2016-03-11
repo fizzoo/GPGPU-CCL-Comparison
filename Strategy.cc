@@ -243,10 +243,17 @@ void GPUKR::execute() {
     cl_int err;
 
     //preprocessing, init values and simple scan 
-    cl::Kernel init(*program, "gpu_label_mask_naive", &err);
+    cl::Kernel init(*program, "gpu_kr_init_phase", &err);
+    CHECKERR;
+    //preproccesing part 2, scan phase
+    cl::Kernel scan(*program, "gpu_kr_scan_phase", &err);
     CHECKERR;
     //this one will itterate until wanted result is reached
     cl::Kernel propagate(*program, "gpu_label_mask_two", &err);
+    CHECKERR;
+    cl::Kernel link(*program, "gpu_kr_link_phase", &err);
+    CHECKERR;
+    cl::Kernel final_phases(*program, "gpu_kr_final_phases", &err);
     CHECKERR;
 
     err = init.setArg(0, *buf);
@@ -257,8 +264,6 @@ void GPUKR::execute() {
     CHECKERR;
 
     char iterate = 1;
-
-    //save the position of the rootpixels
 
     LABELTYPE *repLabels = new LABELTYPE[width * height];
     auto size = width * height * sizeof(LABELTYPE);
@@ -272,16 +277,45 @@ void GPUKR::execute() {
     err = queue->enqueueWriteBuffer(repLabelBuf, CL_TRUE, 0, size, repLabels);
     CHECKERR;
 
+    err = scan.setArg(0, *buf);
+    CHECKERR;
+    err = scan.setArg(1, (cl_int)width);
+    CHECKERR;
+    err = scan.setArg(2, (cl_int)height);
+    CHECKERR;
+    err = scan.setArg(3, repLabelBuf);
+    CHECKERR;
+
     err = propagate.setArg(0, *buf);
     CHECKERR;
     err = propagate.setArg(1, (cl_int)width);
     CHECKERR;
     err = propagate.setArg(2, (cl_int)height);
     CHECKERR;
-    err = propagate.setArg(3, iter);
+    err = propagate.setArg(3, repLabelBuf);
     CHECKERR;
-    err = propagate.setArg(4, repLabelBuf);
+
+    err = link.setArg(0, *buf);
     CHECKERR;
+    err = link.setArg(1, (cl_int)width);
+    CHECKERR;
+    err = link.setArg(2, (cl_int)height);
+    CHECKERR;
+    err = link.setArg(3, repLabelBuf);
+    CHECKERR;
+
+    err = final_phases.setArg(0, *buf);
+    CHECKERR;
+    err = final_phases.setArg(1, (cl_int)width);
+    CHECKERR;
+    err = final_phases.setArg(2, (cl_int)height);
+    CHECKERR;
+    err = final_phases.setArg(3, iter);
+    CHECKERR;
+    err = final_phases.setArg(4, repLabelBuf);
+    CHECKERR;
+
+
 
     std::vector<cl::Event> events(1);
     std::vector<cl::Event> writtenevents(1);
@@ -290,6 +324,12 @@ void GPUKR::execute() {
             cl::NDRange(width, height), 
             cl::NDRange(1, 1), NULL, &events[0]);
     CHECKERR;
+
+    err = queue->enqueueNDRangeKernel(scan, cl::NullRange,
+            cl::NDRange(width, height), 
+            cl::NDRange(1, 1), NULL, &events[0]);
+    CHECKERR;
+
 
     int i = 0;
 
@@ -305,6 +345,16 @@ void GPUKR::execute() {
         iterate = false;
         queue->enqueueWriteBuffer(iter, CL_FALSE, 0, 1, &iterate, NULL, &writtenevents[0]);
         queue->enqueueNDRangeKernel(propagate, cl::NullRange, 
+                cl::NDRange(width, height), 
+                cl::NDRange(1,1), 
+                &writtenevents, &events[0]);
+
+        queue->enqueueNDRangeKernel(link, cl::NullRange, 
+                cl::NDRange(width, height), 
+                cl::NDRange(1,1), 
+                &writtenevents, &events[0]);
+
+        queue->enqueueNDRangeKernel(final_phases, cl::NullRange, 
                 cl::NDRange(width, height), 
                 cl::NDRange(1,1), 
                 &writtenevents, &events[0]);

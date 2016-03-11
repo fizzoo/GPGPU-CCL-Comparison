@@ -235,7 +235,26 @@ kernel void id_accessor(global int *data, int w) {
   data[loc] = data[loc];
 }
 
-kernel void gpu_label_mask_naive(global int *d, int w, int h) {
+kernel void gpu_kr_init_phase(global int *d, int w, int h) {
+    unsigned int x = get_global_id(0);
+    unsigned int y = get_global_id(1);
+
+    int loc = (y * w) + x;
+
+    //west and north pixel position
+
+    //Init phase
+    if (d[loc] == 1) {
+        d[loc] = (loc + 2);
+    } else {
+        d[loc] = 0;
+    }
+}
+
+kernel void gpu_kr_scan_phase (global int *d, int w, int h, global int *rLD) {
+    //Scan phase
+    //check if the init label-value can be improved (=lowered)
+
     unsigned int x = get_global_id(0);
     unsigned int y = get_global_id(1);
 
@@ -245,19 +264,8 @@ kernel void gpu_label_mask_naive(global int *d, int w, int h) {
     int checkW = (y * w) + (x - 1);
     int checkN = ((y - 1) * w) + x;
 
-    //Init phase
-    if (d[loc] == 1) {
-        d[loc] = (loc + 2);
-    } else {
-        d[loc] = 0;
-    }
-
-
-    //Scan phase
-    //check if the init label-value can be improved (=lowered)
     int scanTmp = d[loc]; 
 
-    
     if (scanTmp != 0) {
         if (checkN >= 0 && checkN < w * h && d[checkN] > 0 
                    && d[checkN] < scanTmp) {
@@ -268,19 +276,21 @@ kernel void gpu_label_mask_naive(global int *d, int w, int h) {
             scanTmp = d[checkW];
         }
     }
-    d[loc] = scanTmp;
+    rLD[loc] = scanTmp;
 }
 
 
 //datarace a likely problem, lots of index checks included 
 
-kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, global int *rLD) {
+kernel void gpu_label_mask_two (global int *d, int w, int h, global int *rLD) {
     unsigned int x = get_global_id(0);
     unsigned int y = get_global_id(1);
 
     int loc = (y * w) + x;
 
-    if (d[loc] == loc + 2 && d[loc] > 0) {
+    d[loc] = rLD[loc];
+
+    if (d[loc] == loc + 2) {
         rLD[loc] = loc;
     } else {
         rLD[loc] = -1;
@@ -302,8 +312,10 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
     //root to the other pixels in the component
 
     if (d[loc] > 0 && rLD[loc] != loc) {
-        while(true) 
+int i = 0;
+        while(i < 2000000) 
         {
+            i++;
             if (lN >= 0 && lN < size && rLD[lN] != -1 && d[lN] > 0) {
                 rLD[loc] = rLD[lN]; 
                 break;
@@ -327,6 +339,27 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
         d[loc] = d[rLD[loc]];
     }
 
+
+}
+
+kernel void gpu_kr_link_phase (global int *d, int w, int h, global int *rLD) {
+    unsigned int x = get_global_id(0);
+    unsigned int y = get_global_id(1);
+
+    int loc = (y * w) + x;
+
+    int lN = ((y - 1) * w) + x;
+    int lE = (y * w) + (x + 1);
+    int lS = ((y + 1) * w) + x;
+    int lW = (y * w) + (x - 1);
+
+    int size = w * h;
+/*
+    //after the root has been found the you take on it's value
+    if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size 
+               && d[rLD[loc]] > 0) {
+        d[loc] = d[rLD[loc]];
+    }*/
 
     //Link phase
     //checking the left and right pixels, comparing root-pixel value.
@@ -360,6 +393,22 @@ kernel void gpu_label_mask_two (global int *d, int w, int h, global char *iter, 
                 && d[linkTmp] > 0 && d[loc] > 0) {
         d[rLD[loc]] = d[linkTmp];
     }
+
+}
+
+kernel void gpu_kr_final_phases (global int *d, int w, int h, 
+                                        global char *iter, global int *rLD) {
+    unsigned int x = get_global_id(0);
+    unsigned int y = get_global_id(1);
+
+    int loc = (y * w) + x;
+
+    int lN = ((y - 1) * w) + x;
+    int lE = (y * w) + (x + 1);
+    int lS = ((y + 1) * w) + x;
+    int lW = (y * w) + (x - 1);
+
+    int size = w * h;
 
     //Label phase
     //You take on the (maybe) updated root-value
