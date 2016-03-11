@@ -1,6 +1,9 @@
-kernel void label_with_id(global int *data, unsigned int w) {
-  unsigned int x = get_global_id(0);
-  unsigned int y = get_global_id(1);
+kernel void label_with_id(global int *data, int w, int h) {
+  int x = get_global_id(0);
+  int y = get_global_id(1);
+  if (x >= w || y >= h) {
+    return;
+  }
 
   int loc = w * y + x;
   if (data[loc] == 1) {
@@ -8,10 +11,13 @@ kernel void label_with_id(global int *data, unsigned int w) {
   }
 }
 
-kernel void neighbour_propagate(global int *data, unsigned int w,
-                                unsigned int h, global char *changed) {
-  unsigned int x = get_global_id(0);
-  unsigned int y = get_global_id(1);
+kernel void neighbour_propagate(global int *data, int w, int h,
+                                global char *changed) {
+  int x = get_global_id(0);
+  int y = get_global_id(1);
+  if (x >= w || y >= h) {
+    return;
+  }
 
   int oldlabel = data[w * y + x];
   int curlabel = oldlabel;
@@ -52,7 +58,7 @@ kernel void neighbour_propagate(global int *data, unsigned int w,
   }
 }
 
-kernel void plus_propagate(global int *data, unsigned int w, unsigned int h,
+kernel void plus_propagate(global int *data, int w, int h,
                            global char *changed) {
   int x = get_global_id(0);
   int y = get_global_id(1);

@@ -56,7 +56,9 @@ void GPUNeighbourPropagation::execute() {
 
   err = startlabel.setArg(0, *buf);
   CHECKERR;
-  err = startlabel.setArg(1, (cl_uint)width);
+  err = startlabel.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = startlabel.setArg(2, (cl_int)height);
   CHECKERR;
 
   char changed = 1;
@@ -65,9 +67,9 @@ void GPUNeighbourPropagation::execute() {
 
   err = propagate.setArg(0, *buf);
   CHECKERR;
-  err = propagate.setArg(1, (cl_uint)width);
+  err = propagate.setArg(1, (cl_int)width);
   CHECKERR;
-  err = propagate.setArg(2, (cl_uint)height);
+  err = propagate.setArg(2, (cl_int)height);
   CHECKERR;
   err = propagate.setArg(3, chan);
   CHECKERR;
@@ -116,7 +118,9 @@ void GPUPlusPropagation::execute() {
 
   err = startlabel.setArg(0, *buf);
   CHECKERR;
-  err = startlabel.setArg(1, (cl_uint)width);
+  err = startlabel.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = startlabel.setArg(2, (cl_int)height);
   CHECKERR;
 
   char changed = 1;
@@ -125,9 +129,9 @@ void GPUPlusPropagation::execute() {
 
   err = propagate.setArg(0, *buf);
   CHECKERR;
-  err = propagate.setArg(1, (cl_uint)width);
+  err = propagate.setArg(1, (cl_int)width);
   CHECKERR;
-  err = propagate.setArg(2, (cl_uint)height);
+  err = propagate.setArg(2, (cl_int)height);
   CHECKERR;
   err = propagate.setArg(3, chan);
   CHECKERR;
@@ -171,6 +175,8 @@ void GPULineEditing::execute() {
   err = startlabel.setArg(0, *buf);
   CHECKERR;
   err = startlabel.setArg(1, (cl_uint)width);
+  CHECKERR;
+  err = startlabel.setArg(2, (cl_uint)height);
   CHECKERR;
 
   char changed = 1;
