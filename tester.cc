@@ -21,7 +21,10 @@ int main(int argc, const char *argv[]) {
     std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
     return 0;
   }
-  iml::Image rgba_image(argv[1]);
+
+  std::string filename = argv[1];
+
+  iml::Image rgba_image(filename);
   if (!rgba_image) {
     fail("Image not loaded correctly, aborting.");
   }
@@ -34,9 +37,8 @@ int main(int argc, const char *argv[]) {
   }
 
   LabelData input(&rgba_image, rgb_above_100);
-#ifndef NDEBUG
-  std::cerr << "Loaded input image into a LabelData" << std::endl;
-#endif /* NDEBUG */
+  std::cerr << "\nLoaded input image '" << filename << "' into a LabelData"
+            << std::endl;
 
   std::vector<Strategy *> strats;
   strats.push_back(new CPUOnePass);
@@ -58,20 +60,13 @@ int main(int argc, const char *argv[]) {
     LabelData warmup(input);
     warmup.clear();
 
-#ifndef NDEBUG
-    std::cerr << "Warmup with: " << strat->name() << std::endl;
-#endif /* NDEBUG */
     strat->copy_to(&warmup, &context, &program, &queue);
     strat->execute();
     strat->copy_from();
   }
 
   std::cerr << "(Name of file)                   -- (Name of strategy)         "
-               "      -- (Times "
-               "in microseconds)";
-#ifndef NDEBUG
-  std::cerr << " -- (Times with prep/cleanup)";
-#endif /* NDEBUG */
+               "      -- (Times in microseconds) -- (Times with prep/cleanup)";
   std::cerr << std::endl;
 
   for (auto *strat : strats) {
@@ -92,23 +87,17 @@ int main(int argc, const char *argv[]) {
                           .count();
 
     std::cout << std::left << std::setw(32) << argv[1] << " -- "
-              << std::setw(32) << strat->name() << " -- " << std::setw(23)
-              << ms;
-#ifndef NDEBUG
-    std::cout << " -- " << mswithprep;
-#endif /* NDEBUG */
+              << std::setw(32) << strat->name() << " -- " << std::setw(23) << ms
+              << " -- " << mswithprep;
     std::cout << std::endl;
 
-#ifndef NDEBUG
     if (!valid_result(&output)) {
       std::cerr << "Strategy returned an invalid labeling" << std::endl;
     }
     if (!equivalent_result(&correct, &output)) {
       std::cerr << "Strategy returned an unexpected labeling." << std::endl;
     }
-#endif /* NDEBUG */
 
-#ifndef NDEBUG
     // Write to file
     iml::Image out(output.width, output.height);
     output.copy_to_image(out.data, mod8);
@@ -116,13 +105,11 @@ int main(int argc, const char *argv[]) {
     std::replace(cleaninput.begin(), cleaninput.end(), '/', '-');
     std::string outname = "out/" + cleaninput + " - " + strat->name() + ".png";
     iml::writepng(outname, &out);
-#endif /* NDEBUG */
   }
 
   for (auto *strat : strats) {
     delete strat;
   }
 
-  std::cerr << std::endl;
   return 0;
 }

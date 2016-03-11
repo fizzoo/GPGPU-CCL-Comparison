@@ -98,9 +98,7 @@ bool Image::loadpng(const std::string &filename) {
     unsigned char *tmp = data;
     data = new unsigned char[_width * _height * 4];
     if (channels == 1) {
-#ifndef NDEBUG
       std::cerr << "G -> RGBA performed" << std::endl;
-#endif /* NDEBUG */
       for (size_t i = 0; i < _width * _height; ++i) {
         data[i * 4 + 0] = tmp[i];
         data[i * 4 + 1] = tmp[i];
@@ -108,9 +106,7 @@ bool Image::loadpng(const std::string &filename) {
         data[i * 4 + 3] = 255;
       }
     } else if (channels == 3) {
-#ifndef NDEBUG
       std::cerr << "RGB -> RGBA performed" << std::endl;
-#endif /* NDEBUG */
       auto *in = tmp;
       auto *out = data;
       while (in != tmp + _height * _width * 3) {
