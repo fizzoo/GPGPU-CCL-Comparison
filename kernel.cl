@@ -241,13 +241,15 @@ kernel void id_accessor(global int *data, int w) {
   data[loc] = data[loc];
 }
 
+  /**
+   * Korean CCL algorithm for the gpu
+   * originally implemented using CUDA
+   */
 kernel void gpu_kr_init_phase(global int *d, int w, int h) {
   unsigned int x = get_global_id(0);
   unsigned int y = get_global_id(1);
 
   int loc = (y * w) + x;
-
-  // west and north pixel position
 
   // Init phase
   if (d[loc] == 1) {
@@ -280,7 +282,12 @@ kernel void gpu_kr_scan_phase(global int *d, int w, int h, global int *rLD) {
       scanTmp = d[checkW];
     }
   }
-  rLD[loc] = scanTmp;
+  if (scanTmp != d[loc]) { 
+    rLD[loc] = scanTmp;
+  } else {
+    rLD[loc] = -2;
+  }
+
 }
 
 // datarace a likely problem, lots of index checks included
@@ -291,7 +298,9 @@ kernel void gpu_label_mask_two(global int *d, int w, int h, global int *rLD) {
 
   int loc = (y * w) + x;
 
-  d[loc] = rLD[loc];
+  if (rLD[loc] == -2 && d[loc] > 0) {
+    atomic_xchg(&d[loc], rLD[loc]);
+  }
 
   if (d[loc] == loc + 2) {
     rLD[loc] = loc;
@@ -315,19 +324,19 @@ kernel void gpu_label_mask_two(global int *d, int w, int h, global int *rLD) {
 
   if (d[loc] > 0 && rLD[loc] != loc) {
     int i = 0;
-    while (i < 2000000) {
+    while (i < 1000000) {
       i++;
       if (lN >= 0 && lN < size && rLD[lN] != -1 && d[lN] > 0) {
-        rLD[loc] = rLD[lN];
+        atomic_xchg(&rLD[loc], rLD[lN]);
         break;
       } else if (lE < size && rLD[lE] != -1 && d[lE] > 0) {
-        rLD[loc] = rLD[lE];
+        atomic_xchg(&rLD[loc], rLD[lE]);
         break;
       } else if (lS < size && rLD[lS] != -1 && d[lS] > 0) {
-        rLD[loc] = rLD[lS];
+        atomic_xchg(&rLD[loc], rLD[lS]);
         break;
       } else if (lW >= 0 && lW < size && rLD[lW] != -1 && d[lW] > 0) {
-        rLD[loc] = rLD[lW];
+        atomic_xchg(&rLD[loc], rLD[lW]);
         break;
       }
     }
@@ -336,7 +345,7 @@ kernel void gpu_label_mask_two(global int *d, int w, int h, global int *rLD) {
   // after the root has been found the you take on it's value
   if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size &&
       d[rLD[loc]] > 0) {
-    d[loc] = d[rLD[loc]];
+    atomic_xchg(&d[loc], d[rLD[loc]]);
   }
 }
 
@@ -352,13 +361,6 @@ kernel void gpu_kr_link_phase(global int *d, int w, int h, global int *rLD) {
   int lW = (y * w) + (x - 1);
 
   int size = w * h;
-  /*
-      //after the root has been found the you take on it's value
-      if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size
-                 && d[rLD[loc]] > 0) {
-          d[loc] = d[rLD[loc]];
-      }*/
-
   // Link phase
   // checking the left and right pixels, comparing root-pixel value.
   // if any of the others have a lower value, update your own root
@@ -368,26 +370,24 @@ kernel void gpu_kr_link_phase(global int *d, int w, int h, global int *rLD) {
 
   if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size &&
       d[rLD[loc]] > 0) {
-    int linkTmp = rLD[loc];
 
+    int linkTmp = rLD[loc];
     // the article points to this section proclaiming that it has a
     // datarace, however it can be solved using the cuda function
     // atomicMin
 
     if (lW >= 0 && lW < size && rLD[lW] != -1 && rLD[lW] >= 0 &&
-        rLD[lW] < size && d[lW] > 0 && d[linkTmp] < d[rLD[lW]]) {
-      linkTmp = rLD[lW];
+        rLD[lW] < size && d[lW] > 0 && d[rLD[loc]] < d[rLD[lW]]) {
+        atomic_xchg(&rLD[loc], rLD[lW]);
     }
     if (lE < size && rLD[lE] != -1 && rLD[lE] >= 0 && rLD[lE] < size &&
-        d[lE] > 0 && d[linkTmp] < d[rLD[lE]]) {
-      linkTmp = rLD[lE];
+        d[lE] > 0 && d[rLD[loc]] < d[rLD[lE]]) {
+        atomic_xchg(&rLD[loc], rLD[lW]);
     }
   }
 
-  if (linkTmp != -1 && linkTmp >= 0 && linkTmp < size && rLD[loc] != -1 &&
-      rLD[loc] >= 0 && rLD[loc] < size && d[rLD[loc]] > 0 && d[linkTmp] > 0 &&
-      d[loc] > 0) {
-    d[rLD[loc]] = d[linkTmp];
+  if (linkTmp != -1) {
+    atomic_xchg(&rLD[loc], linkTmp);
   }
 }
 
@@ -410,7 +410,7 @@ kernel void gpu_kr_final_phases(global int *d, int w, int h, global char *iter,
 
   if (d[loc] > 0 && rLD[loc] != -1 && rLD[loc] >= 0 && rLD[loc] < size &&
       d[rLD[loc]] > 0) {
-    d[loc] = d[rLD[loc]];
+    atomic_xchg(&d[loc], d[rLD[loc]]);
   }
 
   // Rescan phase
@@ -425,3 +425,5 @@ kernel void gpu_kr_final_phases(global int *d, int w, int h, global char *iter,
     }
   }
 }
+
+

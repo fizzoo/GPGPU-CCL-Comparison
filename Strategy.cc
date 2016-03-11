@@ -396,7 +396,7 @@ void GPUKR::execute() {
 
   // since the kernel does't work yet just itterate a few times to compare
   // results
-  while (i < 10) {
+  while (i < 1) {
     i++;
     queue->enqueueReadBuffer(iter, CL_TRUE, 0, 1, &iterate, &events, NULL);
     if (iterate == false) {
@@ -415,7 +415,10 @@ void GPUKR::execute() {
     queue->enqueueNDRangeKernel(final_phases, cl::NullRange,
                                 cl::NDRange(width, height), cl::NDRange(1, 1),
                                 &writtenevents, &events[0]);
+  
   }
 
   delete[] repLabels;
 }
+
+
