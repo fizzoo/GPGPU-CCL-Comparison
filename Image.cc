@@ -77,6 +77,10 @@ bool Image::loadpng(const std::string &filename) {
     png_set_strip_16(pngp);
   }
 
+  // Update rowbytes and such with new information from transforms.
+  png_read_update_info(pngp, pngi);
+  channels = png_get_channels(pngp, pngi);
+
   // Get length of row for allocation, allocate
   int rowbytes = png_get_rowbytes(pngp, pngi);
   unsigned char **row_pointers = new unsigned char *[_height];
