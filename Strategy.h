@@ -149,13 +149,4 @@ public:
   virtual void execute();
 };
 
-/**
- *
- */
-class GPUKR : public GPUBase {
-public:
-  virtual std::string name() { return "GPUKR"; }
-  virtual void execute();
-};
-
 #endif /* end of include guard: STRATEGY_H */
