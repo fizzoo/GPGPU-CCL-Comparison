@@ -73,6 +73,9 @@ bool Image::loadpng(const std::string &filename) {
   if (color_type == PNG_COLOR_TYPE_RGB) {
     png_set_filler(pngp, 255, PNG_FILLER_BEFORE);
   }
+  if (bit_depth == 16) {
+    png_set_strip_16(pngp);
+  }
 
   // Get length of row for allocation, allocate
   int rowbytes = png_get_rowbytes(pngp, pngi);
