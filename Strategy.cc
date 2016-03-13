@@ -65,6 +65,87 @@ void CPUUnionFind::execute() {
   }
 }
 
+void CPULinearTwoScan::execute() {
+  auto w = l.width;
+  auto h = l.height;
+  auto d = l.data;
+
+  std::vector< unsigned int > rl_table(w * h, 0);
+  //next label
+  std::vector< unsigned int > n_label(w * h);
+  //tail label
+  std::vector< unsigned int > t_label(w * h);
+
+  int m = 2;
+
+  //first scan, pretty much everything is done here
+  for (size_t y = 0; y < h; ++y) {
+      for (size_t x = 0; x < w; ++x) {
+          //osition of b(x, y);
+          int bXY = y * w + x;
+          if (d[bXY] != 0) {
+              //left pixel
+              int lPPos = y * w + (x - 1);
+              int lP = 0;
+              if (((int)x - 1) >= 0) { //OOR check
+                lP = d[lPPos];
+              }
+
+              //upper pixel
+              int uPPos = (y - 1) * w + x;
+              int uP = 0;
+              if (((int)y - 1) >= 0) { //OOR check
+                uP = d[uPPos];
+              }
+
+              //Need new label
+              if (lP == 0 && uP == 0) {
+                  d[bXY] = m;
+                  rl_table.at(m) = m;
+                  n_label.at(m) = -1;
+                  t_label.at(m) = m;
+                  ++m;
+              } else if (lP != 0) {
+                  d[bXY] = lP;
+              } else {
+                  d[bXY] = uP;
+              }
+
+              unsigned int u = rl_table.at(lP);
+              unsigned int v = rl_table.at(uP);
+              //this part resolves potential label equvalence
+              if (u >= 2 && v >= 2 && u != v) {
+
+                  //can uncomment if we prefer lower labels
+                  /*
+                  if (v < u) {
+                      std::swap(u, v);
+                  }
+                  */
+
+                  //this part is coded exactly as shown with pseudo code in the paper
+                  int i = v;
+                  while (i != -1) {
+                    rl_table.at(i) = u;
+                    i = n_label.at(i);
+                  }
+                  n_label.at(t_label.at(u)) = v;
+                  t_label.at(u) = t_label.at(v);
+              }
+          }
+      }
+  }
+
+  //2nd scan, only asigns correct values
+  for (size_t y = 1; y < h; ++y) {
+      for (size_t x = 1; x < w; ++x) {
+          if (d[y * w + x] != 0) {
+            d[y * w + x] = rl_table.at(d[y * w + x]);
+          }
+      }
+  }
+}
+
 void GPUBase::copy_to(const LabelData *l, cl::Context *c, cl::Program *p,
                       cl::CommandQueue *q) {
   context = c;

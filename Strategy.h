@@ -88,6 +88,16 @@ public:
 };
 
 /**
+ * Two-pass algorithm proposed by Lifeng He, Yuyan Chao and 
+ * Kenju Suzuki
+ */
+class CPULinearTwoScan : public CPUBase {
+public:
+  virtual std::string name() { return "CPU linear two-scan"; }
+  virtual void execute();
+};
+
+/**
  * ABC for GPU algorithms that keep a cl::Buffer.
  */
 class GPUBase : public Strategy {
