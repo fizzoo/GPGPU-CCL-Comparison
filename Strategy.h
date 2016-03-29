@@ -88,7 +88,7 @@ public:
 };
 
 /**
- * Two-pass algorithm proposed by Lifeng He, Yuyan Chao and 
+ * Two-pass algorithm proposed by Lifeng He, Yuyan Chao and
  * Kenju Suzuki
  */
 class CPULinearTwoScan : public CPUBase {
