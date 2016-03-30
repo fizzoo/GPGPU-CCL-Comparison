@@ -156,11 +156,13 @@ bool iml::writepng(const std::string &filename, size_t width, size_t height,
   png_structp pngp =
       png_create_write_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
   if (!pngp) {
+    fclose(fp);
     return false;
   }
   png_infop pngi = png_create_info_struct(pngp);
   if (!pngi) {
     png_destroy_write_struct(&pngp, (png_infopp)NULL);
+    fclose(fp);
     return false;
   }
 
