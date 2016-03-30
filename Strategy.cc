@@ -137,29 +137,28 @@ void CPULinearTwoScan::execute() {
     for (size_t x = 0; x < w; ++x) {
       // position of b(x, y);
       int bXY = y * w + x;
-      if (d[bXY] != 0) {
+
+      if (d[bXY]) {
         // left pixel
-        int lPPos = y * w + (x - 1);
         int lP = 0;
-        if (((int)x - 1) >= 0) { // OOR check
-          lP = d[lPPos];
+        if (x) { // OOR check
+          lP = d[y * w + (x - 1)];
         }
 
         // upper pixel
-        int uPPos = (y - 1) * w + x;
         int uP = 0;
-        if (((int)y - 1) >= 0) { // OOR check
-          uP = d[uPPos];
+        if (y) { // OOR check
+          uP = d[(y - 1) * w + x];
         }
 
         // Need new label
-        if (lP == 0 && uP == 0) {
+        if (!lP && !uP) {
           d[bXY] = m;
           rl_table.at(m) = m;
           n_label.at(m) = -1;
           t_label.at(m) = m;
           ++m;
-        } else if (lP != 0) {
+        } else if (lP) {
           d[bXY] = lP;
         } else {
           d[bXY] = uP;
@@ -168,14 +167,12 @@ void CPULinearTwoScan::execute() {
         unsigned int u = rl_table.at(lP);
         unsigned int v = rl_table.at(uP);
         // this part resolves potential label equvalence
-        if (u >= 2 && v >= 2 && u != v) {
+        if (u > 1 && v > 1 && u != v) {
 
-          // can uncomment if we prefer lower labels
-          /*
-          if (v < u) {
+            //can uncomment this section if we prefer lower labels
+          /*if (v < u) {
               std::swap(u, v);
-          }
-          */
+          }*/
 
           // this part is coded exactly as shown with pseudo code in the paper
           int i = v;
@@ -191,8 +188,8 @@ void CPULinearTwoScan::execute() {
   }
 
   // 2nd scan, only asigns correct values
-  for (size_t y = 1; y < h; ++y) {
-    for (size_t x = 1; x < w; ++x) {
+  for (size_t y = 0; y < h; ++y) {
+    for (size_t x = 0; x < w; ++x) {
       if (d[y * w + x] != 0) {
         d[y * w + x] = rl_table.at(d[y * w + x]);
       }
