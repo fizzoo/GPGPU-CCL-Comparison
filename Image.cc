@@ -60,7 +60,6 @@ bool Image::loadpng(const std::string &filename) {
   // Try to expand to rgba.
   int bit_depth = png_get_bit_depth(pngp, pngi);
   int color_type = png_get_color_type(pngp, pngi);
-  int channels = png_get_channels(pngp, pngi);
   if (color_type == PNG_COLOR_TYPE_PALETTE) {
     png_set_palette_to_rgb(pngp);
   }
@@ -79,7 +78,6 @@ bool Image::loadpng(const std::string &filename) {
 
   // Update rowbytes and such with new information from transforms.
   png_read_update_info(pngp, pngi);
-  channels = png_get_channels(pngp, pngi);
 
   // Get length of row for allocation, allocate
   int rowbytes = png_get_rowbytes(pngp, pngi);
@@ -101,6 +99,7 @@ bool Image::loadpng(const std::string &filename) {
 
   // Try again to get 8bit RGBA if we were unsuccessful.
   // Should now atleast be 8bit each, not palette.
+  int channels = png_get_channels(pngp, pngi);
   if (channels == 1 || channels == 3) {
     unsigned char *tmp = data;
     data = new unsigned char[_width * _height * 4];
@@ -125,7 +124,7 @@ bool Image::loadpng(const std::string &filename) {
         out += 4;
       }
     }
-    delete tmp;
+    delete[] tmp;
   }
 
   return true;

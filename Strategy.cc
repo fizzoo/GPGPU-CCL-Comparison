@@ -31,7 +31,6 @@ void CPUUnionFind::execute() {
   disjoint_sets<associative_property_map<std::map<size_t, int>>,
                 associative_property_map<std::map<size_t, size_t>>> dset(rank,
                                                                          p);
-
   for (size_t y = 0; y < h; ++y) {
     for (size_t x = 0; x < w; ++x) {
       if (d[w * y + x] == 1) {
@@ -169,7 +168,7 @@ void CPULinearTwoScan::execute() {
         // this part resolves potential label equvalence
         if (u > 1 && v > 1 && u != v) {
 
-            //can uncomment this section if we prefer lower labels
+          // can uncomment this section if we prefer lower labels
           /*if (v < u) {
               std::swap(u, v);
           }*/
@@ -252,7 +251,7 @@ void GPUNeighbourPropagation::execute() {
   CHECKERR;
 
   char changed = 1;
-  cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
   queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
 
   err = propagate.setArg(0, *buf);
@@ -314,7 +313,7 @@ void GPUPlusPropagation::execute() {
   CHECKERR;
 
   char changed = 1;
-  cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
   queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
 
   err = propagate.setArg(0, *buf);
@@ -376,7 +375,7 @@ void GPUUnionFind::execute() {
   CHECKERR;
 
   char changed = 1;
-  cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
   queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
 
   err = propagate.setArg(0, *buf);
@@ -432,7 +431,7 @@ void GPULineEditing::execute() {
   CHECKERR;
 
   char changed = 1;
-  cl::Buffer chan(*context, CL_MEM_READ_WRITE, 1, nullptr, &err);
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
   queue->enqueueWriteBuffer(chan, CL_TRUE, 0, 1, &changed);
 
   err = up.setArg(0, *buf);

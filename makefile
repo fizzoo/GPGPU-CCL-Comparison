@@ -3,10 +3,10 @@ LDLIBS=-lOpenCL -lpng
 SRC=tester.cc Image.cc LabelData.cc Strategy.cc RGBAConversions.cc utilityCL.cc
 
 tester: $(SRC)
-	g++ $(CXXFLAGS) -g -Og $(SRC) $(LDLIBS) -o $@
+	$(CXX) $(CXXFLAGS) -g $(SRC) $(LDLIBS) -o $@
 
 fasts:  $(SRC)
-	g++ -DNDEBUG $(CXXFLAGS) -O3 $(SRC) $(LDLIBS) -o $@
+	$(CXX) -DNDEBUG $(CXXFLAGS) -O3 $(SRC) $(LDLIBS) -o $@
 
 format:
 	zsh -c 'for f in *.cc *.h kernel.cl; do clang-format -i $$f; done'
