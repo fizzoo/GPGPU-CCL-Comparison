@@ -65,6 +65,60 @@ void CPUUnionFind::execute() {
   }
 }
 
+int CPUUnionFindReusing::findset(int loc) {
+  // All loc of found elements should be in range.
+  // Also assuming there are no cycles in the links.
+  while (loc != l.data[loc] - 2) {
+    loc = l.data[loc] - 2;
+  }
+
+  // +2 is the correct LABEL of root at LOCATION loc
+  return loc + 2;
+}
+
+void CPUUnionFindReusing::execute() {
+  auto w = l.width;
+  auto h = l.height;
+  auto d = l.data;
+
+  for (size_t y = 0; y < h; ++y) {
+    for (size_t x = 0; x < w; ++x) {
+      int locCur = w * y + x, locN = w * (y - 1) + (x),
+          locW = w * (y) + (x - 1);
+
+      if (d[locCur] == 1) {
+        if (x > 0 && y > 0 && d[locN] && d[locW]) {
+          // Both foreground
+          int N = findset(locN);
+          int W = findset(locW);
+
+          if (N < W) { // Less is more
+            d[locCur] = N;
+            d[W - 2] = N;
+          } else {
+            d[locCur] = W;
+            d[N - 2] = W;
+          }
+        } else if (x > 0 && d[locW]) {
+          d[locCur] = d[locW];
+        } else if (y > 0 && d[locN]) {
+          d[locCur] = d[locN];
+        } else {
+          d[locCur] = w * y + x + 2;
+        }
+      }
+    }
+  }
+
+  for (size_t y = 0; y < h; ++y) {
+    for (size_t x = 0; x < w; ++x) {
+      if (d[w * y + x]) {
+        d[w * y + x] = findset(w * y + x);
+      }
+    }
+  }
+}
+
 void CPULinearTwoScan::execute() {
   auto w = l.width;
   auto h = l.height;

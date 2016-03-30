@@ -88,6 +88,18 @@ public:
 };
 
 /**
+ * Two-pass algorithm, using union-find for the equivalence.
+ * Equivalences are recorded inside the labeling themselves, similar to the gpu
+ * version.
+ */
+class CPUUnionFindReusing : public CPUBase {
+public:
+  virtual std::string name() { return "CPU union-find, reusing"; }
+  virtual void execute();
+  int findset(int location);
+};
+
+/**
  * Two-pass algorithm proposed by Lifeng He, Yuyan Chao and
  * Kenju Suzuki
  */
