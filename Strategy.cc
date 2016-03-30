@@ -350,14 +350,16 @@ void GPUPlusPropagation::execute() {
 void GPUUnionFind::execute() {
   cl_int err;
 
+  const int wgw = 32, wgh = 4;
+
   int wsize, hsize;
-  if (width % 16) {
-    wsize = width + 16 - (width % 16);
+  if (width % wgw) {
+    wsize = width + wgw - (width % wgw);
   } else {
     wsize = width;
   }
-  if (height % 8) {
-    hsize = height + 8 - (height % 8);
+  if (height % wgh) {
+    hsize = height + wgh - (height % wgh);
   } else {
     hsize = height;
   }
@@ -391,7 +393,7 @@ void GPUUnionFind::execute() {
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(16, 8), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -404,7 +406,7 @@ void GPUUnionFind::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(16, 8),
+                                cl::NDRange(wsize, hsize), cl::NDRange(wgw, wgh),
                                 &writtenevents, &events[0]);
   }
 }
