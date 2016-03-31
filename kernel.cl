@@ -484,7 +484,7 @@ kernel void solve_locally_plus(global int *data, int w, int h) {
       diff = 1;
       while (lx - diff >= 0) {
         tmp = buffer[lw * (ly) + (lx - diff)];
-        if (!tmp){
+        if (!tmp) {
           break;
         }
         if (tmp < min) {
@@ -496,7 +496,7 @@ kernel void solve_locally_plus(global int *data, int w, int h) {
       diff = 1;
       while (lx + diff < lw) {
         tmp = buffer[lw * (ly) + (lx + diff)];
-        if (!tmp){
+        if (!tmp) {
           break;
         }
         if (tmp < min) {
@@ -508,7 +508,7 @@ kernel void solve_locally_plus(global int *data, int w, int h) {
       diff = 1;
       while (ly - diff >= 0) {
         tmp = buffer[lw * (ly - diff) + (lx)];
-        if (!tmp){
+        if (!tmp) {
           break;
         }
         if (tmp < min) {
@@ -520,7 +520,7 @@ kernel void solve_locally_plus(global int *data, int w, int h) {
       diff = 1;
       while (ly + diff < lh) {
         tmp = buffer[lw * (ly + diff) + (lx)];
-        if (!tmp){
+        if (!tmp) {
           break;
         }
         if (tmp < min) {
@@ -539,5 +539,81 @@ kernel void solve_locally_plus(global int *data, int w, int h) {
 
   if (valid) {
     data[w * y + x] = buffer[lw * ly + lx];
+  }
+}
+
+kernel void plus_once_locally(global int *data, int w, int h) {
+  int lx = get_local_id(0);
+  int ly = get_local_id(1);
+  int x = get_global_id(0);
+  int y = get_global_id(1);
+
+  int diff;
+  local int buffer[lw * lh];
+
+  if (y >= h || x >= w) {
+    buffer[lw * ly + lx] = 0;
+    return;
+  }
+  buffer[lw * ly + lx] = data[w * y + x];
+  if (buffer[lw * ly + lx] == 0) {
+    return;
+  }
+
+  barrier(CLK_LOCAL_MEM_FENCE);
+
+  int min = 1 << 30;
+  int tmp;
+
+  diff = 1;
+  while (lx - diff >= 0) {
+    tmp = buffer[lw * (ly) + (lx - diff)];
+    if (!tmp) {
+      break;
+    }
+    if (tmp < min) {
+      min = tmp;
+    }
+    ++diff;
+  }
+
+  diff = 1;
+  while (lx + diff < lw) {
+    tmp = buffer[lw * (ly) + (lx + diff)];
+    if (!tmp) {
+      break;
+    }
+    if (tmp < min) {
+      min = tmp;
+    }
+    ++diff;
+  }
+
+  diff = 1;
+  while (ly - diff >= 0) {
+    tmp = buffer[lw * (ly - diff) + (lx)];
+    if (!tmp) {
+      break;
+    }
+    if (tmp < min) {
+      min = tmp;
+    }
+    ++diff;
+  }
+
+  diff = 1;
+  while (ly + diff < lh) {
+    tmp = buffer[lw * (ly + diff) + (lx)];
+    if (!tmp) {
+      break;
+    }
+    if (tmp < min) {
+      min = tmp;
+    }
+    ++diff;
+  }
+  if (min < buffer[lw * ly + lx]) {
+    buffer[lw * ly + lx] = min;
+    data[w * y + x] = min;
   }
 }

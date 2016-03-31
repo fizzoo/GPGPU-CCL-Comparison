@@ -174,6 +174,12 @@ public:
   virtual void execute();
 };
 
+class GPUUnionFind_Oneshot : public GPUBase {
+public:
+  virtual std::string name() { return "GPU Union-find + oneshot"; }
+  virtual void execute();
+};
+
 /**
  * Traverses row/column forward/backwards and edits at the same time.
  */
