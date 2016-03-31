@@ -502,7 +502,7 @@ void GPUUnionFind_Localer::execute() {
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
-  cl::Kernel localer(*program, "solve_locally_nprop", &err);
+  cl::Kernel localer(*program, "solve_locally_plus", &err);
   CHECKERR;
   cl::Kernel propagate(*program, "union_find", &err);
   CHECKERR;

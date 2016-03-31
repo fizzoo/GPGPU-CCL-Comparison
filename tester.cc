@@ -48,11 +48,11 @@ int main(int argc, const char *argv[]) {
     //strats.push_back(new CPUUnionFind);
     //strats.push_back(new CPUUnionFindReusing);
     //strats.push_back(new CPULinearTwoScan);
-    strats.push_back(new GPUNeighbourPropagation);
-    strats.push_back(new GPUNeighbourPropagation_Localer);
-    strats.push_back(new GPUUnionFind);
+    //strats.push_back(new GPUNeighbourPropagation);
+    //strats.push_back(new GPUNeighbourPropagation_Localer);
+    //strats.push_back(new GPUUnionFind);
     strats.push_back(new GPUUnionFind_Localer);
-    strats.push_back(new GPUUnionFind_Oneshot);
+    //strats.push_back(new GPUUnionFind_Oneshot);
     //strats.push_back(new GPUPlusPropagation);
     //strats.push_back(new GPULineEditing);
     //strats.push_back(new GPULines);

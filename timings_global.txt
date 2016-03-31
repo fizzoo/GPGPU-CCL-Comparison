@@ -19,4 +19,3 @@ img/1333701354280.png            -- GPU Union-find, localer          -- 16615   
 img/1333808287791.png            -- GPU Union-find, localer          -- 6641                    -- 8646
 img/1333888003944.png            -- GPU Union-find, localer          -- 4194                    -- 6188
 img/1335741204575.png            -- GPU Union-find, localer          -- 11563                   -- 14737
-img/1335744909544.png            -- GPU Union-find, localer          -- 19222                   -- 22149
