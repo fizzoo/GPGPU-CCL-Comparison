@@ -419,25 +419,25 @@ kernel void solve_locally_nprop(global int *data, int w, int h) {
       int tmp;
       if (lx > 0) {
         tmp = buffer[lw * (ly) + (lx - 1)];
-        if (tmp < min) {
+        if (tmp && tmp < min) {
           min = tmp;
         }
       }
       if (lx < lw - 1) {
         tmp = buffer[lw * (ly) + (lx + 1)];
-        if (tmp < min) {
+        if (tmp && tmp < min) {
           min = tmp;
         }
       }
       if (ly > 0) {
         tmp = buffer[lw * (ly - 1) + (lx)];
-        if (tmp < min) {
+        if (tmp && tmp < min) {
           min = tmp;
         }
       }
       if (ly < lh - 1) {
         tmp = buffer[lw * (ly + 1) + (lx)];
-        if (tmp < min) {
+        if (tmp && tmp < min) {
           min = tmp;
         }
       }
@@ -448,5 +448,9 @@ kernel void solve_locally_nprop(global int *data, int w, int h) {
     }
 
     barrier(CLK_LOCAL_MEM_FENCE);
+  }
+
+  if (valid) {
+    data[w * y + x] = buffer[lw * ly + lx];
   }
 }
