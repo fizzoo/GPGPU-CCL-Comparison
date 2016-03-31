@@ -92,6 +92,7 @@ bool Image::loadpng(const std::string &filename) {
   delete[] row_pointers;
 
   png_read_end(pngp, pngend);
+  int channels = png_get_channels(pngp, pngi);
 
   // Cleanup
   png_destroy_read_struct(&pngp, &pngi, &pngend);
@@ -99,7 +100,6 @@ bool Image::loadpng(const std::string &filename) {
 
   // Try again to get 8bit RGBA if we were unsuccessful.
   // Should now atleast be 8bit each, not palette.
-  int channels = png_get_channels(pngp, pngi);
   if (channels == 1 || channels == 3) {
     unsigned char *tmp = data;
     data = new unsigned char[_width * _height * 4];

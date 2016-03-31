@@ -311,6 +311,76 @@ kernel void lineedit_down(global int *data, int w, int h,
   }
 }
 
+kernel void lines_up(global int *data, int w, int h, global char *changed) {
+  int x = get_global_id(0);
+  int y = 0;
+  char localchanged = 0;
+
+  while (y < h) {
+    if (!data[w * y + x]) {
+      ++y;
+      continue;
+    }
+    int i = y;
+    int min = data[w * y + x];
+    int tmpmin = min;
+
+    while (i < h && (tmpmin = data[w * i + x])) {
+      if (tmpmin != min) {
+        localchanged = 1; // Not all equal, i.e. will have change
+      }
+      if (tmpmin < min) {
+        min = tmpmin;
+      }
+      ++i;
+    }
+
+    while (y != i) {
+      data[w * y + x] = min;
+      ++y;
+    }
+  }
+
+  if (localchanged) {
+    *changed = localchanged;
+  }
+}
+
+kernel void lines_right(global int *data, int w, int h, global char *changed) {
+  int x = 0;
+  int y = get_global_id(0);
+  char localchanged = 0;
+
+  while (x < w) {
+    if (!data[w * y + x]) {
+      ++x;
+      continue;
+    }
+    int i = x;
+    int min = data[w * y + x];
+    int tmpmin = min;
+
+    while (i < w && (tmpmin = data[w * y + i])) {
+      if (tmpmin != min) {
+        localchanged = 1; // Not all equal, i.e. will have change
+      }
+      if (tmpmin < min) {
+        min = tmpmin;
+      }
+      ++i;
+    }
+
+    while (x != i) {
+      data[w * y + x] = min;
+      ++x;
+    }
+  }
+
+  if (localchanged) {
+    *changed = localchanged;
+  }
+}
+
 kernel void id_accessor(global int *data, int w) {
   unsigned int x = get_global_id(0);
   unsigned int y = get_global_id(1);

@@ -351,7 +351,6 @@ void GPUUnionFind::execute() {
   cl_int err;
 
   const int wgw = 32, wgh = 4;
-
   int wsize, hsize;
   if (width % wgw) {
     wsize = width + wgw - (width % wgw);
@@ -405,9 +404,9 @@ void GPUUnionFind::execute() {
     changed = false;
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
-    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(wgw, wgh),
-                                &writtenevents, &events[0]);
+    queue->enqueueNDRangeKernel(
+        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
+        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
   }
 }
 
@@ -492,6 +491,67 @@ void GPULineEditing::execute() {
     queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(width),
                                 cl::NDRange(1), &event2, &event1[0]);
     queue->enqueueNDRangeKernel(left, cl::NullRange, cl::NDRange(height),
+                                cl::NDRange(1), &event1, &event2[0]);
+    queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
+                                cl::NDRange(1), &event2, &event1[0]);
+  }
+}
+
+void GPULines::execute() {
+  cl_int err;
+
+  cl::Kernel startlabel(*program, "label_with_id", &err);
+  CHECKERR;
+  cl::Kernel right(*program, "lines_right", &err);
+  CHECKERR;
+  cl::Kernel up(*program, "lines_up", &err);
+  CHECKERR;
+
+  err = startlabel.setArg(0, *buf);
+  CHECKERR;
+  err = startlabel.setArg(1, (cl_uint)width);
+  CHECKERR;
+  err = startlabel.setArg(2, (cl_uint)height);
+  CHECKERR;
+
+  char changed = 1;
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
+  queue->enqueueWriteBuffer(chan, CL_TRUE, 0, 1, &changed);
+
+  err = right.setArg(0, *buf);
+  CHECKERR;
+  err = right.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = right.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = right.setArg(3, chan);
+  CHECKERR;
+
+  err = up.setArg(0, *buf);
+  CHECKERR;
+  err = up.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = up.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = up.setArg(3, chan);
+  CHECKERR;
+
+  std::vector<cl::Event> event1(1);
+  std::vector<cl::Event> event2(1);
+  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
+                                    cl::NDRange(width, height),
+                                    cl::NDRange(1, 1), NULL, &event1[0]);
+  CHECKERR;
+
+  while (true) {
+    // CPU-GPU sync, sadly
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &event1, NULL);
+    if (changed == false) {
+      break;
+    }
+    changed = false;
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &event1[0]);
+    queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(height),
                                 cl::NDRange(1), &event1, &event2[0]);
     queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
                                 cl::NDRange(1), &event2, &event1[0]);

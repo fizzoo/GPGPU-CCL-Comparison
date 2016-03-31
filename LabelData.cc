@@ -43,6 +43,7 @@ LabelData::LabelData(LabelData &&rhs) {
 
 LabelData &LabelData::operator=(LabelData &&rhs) noexcept {
   if (this != &rhs) {
+    delete[] data;
     width = rhs.width;
     height = rhs.height;
     data = rhs.data;

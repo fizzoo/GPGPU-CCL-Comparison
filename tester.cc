@@ -52,6 +52,7 @@ int main(int argc, const char *argv[]) {
     strats.push_back(new GPUUnionFind);
     strats.push_back(new GPUPlusPropagation);
     strats.push_back(new GPULineEditing);
+    strats.push_back(new GPULines);
 
     strats[0]->copy_to(&input, &context, &program, &queue);
     strats[0]->execute();

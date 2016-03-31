@@ -171,4 +171,13 @@ public:
   virtual void execute();
 };
 
+/**
+ * Traverses row/column and reads the entire connected part before writing.
+ */
+class GPULines : public GPUBase {
+public:
+  virtual std::string name() { return "GPU lines"; }
+  virtual void execute();
+};
+
 #endif /* end of include guard: STRATEGY_H */
