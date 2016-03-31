@@ -1,0 +1,91 @@
+img/1292525372787.png            -- GPU neighbour propagation        -- 148057                  -- 152286
+img/1292525372787.png            -- GPU neighbour propagation, loc   -- 15818                   -- 20074
+img/1292525372787.png            -- GPU Union-find                   -- 1178                    -- 5444
+img/1292525372787.png            -- GPU Union-find, localer          -- 1986                    -- 6247
+img/1292525372787.png            -- GPU Union-find + oneshot         -- 1247                    -- 5508
+img/1312217789153.png            -- GPU neighbour propagation        -- 570394                  -- 576921
+img/1312217789153.png            -- GPU neighbour propagation, loc   -- 339822                  -- 346354
+img/1312217789153.png            -- GPU Union-find                   -- 3342                    -- 9858
+img/1312217789153.png            -- GPU Union-find, localer          -- 5841                    -- 12370
+img/1312217789153.png            -- GPU Union-find + oneshot         -- 4112                    -- 10637
+img/1321829555515.png            -- GPU neighbour propagation        -- 71692                   -- 74433
+img/1321829555515.png            -- GPU neighbour propagation, loc   -- 27873                   -- 30669
+img/1321829555515.png            -- GPU Union-find                   -- 1450                    -- 4272
+img/1321829555515.png            -- GPU Union-find, localer          -- 2285                    -- 5095
+img/1321829555515.png            -- GPU Union-find + oneshot         -- 1614                    -- 4427
+img/1321830034288.png            -- GPU neighbour propagation        -- 726421                  -- 734850
+img/1321830034288.png            -- GPU neighbour propagation, loc   -- 379744                  -- 388227
+img/1321830034288.png            -- GPU Union-find                   -- 3862                    -- 12310
+img/1321830034288.png            -- GPU Union-find, localer          -- 6666                    -- 15119
+img/1321830034288.png            -- GPU Union-find + oneshot         -- 4613                    -- 13076
+img/1321831138708.png            -- GPU neighbour propagation        -- 57513                   -- 58728
+img/1321831138708.png            -- GPU neighbour propagation, loc   -- 18598                   -- 19875
+img/1321831138708.png            -- GPU Union-find                   -- 929                     -- 2222
+img/1321831138708.png            -- GPU Union-find, localer          -- 1340                    -- 2621
+img/1321831138708.png            -- GPU Union-find + oneshot         -- 919                     -- 2205
+img/1321897459935.png            -- GPU neighbour propagation        -- 541207                  -- 543949
+img/1321897459935.png            -- GPU neighbour propagation, loc   -- 293264                  -- 296077
+img/1321897459935.png            -- GPU Union-find                   -- 3552                    -- 6360
+img/1321897459935.png            -- GPU Union-find, localer          -- 6074                    -- 8882
+img/1321897459935.png            -- GPU Union-find + oneshot         -- 4878                    -- 7689
+img/1329776077366.png            -- GPU neighbour propagation        -- 198754                  -- 201313
+img/1329776077366.png            -- GPU neighbour propagation, loc   -- 58081                   -- 60685
+img/1329776077366.png            -- GPU Union-find                   -- 1108                    -- 3704
+img/1329776077366.png            -- GPU Union-find, localer          -- 1737                    -- 4345
+img/1329776077366.png            -- GPU Union-find + oneshot         -- 1236                    -- 3835
+img/1330616617741.png            -- GPU neighbour propagation        -- 997                     -- 3022
+img/1330616617741.png            -- GPU neighbour propagation, loc   -- 664                     -- 2731
+img/1330616617741.png            -- GPU Union-find                   -- 602                     -- 2682
+img/1330616617741.png            -- GPU Union-find, localer          -- 779                     -- 2837
+img/1330616617741.png            -- GPU Union-find + oneshot         -- 678                     -- 2747
+img/1330616658722.png            -- GPU neighbour propagation        -- 9644                    -- 11972
+img/1330616658722.png            -- GPU neighbour propagation, loc   -- 2223                    -- 4585
+img/1330616658722.png            -- GPU Union-find                   -- 765                     -- 3119
+img/1330616658722.png            -- GPU Union-find, localer          -- 1150                    -- 3506
+img/1330616658722.png            -- GPU Union-find + oneshot         -- 841                     -- 3200
+img/1331059021565.png            -- GPU neighbour propagation        -- 105025                  -- 106672
+img/1331059021565.png            -- GPU neighbour propagation, loc   -- 55452                   -- 57133
+img/1331059021565.png            -- GPU Union-find                   -- 1555                    -- 3228
+img/1331059021565.png            -- GPU Union-find, localer          -- 2203                    -- 3882
+img/1331059021565.png            -- GPU Union-find + oneshot         -- 1694                    -- 3377
+img/1331483471148.png            -- GPU neighbour propagation        -- 728860                  -- 732072
+img/1331483471148.png            -- GPU neighbour propagation, loc   -- 380695                  -- 383974
+img/1331483471148.png            -- GPU Union-find                   -- 3180                    -- 6452
+img/1331483471148.png            -- GPU Union-find, localer          -- 6645                    -- 9926
+img/1331483471148.png            -- GPU Union-find + oneshot         -- 5414                    -- 8685
+img/1331483472027.png            -- GPU neighbour propagation        -- 61535                   -- 63086
+img/1331483472027.png            -- GPU neighbour propagation, loc   -- 7719                    -- 9307
+img/1331483472027.png            -- GPU Union-find                   -- 1005                    -- 2581
+img/1331483472027.png            -- GPU Union-find, localer          -- 1358                    -- 2942
+img/1331483472027.png            -- GPU Union-find + oneshot         -- 973                     -- 2556
+img/1331486233701.png            -- GPU neighbour propagation        -- 283711                  -- 285749
+img/1331486233701.png            -- GPU neighbour propagation, loc   -- 108502                  -- 110538
+img/1331486233701.png            -- GPU Union-find                   -- 2438                    -- 4480
+img/1331486233701.png            -- GPU Union-find, localer          -- 3892                    -- 5939
+img/1331486233701.png            -- GPU Union-find + oneshot         -- 3037                    -- 5085
+img/1331487795438.png            -- GPU neighbour propagation        -- 108879                  -- 111803
+img/1331487795438.png            -- GPU neighbour propagation, loc   -- 35086                   -- 38067
+img/1331487795438.png            -- GPU Union-find                   -- 1184                    -- 4166
+img/1331487795438.png            -- GPU Union-find, localer          -- 2253                    -- 5236
+img/1331487795438.png            -- GPU Union-find + oneshot         -- 1407                    -- 4398
+img/1332272575005.png            -- GPU neighbour propagation        -- 40774                   -- 42839
+img/1332272575005.png            -- GPU neighbour propagation, loc   -- 12011                   -- 14075
+img/1332272575005.png            -- GPU Union-find                   -- 1074                    -- 3141
+img/1332272575005.png            -- GPU Union-find, localer          -- 1566                    -- 3632
+img/1332272575005.png            -- GPU Union-find + oneshot         -- 1024                    -- 3087
+img/1332784009980.png            -- GPU neighbour propagation        -- 184801                  -- 187366
+img/1332784009980.png            -- GPU neighbour propagation, loc   -- 27240                   -- 30038
+img/1332784009980.png            -- GPU Union-find                   -- 1514                    -- 4130
+img/1332784009980.png            -- GPU Union-find, localer          -- 2265                    -- 4877
+img/1332784009980.png            -- GPU Union-find + oneshot         -- 1495                    -- 4099
+img/1333053589048.png            -- GPU neighbour propagation        -- 293985                  -- 296008
+img/1333053589048.png            -- GPU neighbour propagation, loc   -- 157601                  -- 159653
+img/1333053589048.png            -- GPU Union-find                   -- 2451                    -- 4502
+img/1333053589048.png            -- GPU Union-find, localer          -- 3703                    -- 5739
+img/1333053589048.png            -- GPU Union-find + oneshot         -- 3046                    -- 5096
+img/1333701354280.png            -- GPU neighbour propagation        -- 782802                  -- 787643
+img/1333701354280.png            -- GPU neighbour propagation, loc   -- 298917                  -- 310320
+img/1333701354280.png            -- GPU Union-find                   -- 3544                    -- 14646
+img/1333701354280.png            -- GPU Union-find, localer          -- 6083                    -- 17114
+img/1333701354280.png            -- GPU Union-find + oneshot         -- 4484                    -- 15550
+img/1333808287791.png            -- GPU neighbour propagation        -- 194179                  -- 196200
