@@ -112,7 +112,9 @@ int main(int argc, const char *argv[]) {
       std::replace(cleaninput.begin(), cleaninput.end(), '/', '-');
       std::string outname =
           "out/" + cleaninput + " - " + strat->name() + ".png";
-      iml::writepng(outname, &out);
+      if (!iml::writepng(outname, &out)){
+        std::cerr << "Failed writing file." << std::endl;
+      }
     }
 
     std::cerr << std::endl;

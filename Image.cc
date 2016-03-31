@@ -166,6 +166,12 @@ bool iml::writepng(const std::string &filename, size_t width, size_t height,
     return false;
   }
 
+  if (setjmp(png_jmpbuf(pngp))){
+    png_destroy_write_struct(&pngp, (png_infopp)NULL);
+    fclose(fp);
+    return false;
+  }
+
   png_init_io(pngp, fp);
 
   png_set_IHDR(pngp, pngi, width, height, 8, PNG_COLOR_TYPE_RGB_ALPHA,
@@ -182,10 +188,11 @@ bool iml::writepng(const std::string &filename, size_t width, size_t height,
   png_write_image(pngp, row_pointers);
   delete[] row_pointers;
 
-  png_write_end(pngp, pngi);
+  png_write_end(pngp, NULL);
 
   // Cleanup
   png_destroy_write_struct(&pngp, &pngi);
+  fclose(fp);
 
   return true;
 }
