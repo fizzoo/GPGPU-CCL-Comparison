@@ -143,6 +143,12 @@ public:
   virtual void execute();
 };
 
+class GPUNeighbourPropagation_Localer : public GPUBase {
+public:
+  virtual std::string name() { return "GPU neighbour propagation, loc"; }
+  virtual void execute();
+};
+
 /**
  * Looks at pixels straight up/down/left/right while inside a component.
  */

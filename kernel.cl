@@ -391,7 +391,7 @@ kernel void id_accessor(global int *data, int w) {
 
 // Can't allocate if not known at compile-time anyway
 #define lw 32
-#define lh 4
+#define lh 8
 
 kernel void solve_locally_nprop(global int *data, int w, int h) {
   int lx = get_local_id(0);
@@ -440,6 +440,93 @@ kernel void solve_locally_nprop(global int *data, int w, int h) {
         if (tmp && tmp < min) {
           min = tmp;
         }
+      }
+      if (min < buffer[lw * ly + lx]) {
+        changed = 1;
+        buffer[lw * ly + lx] = min;
+      }
+    }
+
+    barrier(CLK_LOCAL_MEM_FENCE);
+  }
+
+  if (valid) {
+    data[w * y + x] = buffer[lw * ly + lx];
+  }
+}
+
+kernel void solve_locally_plus(global int *data, int w, int h) {
+  int lx = get_local_id(0);
+  int ly = get_local_id(1);
+  int x = get_global_id(0);
+  int y = get_global_id(1);
+
+  char valid = 1;
+  int diff;
+  local int buffer[lw * lh];
+  local char changed;
+
+  if (y >= h || x >= w) {
+    valid = 0;
+  }
+  buffer[lw * ly + lx] = valid ? data[w * y + x] : 0;
+  changed = 1;
+
+  while (changed) {
+    barrier(CLK_LOCAL_MEM_FENCE);
+    changed = 0;
+    barrier(CLK_LOCAL_MEM_FENCE);
+
+    if (valid) {
+      int min = 1 << 30;
+      int tmp;
+
+      diff = 1;
+      while (lx - diff >= 0) {
+        tmp = buffer[lw * (ly) + (lx - diff)];
+        if (!tmp){
+          break;
+        }
+        if (tmp < min) {
+          min = tmp;
+        }
+        ++diff;
+      }
+
+      diff = 1;
+      while (lx + diff < lw) {
+        tmp = buffer[lw * (ly) + (lx + diff)];
+        if (!tmp){
+          break;
+        }
+        if (tmp < min) {
+          min = tmp;
+        }
+        ++diff;
+      }
+
+      diff = 1;
+      while (ly - diff >= 0) {
+        tmp = buffer[lw * (ly - diff) + (lx)];
+        if (!tmp){
+          break;
+        }
+        if (tmp < min) {
+          min = tmp;
+        }
+        ++diff;
+      }
+
+      diff = 1;
+      while (ly + diff < lh) {
+        tmp = buffer[lw * (ly + diff) + (lx)];
+        if (!tmp){
+          break;
+        }
+        if (tmp < min) {
+          min = tmp;
+        }
+        ++diff;
       }
       if (min < buffer[lw * ly + lx]) {
         changed = 1;

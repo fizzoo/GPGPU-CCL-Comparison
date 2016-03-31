@@ -227,8 +227,8 @@ void GPUNeighbourPropagation::execute() {
   cl_int err;
 
   int wsize, hsize;
-  if (width % 16) {
-    wsize = width + 16 - (width % 16);
+  if (width % 32) {
+    wsize = width + 32 - (width % 32);
   } else {
     wsize = width;
   }
@@ -267,7 +267,7 @@ void GPUNeighbourPropagation::execute() {
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(16, 8), NULL, &events[0]);
+                                    cl::NDRange(32, 8), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -280,7 +280,81 @@ void GPUNeighbourPropagation::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(16, 8),
+                                cl::NDRange(wsize, hsize), cl::NDRange(32, 8),
+                                &writtenevents, &events[0]);
+  }
+}
+void GPUNeighbourPropagation_Localer::execute() {
+  cl_int err;
+
+  int wsize, hsize;
+  if (width % 32) {
+    wsize = width + 32 - (width % 32);
+  } else {
+    wsize = width;
+  }
+  if (height % 8) {
+    hsize = height + 8 - (height % 8);
+  } else {
+    hsize = height;
+  }
+
+  cl::Kernel startlabel(*program, "label_with_id", &err);
+  CHECKERR;
+  cl::Kernel localer(*program, "solve_locally_plus", &err);
+  CHECKERR;
+  cl::Kernel propagate(*program, "neighbour_propagate", &err);
+  CHECKERR;
+
+  err = startlabel.setArg(0, *buf);
+  CHECKERR;
+  err = startlabel.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = startlabel.setArg(2, (cl_int)height);
+  CHECKERR;
+
+  err = localer.setArg(0, *buf);
+  CHECKERR;
+  err = localer.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = localer.setArg(2, (cl_int)height);
+  CHECKERR;
+
+
+  char changed = 1;
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
+  queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+
+  err = propagate.setArg(0, *buf);
+  CHECKERR;
+  err = propagate.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = propagate.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = propagate.setArg(3, chan);
+  CHECKERR;
+
+  std::vector<cl::Event> events(2);
+  std::vector<cl::Event> writtenevents(1);
+  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
+                                    cl::NDRange(wsize, hsize),
+                                    cl::NDRange(32, 8), NULL, &events[0]);
+  CHECKERR;
+
+  while (true) {
+    // CPU-GPU sync, sadly
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    if (changed == false) {
+      break;
+    }
+    changed = false;
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
+                              &writtenevents[0]);
+    queue->enqueueNDRangeKernel(localer, cl::NullRange,
+                                cl::NDRange(wsize, hsize), cl::NDRange(32, 8),
+                                &writtenevents, &events[1]);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize), cl::NDRange(32, 8),
                                 &writtenevents, &events[0]);
   }
 }
