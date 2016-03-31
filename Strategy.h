@@ -162,6 +162,12 @@ public:
   virtual void execute();
 };
 
+class GPUUnionFind_Localer : public GPUBase {
+public:
+  virtual std::string name() { return "GPU Union-find, localer"; }
+  virtual void execute();
+};
+
 /**
  * Traverses row/column forward/backwards and edits at the same time.
  */

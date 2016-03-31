@@ -388,3 +388,65 @@ kernel void id_accessor(global int *data, int w) {
   int loc = w * y + x;
   data[loc] = data[loc];
 }
+
+// Can't allocate if not known at compile-time anyway
+#define lw 32
+#define lh 4
+
+kernel void solve_locally_nprop(global int *data, int w, int h) {
+  int lx = get_local_id(0);
+  int ly = get_local_id(1);
+  int x = get_global_id(0);
+  int y = get_global_id(1);
+
+  char valid = 1;
+  local int buffer[lw * lh];
+  local char changed;
+
+  if (y >= h || x >= w) {
+    valid = 0;
+  }
+  buffer[lw * ly + lx] = valid ? data[w * y + x] : 0;
+  changed = 1;
+
+  while (changed) {
+    barrier(CLK_LOCAL_MEM_FENCE);
+    changed = 0;
+    barrier(CLK_LOCAL_MEM_FENCE);
+
+    if (valid) {
+      int min = 1 << 30;
+      int tmp;
+      if (lx > 0) {
+        tmp = buffer[lw * (ly) + (lx - 1)];
+        if (tmp < min) {
+          min = tmp;
+        }
+      }
+      if (lx < lw - 1) {
+        tmp = buffer[lw * (ly) + (lx + 1)];
+        if (tmp < min) {
+          min = tmp;
+        }
+      }
+      if (ly > 0) {
+        tmp = buffer[lw * (ly - 1) + (lx)];
+        if (tmp < min) {
+          min = tmp;
+        }
+      }
+      if (ly < lh - 1) {
+        tmp = buffer[lw * (ly + 1) + (lx)];
+        if (tmp < min) {
+          min = tmp;
+        }
+      }
+      if (min < buffer[lw * ly + lx]) {
+        changed = 1;
+        buffer[lw * ly + lx] = min;
+      }
+    }
+
+    barrier(CLK_LOCAL_MEM_FENCE);
+  }
+}
