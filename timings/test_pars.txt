@@ -1,0 +1,1080 @@
+img/1292525372787.png            -- CPU one-pass                     -- 2585                    -- 3863
+img/1292525372787.png            -- CPU union-find                   -- 8177                    -- 9403
+img/1292525372787.png            -- CPU union-find, reusing          -- 2675                    -- 3930
+img/1292525372787.png            -- CPU linear two-scan              -- 4753                    -- 6016
+img/1292525372787.png            -- GPU neighbour propagation        -- 152123                  -- 155141
+img/1292525372787.png            -- GPU neighbour propagation, loc   -- 16356                   -- 19375
+img/1292525372787.png            -- GPU Union-find                   -- 1161                    -- 4203
+img/1292525372787.png            -- GPU Union-find, localer          -- 2281                    -- 5291
+img/1292525372787.png            -- GPU Union-find + oneshot         -- 1978                    -- 4996
+img/1292525372787.png            -- GPU plus propagation             -- 100135                  -- 103148
+img/1292525372787.png            -- GPU line editing                 -- 137252                  -- 141220
+img/1292525372787.png            -- GPU lines                        -- 73724                   -- 76798
+img/1312217789153.png            -- CPU one-pass                     -- 13680                   -- 14558
+img/1312217789153.png            -- CPU union-find                   -- 176324                  -- 178054
+img/1312217789153.png            -- CPU union-find, reusing          -- 9118                    -- 10845
+img/1312217789153.png            -- CPU linear two-scan              -- 21213                   -- 22939
+img/1312217789153.png            -- GPU neighbour propagation        -- 569900                  -- 573490
+img/1312217789153.png            -- GPU neighbour propagation, loc   -- 337094                  -- 340669
+img/1312217789153.png            -- GPU Union-find                   -- 3348                    -- 6915
+img/1312217789153.png            -- GPU Union-find, localer          -- 12714                   -- 16296
+img/1312217789153.png            -- GPU Union-find + oneshot         -- 8508                    -- 12083
+img/1312217789153.png            -- GPU plus propagation             -- 437781                  -- 441359
+img/1312217789153.png            -- GPU line editing                 -- 280710                  -- 284292
+img/1312217789153.png            -- GPU lines                        -- 145608                  -- 149189
+img/1321829555515.png            -- CPU one-pass                     -- 3377                    -- 4201
+img/1321829555515.png            -- CPU union-find                   -- 33061                   -- 33876
+img/1321829555515.png            -- CPU union-find, reusing          -- 3655                    -- 4455
+img/1321829555515.png            -- CPU linear two-scan              -- 5935                    -- 6736
+img/1321829555515.png            -- GPU neighbour propagation        -- 71481                   -- 74296
+img/1321829555515.png            -- GPU neighbour propagation, loc   -- 27861                   -- 30679
+img/1321829555515.png            -- GPU Union-find                   -- 1455                    -- 4263
+img/1321829555515.png            -- GPU Union-find, localer          -- 3279                    -- 6091
+img/1321829555515.png            -- GPU Union-find + oneshot         -- 2331                    -- 5142
+img/1321829555515.png            -- GPU plus propagation             -- 78716                   -- 81543
+img/1321829555515.png            -- GPU line editing                 -- 783883                  -- 786709
+img/1321829555515.png            -- GPU lines                        -- 415646                  -- 418458
+img/1321830034288.png            -- CPU one-pass                     -- 14570                   -- 16638
+img/1321830034288.png            -- CPU union-find                   -- 429320                  -- 431404
+img/1321830034288.png            -- CPU union-find, reusing          -- 10925                   -- 13011
+img/1321830034288.png            -- CPU linear two-scan              -- 22699                   -- 24764
+img/1321830034288.png            -- GPU neighbour propagation        -- 725436                  -- 730130
+img/1321830034288.png            -- GPU neighbour propagation, loc   -- 382329                  -- 387007
+img/1321830034288.png            -- GPU Union-find                   -- 4415                    -- 9087
+img/1321830034288.png            -- GPU Union-find, localer          -- 14463                   -- 19130
+img/1321830034288.png            -- GPU Union-find + oneshot         -- 9232                    -- 13913
+img/1321830034288.png            -- GPU plus propagation             -- 451479                  -- 456209
+img/1321830034288.png            -- GPU line editing                 -- 553713                  -- 558406
+img/1321830034288.png            -- GPU lines                        -- 285615                  -- 290345
+img/1321831138708.png            -- CPU one-pass                     -- 1747                    -- 2043
+img/1321831138708.png            -- CPU union-find                   -- 17540                   -- 17918
+img/1321831138708.png            -- CPU union-find, reusing          -- 1690                    -- 1994
+img/1321831138708.png            -- CPU linear two-scan              -- 2385                    -- 2693
+img/1321831138708.png            -- GPU neighbour propagation        -- 57471                   -- 58743
+img/1321831138708.png            -- GPU neighbour propagation, loc   -- 18340                   -- 19604
+img/1321831138708.png            -- GPU Union-find                   -- 917                     -- 2193
+img/1321831138708.png            -- GPU Union-find, localer          -- 2278                    -- 3532
+img/1321831138708.png            -- GPU Union-find + oneshot         -- 1375                    -- 2628
+img/1321831138708.png            -- GPU plus propagation             -- 19702                   -- 20971
+img/1321831138708.png            -- GPU line editing                 -- 80073                   -- 81363
+img/1321831138708.png            -- GPU lines                        -- 42418                   -- 43704
+img/1321897459935.png            -- CPU one-pass                     -- 14889                   -- 15689
+img/1321897459935.png            -- CPU union-find                   -- 157191                  -- 157982
+img/1321897459935.png            -- CPU union-find, reusing          -- 8891                    -- 9685
+img/1321897459935.png            -- CPU linear two-scan              -- 15234                   -- 16023
+img/1321897459935.png            -- GPU neighbour propagation        -- 538000                  -- 540847
+img/1321897459935.png            -- GPU neighbour propagation, loc   -- 293611                  -- 296420
+img/1321897459935.png            -- GPU Union-find                   -- 3562                    -- 6362
+img/1321897459935.png            -- GPU Union-find, localer          -- 14167                   -- 16966
+img/1321897459935.png            -- GPU Union-find + oneshot         -- 9553                    -- 12359
+img/1321897459935.png            -- GPU plus propagation             -- 2158520                 -- 2161347
+img/1321897459935.png            -- GPU line editing                 -- 273102                  -- 275944
+img/1321897459935.png            -- GPU lines                        -- 144081                  -- 146925
+img/1329776077366.png            -- CPU one-pass                     -- 1719                    -- 2515
+img/1329776077366.png            -- CPU union-find                   -- 5592                    -- 6430
+img/1329776077366.png            -- CPU union-find, reusing          -- 2407                    -- 3230
+img/1329776077366.png            -- CPU linear two-scan              -- 4962                    -- 5808
+img/1329776077366.png            -- GPU neighbour propagation        -- 198997                  -- 202290
+img/1329776077366.png            -- GPU neighbour propagation, loc   -- 57041                   -- 59653
+img/1329776077366.png            -- GPU Union-find                   -- 1093                    -- 3688
+img/1329776077366.png            -- GPU Union-find, localer          -- 2454                    -- 5063
+img/1329776077366.png            -- GPU Union-find + oneshot         -- 1656                    -- 4246
+img/1329776077366.png            -- GPU plus propagation             -- 48563                   -- 51172
+img/1329776077366.png            -- GPU line editing                 -- 1160512                 -- 1163125
+img/1329776077366.png            -- GPU lines                        -- 604237                  -- 606849
+img/1330616617741.png            -- CPU one-pass                     -- 978                     -- 1600
+img/1330616617741.png            -- CPU union-find                   -- 1321                    -- 1884
+img/1330616617741.png            -- CPU union-find, reusing          -- 1513                    -- 2077
+img/1330616617741.png            -- CPU linear two-scan              -- 3000                    -- 3565
+img/1330616617741.png            -- GPU neighbour propagation        -- 902                     -- 2958
+img/1330616617741.png            -- GPU neighbour propagation, loc   -- 651                     -- 2703
+img/1330616617741.png            -- GPU Union-find                   -- 605                     -- 2673
+img/1330616617741.png            -- GPU Union-find, localer          -- 797                     -- 2855
+img/1330616617741.png            -- GPU Union-find + oneshot         -- 671                     -- 2725
+img/1330616617741.png            -- GPU plus propagation             -- 733                     -- 3555
+img/1330616617741.png            -- GPU line editing                 -- 17762                   -- 19900
+img/1330616617741.png            -- GPU lines                        -- 11310                   -- 13394
+img/1330616658722.png            -- CPU one-pass                     -- 1200                    -- 1882
+img/1330616658722.png            -- CPU union-find                   -- 1687                    -- 2323
+img/1330616658722.png            -- CPU union-find, reusing          -- 1850                    -- 2488
+img/1330616658722.png            -- CPU linear two-scan              -- 3499                    -- 4136
+img/1330616658722.png            -- GPU neighbour propagation        -- 9601                    -- 12490
+img/1330616658722.png            -- GPU neighbour propagation, loc   -- 2265                    -- 4615
+img/1330616658722.png            -- GPU Union-find                   -- 771                     -- 3117
+img/1330616658722.png            -- GPU Union-find, localer          -- 1187                    -- 3548
+img/1330616658722.png            -- GPU Union-find + oneshot         -- 921                     -- 3275
+img/1330616658722.png            -- GPU plus propagation             -- 1350                    -- 3697
+img/1330616658722.png            -- GPU line editing                 -- 46569                   -- 48923
+img/1330616658722.png            -- GPU lines                        -- 26746                   -- 29087
+img/1331059021565.png            -- CPU one-pass                     -- 3576                    -- 4047
+img/1331059021565.png            -- CPU union-find                   -- 31822                   -- 32276
+img/1331059021565.png            -- CPU union-find, reusing          -- 2913                    -- 3367
+img/1331059021565.png            -- CPU linear two-scan              -- 3541                    -- 3998
+img/1331059021565.png            -- GPU neighbour propagation        -- 104438                  -- 106104
+img/1331059021565.png            -- GPU neighbour propagation, loc   -- 55569                   -- 57226
+img/1331059021565.png            -- GPU Union-find                   -- 1547                    -- 3214
+img/1331059021565.png            -- GPU Union-find, localer          -- 4290                    -- 5957
+img/1331059021565.png            -- GPU Union-find + oneshot         -- 2722                    -- 4383
+img/1331059021565.png            -- GPU plus propagation             -- 208225                  -- 209891
+img/1331059021565.png            -- GPU line editing                 -- 215554                  -- 217221
+img/1331059021565.png            -- GPU lines                        -- 111545                  -- 113197
+img/1331483471148.png            -- CPU one-pass                     -- 19575                   -- 20557
+img/1331483471148.png            -- CPU union-find                   -- 48067                   -- 49042
+img/1331483471148.png            -- CPU union-find, reusing          -- 10214                   -- 11175
+img/1331483471148.png            -- CPU linear two-scan              -- 11003                   -- 11961
+img/1331483471148.png            -- GPU neighbour propagation        -- 728093                  -- 731361
+img/1331483471148.png            -- GPU neighbour propagation, loc   -- 378882                  -- 382133
+img/1331483471148.png            -- GPU Union-find                   -- 3035                    -- 6293
+img/1331483471148.png            -- GPU Union-find, localer          -- 14887                   -- 18149
+img/1331483471148.png            -- GPU Union-find + oneshot         -- 12356                   -- 15614
+img/1331483471148.png            -- GPU plus propagation             -- 598017                  -- 601337
+img/1331483471148.png            -- GPU line editing                 -- 64717                   -- 68084
+img/1331483471148.png            -- GPU lines                        -- 29140                   -- 32517
+img/1331483472027.png            -- CPU one-pass                     -- 1378                    -- 1850
+img/1331483472027.png            -- CPU union-find                   -- 9081                    -- 9514
+img/1331483472027.png            -- CPU union-find, reusing          -- 1526                    -- 1964
+img/1331483472027.png            -- CPU linear two-scan              -- 2209                    -- 2659
+img/1331483472027.png            -- GPU neighbour propagation        -- 61596                   -- 63178
+img/1331483472027.png            -- GPU neighbour propagation, loc   -- 7500                    -- 9082
+img/1331483472027.png            -- GPU Union-find                   -- 900                     -- 2499
+img/1331483472027.png            -- GPU Union-find, localer          -- 1821                    -- 3392
+img/1331483472027.png            -- GPU Union-find + oneshot         -- 1369                    -- 2939
+img/1331483472027.png            -- GPU plus propagation             -- 7708                    -- 9284
+img/1331483472027.png            -- GPU line editing                 -- 80491                   -- 82071
+img/1331483472027.png            -- GPU lines                        -- 44477                   -- 46055
+img/1331486233701.png            -- CPU one-pass                     -- 8045                    -- 8650
+img/1331486233701.png            -- CPU union-find                   -- 38340                   -- 38919
+img/1331486233701.png            -- CPU union-find, reusing          -- 4939                    -- 5504
+img/1331486233701.png            -- CPU linear two-scan              -- 5467                    -- 6034
+img/1331486233701.png            -- GPU neighbour propagation        -- 291139                  -- 293252
+img/1331486233701.png            -- GPU neighbour propagation, loc   -- 108650                  -- 110717
+img/1331486233701.png            -- GPU Union-find                   -- 2647                    -- 4702
+img/1331486233701.png            -- GPU Union-find, localer          -- 8650                    -- 10689
+img/1331486233701.png            -- GPU Union-find + oneshot         -- 5786                    -- 7835
+img/1331486233701.png            -- GPU plus propagation             -- 618245                  -- 620292
+img/1331486233701.png            -- GPU line editing                 -- 97199                   -- 99253
+img/1331486233701.png            -- GPU lines                        -- 51746                   -- 53783
+img/1331487795438.png            -- CPU one-pass                     -- 2644                    -- 3498
+img/1331487795438.png            -- CPU union-find                   -- 14544                   -- 15399
+img/1331487795438.png            -- CPU union-find, reusing          -- 3204                    -- 4040
+img/1331487795438.png            -- CPU linear two-scan              -- 5382                    -- 6215
+img/1331487795438.png            -- GPU neighbour propagation        -- 109209                  -- 112211
+img/1331487795438.png            -- GPU neighbour propagation, loc   -- 35164                   -- 38160
+img/1331487795438.png            -- GPU Union-find                   -- 1174                    -- 4161
+img/1331487795438.png            -- GPU Union-find, localer          -- 3257                    -- 6255
+img/1331487795438.png            -- GPU Union-find + oneshot         -- 2201                    -- 5195
+img/1331487795438.png            -- GPU plus propagation             -- 43266                   -- 46323
+img/1331487795438.png            -- GPU line editing                 -- 217972                  -- 220971
+img/1331487795438.png            -- GPU lines                        -- 116291                  -- 119273
+img/1332272575005.png            -- CPU one-pass                     -- 1611                    -- 2228
+img/1332272575005.png            -- CPU union-find                   -- 7982                    -- 8547
+img/1332272575005.png            -- CPU union-find, reusing          -- 2003                    -- 2564
+img/1332272575005.png            -- CPU linear two-scan              -- 3094                    -- 3659
+img/1332272575005.png            -- GPU neighbour propagation        -- 40680                   -- 42738
+img/1332272575005.png            -- GPU neighbour propagation, loc   -- 11975                   -- 14028
+img/1332272575005.png            -- GPU Union-find                   -- 1077                    -- 3129
+img/1332272575005.png            -- GPU Union-find, localer          -- 2000                    -- 4053
+img/1332272575005.png            -- GPU Union-find + oneshot         -- 1347                    -- 3403
+img/1332272575005.png            -- GPU plus propagation             -- 20508                   -- 22558
+img/1332272575005.png            -- GPU line editing                 -- 191716                  -- 193763
+img/1332272575005.png            -- GPU lines                        -- 103039                  -- 105177
+img/1332784009980.png            -- CPU one-pass                     -- 3280                    -- 4048
+img/1332784009980.png            -- CPU union-find                   -- 18312                   -- 19056
+img/1332784009980.png            -- CPU union-find, reusing          -- 3209                    -- 3954
+img/1332784009980.png            -- CPU linear two-scan              -- 5283                    -- 6030
+img/1332784009980.png            -- GPU neighbour propagation        -- 184679                  -- 187278
+img/1332784009980.png            -- GPU neighbour propagation, loc   -- 26655                   -- 29251
+img/1332784009980.png            -- GPU Union-find                   -- 1494                    -- 4080
+img/1332784009980.png            -- GPU Union-find, localer          -- 3596                    -- 6191
+img/1332784009980.png            -- GPU Union-find + oneshot         -- 2463                    -- 5056
+img/1332784009980.png            -- GPU plus propagation             -- 72171                   -- 74761
+img/1332784009980.png            -- GPU line editing                 -- 116609                  -- 119242
+img/1332784009980.png            -- GPU lines                        -- 58053                   -- 60654
+img/1333053589048.png            -- CPU one-pass                     -- 9453                    -- 10060
+img/1333053589048.png            -- CPU union-find                   -- 33723                   -- 34284
+img/1333053589048.png            -- CPU union-find, reusing          -- 5542                    -- 6105
+img/1333053589048.png            -- CPU linear two-scan              -- 5811                    -- 6382
+img/1333053589048.png            -- GPU neighbour propagation        -- 293314                  -- 295355
+img/1333053589048.png            -- GPU neighbour propagation, loc   -- 157696                  -- 159727
+img/1333053589048.png            -- GPU Union-find                   -- 2288                    -- 4322
+img/1333053589048.png            -- GPU Union-find, localer          -- 8078                    -- 10126
+img/1333053589048.png            -- GPU Union-find + oneshot         -- 6610                    -- 8651
+img/1333053589048.png            -- GPU plus propagation             -- 474254                  -- 476336
+img/1333053589048.png            -- GPU line editing                 -- 75797                   -- 77848
+img/1333053589048.png            -- GPU lines                        -- 39695                   -- 41729
+img/1333701354280.png            -- CPU one-pass                     -- 12538                   -- 14004
+img/1333701354280.png            -- CPU union-find                   -- 197139                  -- 199872
+img/1333701354280.png            -- CPU union-find, reusing          -- 9772                    -- 12483
+img/1333701354280.png            -- CPU linear two-scan              -- 15802                   -- 18488
+img/1333701354280.png            -- GPU neighbour propagation        -- 784772                  -- 790748
+img/1333701354280.png            -- GPU neighbour propagation, loc   -- 300723                  -- 306595
+img/1333701354280.png            -- GPU Union-find                   -- 3561                    -- 9408
+img/1333701354280.png            -- GPU Union-find, localer          -- 11663                   -- 17510
+img/1333701354280.png            -- GPU Union-find + oneshot         -- 9177                    -- 15018
+img/1333701354280.png            -- GPU plus propagation             -- 425312                  -- 431161
+img/1333701354280.png            -- GPU line editing                 -- 521536                  -- 527416
+img/1333701354280.png            -- GPU lines                        -- 276102                  -- 281975
+img/1333808287791.png            -- CPU one-pass                     -- 4384                    -- 4994
+img/1333808287791.png            -- CPU union-find                   -- 23349                   -- 23927
+img/1333808287791.png            -- CPU union-find, reusing          -- 3424                    -- 3986
+img/1333808287791.png            -- CPU linear two-scan              -- 4255                    -- 4816
+img/1333808287791.png            -- GPU neighbour propagation        -- 193591                  -- 195842
+img/1333808287791.png            -- GPU neighbour propagation, loc   -- 47499                   -- 49547
+img/1333808287791.png            -- GPU Union-find                   -- 1892                    -- 3939
+img/1333808287791.png            -- GPU Union-find, localer          -- 4798                    -- 6872
+img/1333808287791.png            -- GPU Union-find + oneshot         -- 3876                    -- 5936
+img/1333808287791.png            -- GPU plus propagation             -- 1140567                 -- 1142676
+img/1333808287791.png            -- GPU line editing                 -- 311918                  -- 313952
+img/1333808287791.png            -- GPU lines                        -- 164333                  -- 166376
+img/1333888003944.png            -- CPU one-pass                     -- 2438                    -- 3037
+img/1333888003944.png            -- CPU union-find                   -- 24109                   -- 24664
+img/1333888003944.png            -- CPU union-find, reusing          -- 2505                    -- 3051
+img/1333888003944.png            -- CPU linear two-scan              -- 3910                    -- 4465
+img/1333888003944.png            -- GPU neighbour propagation        -- 156925                  -- 158929
+img/1333888003944.png            -- GPU neighbour propagation, loc   -- 41265                   -- 43272
+img/1333888003944.png            -- GPU Union-find                   -- 1174                    -- 3188
+img/1333888003944.png            -- GPU Union-find, localer          -- 2980                    -- 4995
+img/1333888003944.png            -- GPU Union-find + oneshot         -- 2247                    -- 4259
+img/1333888003944.png            -- GPU plus propagation             -- 67269                   -- 69278
+img/1333888003944.png            -- GPU line editing                 -- 194723                  -- 196772
+img/1333888003944.png            -- GPU lines                        -- 103808                  -- 105830
+img/1335741204575.png            -- CPU one-pass                     -- 8990                    -- 9958
+img/1335741204575.png            -- CPU union-find                   -- 33649                   -- 34602
+img/1335741204575.png            -- CPU union-find, reusing          -- 6086                    -- 7031
+img/1335741204575.png            -- CPU linear two-scan              -- 7742                    -- 8685
+img/1335741204575.png            -- GPU neighbour propagation        -- 447198                  -- 450904
+img/1335741204575.png            -- GPU neighbour propagation, loc   -- 196743                  -- 199977
+img/1335741204575.png            -- GPU Union-find                   -- 2192                    -- 5412
+img/1335741204575.png            -- GPU Union-find, localer          -- 7046                    -- 10272
+img/1335741204575.png            -- GPU Union-find + oneshot         -- 4503                    -- 7728
+img/1335741204575.png            -- GPU plus propagation             -- 115155                  -- 118398
+img/1335741204575.png            -- GPU line editing                 -- 84235                   -- 87462
+img/1335741204575.png            -- GPU lines                        -- 39623                   -- 42850
+img/1335744909544.png            -- CPU one-pass                     -- 12898                   -- 13755
+img/1335744909544.png            -- CPU union-find                   -- 263936                  -- 264780
+img/1335744909544.png            -- CPU union-find, reusing          -- 8932                    -- 9785
+img/1335744909544.png            -- CPU linear two-scan              -- 10538                   -- 11380
+img/1335744909544.png            -- GPU neighbour propagation        -- 528455                  -- 531451
+img/1335744909544.png            -- GPU neighbour propagation, loc   -- 346091                  -- 349087
+img/1335744909544.png            -- GPU Union-find                   -- 3409                    -- 6392
+img/1335744909544.png            -- GPU Union-find, localer          -- 14148                   -- 17139
+img/1335744909544.png            -- GPU Union-find + oneshot         -- 9730                    -- 12726
+img/1335744909544.png            -- GPU plus propagation             -- 652764                  -- 655750
+img/1335744909544.png            -- GPU line editing                 -- 262481                  -- 265471
+img/1335744909544.png            -- GPU lines                        -- 132816                  -- 135872
+img/1335746038121.png            -- CPU one-pass                     -- 16239                   -- 16930
+img/1335746038121.png            -- CPU union-find                   -- 198620                  -- 199279
+img/1335746038121.png            -- CPU union-find, reusing          -- 7308                    -- 7974
+img/1335746038121.png            -- CPU linear two-scan              -- 8828                    -- 9482
+img/1335746038121.png            -- GPU neighbour propagation        -- 448450                  -- 450871
+img/1335746038121.png            -- GPU neighbour propagation, loc   -- 252005                  -- 254436
+img/1335746038121.png            -- GPU Union-find                   -- 3172                    -- 5576
+img/1335746038121.png            -- GPU Union-find, localer          -- 11873                   -- 14279
+img/1335746038121.png            -- GPU Union-find + oneshot         -- 8085                    -- 10501
+img/1335746038121.png            -- GPU plus propagation             -- 4174181                 -- 4176602
+img/1335746038121.png            -- GPU line editing                 -- 321172                  -- 323576
+img/1335746038121.png            -- GPU lines                        -- 172213                  -- 174620
+img/1336051997824.png            -- CPU one-pass                     -- 17291                   -- 18149
+img/1336051997824.png            -- CPU union-find                   -- 123762                  -- 124603
+img/1336051997824.png            -- CPU union-find, reusing          -- 8569                    -- 9405
+img/1336051997824.png            -- CPU linear two-scan              -- 9828                    -- 10671
+img/1336051997824.png            -- GPU neighbour propagation        -- 550576                  -- 553566
+img/1336051997824.png            -- GPU neighbour propagation, loc   -- 266617                  -- 269611
+img/1336051997824.png            -- GPU Union-find                   -- 3415                    -- 6413
+img/1336051997824.png            -- GPU Union-find, localer          -- 13996                   -- 16984
+img/1336051997824.png            -- GPU Union-find + oneshot         -- 9574                    -- 12559
+img/1336051997824.png            -- GPU plus propagation             -- 3246009                 -- 3249132
+img/1336051997824.png            -- GPU line editing                 -- 329474                  -- 332557
+img/1336051997824.png            -- GPU lines                        -- 168067                  -- 171079
+img/1338787561677.png            -- CPU one-pass                     -- 18899                   -- 19748
+img/1338787561677.png            -- CPU union-find                   -- 70341                   -- 71214
+img/1338787561677.png            -- CPU union-find, reusing          -- 9544                    -- 10534
+img/1338787561677.png            -- CPU linear two-scan              -- 10980                   -- 12034
+img/1338787561677.png            -- GPU neighbour propagation        -- 637279                  -- 640403
+img/1338787561677.png            -- GPU neighbour propagation, loc   -- 308162                  -- 311181
+img/1338787561677.png            -- GPU Union-find                   -- 3914                    -- 6923
+img/1338787561677.png            -- GPU Union-find, localer          -- 15904                   -- 18949
+img/1338787561677.png            -- GPU Union-find + oneshot         -- 11614                   -- 14652
+img/1338787561677.png            -- GPU plus propagation             -- 9102946                 -- 9105997
+img/1338787561677.png            -- GPU line editing                 -- 588644                  -- 591642
+img/1338787561677.png            -- GPU lines                        -- 313490                  -- 316497
+img/1339247145702.png            -- CPU one-pass                     -- 7261                    -- 10571
+img/1339247145702.png            -- CPU union-find                   -- 88157                   -- 91492
+img/1339247145702.png            -- CPU union-find, reusing          -- 7610                    -- 10976
+img/1339247145702.png            -- CPU linear two-scan              -- 20574                   -- 23932
+img/1339247145702.png            -- GPU neighbour propagation        -- 349912                  -- 356927
+img/1339247145702.png            -- GPU neighbour propagation, loc   -- 86579                   -- 93784
+img/1339247145702.png            -- GPU Union-find                   -- 2792                    -- 9980
+img/1339247145702.png            -- GPU Union-find, localer          -- 7009                    -- 14005
+img/1339247145702.png            -- GPU Union-find + oneshot         -- 4436                    -- 11445
+img/1339247145702.png            -- GPU plus propagation             -- 77148                   -- 84245
+img/1339247145702.png            -- GPU line editing                 -- 798590                  -- 805803
+img/1339247145702.png            -- GPU lines                        -- 413813                  -- 420812
+img/1341603821166.png            -- CPU one-pass                     -- 5053                    -- 5917
+img/1341603821166.png            -- CPU union-find                   -- 68280                   -- 69161
+img/1341603821166.png            -- CPU union-find, reusing          -- 5302                    -- 6190
+img/1341603821166.png            -- CPU linear two-scan              -- 8255                    -- 9158
+img/1341603821166.png            -- GPU neighbour propagation        -- 197032                  -- 200073
+img/1341603821166.png            -- GPU neighbour propagation, loc   -- 68351                   -- 71408
+img/1341603821166.png            -- GPU Union-find                   -- 1975                    -- 4991
+img/1341603821166.png            -- GPU Union-find, localer          -- 6479                    -- 9482
+img/1341603821166.png            -- GPU Union-find + oneshot         -- 4285                    -- 7269
+img/1341603821166.png            -- GPU plus propagation             -- 110689                  -- 113704
+img/1341603821166.png            -- GPU line editing                 -- 383214                  -- 386231
+img/1341603821166.png            -- GPU lines                        -- 204129                  -- 207163
+img/1341696644116.png            -- CPU one-pass                     -- 10365                   -- 11036
+img/1341696644116.png            -- CPU union-find                   -- 39645                   -- 40720
+img/1341696644116.png            -- CPU union-find, reusing          -- 6339                    -- 6968
+img/1341696644116.png            -- CPU linear two-scan              -- 6422                    -- 7060
+img/1341696644116.png            -- GPU neighbour propagation        -- 381552                  -- 383779
+img/1341696644116.png            -- GPU neighbour propagation, loc   -- 174182                  -- 176414
+img/1341696644116.png            -- GPU Union-find                   -- 2541                    -- 4759
+img/1341696644116.png            -- GPU Union-find, localer          -- 11013                   -- 13338
+img/1341696644116.png            -- GPU Union-find + oneshot         -- 7621                    -- 9836
+img/1341696644116.png            -- GPU plus propagation             -- 1050584                 -- 1052805
+img/1341696644116.png            -- GPU line editing                 -- 104227                  -- 106444
+img/1341696644116.png            -- GPU lines                        -- 55816                   -- 58048
+img/1341713786708.png            -- CPU one-pass                     -- 6099                    -- 6962
+img/1341713786708.png            -- CPU union-find                   -- 36695                   -- 37550
+img/1341713786708.png            -- CPU union-find, reusing          -- 4778                    -- 5623
+img/1341713786708.png            -- CPU linear two-scan              -- 6373                    -- 7208
+img/1341713786708.png            -- GPU neighbour propagation        -- 301063                  -- 304071
+img/1341713786708.png            -- GPU neighbour propagation, loc   -- 88122                   -- 91112
+img/1341713786708.png            -- GPU Union-find                   -- 1708                    -- 4691
+img/1341713786708.png            -- GPU Union-find, localer          -- 6397                    -- 9379
+img/1341713786708.png            -- GPU Union-find + oneshot         -- 4395                    -- 7382
+img/1341713786708.png            -- GPU plus propagation             -- 291242                  -- 294242
+img/1341713786708.png            -- GPU line editing                 -- 114172                  -- 117156
+img/1341713786708.png            -- GPU lines                        -- 55837                   -- 58826
+img/1341833021446.png            -- CPU one-pass                     -- 11292                   -- 12147
+img/1341833021446.png            -- CPU union-find                   -- 226914                  -- 227754
+img/1341833021446.png            -- CPU union-find, reusing          -- 8215                    -- 9057
+img/1341833021446.png            -- CPU linear two-scan              -- 17989                   -- 18829
+img/1341833021446.png            -- GPU neighbour propagation        -- 626736                  -- 629736
+img/1341833021446.png            -- GPU neighbour propagation, loc   -- 273074                  -- 276063
+img/1341833021446.png            -- GPU Union-find                   -- 3127                    -- 6110
+img/1341833021446.png            -- GPU Union-find, localer          -- 12444                   -- 15431
+img/1341833021446.png            -- GPU Union-find + oneshot         -- 8359                    -- 11344
+img/1341833021446.png            -- GPU plus propagation             -- 975395                  -- 978404
+img/1341833021446.png            -- GPU line editing                 -- 244265                  -- 247266
+img/1341833021446.png            -- GPU lines                        -- 125989                  -- 128975
+img/1341835947889.png            -- CPU one-pass                     -- 12318                   -- 13178
+img/1341835947889.png            -- CPU union-find                   -- 156430                  -- 157276
+img/1341835947889.png            -- CPU union-find, reusing          -- 7788                    -- 8631
+img/1341835947889.png            -- CPU linear two-scan              -- 13472                   -- 14327
+img/1341835947889.png            -- GPU neighbour propagation        -- 488335                  -- 491342
+img/1341835947889.png            -- GPU neighbour propagation, loc   -- 199581                  -- 202581
+img/1341835947889.png            -- GPU Union-find                   -- 3684                    -- 6679
+img/1341835947889.png            -- GPU Union-find, localer          -- 11501                   -- 14480
+img/1341835947889.png            -- GPU Union-find + oneshot         -- 9217                    -- 12205
+img/1341835947889.png            -- GPU plus propagation             -- 1132610                 -- 1135610
+img/1341835947889.png            -- GPU line editing                 -- 216577                  -- 219606
+img/1341835947889.png            -- GPU lines                        -- 113746                  -- 116740
+img/1344508394928.png            -- CPU one-pass                     -- 18635                   -- 19501
+img/1344508394928.png            -- CPU union-find                   -- 70296                   -- 71142
+img/1344508394928.png            -- CPU union-find, reusing          -- 9123                    -- 9968
+img/1344508394928.png            -- CPU linear two-scan              -- 9704                    -- 10560
+img/1344508394928.png            -- GPU neighbour propagation        -- 633068                  -- 636063
+img/1344508394928.png            -- GPU neighbour propagation, loc   -- 317964                  -- 320948
+img/1344508394928.png            -- GPU Union-find                   -- 3532                    -- 6513
+img/1344508394928.png            -- GPU Union-find, localer          -- 13080                   -- 16073
+img/1344508394928.png            -- GPU Union-find + oneshot         -- 10936                   -- 13919
+img/1344508394928.png            -- GPU plus propagation             -- 1359046                 -- 1362052
+img/1344508394928.png            -- GPU line editing                 -- 111039                  -- 114026
+img/1344508394928.png            -- GPU lines                        -- 52806                   -- 55801
+img/1355271878468.png            -- CPU one-pass                     -- 1852                    -- 2899
+img/1355271878468.png            -- CPU union-find                   -- 3318                    -- 4346
+img/1355271878468.png            -- CPU union-find, reusing          -- 2866                    -- 3890
+img/1355271878468.png            -- CPU linear two-scan              -- 5268                    -- 6306
+img/1355271878468.png            -- GPU neighbour propagation        -- 5167                    -- 9258
+img/1355271878468.png            -- GPU neighbour propagation, loc   -- 1698                    -- 5042
+img/1355271878468.png            -- GPU Union-find                   -- 966                     -- 4309
+img/1355271878468.png            -- GPU Union-find, localer          -- 1615                    -- 4967
+img/1355271878468.png            -- GPU Union-find + oneshot         -- 1161                    -- 4517
+img/1355271878468.png            -- GPU plus propagation             -- 1699                    -- 5046
+img/1355271878468.png            -- GPU line editing                 -- 70196                   -- 73533
+img/1355271878468.png            -- GPU lines                        -- 46643                   -- 49987
+img/1431997556287.png            -- CPU one-pass                     -- 7861                    -- 8724
+img/1431997556287.png            -- CPU union-find                   -- 127663                  -- 128508
+img/1431997556287.png            -- CPU union-find, reusing          -- 6043                    -- 6881
+img/1431997556287.png            -- CPU linear two-scan              -- 8839                    -- 9690
+img/1431997556287.png            -- GPU neighbour propagation        -- 314096                  -- 317097
+img/1431997556287.png            -- GPU neighbour propagation, loc   -- 153144                  -- 156132
+img/1431997556287.png            -- GPU Union-find                   -- 2380                    -- 5369
+img/1431997556287.png            -- GPU Union-find, localer          -- 8275                    -- 11267
+img/1431997556287.png            -- GPU Union-find + oneshot         -- 5523                    -- 8631
+img/1431997556287.png            -- GPU plus propagation             -- 697697                  -- 700704
+img/1431997556287.png            -- GPU line editing                 -- 311108                  -- 314119
+img/1431997556287.png            -- GPU lines                        -- 163083                  -- 166092
+img/1434712922294.png            -- CPU one-pass                     -- 14294                   -- 15874
+img/1434712922294.png            -- CPU union-find                   -- 106252                  -- 109153
+img/1434712922294.png            -- CPU union-find, reusing          -- 10121                   -- 13036
+img/1434712922294.png            -- CPU linear two-scan              -- 19824                   -- 22751
+img/1434712922294.png            -- GPU neighbour propagation        -- 678819                  -- 684992
+img/1434712922294.png            -- GPU neighbour propagation, loc   -- 339755                  -- 345933
+img/1434712922294.png            -- GPU Union-find                   -- 3784                    -- 9971
+img/1434712922294.png            -- GPU Union-find, localer          -- 14095                   -- 20255
+img/1434712922294.png            -- GPU Union-find + oneshot         -- 9606                    -- 15754
+img/1434712922294.png            -- GPU plus propagation             -- 697133                  -- 703312
+img/1434712922294.png            -- GPU line editing                 -- 239096                  -- 245279
+img/1434712922294.png            -- GPU lines                        -- 127145                  -- 133312
+img/1434903224122.png            -- CPU one-pass                     -- 5947                    -- 6696
+img/1434903224122.png            -- CPU union-find                   -- 94597                   -- 95318
+img/1434903224122.png            -- CPU union-find, reusing          -- 5005                    -- 5729
+img/1434903224122.png            -- CPU linear two-scan              -- 9873                    -- 10594
+img/1434903224122.png            -- GPU neighbour propagation        -- 237393                  -- 240001
+img/1434903224122.png            -- GPU neighbour propagation, loc   -- 64175                   -- 66778
+img/1434903224122.png            -- GPU Union-find                   -- 1935                    -- 4542
+img/1434903224122.png            -- GPU Union-find, localer          -- 5907                    -- 8522
+img/1434903224122.png            -- GPU Union-find + oneshot         -- 4540                    -- 7142
+img/1434903224122.png            -- GPU plus propagation             -- 224015                  -- 226993
+img/1434903224122.png            -- GPU line editing                 -- 207366                  -- 209977
+img/1434903224122.png            -- GPU lines                        -- 104551                  -- 107157
+img/1435047777858.png            -- CPU one-pass                     -- 11125                   -- 12735
+img/1435047777858.png            -- CPU union-find                   -- 119074                  -- 121879
+img/1435047777858.png            -- CPU union-find, reusing          -- 8612                    -- 11471
+img/1435047777858.png            -- CPU linear two-scan              -- 13140                   -- 15980
+img/1435047777858.png            -- GPU neighbour propagation        -- 429600                  -- 435495
+img/1435047777858.png            -- GPU neighbour propagation, loc   -- 207247                  -- 213163
+img/1435047777858.png            -- GPU Union-find                   -- 3044                    -- 8940
+img/1435047777858.png            -- GPU Union-find, localer          -- 10801                   -- 16711
+img/1435047777858.png            -- GPU Union-find + oneshot         -- 7180                    -- 13082
+img/1435047777858.png            -- GPU plus propagation             -- 665185                  -- 671123
+img/1435047777858.png            -- GPU line editing                 -- 289447                  -- 295349
+img/1435047777858.png            -- GPU lines                        -- 153700                  -- 159635
+img/1435321191230.png            -- CPU one-pass                     -- 4933                    -- 5687
+img/1435321191230.png            -- CPU union-find                   -- 82703                   -- 83444
+img/1435321191230.png            -- CPU union-find, reusing          -- 4706                    -- 5447
+img/1435321191230.png            -- CPU linear two-scan              -- 6051                    -- 6800
+img/1435321191230.png            -- GPU neighbour propagation        -- 253240                  -- 255859
+img/1435321191230.png            -- GPU neighbour propagation, loc   -- 109695                  -- 112306
+img/1435321191230.png            -- GPU Union-find                   -- 2251                    -- 4862
+img/1435321191230.png            -- GPU Union-find, localer          -- 5875                    -- 8490
+img/1435321191230.png            -- GPU Union-find + oneshot         -- 3649                    -- 6262
+img/1435321191230.png            -- GPU plus propagation             -- 251179                  -- 253797
+img/1435321191230.png            -- GPU line editing                 -- 880416                  -- 883024
+img/1435321191230.png            -- GPU lines                        -- 462251                  -- 464892
+img/1447134403051.png            -- CPU one-pass                     -- 5263                    -- 6129
+img/1447134403051.png            -- CPU union-find                   -- 75382                   -- 76231
+img/1447134403051.png            -- CPU union-find, reusing          -- 4971                    -- 5819
+img/1447134403051.png            -- CPU linear two-scan              -- 7169                    -- 8030
+img/1447134403051.png            -- GPU neighbour propagation        -- 215417                  -- 218414
+img/1447134403051.png            -- GPU neighbour propagation, loc   -- 35954                   -- 38957
+img/1447134403051.png            -- GPU Union-find                   -- 2095                    -- 5090
+img/1447134403051.png            -- GPU Union-find, localer          -- 5598                    -- 8595
+img/1447134403051.png            -- GPU Union-find + oneshot         -- 3472                    -- 6468
+img/1447134403051.png            -- GPU plus propagation             -- 241178                  -- 244179
+img/1447134403051.png            -- GPU line editing                 -- 546431                  -- 549443
+img/1447134403051.png            -- GPU lines                        -- 291843                  -- 294874
+img/1447144260467.png            -- CPU one-pass                     -- 5075                    -- 5927
+img/1447144260467.png            -- CPU union-find                   -- 99263                   -- 100116
+img/1447144260467.png            -- CPU union-find, reusing          -- 5554                    -- 6399
+img/1447144260467.png            -- CPU linear two-scan              -- 8373                    -- 9218
+img/1447144260467.png            -- GPU neighbour propagation        -- 258870                  -- 261871
+img/1447144260467.png            -- GPU neighbour propagation, loc   -- 193765                  -- 196763
+img/1447144260467.png            -- GPU Union-find                   -- 2660                    -- 5653
+img/1447144260467.png            -- GPU Union-find, localer          -- 6949                    -- 9934
+img/1447144260467.png            -- GPU Union-find + oneshot         -- 4338                    -- 7325
+img/1447144260467.png            -- GPU plus propagation             -- 454611                  -- 457634
+img/1447144260467.png            -- GPU line editing                 -- 2392178                 -- 2395180
+img/1447144260467.png            -- GPU lines                        -- 1291931                 -- 1294951
+img/1447172914375.png            -- CPU one-pass                     -- 5772                    -- 6747
+img/1447172914375.png            -- CPU union-find                   -- 92759                   -- 93701
+img/1447172914375.png            -- CPU union-find, reusing          -- 5465                    -- 6409
+img/1447172914375.png            -- CPU linear two-scan              -- 8531                    -- 9481
+img/1447172914375.png            -- GPU neighbour propagation        -- 262439                  -- 266518
+img/1447172914375.png            -- GPU neighbour propagation, loc   -- 90776                   -- 94045
+img/1447172914375.png            -- GPU Union-find                   -- 2202                    -- 5460
+img/1447172914375.png            -- GPU Union-find, localer          -- 6848                    -- 10105
+img/1447172914375.png            -- GPU Union-find + oneshot         -- 4540                    -- 7803
+img/1447172914375.png            -- GPU plus propagation             -- 146022                  -- 149296
+img/1447172914375.png            -- GPU line editing                 -- 324958                  -- 328228
+img/1447172914375.png            -- GPU lines                        -- 170990                  -- 174264
+img/1447445408999.png            -- CPU one-pass                     -- 13626                   -- 15148
+img/1447445408999.png            -- CPU union-find                   -- 299906                  -- 301350
+img/1447445408999.png            -- CPU union-find, reusing          -- 10670                   -- 12128
+img/1447445408999.png            -- CPU linear two-scan              -- 14211                   -- 15669
+img/1447445408999.png            -- GPU neighbour propagation        -- 559576                  -- 564462
+img/1447445408999.png            -- GPU neighbour propagation, loc   -- 349276                  -- 354163
+img/1447445408999.png            -- GPU Union-find                   -- 3870                    -- 8738
+img/1447445408999.png            -- GPU Union-find, localer          -- 13693                   -- 18598
+img/1447445408999.png            -- GPU Union-find + oneshot         -- 9106                    -- 13979
+img/1447445408999.png            -- GPU plus propagation             -- 1344149                 -- 1349036
+img/1447445408999.png            -- GPU line editing                 -- 978601                  -- 983469
+img/1447445408999.png            -- GPU lines                        -- 507041                  -- 511910
+img/1447487171324.png            -- CPU one-pass                     -- 3901                    -- 4734
+img/1447487171324.png            -- CPU union-find                   -- 43764                   -- 44577
+img/1447487171324.png            -- CPU union-find, reusing          -- 4054                    -- 4866
+img/1447487171324.png            -- CPU linear two-scan              -- 5911                    -- 6732
+img/1447487171324.png            -- GPU neighbour propagation        -- 207091                  -- 209977
+img/1447487171324.png            -- GPU neighbour propagation, loc   -- 68487                   -- 71363
+img/1447487171324.png            -- GPU Union-find                   -- 1738                    -- 4606
+img/1447487171324.png            -- GPU Union-find, localer          -- 4708                    -- 7580
+img/1447487171324.png            -- GPU Union-find + oneshot         -- 3062                    -- 5938
+img/1447487171324.png            -- GPU plus propagation             -- 108090                  -- 110963
+img/1447487171324.png            -- GPU line editing                 -- 166012                  -- 168889
+img/1447487171324.png            -- GPU lines                        -- 92378                   -- 95263
+img/1447721371006.png            -- CPU one-pass                     -- 5437                    -- 6292
+img/1447721371006.png            -- CPU union-find                   -- 100199                  -- 101037
+img/1447721371006.png            -- CPU union-find, reusing          -- 5143                    -- 5979
+img/1447721371006.png            -- CPU linear two-scan              -- 8885                    -- 9726
+img/1447721371006.png            -- GPU neighbour propagation        -- 224774                  -- 227758
+img/1447721371006.png            -- GPU neighbour propagation, loc   -- 82198                   -- 85173
+img/1447721371006.png            -- GPU Union-find                   -- 2333                    -- 5316
+img/1447721371006.png            -- GPU Union-find, localer          -- 6081                    -- 9067
+img/1447721371006.png            -- GPU Union-find + oneshot         -- 4760                    -- 7746
+img/1447721371006.png            -- GPU plus propagation             -- 227815                  -- 230811
+img/1447721371006.png            -- GPU line editing                 -- 375265                  -- 378268
+img/1447721371006.png            -- GPU lines                        -- 194106                  -- 197113
+img/1449660284583.png            -- CPU one-pass                     -- 10934                   -- 11891
+img/1449660284583.png            -- CPU union-find                   -- 253984                  -- 255006
+img/1449660284583.png            -- CPU union-find, reusing          -- 8485                    -- 9438
+img/1449660284583.png            -- CPU linear two-scan              -- 14304                   -- 15287
+img/1449660284583.png            -- GPU neighbour propagation        -- 442282                  -- 446387
+img/1449660284583.png            -- GPU neighbour propagation, loc   -- 262627                  -- 265891
+img/1449660284583.png            -- GPU Union-find                   -- 3646                    -- 6909
+img/1449660284583.png            -- GPU Union-find, localer          -- 11189                   -- 14439
+img/1449660284583.png            -- GPU Union-find + oneshot         -- 9362                    -- 12663
+img/1449660284583.png            -- GPU plus propagation             -- 1135876                 -- 1139382
+img/1449660284583.png            -- GPU line editing                 -- 410347                  -- 413617
+img/1449660284583.png            -- GPU lines                        -- 218104                  -- 221369
+img/1449660540526.png            -- CPU one-pass                     -- 5626                    -- 6480
+img/1449660540526.png            -- CPU union-find                   -- 83529                   -- 84379
+img/1449660540526.png            -- CPU union-find, reusing          -- 5080                    -- 5920
+img/1449660540526.png            -- CPU linear two-scan              -- 12340                   -- 13181
+img/1449660540526.png            -- GPU neighbour propagation        -- 272485                  -- 275482
+img/1449660540526.png            -- GPU neighbour propagation, loc   -- 85680                   -- 88679
+img/1449660540526.png            -- GPU Union-find                   -- 2157                    -- 5189
+img/1449660540526.png            -- GPU Union-find, localer          -- 6298                    -- 9285
+img/1449660540526.png            -- GPU Union-find + oneshot         -- 4098                    -- 7171
+img/1449660540526.png            -- GPU plus propagation             -- 165000                  -- 167988
+img/1449660540526.png            -- GPU line editing                 -- 400548                  -- 403551
+img/1449660540526.png            -- GPU lines                        -- 211842                  -- 214864
+img/1449660922465.png            -- CPU one-pass                     -- 4650                    -- 5386
+img/1449660922465.png            -- CPU union-find                   -- 67122                   -- 67807
+img/1449660922465.png            -- CPU union-find, reusing          -- 4052                    -- 4737
+img/1449660922465.png            -- CPU linear two-scan              -- 6267                    -- 6959
+img/1449660922465.png            -- GPU neighbour propagation        -- 162355                  -- 164771
+img/1449660922465.png            -- GPU neighbour propagation, loc   -- 95085                   -- 97498
+img/1449660922465.png            -- GPU Union-find                   -- 1738                    -- 4152
+img/1449660922465.png            -- GPU Union-find, localer          -- 5425                    -- 7851
+img/1449660922465.png            -- GPU Union-find + oneshot         -- 4109                    -- 6524
+img/1449660922465.png            -- GPU plus propagation             -- 645367                  -- 647781
+img/1449660922465.png            -- GPU line editing                 -- 778669                  -- 781076
+img/1449660922465.png            -- GPU lines                        -- 407535                  -- 409948
+img/1449660984866.png            -- CPU one-pass                     -- 3442                    -- 4013
+img/1449660984866.png            -- CPU union-find                   -- 39900                   -- 40430
+img/1449660984866.png            -- CPU union-find, reusing          -- 3110                    -- 3644
+img/1449660984866.png            -- CPU linear two-scan              -- 3952                    -- 4483
+img/1449660984866.png            -- GPU neighbour propagation        -- 84470                   -- 86523
+img/1449660984866.png            -- GPU neighbour propagation, loc   -- 54846                   -- 56860
+img/1449660984866.png            -- GPU Union-find                   -- 1547                    -- 3544
+img/1449660984866.png            -- GPU Union-find, localer          -- 4734                    -- 6833
+img/1449660984866.png            -- GPU Union-find + oneshot         -- 2970                    -- 5270
+img/1449660984866.png            -- GPU plus propagation             -- 195676                  -- 197713
+img/1449660984866.png            -- GPU line editing                 -- 398311                  -- 400253
+img/1449660984866.png            -- GPU lines                        -- 210986                  -- 212921
+img/1449661595134.png            -- CPU one-pass                     -- 3388                    -- 4484
+img/1449661595134.png            -- CPU union-find                   -- 19030                   -- 20064
+img/1449661595134.png            -- CPU union-find, reusing          -- 3866                    -- 4912
+img/1449661595134.png            -- CPU linear two-scan              -- 6314                    -- 7355
+img/1449661595134.png            -- GPU neighbour propagation        -- 67145                   -- 71763
+img/1449661595134.png            -- GPU neighbour propagation, loc   -- 17869                   -- 21225
+img/1449661595134.png            -- GPU Union-find                   -- 1566                    -- 5032
+img/1449661595134.png            -- GPU Union-find, localer          -- 3938                    -- 7702
+img/1449661595134.png            -- GPU Union-find + oneshot         -- 2309                    -- 5954
+img/1449661595134.png            -- GPU plus propagation             -- 34601                   -- 38420
+img/1449661595134.png            -- GPU line editing                 -- 306545                  -- 309957
+img/1449661595134.png            -- GPU lines                        -- 159892                  -- 163257
+img/1449910616052.png            -- CPU one-pass                     -- 10430                   -- 12104
+img/1449910616052.png            -- CPU union-find                   -- 136509                  -- 139656
+img/1449910616052.png            -- CPU union-find, reusing          -- 9249                    -- 12404
+img/1449910616052.png            -- CPU linear two-scan              -- 14210                   -- 17355
+img/1449910616052.png            -- GPU neighbour propagation        -- 772508                  -- 779066
+img/1449910616052.png            -- GPU neighbour propagation, loc   -- 253814                  -- 260410
+img/1449910616052.png            -- GPU Union-find                   -- 3436                    -- 10032
+img/1449910616052.png            -- GPU Union-find, localer          -- 11202                   -- 17724
+img/1449910616052.png            -- GPU Union-find + oneshot         -- 7251                    -- 13800
+img/1449910616052.png            -- GPU plus propagation             -- 485231                  -- 491777
+img/1449910616052.png            -- GPU line editing                 -- 493949                  -- 500457
+img/1449910616052.png            -- GPU lines                        -- 260358                  -- 266934
+img/1449951130528.png            -- CPU one-pass                     -- 12471                   -- 13425
+img/1449951130528.png            -- CPU union-find                   -- 105986                  -- 106928
+img/1449951130528.png            -- CPU union-find, reusing          -- 8066                    -- 9172
+img/1449951130528.png            -- CPU linear two-scan              -- 10617                   -- 11616
+img/1449951130528.png            -- GPU neighbour propagation        -- 384567                  -- 388649
+img/1449951130528.png            -- GPU neighbour propagation, loc   -- 257091                  -- 260355
+img/1449951130528.png            -- GPU Union-find                   -- 2999                    -- 6255
+img/1449951130528.png            -- GPU Union-find, localer          -- 12295                   -- 15552
+img/1449951130528.png            -- GPU Union-find + oneshot         -- 8332                    -- 11588
+img/1449951130528.png            -- GPU plus propagation             -- 2706505                 -- 2709806
+img/1449951130528.png            -- GPU line editing                 -- 483286                  -- 486574
+img/1449951130528.png            -- GPU lines                        -- 251741                  -- 255041
+img/1449977373055.png            -- CPU one-pass                     -- 9048                    -- 9892
+img/1449977373055.png            -- CPU union-find                   -- 164528                  -- 165371
+img/1449977373055.png            -- CPU union-find, reusing          -- 7771                    -- 8599
+img/1449977373055.png            -- CPU linear two-scan              -- 18221                   -- 19057
+img/1449977373055.png            -- GPU neighbour propagation        -- 386785                  -- 389652
+img/1449977373055.png            -- GPU neighbour propagation, loc   -- 164814                  -- 167755
+img/1449977373055.png            -- GPU Union-find                   -- 2999                    -- 5878
+img/1449977373055.png            -- GPU Union-find, localer          -- 10890                   -- 13757
+img/1449977373055.png            -- GPU Union-find + oneshot         -- 8469                    -- 11339
+img/1449977373055.png            -- GPU plus propagation             -- 609640                  -- 612553
+img/1449977373055.png            -- GPU line editing                 -- 323539                  -- 326418
+img/1449977373055.png            -- GPU lines                        -- 165845                  -- 168718
+img/1450910472581.png            -- CPU one-pass                     -- 1794                    -- 2186
+img/1450910472581.png            -- CPU union-find                   -- 14641                   -- 15014
+img/1450910472581.png            -- CPU union-find, reusing          -- 1803                    -- 2197
+img/1450910472581.png            -- CPU linear two-scan              -- 2317                    -- 2713
+img/1450910472581.png            -- GPU neighbour propagation        -- 42486                   -- 43996
+img/1450910472581.png            -- GPU neighbour propagation, loc   -- 12544                   -- 14064
+img/1450910472581.png            -- GPU Union-find                   -- 946                     -- 2510
+img/1450910472581.png            -- GPU Union-find, localer          -- 2349                    -- 3893
+img/1450910472581.png            -- GPU Union-find + oneshot         -- 1524                    -- 3044
+img/1450910472581.png            -- GPU plus propagation             -- 19625                   -- 21168
+img/1450910472581.png            -- GPU line editing                 -- 81936                   -- 83456
+img/1450910472581.png            -- GPU lines                        -- 45238                   -- 46732
+img/164e836019d078d35d3cd6ae568077f5.png -- CPU one-pass                     -- 14123                   -- 14978
+img/164e836019d078d35d3cd6ae568077f5.png -- CPU union-find                   -- 305796                  -- 306669
+img/164e836019d078d35d3cd6ae568077f5.png -- CPU union-find, reusing          -- 9593                    -- 10468
+img/164e836019d078d35d3cd6ae568077f5.png -- CPU linear two-scan              -- 47486                   -- 48360
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU neighbour propagation        -- 640358                  -- 643354
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU neighbour propagation, loc   -- 291616                  -- 294612
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU Union-find                   -- 3492                    -- 6483
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU Union-find, localer          -- 13211                   -- 16201
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU Union-find + oneshot         -- 10322                   -- 13334
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU plus propagation             -- 1342833                 -- 1345835
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU line editing                 -- 439451                  -- 442436
+img/164e836019d078d35d3cd6ae568077f5.png -- GPU lines                        -- 225537                  -- 228564
+img/2dbb9053d29841b279ca776f8c9b1100.png -- CPU one-pass                     -- 1778                    -- 2410
+img/2dbb9053d29841b279ca776f8c9b1100.png -- CPU union-find                   -- 8930                    -- 9499
+img/2dbb9053d29841b279ca776f8c9b1100.png -- CPU union-find, reusing          -- 2125                    -- 2691
+img/2dbb9053d29841b279ca776f8c9b1100.png -- CPU linear two-scan              -- 3156                    -- 3738
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU neighbour propagation        -- 24792                   -- 26833
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU neighbour propagation, loc   -- 7080                    -- 9116
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU Union-find                   -- 1030                    -- 3069
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU Union-find, localer          -- 2171                    -- 4213
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU Union-find + oneshot         -- 1321                    -- 3356
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU plus propagation             -- 9225                    -- 11253
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU line editing                 -- 97541                   -- 99583
+img/2dbb9053d29841b279ca776f8c9b1100.png -- GPU lines                        -- 53323                   -- 55362
+img/anime_wallpaper_rain.png     -- CPU one-pass                     -- 2566                    -- 3118
+img/anime_wallpaper_rain.png     -- CPU union-find                   -- 21900                   -- 22434
+img/anime_wallpaper_rain.png     -- CPU union-find, reusing          -- 2601                    -- 3122
+img/anime_wallpaper_rain.png     -- CPU linear two-scan              -- 3410                    -- 3932
+img/anime_wallpaper_rain.png     -- GPU neighbour propagation        -- 82368                   -- 84262
+img/anime_wallpaper_rain.png     -- GPU neighbour propagation, loc   -- 31832                   -- 33712
+img/anime_wallpaper_rain.png     -- GPU Union-find                   -- 1237                    -- 3121
+img/anime_wallpaper_rain.png     -- GPU Union-find, localer          -- 3226                    -- 5112
+img/anime_wallpaper_rain.png     -- GPU Union-find + oneshot         -- 2488                    -- 4377
+img/anime_wallpaper_rain.png     -- GPU plus propagation             -- 54070                   -- 55947
+img/anime_wallpaper_rain.png     -- GPU line editing                 -- 146968                  -- 148860
+img/anime_wallpaper_rain.png     -- GPU lines                        -- 79839                   -- 81732
+img/cavestoryfixt.png            -- CPU one-pass                     -- 5525                    -- 6387
+img/cavestoryfixt.png            -- CPU union-find                   -- 70240                   -- 71093
+img/cavestoryfixt.png            -- CPU union-find, reusing          -- 4392                    -- 5248
+img/cavestoryfixt.png            -- CPU linear two-scan              -- 6974                    -- 7888
+img/cavestoryfixt.png            -- GPU neighbour propagation        -- 243909                  -- 246891
+img/cavestoryfixt.png            -- GPU neighbour propagation, loc   -- 37934                   -- 40908
+img/cavestoryfixt.png            -- GPU Union-find                   -- 1537                    -- 4516
+img/cavestoryfixt.png            -- GPU Union-find, localer          -- 4625                    -- 7606
+img/cavestoryfixt.png            -- GPU Union-find + oneshot         -- 3880                    -- 6860
+img/cavestoryfixt.png            -- GPU plus propagation             -- 357253                  -- 360230
+img/cavestoryfixt.png            -- GPU line editing                 -- 115500                  -- 118499
+img/cavestoryfixt.png            -- GPU lines                        -- 63130                   -- 66112
+img/Fooly Cooly.png              -- CPU one-pass                     -- 2133                    -- 2999
+img/Fooly Cooly.png              -- CPU union-find                   -- 6903                    -- 7747
+img/Fooly Cooly.png              -- CPU union-find, reusing          -- 2859                    -- 3713
+img/Fooly Cooly.png              -- CPU linear two-scan              -- 4941                    -- 5779
+img/Fooly Cooly.png              -- GPU neighbour propagation        -- 50798                   -- 53781
+img/Fooly Cooly.png              -- GPU neighbour propagation, loc   -- 10133                   -- 13122
+img/Fooly Cooly.png              -- GPU Union-find                   -- 1247                    -- 4216
+img/Fooly Cooly.png              -- GPU Union-find, localer          -- 2740                    -- 5750
+img/Fooly Cooly.png              -- GPU Union-find + oneshot         -- 1768                    -- 4780
+img/Fooly Cooly.png              -- GPU plus propagation             -- 8628                    -- 11607
+img/Fooly Cooly.png              -- GPU line editing                 -- 135812                  -- 138792
+img/Fooly Cooly.png              -- GPU lines                        -- 73489                   -- 76467
+img/foo.png                      -- CPU one-pass                     -- 2132                    -- 2987
+img/foo.png                      -- CPU union-find                   -- 6912                    -- 7746
+img/foo.png                      -- CPU union-find, reusing          -- 2880                    -- 3717
+img/foo.png                      -- CPU linear two-scan              -- 4936                    -- 5789
+img/foo.png                      -- GPU neighbour propagation        -- 50663                   -- 53659
+img/foo.png                      -- GPU neighbour propagation, loc   -- 9859                    -- 12843
+img/foo.png                      -- GPU Union-find                   -- 1207                    -- 4180
+img/foo.png                      -- GPU Union-find, localer          -- 2506                    -- 5491
+img/foo.png                      -- GPU Union-find + oneshot         -- 1705                    -- 4677
+img/foo.png                      -- GPU plus propagation             -- 8604                    -- 11587
+img/foo.png                      -- GPU line editing                 -- 134983                  -- 137958
+img/foo.png                      -- GPU lines                        -- 73430                   -- 76416
+img/King of Hyrule.png           -- CPU one-pass                     -- 2090                    -- 2946
+img/King of Hyrule.png           -- CPU union-find                   -- 6503                    -- 7355
+img/King of Hyrule.png           -- CPU union-find, reusing          -- 2855                    -- 3696
+img/King of Hyrule.png           -- CPU linear two-scan              -- 4923                    -- 5763
+img/King of Hyrule.png           -- GPU neighbour propagation        -- 69128                   -- 72122
+img/King of Hyrule.png           -- GPU neighbour propagation, loc   -- 13779                   -- 16763
+img/King of Hyrule.png           -- GPU Union-find                   -- 1224                    -- 4196
+img/King of Hyrule.png           -- GPU Union-find, localer          -- 2459                    -- 5438
+img/King of Hyrule.png           -- GPU Union-find + oneshot         -- 1650                    -- 4622
+img/King of Hyrule.png           -- GPU plus propagation             -- 8616                    -- 11593
+img/King of Hyrule.png           -- GPU line editing                 -- 158387                  -- 161361
+img/King of Hyrule.png           -- GPU lines                        -- 85608                   -- 88593
+img/sheep.png                    -- CPU one-pass                     -- 793                     -- 844
+img/sheep.png                    -- CPU union-find                   -- 5425                    -- 5510
+img/sheep.png                    -- CPU union-find, reusing          -- 691                     -- 757
+img/sheep.png                    -- CPU linear two-scan              -- 715                     -- 776
+img/sheep.png                    -- GPU neighbour propagation        -- 17277                   -- 18001
+img/sheep.png                    -- GPU neighbour propagation, loc   -- 7823                    -- 8485
+img/sheep.png                    -- GPU Union-find                   -- 529                     -- 1182
+img/sheep.png                    -- GPU Union-find, localer          -- 1391                    -- 2035
+img/sheep.png                    -- GPU Union-find + oneshot         -- 924                     -- 1569
+img/sheep.png                    -- GPU plus propagation             -- 8194                    -- 8830
+img/sheep.png                    -- GPU line editing                 -- 8667                    -- 9308
+img/sheep.png                    -- GPU lines                        -- 4890                    -- 5531
+img/wallpaper-109558.png         -- CPU one-pass                     -- 2093                    -- 2862
+img/wallpaper-109558.png         -- CPU union-find                   -- 8914                    -- 9650
+img/wallpaper-109558.png         -- CPU union-find, reusing          -- 2585                    -- 3322
+img/wallpaper-109558.png         -- CPU linear two-scan              -- 4030                    -- 4764
+img/wallpaper-109558.png         -- GPU neighbour propagation        -- 74022                   -- 76617
+img/wallpaper-109558.png         -- GPU neighbour propagation, loc   -- 19651                   -- 22254
+img/wallpaper-109558.png         -- GPU Union-find                   -- 1031                    -- 3626
+img/wallpaper-109558.png         -- GPU Union-find, localer          -- 2170                    -- 4764
+img/wallpaper-109558.png         -- GPU Union-find + oneshot         -- 1409                    -- 4016
+img/wallpaper-109558.png         -- GPU plus propagation             -- 8689                    -- 11272
+img/wallpaper-109558.png         -- GPU line editing                 -- 95751                   -- 98353
+img/wallpaper-109558.png         -- GPU lines                        -- 52565                   -- 55152
+img/wallpaper-1243645.png        -- CPU one-pass                     -- 1297                    -- 1962
+img/wallpaper-1243645.png        -- CPU union-find                   -- 2810                    -- 3430
+img/wallpaper-1243645.png        -- CPU union-find, reusing          -- 1821                    -- 2438
+img/wallpaper-1243645.png        -- CPU linear two-scan              -- 3011                    -- 3630
+img/wallpaper-1243645.png        -- GPU neighbour propagation        -- 31067                   -- 33264
+img/wallpaper-1243645.png        -- GPU neighbour propagation, loc   -- 6965                    -- 9181
+img/wallpaper-1243645.png        -- GPU Union-find                   -- 857                     -- 3077
+img/wallpaper-1243645.png        -- GPU Union-find, localer          -- 1557                    -- 3757
+img/wallpaper-1243645.png        -- GPU Union-find + oneshot         -- 1101                    -- 3312
+img/wallpaper-1243645.png        -- GPU plus propagation             -- 3740                    -- 5956
+img/wallpaper-1243645.png        -- GPU line editing                 -- 103013                  -- 105220
+img/wallpaper-1243645.png        -- GPU lines                        -- 55699                   -- 57916
+img/wallpaper-139219.png         -- CPU one-pass                     -- 5037                    -- 5888
+img/wallpaper-139219.png         -- CPU union-find                   -- 67270                   -- 68108
+img/wallpaper-139219.png         -- CPU union-find, reusing          -- 4864                    -- 5698
+img/wallpaper-139219.png         -- CPU linear two-scan              -- 6956                    -- 7788
+img/wallpaper-139219.png         -- GPU neighbour propagation        -- 194284                  -- 197297
+img/wallpaper-139219.png         -- GPU neighbour propagation, loc   -- 95336                   -- 98311
+img/wallpaper-139219.png         -- GPU Union-find                   -- 2052                    -- 5065
+img/wallpaper-139219.png         -- GPU Union-find, localer          -- 6206                    -- 9181
+img/wallpaper-139219.png         -- GPU Union-find + oneshot         -- 4020                    -- 7014
+img/wallpaper-139219.png         -- GPU plus propagation             -- 180313                  -- 183296
+img/wallpaper-139219.png         -- GPU line editing                 -- 469227                  -- 472207
+img/wallpaper-139219.png         -- GPU lines                        -- 245725                  -- 248707
+img/wallpaper-139239.png         -- CPU one-pass                     -- 4459                    -- 5319
+img/wallpaper-139239.png         -- CPU union-find                   -- 63436                   -- 64302
+img/wallpaper-139239.png         -- CPU union-find, reusing          -- 4240                    -- 5086
+img/wallpaper-139239.png         -- CPU linear two-scan              -- 6265                    -- 7113
+img/wallpaper-139239.png         -- GPU neighbour propagation        -- 133932                  -- 136924
+img/wallpaper-139239.png         -- GPU neighbour propagation, loc   -- 31564                   -- 34562
+img/wallpaper-139239.png         -- GPU Union-find                   -- 1857                    -- 5010
+img/wallpaper-139239.png         -- GPU Union-find, localer          -- 4806                    -- 7802
+img/wallpaper-139239.png         -- GPU Union-find + oneshot         -- 3162                    -- 6141
+img/wallpaper-139239.png         -- GPU plus propagation             -- 124770                  -- 127762
+img/wallpaper-139239.png         -- GPU line editing                 -- 207430                  -- 210424
+img/wallpaper-139239.png         -- GPU lines                        -- 111650                  -- 114638
+img/wallpaper-139253.png         -- CPU one-pass                     -- 3584                    -- 4438
+img/wallpaper-139253.png         -- CPU union-find                   -- 46138                   -- 46972
+img/wallpaper-139253.png         -- CPU union-find, reusing          -- 3908                    -- 4755
+img/wallpaper-139253.png         -- CPU linear two-scan              -- 6384                    -- 7220
+img/wallpaper-139253.png         -- GPU neighbour propagation        -- 175503                  -- 178494
+img/wallpaper-139253.png         -- GPU neighbour propagation, loc   -- 45471                   -- 48460
+img/wallpaper-139253.png         -- GPU Union-find                   -- 1652                    -- 4632
+img/wallpaper-139253.png         -- GPU Union-find, localer          -- 4265                    -- 7241
+img/wallpaper-139253.png         -- GPU Union-find + oneshot         -- 2847                    -- 5848
+img/wallpaper-139253.png         -- GPU plus propagation             -- 64084                   -- 67066
+img/wallpaper-139253.png         -- GPU line editing                 -- 193394                  -- 196379
+img/wallpaper-139253.png         -- GPU lines                        -- 104093                  -- 107079
+img/wallpaper-139258.png         -- CPU one-pass                     -- 10039                   -- 10903
+img/wallpaper-139258.png         -- CPU union-find                   -- 89506                   -- 90357
+img/wallpaper-139258.png         -- CPU union-find, reusing          -- 7531                    -- 8376
+img/wallpaper-139258.png         -- CPU linear two-scan              -- 9850                    -- 10694
+img/wallpaper-139258.png         -- GPU neighbour propagation        -- 420539                  -- 423530
+img/wallpaper-139258.png         -- GPU neighbour propagation, loc   -- 245461                  -- 248460
+img/wallpaper-139258.png         -- GPU Union-find                   -- 2961                    -- 5948
+img/wallpaper-139258.png         -- GPU Union-find, localer          -- 10724                   -- 13725
+img/wallpaper-139258.png         -- GPU Union-find + oneshot         -- 7229                    -- 10221
+img/wallpaper-139258.png         -- GPU plus propagation             -- 612528                  -- 615522
+img/wallpaper-139258.png         -- GPU line editing                 -- 447591                  -- 450572
+img/wallpaper-139258.png         -- GPU lines                        -- 231198                  -- 234201
+img/wallpaper-139290.png         -- CPU one-pass                     -- 3775                    -- 4632
+img/wallpaper-139290.png         -- CPU union-find                   -- 35584                   -- 36423
+img/wallpaper-139290.png         -- CPU union-find, reusing          -- 3667                    -- 4518
+img/wallpaper-139290.png         -- CPU linear two-scan              -- 6263                    -- 7100
+img/wallpaper-139290.png         -- GPU neighbour propagation        -- 191683                  -- 194660
+img/wallpaper-139290.png         -- GPU neighbour propagation, loc   -- 59999                   -- 62982
+img/wallpaper-139290.png         -- GPU Union-find                   -- 1546                    -- 4529
+img/wallpaper-139290.png         -- GPU Union-find, localer          -- 4087                    -- 7080
+img/wallpaper-139290.png         -- GPU Union-find + oneshot         -- 2683                    -- 5674
+img/wallpaper-139290.png         -- GPU plus propagation             -- 91201                   -- 94185
+img/wallpaper-139290.png         -- GPU line editing                 -- 242408                  -- 245394
+img/wallpaper-139290.png         -- GPU lines                        -- 128872                  -- 131858
+img/wallpaper-139315.png         -- CPU one-pass                     -- 11026                   -- 11882
+img/wallpaper-139315.png         -- CPU union-find                   -- 69337                   -- 70167
+img/wallpaper-139315.png         -- CPU union-find, reusing          -- 6677                    -- 7505
+img/wallpaper-139315.png         -- CPU linear two-scan              -- 7871                    -- 8704
+img/wallpaper-139315.png         -- GPU neighbour propagation        -- 286157                  -- 289140
+img/wallpaper-139315.png         -- GPU neighbour propagation, loc   -- 130548                  -- 133537
+img/wallpaper-139315.png         -- GPU Union-find                   -- 2199                    -- 5191
+img/wallpaper-139315.png         -- GPU Union-find, localer          -- 10424                   -- 13403
+img/wallpaper-139315.png         -- GPU Union-find + oneshot         -- 7199                    -- 10182
+img/wallpaper-139315.png         -- GPU plus propagation             -- 362324                  -- 365309
+img/wallpaper-139315.png         -- GPU line editing                 -- 108115                  -- 111101
+img/wallpaper-139315.png         -- GPU lines                        -- 50914                   -- 53892
+img/wallpaper-139319.png         -- CPU one-pass                     -- 14059                   -- 14924
+img/wallpaper-139319.png         -- CPU union-find                   -- 95849                   -- 96712
+img/wallpaper-139319.png         -- CPU union-find, reusing          -- 8542                    -- 9388
+img/wallpaper-139319.png         -- CPU linear two-scan              -- 9571                    -- 10417
+img/wallpaper-139319.png         -- GPU neighbour propagation        -- 599895                  -- 602887
+img/wallpaper-139319.png         -- GPU neighbour propagation, loc   -- 275373                  -- 278367
+img/wallpaper-139319.png         -- GPU Union-find                   -- 3129                    -- 6105
+img/wallpaper-139319.png         -- GPU Union-find, localer          -- 14040                   -- 17025
+img/wallpaper-139319.png         -- GPU Union-find + oneshot         -- 9696                    -- 12669
+img/wallpaper-139319.png         -- GPU plus propagation             -- 638167                  -- 641169
+img/wallpaper-139319.png         -- GPU line editing                 -- 134385                  -- 137388
+img/wallpaper-139319.png         -- GPU lines                        -- 69884                   -- 72884
+img/wallpaper-139325.png         -- CPU one-pass                     -- 12095                   -- 12964
+img/wallpaper-139325.png         -- CPU union-find                   -- 116688                  -- 117536
+img/wallpaper-139325.png         -- CPU union-find, reusing          -- 7636                    -- 8473
+img/wallpaper-139325.png         -- CPU linear two-scan              -- 11328                   -- 12166
+img/wallpaper-139325.png         -- GPU neighbour propagation        -- 536507                  -- 539503
+img/wallpaper-139325.png         -- GPU neighbour propagation, loc   -- 233493                  -- 236499
+img/wallpaper-139325.png         -- GPU Union-find                   -- 3311                    -- 6303
+img/wallpaper-139325.png         -- GPU Union-find, localer          -- 11944                   -- 14970
+img/wallpaper-139325.png         -- GPU Union-find + oneshot         -- 7845                    -- 10828
+img/wallpaper-139325.png         -- GPU plus propagation             -- 590594                  -- 593593
+img/wallpaper-139325.png         -- GPU line editing                 -- 180158                  -- 183153
+img/wallpaper-139325.png         -- GPU lines                        -- 96195                   -- 99193
+img/wallpaper-139368.png         -- CPU one-pass                     -- 10429                   -- 11283
+img/wallpaper-139368.png         -- CPU union-find                   -- 110733                  -- 111587
+img/wallpaper-139368.png         -- CPU union-find, reusing          -- 7580                    -- 8419
+img/wallpaper-139368.png         -- CPU linear two-scan              -- 10304                   -- 11157
+img/wallpaper-139368.png         -- GPU neighbour propagation        -- 449423                  -- 452413
+img/wallpaper-139368.png         -- GPU neighbour propagation, loc   -- 215113                  -- 218118
+img/wallpaper-139368.png         -- GPU Union-find                   -- 3323                    -- 6342
+img/wallpaper-139368.png         -- GPU Union-find, localer          -- 11497                   -- 14488
+img/wallpaper-139368.png         -- GPU Union-find + oneshot         -- 7724                    -- 10708
+img/wallpaper-139368.png         -- GPU plus propagation             -- 1227481                 -- 1230473
+img/wallpaper-139368.png         -- GPU line editing                 -- 346741                  -- 349735
+img/wallpaper-139368.png         -- GPU lines                        -- 179907                  -- 182896
+img/wallpaper-1415829.png        -- CPU one-pass                     -- 8651                    -- 9504
+img/wallpaper-1415829.png        -- CPU union-find                   -- 103920                  -- 104784
+img/wallpaper-1415829.png        -- CPU union-find, reusing          -- 6537                    -- 7376
+img/wallpaper-1415829.png        -- CPU linear two-scan              -- 12532                   -- 13382
+img/wallpaper-1415829.png        -- GPU neighbour propagation        -- 390369                  -- 393360
+img/wallpaper-1415829.png        -- GPU neighbour propagation, loc   -- 191498                  -- 194536
+img/wallpaper-1415829.png        -- GPU Union-find                   -- 2557                    -- 5542
+img/wallpaper-1415829.png        -- GPU Union-find, localer          -- 9303                    -- 12289
+img/wallpaper-1415829.png        -- GPU Union-find + oneshot         -- 6176                    -- 9166
+img/wallpaper-1415829.png        -- GPU plus propagation             -- 736205                  -- 739226
+img/wallpaper-1415829.png        -- GPU line editing                 -- 311723                  -- 314756
+img/wallpaper-1415829.png        -- GPU lines                        -- 166616                  -- 169631
+img/wallpaper-1424435.png        -- CPU one-pass                     -- 12096                   -- 12960
+img/wallpaper-1424435.png        -- CPU union-find                   -- 82070                   -- 82963
+img/wallpaper-1424435.png        -- CPU union-find, reusing          -- 7283                    -- 8185
+img/wallpaper-1424435.png        -- CPU linear two-scan              -- 8674                    -- 9527
+img/wallpaper-1424435.png        -- GPU neighbour propagation        -- 478541                  -- 481532
+img/wallpaper-1424435.png        -- GPU neighbour propagation, loc   -- 274014                  -- 277006
+img/wallpaper-1424435.png        -- GPU Union-find                   -- 3120                    -- 6101
+img/wallpaper-1424435.png        -- GPU Union-find, localer          -- 11279                   -- 14263
+img/wallpaper-1424435.png        -- GPU Union-find + oneshot         -- 7999                    -- 10998
+img/wallpaper-1424435.png        -- GPU plus propagation             -- 3177581                 -- 3180657
+img/wallpaper-1424435.png        -- GPU line editing                 -- 559740                  -- 562918
+img/wallpaper-1424435.png        -- GPU lines                        -- 291638                  -- 294636
+img/wallpaper-164322.png         -- CPU one-pass                     -- 795                     -- 1192
+img/wallpaper-164322.png         -- CPU union-find                   -- 2134                    -- 2494
+img/wallpaper-164322.png         -- CPU union-find, reusing          -- 1058                    -- 1430
+img/wallpaper-164322.png         -- CPU linear two-scan              -- 1731                    -- 2093
+img/wallpaper-164322.png         -- GPU neighbour propagation        -- 43697                   -- 45111
+img/wallpaper-164322.png         -- GPU neighbour propagation, loc   -- 3850                    -- 5252
+img/wallpaper-164322.png         -- GPU Union-find                   -- 677                     -- 2112
+img/wallpaper-164322.png         -- GPU Union-find, localer          -- 1126                    -- 2556
+img/wallpaper-164322.png         -- GPU Union-find + oneshot         -- 958                     -- 2389
+img/wallpaper-164322.png         -- GPU plus propagation             -- 2913                    -- 4345
+img/wallpaper-164322.png         -- GPU line editing                 -- 26724                   -- 28162
+img/wallpaper-164322.png         -- GPU lines                        -- 15897                   -- 17309
+img/wallpaper-173507.png         -- CPU one-pass                     -- 1356                    -- 1864
+img/wallpaper-173507.png         -- CPU union-find                   -- 6075                    -- 6523
+img/wallpaper-173507.png         -- CPU union-find, reusing          -- 1624                    -- 2081
+img/wallpaper-173507.png         -- CPU linear two-scan              -- 2396                    -- 2858
+img/wallpaper-173507.png         -- GPU neighbour propagation        -- 27830                   -- 29522
+img/wallpaper-173507.png         -- GPU neighbour propagation, loc   -- 10933                   -- 12638
+img/wallpaper-173507.png         -- GPU Union-find                   -- 767                     -- 2477
+img/wallpaper-173507.png         -- GPU Union-find, localer          -- 1881                    -- 3590
+img/wallpaper-173507.png         -- GPU Union-find + oneshot         -- 1346                    -- 3033
+img/wallpaper-173507.png         -- GPU plus propagation             -- 6237                    -- 7932
+img/wallpaper-173507.png         -- GPU line editing                 -- 49433                   -- 51141
+img/wallpaper-173507.png         -- GPU lines                        -- 27543                   -- 29249
+img/wallpaper-174412.png         -- CPU one-pass                     -- 18152                   -- 19333
+img/wallpaper-174412.png         -- CPU union-find                   -- 223624                  -- 225738
+img/wallpaper-174412.png         -- CPU union-find, reusing          -- 11382                   -- 13424
+img/wallpaper-174412.png         -- CPU linear two-scan              -- 13293                   -- 15336
+img/wallpaper-174412.png         -- GPU neighbour propagation        -- 858023                  -- 862537
+img/wallpaper-174412.png         -- GPU neighbour propagation, loc   -- 545027                  -- 549514
+img/wallpaper-174412.png         -- GPU Union-find                   -- 3761                    -- 8739
+img/wallpaper-174412.png         -- GPU Union-find, localer          -- 18790                   -- 23331
+img/wallpaper-174412.png         -- GPU Union-find + oneshot         -- 9595                    -- 14127
+img/wallpaper-174412.png         -- GPU plus propagation             -- 722771                  -- 727262
+img/wallpaper-174412.png         -- GPU line editing                 -- 207252                  -- 211794
+img/wallpaper-174412.png         -- GPU lines                        -- 112109                  -- 116619
+img/wallpaper-31739.png          -- CPU one-pass                     -- 861                     -- 1328
+img/wallpaper-31739.png          -- CPU union-find                   -- 1535                    -- 2099
+img/wallpaper-31739.png          -- CPU union-find, reusing          -- 1254                    -- 1716
+img/wallpaper-31739.png          -- CPU linear two-scan              -- 2017                    -- 2473
+img/wallpaper-31739.png          -- GPU neighbour propagation        -- 13374                   -- 15073
+img/wallpaper-31739.png          -- GPU neighbour propagation, loc   -- 3127                    -- 4836
+img/wallpaper-31739.png          -- GPU Union-find                   -- 674                     -- 2376
+img/wallpaper-31739.png          -- GPU Union-find, localer          -- 961                     -- 2672
+img/wallpaper-31739.png          -- GPU Union-find + oneshot         -- 898                     -- 2603
+img/wallpaper-31739.png          -- GPU plus propagation             -- 3113                    -- 4797
+img/wallpaper-31739.png          -- GPU line editing                 -- 74020                   -- 75722
+img/wallpaper-31739.png          -- GPU lines                        -- 40554                   -- 42242
+img/wallpaper-36493.png          -- CPU one-pass                     -- 14535                   -- 15510
+img/wallpaper-36493.png          -- CPU union-find                   -- 174317                  -- 175271
+img/wallpaper-36493.png          -- CPU union-find, reusing          -- 9426                    -- 10386
+img/wallpaper-36493.png          -- CPU linear two-scan              -- 28405                   -- 29373
+img/wallpaper-36493.png          -- GPU neighbour propagation        -- 688655                  -- 692733
+img/wallpaper-36493.png          -- GPU neighbour propagation, loc   -- 338135                  -- 341424
+img/wallpaper-36493.png          -- GPU Union-find                   -- 4188                    -- 7493
+img/wallpaper-36493.png          -- GPU Union-find, localer          -- 13156                   -- 16470
+img/wallpaper-36493.png          -- GPU Union-find + oneshot         -- 11303                   -- 14599
+img/wallpaper-36493.png          -- GPU plus propagation             -- 1802105                 -- 1805399
+img/wallpaper-36493.png          -- GPU line editing                 -- 366121                  -- 369388
+img/wallpaper-36493.png          -- GPU lines                        -- 184501                  -- 187784
+img/wallpaper-377816.png         -- CPU one-pass                     -- 11220                   -- 11838
+img/wallpaper-377816.png         -- CPU union-find                   -- 49646                   -- 50211
+img/wallpaper-377816.png         -- CPU union-find, reusing          -- 5920                    -- 6483
+img/wallpaper-377816.png         -- CPU linear two-scan              -- 7075                    -- 7641
+img/wallpaper-377816.png         -- GPU neighbour propagation        -- 326017                  -- 328082
+img/wallpaper-377816.png         -- GPU neighbour propagation, loc   -- 181960                  -- 184028
+img/wallpaper-377816.png         -- GPU Union-find                   -- 2343                    -- 4404
+img/wallpaper-377816.png         -- GPU Union-find, localer          -- 8879                    -- 10938
+img/wallpaper-377816.png         -- GPU Union-find + oneshot         -- 7012                    -- 9071
+img/wallpaper-377816.png         -- GPU plus propagation             -- 469743                  -- 471810
+img/wallpaper-377816.png         -- GPU line editing                 -- 64910                   -- 66961
+img/wallpaper-377816.png         -- GPU lines                        -- 31012                   -- 33078
+img/wallpaper-425858.png         -- CPU one-pass                     -- 10339                   -- 11197
+img/wallpaper-425858.png         -- CPU union-find                   -- 62772                   -- 63598
+img/wallpaper-425858.png         -- CPU union-find, reusing          -- 6504                    -- 7357
+img/wallpaper-425858.png         -- CPU linear two-scan              -- 8287                    -- 9109
+img/wallpaper-425858.png         -- GPU neighbour propagation        -- 509951                  -- 512946
+img/wallpaper-425858.png         -- GPU neighbour propagation, loc   -- 177131                  -- 180154
+img/wallpaper-425858.png         -- GPU Union-find                   -- 2709                    -- 5690
+img/wallpaper-425858.png         -- GPU Union-find, localer          -- 9771                    -- 12757
+img/wallpaper-425858.png         -- GPU Union-find + oneshot         -- 6607                    -- 9597
+img/wallpaper-425858.png         -- GPU plus propagation             -- 421578                  -- 424564
+img/wallpaper-425858.png         -- GPU line editing                 -- 152315                  -- 155336
+img/wallpaper-425858.png         -- GPU lines                        -- 80858                   -- 83837
+img/wallpaper-446507.png         -- CPU one-pass                     -- 12705                   -- 13568
+img/wallpaper-446507.png         -- CPU union-find                   -- 92332                   -- 93166
+img/wallpaper-446507.png         -- CPU union-find, reusing          -- 8235                    -- 9072
+img/wallpaper-446507.png         -- CPU linear two-scan              -- 8951                    -- 9786
+img/wallpaper-446507.png         -- GPU neighbour propagation        -- 617153                  -- 620142
+img/wallpaper-446507.png         -- GPU neighbour propagation, loc   -- 394481                  -- 397469
+img/wallpaper-446507.png         -- GPU Union-find                   -- 3496                    -- 6485
+img/wallpaper-446507.png         -- GPU Union-find, localer          -- 13010                   -- 15994
+img/wallpaper-446507.png         -- GPU Union-find + oneshot         -- 8919                    -- 11896
+img/wallpaper-446507.png         -- GPU plus propagation             -- 3768764                 -- 3771759
+img/wallpaper-446507.png         -- GPU line editing                 -- 481464                  -- 484451
+img/wallpaper-446507.png         -- GPU lines                        -- 246610                  -- 249589
+img/wallpaper-50518.png          -- CPU one-pass                     -- 11041                   -- 11646
+img/wallpaper-50518.png          -- CPU union-find                   -- 34263                   -- 34825
+img/wallpaper-50518.png          -- CPU union-find, reusing          -- 5667                    -- 6248
+img/wallpaper-50518.png          -- CPU linear two-scan              -- 5987                    -- 6554
+img/wallpaper-50518.png          -- GPU neighbour propagation        -- 319701                  -- 321767
+img/wallpaper-50518.png          -- GPU neighbour propagation, loc   -- 196631                  -- 198697
+img/wallpaper-50518.png          -- GPU Union-find                   -- 2302                    -- 4367
+img/wallpaper-50518.png          -- GPU Union-find, localer          -- 10145                   -- 12204
+img/wallpaper-50518.png          -- GPU Union-find + oneshot         -- 6792                    -- 8869
+img/wallpaper-50518.png          -- GPU plus propagation             -- 487508                  -- 489567
+img/wallpaper-50518.png          -- GPU line editing                 -- 64591                   -- 66659
+img/wallpaper-50518.png          -- GPU lines                        -- 34683                   -- 36753
+img/wallpaper-648480.png         -- CPU one-pass                     -- 3857                    -- 4349
+img/wallpaper-648480.png         -- CPU union-find                   -- 67846                   -- 68302
+img/wallpaper-648480.png         -- CPU union-find, reusing          -- 3221                    -- 3679
+img/wallpaper-648480.png         -- CPU linear two-scan              -- 9878                    -- 10336
+img/wallpaper-648480.png         -- GPU neighbour propagation        -- 207330                  -- 209041
+img/wallpaper-648480.png         -- GPU neighbour propagation, loc   -- 76362                   -- 78070
+img/wallpaper-648480.png         -- GPU Union-find                   -- 1907                    -- 3609
+img/wallpaper-648480.png         -- GPU Union-find, localer          -- 4919                    -- 6623
+img/wallpaper-648480.png         -- GPU Union-find + oneshot         -- 3108                    -- 4816
+img/wallpaper-648480.png         -- GPU plus propagation             -- 151874                  -- 153602
+img/wallpaper-648480.png         -- GPU line editing                 -- 103811                  -- 105517
+img/wallpaper-648480.png         -- GPU lines                        -- 55875                   -- 57583
+img/wallpaper-677411.png         -- CPU one-pass                     -- 63932                   -- 68943
+img/wallpaper-677411.png         -- CPU union-find                   -- 162319                  -- 167440
+img/wallpaper-677411.png         -- CPU union-find, reusing          -- 30407                   -- 35368
+img/wallpaper-677411.png         -- CPU linear two-scan              -- 33023                   -- 38027
+img/wallpaper-677411.png         -- GPU neighbour propagation        -- 3729377                 -- 3740070
+img/wallpaper-677411.png         -- GPU neighbour propagation, loc   -- 2121562                 -- 2132129
+img/wallpaper-677411.png         -- GPU Union-find                   -- 9815                    -- 20602
+img/wallpaper-677411.png         -- GPU Union-find, localer          -- 51394                   -- 61801
+img/wallpaper-677411.png         -- GPU Union-find + oneshot         -- 27708                   -- 38553
+img/wallpaper-677411.png         -- GPU plus propagation             -- 9618208                 -- 9628652
+img/wallpaper-677411.png         -- GPU line editing                 -- 475580                  -- 485989
+img/wallpaper-677411.png         -- GPU lines                        -- 252509                  -- 262917
+img/wallpaper-72570.png          -- CPU one-pass                     -- 4547                    -- 5404
+img/wallpaper-72570.png          -- CPU union-find                   -- 49995                   -- 50832
+img/wallpaper-72570.png          -- CPU union-find, reusing          -- 4321                    -- 5160
+img/wallpaper-72570.png          -- CPU linear two-scan              -- 6148                    -- 6988
+img/wallpaper-72570.png          -- GPU neighbour propagation        -- 210437                  -- 213416
+img/wallpaper-72570.png          -- GPU neighbour propagation, loc   -- 59182                   -- 62165
+img/wallpaper-72570.png          -- GPU Union-find                   -- 1718                    -- 4698
+img/wallpaper-72570.png          -- GPU Union-find, localer          -- 5158                    -- 8141
+img/wallpaper-72570.png          -- GPU Union-find + oneshot         -- 3480                    -- 6457
+img/wallpaper-72570.png          -- GPU plus propagation             -- 148049                  -- 151024
+img/wallpaper-72570.png          -- GPU line editing                 -- 206551                  -- 209535
+img/wallpaper-72570.png          -- GPU lines                        -- 103671                  -- 106650
+img/wallpaper-75701.png          -- CPU one-pass                     -- 1580                    -- 2429
+img/wallpaper-75701.png          -- CPU union-find                   -- 2216                    -- 3058
+img/wallpaper-75701.png          -- CPU union-find, reusing          -- 2484                    -- 3324
+img/wallpaper-75701.png          -- CPU linear two-scan              -- 4562                    -- 5446
+img/wallpaper-75701.png          -- GPU neighbour propagation        -- 8557                    -- 11544
+img/wallpaper-75701.png          -- GPU neighbour propagation, loc   -- 2799                    -- 5776
+img/wallpaper-75701.png          -- GPU Union-find                   -- 899                     -- 3873
+img/wallpaper-75701.png          -- GPU Union-find, localer          -- 1481                    -- 4463
+img/wallpaper-75701.png          -- GPU Union-find + oneshot         -- 1353                    -- 4325
+img/wallpaper-75701.png          -- GPU plus propagation             -- 2046                    -- 5033
+img/wallpaper-75701.png          -- GPU line editing                 -- 100033                  -- 103012
+img/wallpaper-75701.png          -- GPU lines                        -- 55192                   -- 58166
+img/wallpaper-950142.png         -- CPU one-pass                     -- 7893                    -- 8253
+img/wallpaper-950142.png         -- CPU union-find                   -- 22124                   -- 22475
+img/wallpaper-950142.png         -- CPU union-find, reusing          -- 3511                    -- 3865
+img/wallpaper-950142.png         -- CPU linear two-scan              -- 3595                    -- 3948
+img/wallpaper-950142.png         -- GPU neighbour propagation        -- 164402                  -- 165844
+img/wallpaper-950142.png         -- GPU neighbour propagation, loc   -- 83284                   -- 84714
+img/wallpaper-950142.png         -- GPU Union-find                   -- 1861                    -- 3302
+img/wallpaper-950142.png         -- GPU Union-find, localer          -- 6719                    -- 8153
+img/wallpaper-950142.png         -- GPU Union-find + oneshot         -- 4338                    -- 5784
+img/wallpaper-950142.png         -- GPU plus propagation             -- 344311                  -- 345742
+img/wallpaper-950142.png         -- GPU line editing                 -- 43248                   -- 44677
+img/wallpaper-950142.png         -- GPU lines                        -- 23605                   -- 25047
+img/White mage sprite.png        -- CPU one-pass                     -- 2415                    -- 3293
+img/White mage sprite.png        -- CPU union-find                   -- 4470                    -- 5336
+img/White mage sprite.png        -- CPU union-find, reusing          -- 3066                    -- 3932
+img/White mage sprite.png        -- CPU linear two-scan              -- 4749                    -- 5629
+img/White mage sprite.png        -- GPU neighbour propagation        -- 7931                    -- 10915
+img/White mage sprite.png        -- GPU neighbour propagation, loc   -- 2389                    -- 5370
+img/White mage sprite.png        -- GPU Union-find                   -- 1003                    -- 3991
+img/White mage sprite.png        -- GPU Union-find, localer          -- 2328                    -- 5324
+img/White mage sprite.png        -- GPU Union-find + oneshot         -- 1513                    -- 4530
+img/White mage sprite.png        -- GPU plus propagation             -- 1694                    -- 4709
+img/White mage sprite.png        -- GPU line editing                 -- 30981                   -- 33979
+img/White mage sprite.png        -- GPU lines                        -- 18906                   -- 21896
+img/Zelda is a Grill.png         -- CPU one-pass                     -- 12153                   -- 13019
+img/Zelda is a Grill.png         -- CPU union-find                   -- 83470                   -- 84411
+img/Zelda is a Grill.png         -- CPU union-find, reusing          -- 7708                    -- 8547
+img/Zelda is a Grill.png         -- CPU linear two-scan              -- 9619                    -- 10462
+img/Zelda is a Grill.png         -- GPU neighbour propagation        -- 476077                  -- 479049
+img/Zelda is a Grill.png         -- GPU neighbour propagation, loc   -- 215712                  -- 218694
+img/Zelda is a Grill.png         -- GPU Union-find                   -- 3859                    -- 6877
+img/Zelda is a Grill.png         -- GPU Union-find, localer          -- 11921                   -- 14960
+img/Zelda is a Grill.png         -- GPU Union-find + oneshot         -- 7878                    -- 10861
+img/Zelda is a Grill.png         -- GPU plus propagation             -- 1283839                 -- 1286836
+img/Zelda is a Grill.png         -- GPU line editing                 -- 240019                  -- 242996
+img/Zelda is a Grill.png         -- GPU lines                        -- 119211                  -- 122195
