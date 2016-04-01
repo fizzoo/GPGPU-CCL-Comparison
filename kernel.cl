@@ -616,3 +616,212 @@ kernel void plus_once_locally(global int *data, int w, int h) {
     data[w * y + x] = min;
   }
 }
+
+// A too large value here silently fails, even if it doesn't exceed
+// LOCAL_MEM_MAX. TODO
+#define BUFFS 256
+
+#define NORTH (w * (y - 1) + (x))
+#define EAST (w * (y) + (x + 1))
+#define SOUTH (w * (y + 1) + (x))
+#define WEST (w * (y) + (x - 1))
+#define CENTER (w * y + x)
+
+#define OK_NORTH (y > 0 && data[NORTH])
+#define OK_EAST (x < w - 1 && data[EAST])
+#define OK_SOUTH (y < h - 1 && data[SOUTH])
+#define OK_WEST (x > 0 && data[WEST])
+#define VALID (x < w && y < h)
+
+kernel void recursively_win(global int *data, int w, int h,
+                            global char *changed) {
+  int x, y;
+  int lx = get_local_id(0);
+  int ly = get_local_id(1);
+  int tmp, thistmp;
+  char eligible;
+
+  local int lowest[1];
+  local int stack_x[BUFFS];
+  local int stack_y[BUFFS];
+  local int stack_ptr[1];
+  int own_pointer;
+
+  while (1) {
+    x = get_global_id(0);
+    y = get_global_id(1);
+    eligible = 0;
+
+    if (lx == 0 && ly == 0) {
+      *lowest = 1 << 30;
+    }
+
+    // ELIGIBILITY PHASE
+    // Only pick something as the label to handle if
+    // values around it can be reduced to it
+    barrier(CLK_LOCAL_MEM_FENCE);
+
+    if (VALID && (thistmp = data[CENTER])) {
+      if (OK_NORTH && data[NORTH] > thistmp) {
+        eligible = 1;
+      }
+      if (OK_EAST && data[EAST] > thistmp) {
+        eligible = 1;
+      }
+      if (OK_SOUTH && data[SOUTH] > thistmp) {
+        eligible = 1;
+      }
+      if (OK_WEST && data[WEST] > thistmp) {
+        eligible = 1;
+      }
+
+      if (eligible) {
+        atomic_min(lowest, thistmp);
+      }
+    }
+
+    barrier(CLK_LOCAL_MEM_FENCE);
+    if (*lowest == 1 << 30) {
+      // Found no label inside this region that can be improved upon
+      return;
+    } else if (lx == 0 && ly == 0) {
+      // Found an improvement, so a change will be had
+      *changed = 1;
+    }
+
+    // FIRST PUSH PHASE
+    if (VALID && thistmp == *lowest) {
+
+      if (OK_NORTH) {
+        if (data[NORTH] > thistmp) {
+          data[NORTH] = thistmp;
+          own_pointer = atomic_inc(stack_ptr);
+          if (own_pointer >= BUFFS) {
+            atomic_dec(stack_ptr);
+          } else {
+            stack_x[own_pointer] = x;
+            stack_y[own_pointer] = y - 1;
+          }
+        }
+      }
+      if (OK_EAST) {
+        if (data[EAST] > thistmp) {
+          data[EAST] = thistmp;
+          own_pointer = atomic_inc(stack_ptr);
+          if (own_pointer >= BUFFS) {
+            atomic_dec(stack_ptr);
+          } else {
+            stack_x[own_pointer] = x + 1;
+            stack_y[own_pointer] = y;
+          }
+        }
+      }
+      if (OK_SOUTH) {
+        if (data[SOUTH] > thistmp) {
+          data[SOUTH] = thistmp;
+          own_pointer = atomic_inc(stack_ptr);
+          if (own_pointer >= BUFFS) {
+            atomic_dec(stack_ptr);
+          } else {
+            stack_x[own_pointer] = x;
+            stack_y[own_pointer] = y + 1;
+          }
+        }
+      }
+      if (OK_WEST) {
+        if (data[WEST] > thistmp) {
+          data[WEST] = thistmp;
+          own_pointer = atomic_inc(stack_ptr);
+          if (own_pointer >= BUFFS) {
+            atomic_dec(stack_ptr);
+          } else {
+            stack_x[own_pointer] = x - 1;
+            stack_y[own_pointer] = y;
+          }
+        }
+      }
+    }
+
+    thistmp = *lowest; // For unlucky threads to participate
+
+    if (lx == 0 && ly == 0 && thistmp == 0) {
+      *changed = 0;
+      return;
+    }
+    while (1) {
+      // Test-if-there's-work-at-all phase
+      barrier(CLK_LOCAL_MEM_FENCE);
+      if (*stack_ptr == 0) {
+        break;
+      }
+
+      // POP PHASE
+      barrier(CLK_LOCAL_MEM_FENCE);
+      own_pointer = atomic_dec(stack_ptr) - 1;
+      if (own_pointer < 0) {
+        atomic_inc(stack_ptr);
+      } else {
+        x = stack_x[own_pointer];
+        y = stack_y[own_pointer];
+      }
+
+      // PUSH PHASE
+      barrier(CLK_LOCAL_MEM_FENCE);
+
+      if (own_pointer >= 0) {
+        // Not trash in x, y
+
+        if (OK_NORTH) {
+          if (data[NORTH] > thistmp) {
+            data[NORTH] = thistmp;
+            own_pointer = atomic_inc(stack_ptr);
+            if (own_pointer >= BUFFS) {
+              atomic_dec(stack_ptr);
+            } else {
+              stack_x[own_pointer] = x;
+              stack_y[own_pointer] = y - 1;
+            }
+          }
+        }
+        if (OK_EAST) {
+          if (data[EAST] > thistmp) {
+            data[EAST] = thistmp;
+            own_pointer = atomic_inc(stack_ptr);
+            if (own_pointer >= BUFFS) {
+              atomic_dec(stack_ptr);
+            } else {
+              stack_x[own_pointer] = x + 1;
+              stack_y[own_pointer] = y;
+            }
+          }
+        }
+        if (OK_SOUTH) {
+          if (data[SOUTH] > thistmp) {
+            data[SOUTH] = thistmp;
+            own_pointer = atomic_inc(stack_ptr);
+            if (own_pointer >= BUFFS) {
+              atomic_dec(stack_ptr);
+            } else {
+              stack_x[own_pointer] = x;
+              stack_y[own_pointer] = y + 1;
+            }
+          }
+        }
+        if (OK_WEST) {
+          if (data[WEST] > thistmp) {
+            data[WEST] = thistmp;
+            own_pointer = atomic_inc(stack_ptr);
+            if (own_pointer >= BUFFS) {
+              atomic_dec(stack_ptr);
+            } else {
+              stack_x[own_pointer] = x - 1;
+              stack_y[own_pointer] = y;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+}

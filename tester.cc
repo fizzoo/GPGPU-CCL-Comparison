@@ -56,6 +56,8 @@ int main(int argc, const char *argv[]) {
     strats.push_back(new GPUPlusPropagation);
     strats.push_back(new GPULineEditing);
     strats.push_back(new GPULines);
+    strats.push_back(new GPURecursive);
+
 
     strats[0]->copy_to(&input, &context, &program, &queue);
     strats[0]->execute();

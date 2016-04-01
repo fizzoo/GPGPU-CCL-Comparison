@@ -198,4 +198,13 @@ public:
   virtual void execute();
 };
 
+/**
+ * Acts like the gpu has recursive calls and does the best it can.
+ */
+class GPURecursive : public GPUBase {
+public:
+  virtual std::string name() { return "GPU recursive"; }
+  virtual void execute();
+};
+
 #endif /* end of include guard: STRATEGY_H */

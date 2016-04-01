@@ -284,6 +284,7 @@ void GPUNeighbourPropagation::execute() {
                                 &writtenevents, &events[0]);
   }
 }
+
 void GPUNeighbourPropagation_Localer::execute() {
   cl_int err;
 
@@ -779,5 +780,68 @@ void GPULines::execute() {
                                 cl::NDRange(1), &event1, &event2[0]);
     queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
                                 cl::NDRange(1), &event2, &event1[0]);
+  }
+}
+
+void GPURecursive::execute() {
+  cl_int err;
+
+  const int wgw = 32, wgh = 8;
+  int wsize, hsize;
+  if (width % wgw) {
+    wsize = width + wgw - (width % wgw);
+  } else {
+    wsize = width;
+  }
+  if (height % wgh) {
+    hsize = height + wgh - (height % wgh);
+  } else {
+    hsize = height;
+  }
+
+  cl::Kernel startlabel(*program, "label_with_id", &err);
+  CHECKERR;
+  cl::Kernel propagate(*program, "recursively_win", &err);
+  CHECKERR;
+
+  err = startlabel.setArg(0, *buf);
+  CHECKERR;
+  err = startlabel.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = startlabel.setArg(2, (cl_int)height);
+  CHECKERR;
+
+  char changed = 1;
+  cl::Buffer chan(*context, CL_MEM_READ_WRITE, (size_t)1, nullptr, &err);
+  queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+
+  err = propagate.setArg(0, *buf);
+  CHECKERR;
+  err = propagate.setArg(1, (cl_int)width);
+  CHECKERR;
+  err = propagate.setArg(2, (cl_int)height);
+  CHECKERR;
+  err = propagate.setArg(3, chan);
+  CHECKERR;
+
+  std::vector<cl::Event> events(1);
+  std::vector<cl::Event> writtenevents(1);
+  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
+                                    cl::NDRange(wsize, hsize),
+                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+  CHECKERR;
+
+  while (true) {
+    // CPU-GPU sync, sadly
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    if (changed == false) {
+      break;
+    }
+    changed = false;
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
+                              &writtenevents[0]);
+    queue->enqueueNDRangeKernel(
+        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
+        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
   }
 }
