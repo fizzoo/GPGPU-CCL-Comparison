@@ -167,35 +167,34 @@ kernel void union_find(global int *data, int w, int h, global char *changed) {
   bool ok_E = x + 1 < w && data[w * (y) + (x + 1)];
   bool ok_S = y + 1 < h && data[w * (y + 1) + (x)];
   bool ok_W = x - 1 >= 0 && data[w * (y) + (x - 1)];
-  int root_N = 1 << 30;
-  int root_E = 1 << 30;
-  int root_S = 1 << 30;
-  int root_W = 1 << 30;
+  int root_N;
+  int root_E;
+  int root_S;
+  int root_W;
 
   if (ok_N) {
     root_N = find_set(data, w * (y - 1) + (x));
+    if (root_N < lowest) {
+      lowest = root_N;
+    }
   }
   if (ok_E) {
     root_E = find_set(data, w * (y) + (x + 1));
+    if (root_E < lowest) {
+      lowest = root_E;
+    }
   }
   if (ok_S) {
     root_S = find_set(data, w * (y + 1) + (x));
+    if (root_S < lowest) {
+      lowest = root_S;
+    }
   }
   if (ok_W) {
     root_W = find_set(data, w * (y) + (x - 1));
-  }
-
-  if (root_N < lowest) {
-    lowest = root_N;
-  }
-  if (root_E < lowest) {
-    lowest = root_E;
-  }
-  if (root_S < lowest) {
-    lowest = root_S;
-  }
-  if (root_W < lowest) {
-    lowest = root_W;
+    if (root_W < lowest) {
+      lowest = root_W;
+    }
   }
 
   if (lowest < oldlabel) {
