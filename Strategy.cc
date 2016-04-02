@@ -237,7 +237,7 @@ void CPUFrontBack::execute() {
             labelConnT.at(m) = m;
             ++m;
         } else {
-            int min = d[bXY];
+            int min;// = d[bXY];
             if (lP && !uP) {
                 min = labelConnT.at(lP);
             } else if (!lP && uP) {
@@ -278,8 +278,8 @@ void CPUFrontBack::execute() {
                     sP = d[(y + 1) * w + x];
                 }
 
-                int min = labelConnT.at(d[bXY]);
-                int tMin = min;
+                int min = -1;
+                int tMin = labelConnT.at(d[bXY]);
 
                 if (rP && sP) {
                     min = (labelConnT.at(rP) < labelConnT.at(sP)) ? labelConnT.at(rP) : labelConnT.at(sP);
@@ -289,7 +289,7 @@ void CPUFrontBack::execute() {
                     min = labelConnT.at(sP);
                 }
 
-                if (tMin < min) {
+                if (tMin < min || min == -1) {
                     min = tMin;
                 }
                 d[bXY] = min;
@@ -324,8 +324,9 @@ void CPUFrontBack::execute() {
                 if (y) { // OOR check
                     uP = d[(y - 1) * w + x];
                 }
-                int min = labelConnT.at(d[bXY]);
-                int tMin = min;
+
+                int min = -1;
+                int tMin = labelConnT.at(d[bXY]);
 
                 if (lP && uP) {
                     min = (labelConnT.at(lP) < labelConnT.at(uP)) ? labelConnT.at(lP) : labelConnT.at(uP);
@@ -335,7 +336,7 @@ void CPUFrontBack::execute() {
                     min = labelConnT.at(uP);
                 }
 
-                if (tMin < min) {
+                if (tMin < min || min == -1) {
                     min = tMin;
                 }
                 d[bXY] = min;
