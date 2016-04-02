@@ -109,6 +109,15 @@ public:
   virtual void execute();
 };
 
+
+/**
+ * multipass algorithm by Kenji Suzuki, Isao Horiba and Noboru Sugie
+ */
+class CPUFrontBack : public CPUBase {
+    virtual std::string name() { return "CPU front back scan";}
+    virtual void execute();
+};
+
 /**
  * ABC for GPU algorithms that keep a cl::Buffer.
  */

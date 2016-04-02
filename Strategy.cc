@@ -196,6 +196,161 @@ void CPULinearTwoScan::execute() {
   }
 }
 
+void CPUFrontBack::execute() {
+  auto w = l.width;
+  auto h = l.height;
+  auto d = l.data;
+
+  //label connection table
+  std::vector<int> labelConnT(w * h, 0);
+  labelConnT.at(1) = 1;
+
+  int m = 2;
+  bool change = true;
+
+  for (size_t y = 0; y < h; ++y) {
+    for (size_t x = 0; x < w; ++x) {
+      // position of b(x, y);
+      int bXY = y * w + x;
+      if (d[bXY]) {
+        // left pixel
+        int lP = 0;
+        if (x) { // OOR check
+          lP = d[y * w + (x - 1)];
+        }
+
+        // upper pixel
+        int uP = 0;
+        if (y) { // OOR check
+          uP = d[(y - 1) * w + x];
+        }
+
+        if (!lP && !uP) {
+            d[bXY] = m;
+            labelConnT.at(m) = m;
+            ++m;
+        } else {
+            int min = d[bXY];
+            if (lP && !uP) {
+                min = labelConnT.at(lP);
+            } else if (!lP && uP) {
+                min = labelConnT.at(uP);
+            } else {
+                min = (labelConnT.at(lP) < labelConnT.at(uP)) ? labelConnT.at(lP) : labelConnT.at(uP);
+            }
+            d[bXY] = min;
+            if (uP) {
+                labelConnT.at(uP) = min;
+            }
+            if (lP) {
+                labelConnT.at(lP) = min;
+            }
+        }
+
+      }
+    }
+  }
+
+  while(change) {
+      change = false;
+
+      //backwards scan
+      for (int y = h - 1; y >= 0; --y) {
+          for (int x = w - 1; x >= 0; --x) {
+            int bXY = y * w + x;
+            if (d[bXY]) {
+                // right pixel
+                int rP = 0;
+                if (x != (int)w - 1) { // OOR check
+                    rP = d[y * w + (x + 1)];
+                }
+
+                // south pixel
+                int sP = 0;
+                if (y != (int)h - 1) { // OOR check
+                    sP = d[(y + 1) * w + x];
+                }
+
+                int min = labelConnT.at(d[bXY]);
+                int tMin = min;
+
+                if (rP && sP) {
+                    min = (labelConnT.at(rP) < labelConnT.at(sP)) ? labelConnT.at(rP) : labelConnT.at(sP);
+                } else if (rP && !sP) {
+                    min = labelConnT.at(rP);
+                } else if (!rP && sP) {
+                    min = labelConnT.at(sP);
+                }
+
+                if (tMin < min) {
+                    min = tMin;
+                }
+                d[bXY] = min;
+
+                if(rP && labelConnT.at(rP) != min) {
+                    labelConnT.at(rP) = min;
+                    change = true;
+                }
+                if (sP && labelConnT.at(sP) != min) {
+                    labelConnT.at(sP) = min;
+                    change = true;
+                }
+                if (labelConnT.at(d[bXY]) != min) {
+                    labelConnT.at(d[bXY]) = min;
+                    change = true;
+                }
+            }
+          }
+      }
+    for (size_t y = 0; y < h; ++y) {
+        for (size_t x = 0; x < w; ++x) {
+            int bXY = y * w + x;
+            if (d[bXY]) {
+                // left pixel
+                int lP = 0;
+                if (x) { // OOR check
+                    lP = d[y * w + (x - 1)];
+                }
+
+                // upper pixel
+                int uP = 0;
+                if (y) { // OOR check
+                    uP = d[(y - 1) * w + x];
+                }
+                int min = labelConnT.at(d[bXY]);
+                int tMin = min;
+
+                if (lP && uP) {
+                    min = (labelConnT.at(lP) < labelConnT.at(uP)) ? labelConnT.at(lP) : labelConnT.at(uP);
+                } else if (lP && !uP) {
+                    min = labelConnT.at(lP);
+                } else if (!lP && uP) {
+                    min = labelConnT.at(uP);
+                }
+
+                if (tMin < min) {
+                    min = tMin;
+                }
+                d[bXY] = min;
+
+                if(lP && labelConnT.at(lP) != min) {
+                    labelConnT.at(lP) = min;
+                    change = true;
+                }
+                if (uP && labelConnT.at(uP) != min) {
+                    labelConnT.at(uP) = min;
+                    change = true;
+                }
+                if (labelConnT.at(d[bXY]) != min) {
+                    labelConnT.at(d[bXY]) = min;
+                    change = true;
+                }
+            }
+        }
+    }
+  }
+}
+
 void GPUBase::copy_to(const LabelData *l, cl::Context *c, cl::Program *p,
                       cl::CommandQueue *q) {
   context = c;
