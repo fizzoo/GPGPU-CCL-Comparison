@@ -1,6 +1,13 @@
 #include "Strategy.h"
 using namespace boost;
 
+int round_to_nearest(int x, int mod){
+  if (x % mod) {
+    x = x + mod - (x % mod);
+  }
+  return x;
+}
+
 void CPUBase::copy_to(const LabelData *in, cl::Context *, cl::Program *,
                       cl::CommandQueue *) {
   l = *in;
@@ -381,17 +388,10 @@ LabelData GPUBase::copy_from() {
 void GPUNeighbourPropagation::execute() {
   cl_int err;
 
-  int wsize, hsize;
-  if (width % 32) {
-    wsize = width + 32 - (width % 32);
-  } else {
-    wsize = width;
-  }
-  if (height % 8) {
-    hsize = height + 8 - (height % 8);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 32;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -422,7 +422,7 @@ void GPUNeighbourPropagation::execute() {
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(32, 8), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -435,7 +435,7 @@ void GPUNeighbourPropagation::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(32, 8),
+                                cl::NDRange(wsize, hsize), cl::NDRange(wgw, wgh),
                                 &writtenevents, &events[0]);
   }
 }
@@ -443,17 +443,10 @@ void GPUNeighbourPropagation::execute() {
 void GPUNeighbourPropagation_Localer::execute() {
   cl_int err;
 
-  int wsize, hsize;
-  if (width % 32) {
-    wsize = width + 32 - (width % 32);
-  } else {
-    wsize = width;
-  }
-  if (height % 8) {
-    hsize = height + 8 - (height % 8);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 32;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -494,7 +487,7 @@ void GPUNeighbourPropagation_Localer::execute() {
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(32, 8), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -507,10 +500,10 @@ void GPUNeighbourPropagation_Localer::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(localer, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(32, 8),
+                                cl::NDRange(wsize, hsize), cl::NDRange(wgw, wgh),
                                 &writtenevents, &events[1]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(32, 8),
+                                cl::NDRange(wsize, hsize), cl::NDRange(wgw, wgh),
                                 &writtenevents, &events[0]);
   }
 }
@@ -518,17 +511,10 @@ void GPUNeighbourPropagation_Localer::execute() {
 void GPUPlusPropagation::execute() {
   cl_int err;
 
-  int wsize, hsize;
-  if (width % 16) {
-    wsize = width + 16 - (width % 16);
-  } else {
-    wsize = width;
-  }
-  if (height % 8) {
-    hsize = height + 8 - (height % 8);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 16;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -559,7 +545,7 @@ void GPUPlusPropagation::execute() {
   std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(16, 8), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
   CHECKERR;
 
   while (true) {
@@ -572,7 +558,7 @@ void GPUPlusPropagation::execute() {
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
                               &writtenevents[0]);
     queue->enqueueNDRangeKernel(propagate, cl::NullRange,
-                                cl::NDRange(wsize, hsize), cl::NDRange(16, 8),
+                                cl::NDRange(wsize, hsize), cl::NDRange(wgw, wgh),
                                 &writtenevents, &events[0]);
   }
 }
@@ -580,18 +566,10 @@ void GPUPlusPropagation::execute() {
 void GPUUnionFind::execute() {
   cl_int err;
 
-  const int wgw = 32, wgh = 8;
-  int wsize, hsize;
-  if (width % wgw) {
-    wsize = width + wgw - (width % wgw);
-  } else {
-    wsize = width;
-  }
-  if (height % wgh) {
-    hsize = height + wgh - (height % wgh);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 32;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -643,18 +621,10 @@ void GPUUnionFind::execute() {
 void GPUUnionFind_Localer::execute() {
   cl_int err;
 
-  const int wgw = 32, wgh = 8;
-  int wsize, hsize;
-  if (width % wgw) {
-    wsize = width + wgw - (width % wgw);
-  } else {
-    wsize = width;
-  }
-  if (height % wgh) {
-    hsize = height + wgh - (height % wgh);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 32;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -718,18 +688,10 @@ void GPUUnionFind_Localer::execute() {
 void GPUUnionFind_Oneshot::execute() {
   cl_int err;
 
-  const int wgw = 32, wgh = 8;
-  int wsize, hsize;
-  if (width % wgw) {
-    wsize = width + wgw - (width % wgw);
-  } else {
-    wsize = width;
-  }
-  if (height % wgh) {
-    hsize = height + wgh - (height % wgh);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 32;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -941,18 +903,10 @@ void GPULines::execute() {
 void GPURecursive::execute() {
   cl_int err;
 
-  const int wgw = 32, wgh = 8;
-  int wsize, hsize;
-  if (width % wgw) {
-    wsize = width + wgw - (width % wgw);
-  } else {
-    wsize = width;
-  }
-  if (height % wgh) {
-    hsize = height + wgh - (height % wgh);
-  } else {
-    hsize = height;
-  }
+  const int wgw = 32;
+  const int wgh = 8;
+  const int wsize = round_to_nearest(width, wgw);
+  const int hsize = round_to_nearest(height, wgh);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
