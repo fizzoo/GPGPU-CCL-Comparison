@@ -627,10 +627,10 @@ kernel void plus_once_locally(global int *data, int w, int h) {
 #define WEST (w * (y) + (x - 1))
 #define CENTER (w * y + x)
 
-#define OK_NORTH (y > 0 && data[NORTH])
-#define OK_EAST (x < w - 1 && data[EAST])
-#define OK_SOUTH (y < h - 1 && data[SOUTH])
-#define OK_WEST (x > 0 && data[WEST])
+#define OK_NORTH (y > 0)
+#define OK_EAST (x < w - 1)
+#define OK_SOUTH (y < h - 1)
+#define OK_WEST (x > 0)
 #define VALID (x < w && y < h)
 
 kernel void recursively_win(global int *data, int w, int h,
