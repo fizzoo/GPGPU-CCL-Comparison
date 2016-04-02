@@ -617,9 +617,7 @@ kernel void plus_once_locally(global int *data, int w, int h) {
   }
 }
 
-// A too large value here silently fails, even if it doesn't exceed
-// LOCAL_MEM_MAX. TODO
-#define BUFFS 256
+#define BUFFS 512
 
 #define NORTH (w * (y - 1) + (x))
 #define EAST (w * (y) + (x + 1))
@@ -654,6 +652,7 @@ kernel void recursively_win(global int *data, int w, int h,
 
     if (lx == 0 && ly == 0) {
       *lowest = 1 << 30;
+      *stack_ptr = 0;
     }
 
     // ELIGIBILITY PHASE
@@ -819,9 +818,7 @@ kernel void recursively_win(global int *data, int w, int h,
             }
           }
         }
-
       }
-
     }
   }
 }

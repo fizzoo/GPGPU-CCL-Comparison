@@ -166,7 +166,7 @@ bool iml::writepng(const std::string &filename, size_t width, size_t height,
     return false;
   }
 
-  if (setjmp(png_jmpbuf(pngp))){
+  if (setjmp(png_jmpbuf(pngp))) {
     png_destroy_write_struct(&pngp, (png_infopp)NULL);
     fclose(fp);
     return false;

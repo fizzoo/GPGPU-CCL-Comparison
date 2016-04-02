@@ -109,13 +109,12 @@ public:
   virtual void execute();
 };
 
-
 /**
  * multipass algorithm by Kenji Suzuki, Isao Horiba and Noboru Sugie
  */
 class CPUFrontBack : public CPUBase {
-    virtual std::string name() { return "CPU front back scan";}
-    virtual void execute();
+  virtual std::string name() { return "CPU front back scan"; }
+  virtual void execute();
 };
 
 /**
@@ -141,7 +140,7 @@ public:
   virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
                        cl::CommandQueue *);
   virtual LabelData copy_from();
-  virtual ~GPUBase () {}
+  virtual ~GPUBase() {}
 };
 
 /**

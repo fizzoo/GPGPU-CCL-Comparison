@@ -59,7 +59,6 @@ int main(int argc, const char *argv[]) {
     strats.push_back(new GPULines);
     strats.push_back(new GPURecursive);
 
-
     strats[0]->copy_to(&input, &context, &program, &queue);
     strats[0]->execute();
     LabelData correct = strats[0]->copy_from();
@@ -118,7 +117,7 @@ int main(int argc, const char *argv[]) {
       std::replace(cleaninput.begin(), cleaninput.end(), '/', '-');
       std::string outname =
           "out/" + cleaninput + " - " + strat->name() + ".png";
-      if (!iml::writepng(outname, &out)){
+      if (!iml::writepng(outname, &out)) {
         std::cerr << "Failed writing file." << std::endl;
       }
     }
