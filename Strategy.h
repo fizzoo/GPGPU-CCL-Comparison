@@ -141,6 +141,7 @@ public:
   virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
                        cl::CommandQueue *);
   virtual LabelData copy_from();
+  virtual ~GPUBase () {}
 };
 
 /**
