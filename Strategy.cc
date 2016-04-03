@@ -160,9 +160,9 @@ void CPULinearTwoScan::execute() {
         // Need new label
         if (!lP && !uP) {
           d[bXY] = m;
-          rl_table.at(m) = m;
-          n_label.at(m) = -1;
-          t_label.at(m) = m;
+          rl_table[m] = m;
+          n_label[m] = -1;
+          t_label[m] = m;
           ++m;
         } else if (lP) {
           d[bXY] = lP;
@@ -170,8 +170,8 @@ void CPULinearTwoScan::execute() {
           d[bXY] = uP;
         }
 
-        unsigned int u = rl_table.at(lP);
-        unsigned int v = rl_table.at(uP);
+        unsigned int u = rl_table[lP];
+        unsigned int v = rl_table[uP];
         // this part resolves potential label equvalence
         if (u > 1 && v > 1 && u != v) {
 
@@ -183,11 +183,11 @@ void CPULinearTwoScan::execute() {
           // this part is coded exactly as shown with pseudo code in the paper
           int i = v;
           while (i != -1) {
-            rl_table.at(i) = u;
-            i = n_label.at(i);
+            rl_table[i] = u;
+            i = n_label[i];
           }
-          n_label.at(t_label.at(u)) = v;
-          t_label.at(u) = t_label.at(v);
+          n_label[t_label[u]] = v;
+          t_label[u] = t_label[v];
         }
       }
     }
@@ -197,7 +197,7 @@ void CPULinearTwoScan::execute() {
   for (size_t y = 0; y < h; ++y) {
     for (size_t x = 0; x < w; ++x) {
       if (d[y * w + x] != 0) {
-        d[y * w + x] = rl_table.at(d[y * w + x]);
+        d[y * w + x] = rl_table[d[y * w + x]];
       }
     }
   }
@@ -210,7 +210,7 @@ void CPUFrontBack::execute() {
 
   // label connection table
   std::vector<int> labelConnT(w * h, 0);
-  labelConnT.at(1) = 1;
+  labelConnT[1] = 1;
 
   int m = 2;
   bool change = true;
@@ -234,24 +234,24 @@ void CPUFrontBack::execute() {
 
         if (!lP && !uP) {
           d[bXY] = m;
-          labelConnT.at(m) = m;
+          labelConnT[m] = m;
           ++m;
         } else {
           int min; // = d[bXY];
           if (lP && !uP) {
-            min = labelConnT.at(lP);
+            min = labelConnT[lP];
           } else if (!lP && uP) {
-            min = labelConnT.at(uP);
+            min = labelConnT[uP];
           } else {
-            min = (labelConnT.at(lP) < labelConnT.at(uP)) ? labelConnT.at(lP)
-                                                          : labelConnT.at(uP);
+            min = (labelConnT[lP] < labelConnT[uP]) ? labelConnT[lP]
+                                                          : labelConnT[uP];
           }
           d[bXY] = min;
           if (uP) {
-            labelConnT.at(uP) = min;
+            labelConnT[uP] = min;
           }
           if (lP) {
-            labelConnT.at(lP) = min;
+            labelConnT[lP] = min;
           }
         }
       }
@@ -279,15 +279,15 @@ void CPUFrontBack::execute() {
           }
 
           int min = -1;
-          int tMin = labelConnT.at(d[bXY]);
+          int tMin = labelConnT[d[bXY]];
 
           if (rP && sP) {
-            min = (labelConnT.at(rP) < labelConnT.at(sP)) ? labelConnT.at(rP)
-                                                          : labelConnT.at(sP);
+            min = (labelConnT[rP] < labelConnT[sP]) ? labelConnT[rP]
+                                                          : labelConnT[sP];
           } else if (rP && !sP) {
-            min = labelConnT.at(rP);
+            min = labelConnT[rP];
           } else if (!rP && sP) {
-            min = labelConnT.at(sP);
+            min = labelConnT[sP];
           }
 
           if (tMin < min || min == -1) {
@@ -295,16 +295,16 @@ void CPUFrontBack::execute() {
           }
           d[bXY] = min;
 
-          if (rP && labelConnT.at(rP) != min) {
-            labelConnT.at(rP) = min;
+          if (rP && labelConnT[rP] != min) {
+            labelConnT[rP] = min;
             change = true;
           }
-          if (sP && labelConnT.at(sP) != min) {
-            labelConnT.at(sP) = min;
+          if (sP && labelConnT[sP] != min) {
+            labelConnT[sP] = min;
             change = true;
           }
-          if (labelConnT.at(d[bXY]) != min) {
-            labelConnT.at(d[bXY]) = min;
+          if (labelConnT[d[bXY]] != min) {
+            labelConnT[d[bXY]] = min;
             change = true;
           }
         }
@@ -327,15 +327,15 @@ void CPUFrontBack::execute() {
           }
 
           int min = -1;
-          int tMin = labelConnT.at(d[bXY]);
+          int tMin = labelConnT[d[bXY]];
 
           if (lP && uP) {
-            min = (labelConnT.at(lP) < labelConnT.at(uP)) ? labelConnT.at(lP)
-                                                          : labelConnT.at(uP);
+            min = (labelConnT[lP] < labelConnT[uP]) ? labelConnT[lP]
+                                                          : labelConnT[uP];
           } else if (lP && !uP) {
-            min = labelConnT.at(lP);
+            min = labelConnT[lP];
           } else if (!lP && uP) {
-            min = labelConnT.at(uP);
+            min = labelConnT[uP];
           }
 
           if (tMin < min || min == -1) {
@@ -343,16 +343,16 @@ void CPUFrontBack::execute() {
           }
           d[bXY] = min;
 
-          if (lP && labelConnT.at(lP) != min) {
-            labelConnT.at(lP) = min;
+          if (lP && labelConnT[lP] != min) {
+            labelConnT[lP] = min;
             change = true;
           }
-          if (uP && labelConnT.at(uP) != min) {
-            labelConnT.at(uP) = min;
+          if (uP && labelConnT[uP] != min) {
+            labelConnT[uP] = min;
             change = true;
           }
-          if (labelConnT.at(d[bXY]) != min) {
-            labelConnT.at(d[bXY]) = min;
+          if (labelConnT[d[bXY]] != min) {
+            labelConnT[d[bXY]] = min;
             change = true;
           }
         }
