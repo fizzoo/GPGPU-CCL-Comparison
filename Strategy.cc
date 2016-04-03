@@ -244,7 +244,7 @@ void CPUFrontBack::execute() {
             min = labelConnT[uP];
           } else {
             min = (labelConnT[lP] < labelConnT[uP]) ? labelConnT[lP]
-                                                          : labelConnT[uP];
+                                                    : labelConnT[uP];
           }
           d[bXY] = min;
           if (uP) {
@@ -283,7 +283,7 @@ void CPUFrontBack::execute() {
 
           if (rP && sP) {
             min = (labelConnT[rP] < labelConnT[sP]) ? labelConnT[rP]
-                                                          : labelConnT[sP];
+                                                    : labelConnT[sP];
           } else if (rP && !sP) {
             min = labelConnT[rP];
           } else if (!rP && sP) {
@@ -331,7 +331,7 @@ void CPUFrontBack::execute() {
 
           if (lP && uP) {
             min = (labelConnT[lP] < labelConnT[uP]) ? labelConnT[lP]
-                                                          : labelConnT[uP];
+                                                    : labelConnT[uP];
           } else if (lP && !uP) {
             min = labelConnT[lP];
           } else if (!lP && uP) {
@@ -421,25 +421,23 @@ void GPUNeighbourPropagation::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(1);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
 
@@ -485,28 +483,25 @@ void GPUNeighbourPropagation_Localer::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(2);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        localer, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[1]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+    queue->enqueueNDRangeKernel(localer, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
 
@@ -543,25 +538,22 @@ void GPUPlusPropagation::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(1);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
 
@@ -598,25 +590,22 @@ void GPUUnionFind::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(1);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
 
@@ -662,28 +651,25 @@ void GPUUnionFind_Localer::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(2);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        localer, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[1]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+    queue->enqueueNDRangeKernel(localer, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
 
@@ -729,28 +715,25 @@ void GPUUnionFind_Oneshot::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(2);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        localer, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[1]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+    queue->enqueueNDRangeKernel(localer, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
 
@@ -819,29 +802,28 @@ void GPULineEditing::execute() {
   err = right.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> event1(1);
-  std::vector<cl::Event> event2(1);
-  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
-                                    cl::NDRange(round_to_nearest(width, 16), round_to_nearest(height, 16)),
-                                    cl::NDRange(16, 16), NULL, &event1[0]);
+  err = queue->enqueueNDRangeKernel(
+      startlabel, cl::NullRange,
+      cl::NDRange(round_to_nearest(width, 16), round_to_nearest(height, 16)),
+      cl::NDRange(16, 16));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &event1, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &event1[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
     queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(hsize),
-                                cl::NDRange(wgs), &event1, &event2[0]);
+                                cl::NDRange(wgs));
     queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(wsize),
-                                cl::NDRange(wgs), &event2, &event1[0]);
+                                cl::NDRange(wgs));
     queue->enqueueNDRangeKernel(left, cl::NullRange, cl::NDRange(hsize),
-                                cl::NDRange(wgs), &event1, &event2[0]);
+                                cl::NDRange(wgs));
     queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(wsize),
-                                cl::NDRange(wgs), &event2, &event1[0]);
+                                cl::NDRange(wgs));
   }
 }
 
@@ -888,25 +870,24 @@ void GPULines::execute() {
   err = up.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> event1(1);
-  std::vector<cl::Event> event2(1);
-  err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
-                                    cl::NDRange(round_to_nearest(width, 16), round_to_nearest(height, 16)),
-                                    cl::NDRange(16, 16), NULL, &event1[0]);
+  err = queue->enqueueNDRangeKernel(
+      startlabel, cl::NullRange,
+      cl::NDRange(round_to_nearest(width, 16), round_to_nearest(height, 16)),
+      cl::NDRange(16, 16));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &event1, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &event1[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
     queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(hsize),
-                                cl::NDRange(wgs), &event1, &event2[0]);
+                                cl::NDRange(wgs));
     queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(wsize),
-                                cl::NDRange(wgs), &event2, &event1[0]);
+                                cl::NDRange(wgs));
   }
 }
 
@@ -943,24 +924,21 @@ void GPURecursive::execute() {
   err = propagate.setArg(3, chan);
   CHECKERR;
 
-  std::vector<cl::Event> events(1);
-  std::vector<cl::Event> writtenevents(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
                                     cl::NDRange(wsize, hsize),
-                                    cl::NDRange(wgw, wgh), NULL, &events[0]);
+                                    cl::NDRange(wgw, wgh));
   CHECKERR;
 
   while (true) {
     // CPU-GPU sync, sadly
-    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed, &events, NULL);
+    queue->enqueueReadBuffer(chan, CL_TRUE, 0, 1, &changed);
     if (changed == false) {
       break;
     }
     changed = false;
-    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL,
-                              &writtenevents[0]);
-    queue->enqueueNDRangeKernel(
-        propagate, cl::NullRange, cl::NDRange(wsize, hsize),
-        cl::NDRange(wgw, wgh), &writtenevents, &events[0]);
+    queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed);
+    queue->enqueueNDRangeKernel(propagate, cl::NullRange,
+                                cl::NDRange(wsize, hsize),
+                                cl::NDRange(wgw, wgh));
   }
 }
