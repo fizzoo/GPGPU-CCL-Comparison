@@ -221,6 +221,10 @@ kernel void lineedit_right(global int *data, int w, int h,
   int y = get_global_id(0);
   int lowest = 1 << 30;
 
+  if (y >= h) {
+    return;
+  }
+
   while (x < w) {
     int curlabel = data[w * y + x];
 
@@ -245,6 +249,10 @@ kernel void lineedit_left(global int *data, int w, int h,
   int y = get_global_id(0);
   int lowest = 1 << 30;
 
+  if (y >= h) {
+    return;
+  }
+
   while (x >= 0) {
     int curlabel = data[w * y + x];
 
@@ -267,6 +275,10 @@ kernel void lineedit_up(global int *data, int w, int h, global char *changed) {
   int x = get_global_id(0);
   int y = 0;
   int lowest = 1 << 30;
+
+  if (x >= w) {
+    return;
+  }
 
   while (y < h) {
     int curlabel = data[w * y + x];
@@ -292,6 +304,10 @@ kernel void lineedit_down(global int *data, int w, int h,
   int y = h - 1;
   int lowest = 1 << 30;
 
+  if (x >= w) {
+    return;
+  }
+
   while (y >= 0) {
     int curlabel = data[w * y + x];
 
@@ -314,6 +330,10 @@ kernel void lines_up(global int *data, int w, int h, global char *changed) {
   int x = get_global_id(0);
   int y = 0;
   char localchanged = 0;
+
+  if (x >= w) {
+    return;
+  }
 
   while (y < h) {
     if (!data[w * y + x]) {
@@ -349,6 +369,10 @@ kernel void lines_right(global int *data, int w, int h, global char *changed) {
   int x = 0;
   int y = get_global_id(0);
   char localchanged = 0;
+
+  if (y >= h) {
+    return;
+  }
 
   while (x < w) {
     if (!data[w * y + x]) {

@@ -757,6 +757,10 @@ void GPUUnionFind_Oneshot::execute() {
 void GPULineEditing::execute() {
   cl_int err;
 
+  const int wgs = 32;
+  const int wsize = round_to_nearest(width, wgs);
+  const int hsize = round_to_nearest(height, wgs);
+
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
   cl::Kernel up(*program, "lineedit_up", &err);
@@ -818,8 +822,8 @@ void GPULineEditing::execute() {
   std::vector<cl::Event> event1(1);
   std::vector<cl::Event> event2(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
-                                    cl::NDRange(width, height),
-                                    cl::NDRange(1, 1), NULL, &event1[0]);
+                                    cl::NDRange(round_to_nearest(width, 16), round_to_nearest(height, 16)),
+                                    cl::NDRange(16, 16), NULL, &event1[0]);
   CHECKERR;
 
   while (true) {
@@ -830,19 +834,23 @@ void GPULineEditing::execute() {
     }
     changed = false;
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &event1[0]);
-    queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(height),
-                                cl::NDRange(1), &event1, &event2[0]);
-    queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(width),
-                                cl::NDRange(1), &event2, &event1[0]);
-    queue->enqueueNDRangeKernel(left, cl::NullRange, cl::NDRange(height),
-                                cl::NDRange(1), &event1, &event2[0]);
-    queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
-                                cl::NDRange(1), &event2, &event1[0]);
+    queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(hsize),
+                                cl::NDRange(wgs), &event1, &event2[0]);
+    queue->enqueueNDRangeKernel(down, cl::NullRange, cl::NDRange(wsize),
+                                cl::NDRange(wgs), &event2, &event1[0]);
+    queue->enqueueNDRangeKernel(left, cl::NullRange, cl::NDRange(hsize),
+                                cl::NDRange(wgs), &event1, &event2[0]);
+    queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(wsize),
+                                cl::NDRange(wgs), &event2, &event1[0]);
   }
 }
 
 void GPULines::execute() {
   cl_int err;
+
+  const int wgs = 4;
+  const int wsize = round_to_nearest(width, wgs);
+  const int hsize = round_to_nearest(height, wgs);
 
   cl::Kernel startlabel(*program, "label_with_id", &err);
   CHECKERR;
@@ -883,8 +891,8 @@ void GPULines::execute() {
   std::vector<cl::Event> event1(1);
   std::vector<cl::Event> event2(1);
   err = queue->enqueueNDRangeKernel(startlabel, cl::NullRange,
-                                    cl::NDRange(width, height),
-                                    cl::NDRange(1, 1), NULL, &event1[0]);
+                                    cl::NDRange(round_to_nearest(width, 16), round_to_nearest(height, 16)),
+                                    cl::NDRange(16, 16), NULL, &event1[0]);
   CHECKERR;
 
   while (true) {
@@ -895,10 +903,10 @@ void GPULines::execute() {
     }
     changed = false;
     queue->enqueueWriteBuffer(chan, CL_FALSE, 0, 1, &changed, NULL, &event1[0]);
-    queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(height),
-                                cl::NDRange(1), &event1, &event2[0]);
-    queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(width),
-                                cl::NDRange(1), &event2, &event1[0]);
+    queue->enqueueNDRangeKernel(right, cl::NullRange, cl::NDRange(hsize),
+                                cl::NDRange(wgs), &event1, &event2[0]);
+    queue->enqueueNDRangeKernel(up, cl::NullRange, cl::NDRange(wsize),
+                                cl::NDRange(wgs), &event2, &event1[0]);
   }
 }
 
