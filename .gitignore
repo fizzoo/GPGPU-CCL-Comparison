@@ -3,3 +3,4 @@ fasts
 out
 *.png
 *.tiff
+*.pgm

@@ -1,5 +1,4 @@
 #include "Strategy.h"
-using namespace boost;
 
 int round_to_nearest(int x, int mod) {
   if (x % mod) {
@@ -27,51 +26,7 @@ void CPUOnePass::execute() {
   }
 }
 
-void CPUUnionFind::execute() {
-  size_t nr = 2;
-  auto w = l.width;
-  auto h = l.height;
-  auto d = l.data;
-
-  std::map<size_t, int> rank;
-  std::map<size_t, size_t> p;
-  disjoint_sets<associative_property_map<std::map<size_t, int>>,
-                associative_property_map<std::map<size_t, size_t>>> dset(rank,
-                                                                         p);
-  for (size_t y = 0; y < h; ++y) {
-    for (size_t x = 0; x < w; ++x) {
-      if (d[w * y + x] == 1) {
-
-        if (x > 0 && y > 0 && d[w * (y - 1) + (x)] && d[w * (y) + (x - 1)]) {
-          // Both foreground
-          d[w * y + x] = d[w * (y) + (x - 1)];
-
-          if (d[w * (y - 1) + (x)] != d[w * (y) + (x - 1)]) {
-            dset.union_set(d[w * (y - 1) + (x)], d[w * (y) + (x - 1)]);
-          }
-        } else if (x > 0 && d[w * (y) + (x - 1)]) {
-          d[w * y + x] = d[w * (y) + (x - 1)];
-        } else if (y > 0 && d[w * (y - 1) + (x)]) {
-          d[w * y + x] = d[w * (y - 1) + (x)];
-        } else {
-          dset.make_set(nr);
-          d[w * y + x] = nr;
-          ++nr;
-        }
-      }
-    }
-  }
-
-  for (size_t y = 0; y < h; ++y) {
-    for (size_t x = 0; x < w; ++x) {
-      if (d[w * y + x]) {
-        d[w * y + x] = dset.find_set(d[w * y + x]);
-      }
-    }
-  }
-}
-
-int CPUUnionFindReusing::findset(int loc) {
+int CPUUnionFind::findset(int loc) {
   // All loc of found elements should be in range.
   // Also assuming there are no cycles in the links.
   while (loc != l.data[loc] - 2) {
@@ -82,7 +37,7 @@ int CPUUnionFindReusing::findset(int loc) {
   return loc + 2;
 }
 
-void CPUUnionFindReusing::execute() {
+void CPUUnionFind::execute() {
   auto w = l.width;
   auto h = l.height;
   auto d = l.data;

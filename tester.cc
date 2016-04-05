@@ -47,7 +47,6 @@ int main(int argc, const char *argv[]) {
     //strats.push_back(new IdStrategy);
     strats.push_back(new CPUOnePass);
     strats.push_back(new CPUUnionFind);
-    strats.push_back(new CPUUnionFindReusing);
     strats.push_back(new CPULinearTwoScan);
     strats.push_back(new CPUFrontBack);
     strats.push_back(new GPUNeighbourPropagation);

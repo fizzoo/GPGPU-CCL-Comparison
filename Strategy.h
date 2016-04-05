@@ -2,8 +2,6 @@
 #define STRATEGY_H
 
 #include <CL/cl.hpp>
-#include <boost/pending/disjoint_sets.hpp>
-#include <boost/property_map/property_map.hpp>
 #include "LabelData.h"
 
 /**
@@ -80,21 +78,12 @@ public:
 
 /**
  * Two-pass algorithm, using union-find for the equivalence.
+ * Equivalences are recorded inside the labeling themselves, similar to the gpu
+ * version.
  */
 class CPUUnionFind : public CPUBase {
 public:
   virtual std::string name() { return "CPU union-find"; }
-  virtual void execute();
-};
-
-/**
- * Two-pass algorithm, using union-find for the equivalence.
- * Equivalences are recorded inside the labeling themselves, similar to the gpu
- * version.
- */
-class CPUUnionFindReusing : public CPUBase {
-public:
-  virtual std::string name() { return "CPU union-find, reusing"; }
   virtual void execute();
   int findset(int location);
 };
