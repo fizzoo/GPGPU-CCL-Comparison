@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import sys
+from statistics import stdev, mean
+
 
 mappy = {}
 
@@ -13,9 +15,19 @@ for line in sys.stdin:
     mappy[parts[1]].append( (int(parts[2]), int(parts[3])) )
 
 for key, value in mappy.items():
-    withoutprep = sum( [x for x,_ in value] ) / len(value)
-    withprep = sum( [x for _,x in value] ) / len(value)
-    outputs.append(key + " " + str(int(withoutprep)).ljust(10) + " " + str(int(withprep)   ).ljust(10) )
+    withoutprep = [x for x,_ in value]
+    withprep = [x for _,x in value]
+
+    mean_wo = int(mean( withoutprep ))
+    mean_w  = int(mean( withprep ))
+
+    dev_wo = int(stdev( withoutprep ))
+    dev_w  = int(stdev( withprep ))
+    
+    string_wo = str(mean_wo).ljust(10) + " ( " + str(dev_wo).ljust(10) + ")"
+    string_w  = str(mean_w).ljust(10)  + " ( " + str(dev_w).ljust(10) + ")"
+    
+    outputs.append(key + " " + string_wo + " " + string_w)
 
 for string in sorted(outputs):
     print(string)
