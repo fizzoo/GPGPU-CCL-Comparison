@@ -4,9 +4,9 @@
 #include "defines.h"
 
 /**
- * A 1 if all of r, g, and b is above 100
+ * A 1 if all of r, g, and b is above 128
  */
-bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
+bool rgb_above_128(unsigned char r, unsigned char g, unsigned char b,
                    unsigned char);
 
 /**

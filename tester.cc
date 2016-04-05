@@ -39,11 +39,12 @@ int main(int argc, const char *argv[]) {
       fail("Image not loaded correctly, aborting.");
     }
 
-    LabelData input(&rgba_image, rgb_above_100);
+    LabelData input(&rgba_image, rgb_above_128);
     std::cerr << "Loaded input image '" << filename << "' into a LabelData"
               << std::endl;
 
     std::vector<Strategy *> strats;
+    //strats.push_back(new IdStrategy);
     strats.push_back(new CPUOnePass);
     strats.push_back(new CPUUnionFind);
     strats.push_back(new CPUUnionFindReusing);

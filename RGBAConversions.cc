@@ -1,8 +1,8 @@
 #include "RGBAConversions.h"
 
-bool rgb_above_100(unsigned char r, unsigned char g, unsigned char b,
+bool rgb_above_128(unsigned char r, unsigned char g, unsigned char b,
                    unsigned char) {
-  if (r > 100 && g > 100 && b > 100) {
+  if (r > 128 && g > 128 && b > 128) {
     return true;
   }
   return false;
