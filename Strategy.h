@@ -94,6 +94,20 @@ public:
 /**
  * Two-pass algorithm as proposed by Lifeng He, Yuyan Chao and
  * Kenju Suzuki.
+ *
+ * Initial scan will (if needed) asign a new label or try to asign 
+ * current pixel a existing label. To keep track of label relations
+ * three vectors are used. These vectors are the relation label table,
+ * the next table and the tail table.
+ * If two or more labels are part of the same component then by the 
+ * end of the first scan they will both have the same value in the 
+ * RL table. This smalest label will have a tail in the tail label, 
+ * which is the last label in the component.
+ * The next label simply points to the next label in the component, 
+ * starting at the smalest and ending at the tail
+ *
+ * Since all the label relations are taken care of in the first scan
+ * the 2nd scan simply assigns the correct label to all the pixels
  */
 class CPULinearTwoScan : public CPUBase {
 public:
@@ -103,6 +117,12 @@ public:
 
 /**
  * Multipass algorithm as proposed by Kenji Suzuki, Isao Horiba and Noboru Sugie.
+ *
+ * The initial scan is used to, in the forward raster direction, asign 
+ * initial labels and resolve some simple label eqvivalnces along the way.
+ * After that multiple scans in the backwards and forwards raster direction
+ * are done until no more change in result is seen. Theses subsequent scans
+ * are done in pairs of one backwards and one forwards scan.
  */
 class CPUFrontBack : public CPUBase {
   virtual std::string name() { return "CPU front back scan"; }
