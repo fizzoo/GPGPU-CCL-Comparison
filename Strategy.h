@@ -149,7 +149,7 @@ public:
  */
 class GPUNeighbourPropagation_Localer : public GPUBase {
 public:
-  virtual std::string name() { return "GPU neighbour propagation, loc"; }
+  virtual std::string name() { return "GPU neighbour propagation +local"; }
   virtual void execute();
 };
 
@@ -173,7 +173,7 @@ public:
  */
 class GPUUnionFind : public GPUBase {
 public:
-  virtual std::string name() { return "GPU Union-find"; }
+  virtual std::string name() { return "GPU union-find"; }
   virtual void execute();
 };
 
@@ -182,7 +182,7 @@ public:
  */
 class GPUUnionFind_Localer : public GPUBase {
 public:
-  virtual std::string name() { return "GPU Union-find, localer"; }
+  virtual std::string name() { return "GPU union-find +local"; }
   virtual void execute();
 };
 
@@ -213,7 +213,7 @@ public:
  */
 class GPUStackOnePass : public GPUBase {
 public:
-  virtual std::string name() { return "GPU recursive"; }
+  virtual std::string name() { return "GPU stack-based"; }
   virtual void execute();
 };
 

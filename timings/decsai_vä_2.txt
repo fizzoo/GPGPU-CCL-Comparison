@@ -1,0 +1,1152 @@
+binarized-decsai/100b.png        -- CPU one-pass                     -- 1240                    -- 1516
+binarized-decsai/100b.png        -- CPU union-find                   -- 1122                    -- 1372
+binarized-decsai/100b.png        -- CPU linear two-scan              -- 1768                    -- 2005
+binarized-decsai/100b.png        -- CPU front back scan              -- 3543                    -- 3766
+binarized-decsai/100b.png        -- GPU neighbour propagation        -- 24762                   -- 25704
+binarized-decsai/100b.png        -- GPU neighbour propagation +local -- 12685                   -- 13597
+binarized-decsai/100b.png        -- GPU union-find                   -- 635                     -- 1568
+binarized-decsai/100b.png        -- GPU union-find +local            -- 1520                    -- 2414
+binarized-decsai/100b.png        -- GPU plus propagation             -- 11054                   -- 11946
+binarized-decsai/100b.png        -- GPU line editing                 -- 9154                    -- 10053
+binarized-decsai/100b.png        -- GPU lines                        -- 11295                   -- 12184
+binarized-decsai/100b.png        -- GPU stack-based                  -- 1892                    -- 2789
+binarized-decsai/10.png          -- CPU one-pass                     -- 1566                    -- 1751
+binarized-decsai/10.png          -- CPU union-find                   -- 1098                    -- 1298
+binarized-decsai/10.png          -- CPU linear two-scan              -- 1695                    -- 1891
+binarized-decsai/10.png          -- CPU front back scan              -- 4828                    -- 5039
+binarized-decsai/10.png          -- GPU neighbour propagation        -- 58418                   -- 59370
+binarized-decsai/10.png          -- GPU neighbour propagation +local -- 35869                   -- 36814
+binarized-decsai/10.png          -- GPU union-find                   -- 805                     -- 1749
+binarized-decsai/10.png          -- GPU union-find +local            -- 2437                    -- 3377
+binarized-decsai/10.png          -- GPU plus propagation             -- 28067                   -- 28999
+binarized-decsai/10.png          -- GPU line editing                 -- 8077                    -- 9009
+binarized-decsai/10.png          -- GPU lines                        -- 10855                   -- 11778
+binarized-decsai/10.png          -- GPU stack-based                  -- 3299                    -- 4216
+binarized-decsai/11.png          -- CPU one-pass                     -- 1352                    -- 1535
+binarized-decsai/11.png          -- CPU union-find                   -- 1117                    -- 1328
+binarized-decsai/11.png          -- CPU linear two-scan              -- 1609                    -- 1805
+binarized-decsai/11.png          -- CPU front back scan              -- 4671                    -- 4876
+binarized-decsai/11.png          -- GPU neighbour propagation        -- 37089                   -- 38028
+binarized-decsai/11.png          -- GPU neighbour propagation +local -- 26576                   -- 27488
+binarized-decsai/11.png          -- GPU union-find                   -- 868                     -- 1774
+binarized-decsai/11.png          -- GPU union-find +local            -- 2025                    -- 2949
+binarized-decsai/11.png          -- GPU plus propagation             -- 34533                   -- 35440
+binarized-decsai/11.png          -- GPU line editing                 -- 12971                   -- 13877
+binarized-decsai/11.png          -- GPU lines                        -- 16771                   -- 17694
+binarized-decsai/11.png          -- GPU stack-based                  -- 2548                    -- 3455
+binarized-decsai/12.png          -- CPU one-pass                     -- 1027                    -- 1219
+binarized-decsai/12.png          -- CPU union-find                   -- 983                     -- 1186
+binarized-decsai/12.png          -- CPU linear two-scan              -- 1593                    -- 1788
+binarized-decsai/12.png          -- CPU front back scan              -- 3780                    -- 3981
+binarized-decsai/12.png          -- GPU neighbour propagation        -- 34298                   -- 35229
+binarized-decsai/12.png          -- GPU neighbour propagation +local -- 25381                   -- 26287
+binarized-decsai/12.png          -- GPU union-find                   -- 656                     -- 1552
+binarized-decsai/12.png          -- GPU union-find +local            -- 1689                    -- 2575
+binarized-decsai/12.png          -- GPU plus propagation             -- 48628                   -- 49517
+binarized-decsai/12.png          -- GPU line editing                 -- 26432                   -- 27316
+binarized-decsai/12.png          -- GPU lines                        -- 34112                   -- 35000
+binarized-decsai/12.png          -- GPU stack-based                  -- 1975                    -- 2860
+binarized-decsai/13.png          -- CPU one-pass                     -- 1400                    -- 1590
+binarized-decsai/13.png          -- CPU union-find                   -- 1192                    -- 1393
+binarized-decsai/13.png          -- CPU linear two-scan              -- 2049                    -- 2258
+binarized-decsai/13.png          -- CPU front back scan              -- 4900                    -- 5103
+binarized-decsai/13.png          -- GPU neighbour propagation        -- 41427                   -- 42372
+binarized-decsai/13.png          -- GPU neighbour propagation +local -- 22209                   -- 23133
+binarized-decsai/13.png          -- GPU union-find                   -- 922                     -- 1840
+binarized-decsai/13.png          -- GPU union-find +local            -- 2109                    -- 3023
+binarized-decsai/13.png          -- GPU plus propagation             -- 80145                   -- 81053
+binarized-decsai/13.png          -- GPU line editing                 -- 22738                   -- 23661
+binarized-decsai/13.png          -- GPU lines                        -- 30445                   -- 31358
+binarized-decsai/13.png          -- GPU stack-based                  -- 2821                    -- 3732
+binarized-decsai/14.png          -- CPU one-pass                     -- 1531                    -- 1722
+binarized-decsai/14.png          -- CPU union-find                   -- 1412                    -- 1627
+binarized-decsai/14.png          -- CPU linear two-scan              -- 2307                    -- 2505
+binarized-decsai/14.png          -- CPU front back scan              -- 5071                    -- 5276
+binarized-decsai/14.png          -- GPU neighbour propagation        -- 28786                   -- 29721
+binarized-decsai/14.png          -- GPU neighbour propagation +local -- 11977                   -- 12890
+binarized-decsai/14.png          -- GPU union-find                   -- 881                     -- 1792
+binarized-decsai/14.png          -- GPU union-find +local            -- 1773                    -- 2706
+binarized-decsai/14.png          -- GPU plus propagation             -- 34353                   -- 35257
+binarized-decsai/14.png          -- GPU line editing                 -- 26619                   -- 27520
+binarized-decsai/14.png          -- GPU lines                        -- 34360                   -- 35265
+binarized-decsai/14.png          -- GPU stack-based                  -- 2555                    -- 3461
+binarized-decsai/15.png          -- CPU one-pass                     -- 1215                    -- 1426
+binarized-decsai/15.png          -- CPU union-find                   -- 1178                    -- 1396
+binarized-decsai/15.png          -- CPU linear two-scan              -- 1892                    -- 2093
+binarized-decsai/15.png          -- CPU front back scan              -- 4093                    -- 4295
+binarized-decsai/15.png          -- GPU neighbour propagation        -- 18516                   -- 19462
+binarized-decsai/15.png          -- GPU neighbour propagation +local -- 7604                    -- 8504
+binarized-decsai/15.png          -- GPU union-find                   -- 768                     -- 1666
+binarized-decsai/15.png          -- GPU union-find +local            -- 1656                    -- 2553
+binarized-decsai/15.png          -- GPU plus propagation             -- 29233                   -- 30125
+binarized-decsai/15.png          -- GPU line editing                 -- 27314                   -- 28209
+binarized-decsai/15.png          -- GPU lines                        -- 29570                   -- 30463
+binarized-decsai/15.png          -- GPU stack-based                  -- 1810                    -- 2727
+binarized-decsai/16.png          -- CPU one-pass                     -- 1095                    -- 1280
+binarized-decsai/16.png          -- CPU union-find                   -- 910                     -- 1115
+binarized-decsai/16.png          -- CPU linear two-scan              -- 1490                    -- 1697
+binarized-decsai/16.png          -- CPU front back scan              -- 3454                    -- 3658
+binarized-decsai/16.png          -- GPU neighbour propagation        -- 22692                   -- 23635
+binarized-decsai/16.png          -- GPU neighbour propagation +local -- 12867                   -- 13787
+binarized-decsai/16.png          -- GPU union-find                   -- 743                     -- 1675
+binarized-decsai/16.png          -- GPU union-find +local            -- 1429                    -- 2358
+binarized-decsai/16.png          -- GPU plus propagation             -- 20897                   -- 21805
+binarized-decsai/16.png          -- GPU line editing                 -- 12272                   -- 13180
+binarized-decsai/16.png          -- GPU lines                        -- 16725                   -- 17642
+binarized-decsai/16.png          -- GPU stack-based                  -- 1828                    -- 2736
+binarized-decsai/17.png          -- CPU one-pass                     -- 939                     -- 1123
+binarized-decsai/17.png          -- CPU union-find                   -- 992                     -- 1187
+binarized-decsai/17.png          -- CPU linear two-scan              -- 1945                    -- 2137
+binarized-decsai/17.png          -- CPU front back scan              -- 3494                    -- 3692
+binarized-decsai/17.png          -- GPU neighbour propagation        -- 36379                   -- 37319
+binarized-decsai/17.png          -- GPU neighbour propagation +local -- 17100                   -- 17988
+binarized-decsai/17.png          -- GPU union-find                   -- 620                     -- 1517
+binarized-decsai/17.png          -- GPU union-find +local            -- 1471                    -- 2346
+binarized-decsai/17.png          -- GPU plus propagation             -- 12336                   -- 13232
+binarized-decsai/17.png          -- GPU line editing                 -- 23411                   -- 24285
+binarized-decsai/17.png          -- GPU lines                        -- 31417                   -- 32311
+binarized-decsai/17.png          -- GPU stack-based                  -- 2400                    -- 3269
+binarized-decsai/18.png          -- CPU one-pass                     -- 722                     -- 934
+binarized-decsai/18.png          -- CPU union-find                   -- 762                     -- 974
+binarized-decsai/18.png          -- CPU linear two-scan              -- 1423                    -- 1624
+binarized-decsai/18.png          -- CPU front back scan              -- 2518                    -- 2721
+binarized-decsai/18.png          -- GPU neighbour propagation        -- 14623                   -- 15553
+binarized-decsai/18.png          -- GPU neighbour propagation +local -- 5422                    -- 6317
+binarized-decsai/18.png          -- GPU union-find                   -- 532                     -- 1414
+binarized-decsai/18.png          -- GPU union-find +local            -- 1056                    -- 1937
+binarized-decsai/18.png          -- GPU plus propagation             -- 8084                    -- 8997
+binarized-decsai/18.png          -- GPU line editing                 -- 16696                   -- 17586
+binarized-decsai/18.png          -- GPU lines                        -- 17361                   -- 18249
+binarized-decsai/18.png          -- GPU stack-based                  -- 1423                    -- 2309
+binarized-decsai/19.png          -- CPU one-pass                     -- 947                     -- 1141
+binarized-decsai/19.png          -- CPU union-find                   -- 903                     -- 1104
+binarized-decsai/19.png          -- CPU linear two-scan              -- 1513                    -- 1707
+binarized-decsai/19.png          -- CPU front back scan              -- 3265                    -- 3467
+binarized-decsai/19.png          -- GPU neighbour propagation        -- 29941                   -- 30865
+binarized-decsai/19.png          -- GPU neighbour propagation +local -- 12706                   -- 13607
+binarized-decsai/19.png          -- GPU union-find                   -- 805                     -- 1693
+binarized-decsai/19.png          -- GPU union-find +local            -- 1637                    -- 2533
+binarized-decsai/19.png          -- GPU plus propagation             -- 26226                   -- 27114
+binarized-decsai/19.png          -- GPU line editing                 -- 27615                   -- 28514
+binarized-decsai/19.png          -- GPU lines                        -- 28722                   -- 29617
+binarized-decsai/19.png          -- GPU stack-based                  -- 2426                    -- 3321
+binarized-decsai/1.png           -- CPU one-pass                     -- 1186                    -- 1370
+binarized-decsai/1.png           -- CPU union-find                   -- 1069                    -- 1275
+binarized-decsai/1.png           -- CPU linear two-scan              -- 2379                    -- 2580
+binarized-decsai/1.png           -- CPU front back scan              -- 4133                    -- 4336
+binarized-decsai/1.png           -- GPU neighbour propagation        -- 26543                   -- 27485
+binarized-decsai/1.png           -- GPU neighbour propagation +local -- 19342                   -- 20255
+binarized-decsai/1.png           -- GPU union-find                   -- 695                     -- 1609
+binarized-decsai/1.png           -- GPU union-find +local            -- 1974                    -- 2887
+binarized-decsai/1.png           -- GPU plus propagation             -- 66920                   -- 67829
+binarized-decsai/1.png           -- GPU line editing                 -- 36288                   -- 37197
+binarized-decsai/1.png           -- GPU lines                        -- 46827                   -- 47732
+binarized-decsai/1.png           -- GPU stack-based                  -- 2199                    -- 3104
+binarized-decsai/20.png          -- CPU one-pass                     -- 1167                    -- 1384
+binarized-decsai/20.png          -- CPU union-find                   -- 994                     -- 1211
+binarized-decsai/20.png          -- CPU linear two-scan              -- 1731                    -- 1930
+binarized-decsai/20.png          -- CPU front back scan              -- 3775                    -- 3978
+binarized-decsai/20.png          -- GPU neighbour propagation        -- 18320                   -- 19251
+binarized-decsai/20.png          -- GPU neighbour propagation +local -- 14129                   -- 15055
+binarized-decsai/20.png          -- GPU union-find                   -- 632                     -- 1543
+binarized-decsai/20.png          -- GPU union-find +local            -- 1552                    -- 2456
+binarized-decsai/20.png          -- GPU plus propagation             -- 17713                   -- 18611
+binarized-decsai/20.png          -- GPU line editing                 -- 9010                    -- 9911
+binarized-decsai/20.png          -- GPU lines                        -- 12094                   -- 13006
+binarized-decsai/20.png          -- GPU stack-based                  -- 1613                    -- 2533
+binarized-decsai/21.png          -- CPU one-pass                     -- 1066                    -- 1267
+binarized-decsai/21.png          -- CPU union-find                   -- 906                     -- 1105
+binarized-decsai/21.png          -- CPU linear two-scan              -- 1432                    -- 1631
+binarized-decsai/21.png          -- CPU front back scan              -- 3573                    -- 3774
+binarized-decsai/21.png          -- GPU neighbour propagation        -- 22508                   -- 23441
+binarized-decsai/21.png          -- GPU neighbour propagation +local -- 13026                   -- 13939
+binarized-decsai/21.png          -- GPU union-find                   -- 813                     -- 1735
+binarized-decsai/21.png          -- GPU union-find +local            -- 1529                    -- 2451
+binarized-decsai/21.png          -- GPU plus propagation             -- 23524                   -- 24433
+binarized-decsai/21.png          -- GPU line editing                 -- 9942                    -- 10862
+binarized-decsai/21.png          -- GPU lines                        -- 11222                   -- 12122
+binarized-decsai/21.png          -- GPU stack-based                  -- 1941                    -- 2846
+binarized-decsai/22.png          -- CPU one-pass                     -- 961                     -- 1147
+binarized-decsai/22.png          -- CPU union-find                   -- 925                     -- 1122
+binarized-decsai/22.png          -- CPU linear two-scan              -- 1794                    -- 1990
+binarized-decsai/22.png          -- CPU front back scan              -- 3259                    -- 3459
+binarized-decsai/22.png          -- GPU neighbour propagation        -- 23485                   -- 24418
+binarized-decsai/22.png          -- GPU neighbour propagation +local -- 14228                   -- 15127
+binarized-decsai/22.png          -- GPU union-find                   -- 600                     -- 1506
+binarized-decsai/22.png          -- GPU union-find +local            -- 1326                    -- 2214
+binarized-decsai/22.png          -- GPU plus propagation             -- 20186                   -- 21081
+binarized-decsai/22.png          -- GPU line editing                 -- 22177                   -- 23068
+binarized-decsai/22.png          -- GPU lines                        -- 24045                   -- 24940
+binarized-decsai/22.png          -- GPU stack-based                  -- 1687                    -- 2574
+binarized-decsai/23.png          -- CPU one-pass                     -- 401                     -- 600
+binarized-decsai/23.png          -- CPU union-find                   -- 485                     -- 682
+binarized-decsai/23.png          -- CPU linear two-scan              -- 1042                    -- 1237
+binarized-decsai/23.png          -- CPU front back scan              -- 1571                    -- 1772
+binarized-decsai/23.png          -- GPU neighbour propagation        -- 13973                   -- 14885
+binarized-decsai/23.png          -- GPU neighbour propagation +local -- 4555                    -- 5437
+binarized-decsai/23.png          -- GPU union-find                   -- 471                     -- 1342
+binarized-decsai/23.png          -- GPU union-find +local            -- 795                     -- 1674
+binarized-decsai/23.png          -- GPU plus propagation             -- 4219                    -- 5090
+binarized-decsai/23.png          -- GPU line editing                 -- 10806                   -- 11718
+binarized-decsai/23.png          -- GPU lines                        -- 10250                   -- 11167
+binarized-decsai/23.png          -- GPU stack-based                  -- 987                     -- 1882
+binarized-decsai/24.png          -- CPU one-pass                     -- 1591                    -- 1782
+binarized-decsai/24.png          -- CPU union-find                   -- 1120                    -- 1320
+binarized-decsai/24.png          -- CPU linear two-scan              -- 1552                    -- 1750
+binarized-decsai/24.png          -- CPU front back scan              -- 4994                    -- 5202
+binarized-decsai/24.png          -- GPU neighbour propagation        -- 33504                   -- 34461
+binarized-decsai/24.png          -- GPU neighbour propagation +local -- 21669                   -- 22600
+binarized-decsai/24.png          -- GPU union-find                   -- 904                     -- 1825
+binarized-decsai/24.png          -- GPU union-find +local            -- 2250                    -- 3169
+binarized-decsai/24.png          -- GPU plus propagation             -- 32528                   -- 33458
+binarized-decsai/24.png          -- GPU line editing                 -- 7408                    -- 8337
+binarized-decsai/24.png          -- GPU lines                        -- 8964                    -- 9889
+binarized-decsai/24.png          -- GPU stack-based                  -- 3363                    -- 4282
+binarized-decsai/25.png          -- CPU one-pass                     -- 1384                    -- 1585
+binarized-decsai/25.png          -- CPU union-find                   -- 1124                    -- 1324
+binarized-decsai/25.png          -- CPU linear two-scan              -- 1523                    -- 1722
+binarized-decsai/25.png          -- CPU front back scan              -- 4848                    -- 5051
+binarized-decsai/25.png          -- GPU neighbour propagation        -- 36740                   -- 37681
+binarized-decsai/25.png          -- GPU neighbour propagation +local -- 27845                   -- 28760
+binarized-decsai/25.png          -- GPU union-find                   -- 697                     -- 1608
+binarized-decsai/25.png          -- GPU union-find +local            -- 2131                    -- 3056
+binarized-decsai/25.png          -- GPU plus propagation             -- 65622                   -- 66541
+binarized-decsai/25.png          -- GPU line editing                 -- 18630                   -- 19548
+binarized-decsai/25.png          -- GPU lines                        -- 24799                   -- 25705
+binarized-decsai/25.png          -- GPU stack-based                  -- 2016                    -- 2936
+binarized-decsai/26.png          -- CPU one-pass                     -- 1192                    -- 1396
+binarized-decsai/26.png          -- CPU union-find                   -- 1093                    -- 1295
+binarized-decsai/26.png          -- CPU linear two-scan              -- 2014                    -- 2217
+binarized-decsai/26.png          -- CPU front back scan              -- 4185                    -- 4392
+binarized-decsai/26.png          -- GPU neighbour propagation        -- 37957                   -- 38905
+binarized-decsai/26.png          -- GPU neighbour propagation +local -- 23004                   -- 23917
+binarized-decsai/26.png          -- GPU union-find                   -- 664                     -- 1568
+binarized-decsai/26.png          -- GPU union-find +local            -- 1874                    -- 2778
+binarized-decsai/26.png          -- GPU plus propagation             -- 19901                   -- 20801
+binarized-decsai/26.png          -- GPU line editing                 -- 14442                   -- 15358
+binarized-decsai/26.png          -- GPU lines                        -- 19405                   -- 20313
+binarized-decsai/26.png          -- GPU stack-based                  -- 2717                    -- 3616
+binarized-decsai/27.png          -- CPU one-pass                     -- 330                     -- 523
+binarized-decsai/27.png          -- CPU union-find                   -- 404                     -- 605
+binarized-decsai/27.png          -- CPU linear two-scan              -- 956                     -- 1155
+binarized-decsai/27.png          -- CPU front back scan              -- 811                     -- 1014
+binarized-decsai/27.png          -- GPU neighbour propagation        -- 5271                    -- 6199
+binarized-decsai/27.png          -- GPU neighbour propagation +local -- 1909                    -- 2805
+binarized-decsai/27.png          -- GPU union-find                   -- 407                     -- 1280
+binarized-decsai/27.png          -- GPU union-find +local            -- 672                     -- 1571
+binarized-decsai/27.png          -- GPU plus propagation             -- 2097                    -- 2979
+binarized-decsai/27.png          -- GPU line editing                 -- 6659                    -- 7546
+binarized-decsai/27.png          -- GPU lines                        -- 5381                    -- 6264
+binarized-decsai/27.png          -- GPU stack-based                  -- 569                     -- 1456
+binarized-decsai/28.png          -- CPU one-pass                     -- 1445                    -- 1512
+binarized-decsai/28.png          -- CPU union-find                   -- 955                     -- 1056
+binarized-decsai/28.png          -- CPU linear two-scan              -- 1190                    -- 1289
+binarized-decsai/28.png          -- CPU front back scan              -- 3926                    -- 4027
+binarized-decsai/28.png          -- GPU neighbour propagation        -- 28049                   -- 28848
+binarized-decsai/28.png          -- GPU neighbour propagation +local -- 15564                   -- 16363
+binarized-decsai/28.png          -- GPU union-find                   -- 844                     -- 1635
+binarized-decsai/28.png          -- GPU union-find +local            -- 1819                    -- 2603
+binarized-decsai/28.png          -- GPU plus propagation             -- 22429                   -- 23208
+binarized-decsai/28.png          -- GPU line editing                 -- 6849                    -- 7645
+binarized-decsai/28.png          -- GPU lines                        -- 7636                    -- 8429
+binarized-decsai/28.png          -- GPU stack-based                  -- 2339                    -- 3126
+binarized-decsai/29.png          -- CPU one-pass                     -- 1294                    -- 1361
+binarized-decsai/29.png          -- CPU union-find                   -- 1199                    -- 1288
+binarized-decsai/29.png          -- CPU linear two-scan              -- 4102                    -- 4185
+binarized-decsai/29.png          -- CPU front back scan              -- 4488                    -- 4700
+binarized-decsai/29.png          -- GPU neighbour propagation        -- 29725                   -- 30502
+binarized-decsai/29.png          -- GPU neighbour propagation +local -- 17891                   -- 18643
+binarized-decsai/29.png          -- GPU union-find                   -- 688                     -- 1429
+binarized-decsai/29.png          -- GPU union-find +local            -- 1741                    -- 2474
+binarized-decsai/29.png          -- GPU plus propagation             -- 20633                   -- 21362
+binarized-decsai/29.png          -- GPU line editing                 -- 24138                   -- 24879
+binarized-decsai/29.png          -- GPU lines                        -- 31953                   -- 32687
+binarized-decsai/29.png          -- GPU stack-based                  -- 1965                    -- 2704
+binarized-decsai/2.png           -- CPU one-pass                     -- 817                     -- 884
+binarized-decsai/2.png           -- CPU union-find                   -- 790                     -- 876
+binarized-decsai/2.png           -- CPU linear two-scan              -- 1005                    -- 1084
+binarized-decsai/2.png           -- CPU front back scan              -- 2849                    -- 3057
+binarized-decsai/2.png           -- GPU neighbour propagation        -- 19000                   -- 19785
+binarized-decsai/2.png           -- GPU neighbour propagation +local -- 4759                    -- 5495
+binarized-decsai/2.png           -- GPU union-find                   -- 770                     -- 1500
+binarized-decsai/2.png           -- GPU union-find +local            -- 1241                    -- 1977
+binarized-decsai/2.png           -- GPU plus propagation             -- 12926                   -- 13656
+binarized-decsai/2.png           -- GPU line editing                 -- 10521                   -- 11242
+binarized-decsai/2.png           -- GPU lines                        -- 12130                   -- 12848
+binarized-decsai/2.png           -- GPU stack-based                  -- 1525                    -- 2241
+binarized-decsai/30.png          -- CPU one-pass                     -- 1025                    -- 1090
+binarized-decsai/30.png          -- CPU union-find                   -- 980                     -- 1068
+binarized-decsai/30.png          -- CPU linear two-scan              -- 1396                    -- 1476
+binarized-decsai/30.png          -- CPU front back scan              -- 3622                    -- 3829
+binarized-decsai/30.png          -- GPU neighbour propagation        -- 25449                   -- 26236
+binarized-decsai/30.png          -- GPU neighbour propagation +local -- 15852                   -- 16595
+binarized-decsai/30.png          -- GPU union-find                   -- 710                     -- 1446
+binarized-decsai/30.png          -- GPU union-find +local            -- 1513                    -- 2258
+binarized-decsai/30.png          -- GPU plus propagation             -- 18194                   -- 18925
+binarized-decsai/30.png          -- GPU line editing                 -- 14388                   -- 15118
+binarized-decsai/30.png          -- GPU lines                        -- 17735                   -- 18468
+binarized-decsai/30.png          -- GPU stack-based                  -- 1661                    -- 2391
+binarized-decsai/31.png          -- CPU one-pass                     -- 1395                    -- 1463
+binarized-decsai/31.png          -- CPU union-find                   -- 1366                    -- 1456
+binarized-decsai/31.png          -- CPU linear two-scan              -- 4869                    -- 4953
+binarized-decsai/31.png          -- CPU front back scan              -- 4872                    -- 5086
+binarized-decsai/31.png          -- GPU neighbour propagation        -- 46055                   -- 46838
+binarized-decsai/31.png          -- GPU neighbour propagation +local -- 20885                   -- 21626
+binarized-decsai/31.png          -- GPU union-find                   -- 705                     -- 1445
+binarized-decsai/31.png          -- GPU union-find +local            -- 1842                    -- 2572
+binarized-decsai/31.png          -- GPU plus propagation             -- 21654                   -- 22388
+binarized-decsai/31.png          -- GPU line editing                 -- 34881                   -- 35624
+binarized-decsai/31.png          -- GPU lines                        -- 42460                   -- 43199
+binarized-decsai/31.png          -- GPU stack-based                  -- 2597                    -- 3334
+binarized-decsai/32.png          -- CPU one-pass                     -- 1178                    -- 1250
+binarized-decsai/32.png          -- CPU union-find                   -- 1070                    -- 1160
+binarized-decsai/32.png          -- CPU linear two-scan              -- 2032                    -- 2114
+binarized-decsai/32.png          -- CPU front back scan              -- 4174                    -- 4386
+binarized-decsai/32.png          -- GPU neighbour propagation        -- 31233                   -- 32019
+binarized-decsai/32.png          -- GPU neighbour propagation +local -- 23804                   -- 24553
+binarized-decsai/32.png          -- GPU union-find                   -- 658                     -- 1395
+binarized-decsai/32.png          -- GPU union-find +local            -- 1821                    -- 2552
+binarized-decsai/32.png          -- GPU plus propagation             -- 30717                   -- 31446
+binarized-decsai/32.png          -- GPU line editing                 -- 16230                   -- 16976
+binarized-decsai/32.png          -- GPU lines                        -- 20891                   -- 21628
+binarized-decsai/32.png          -- GPU stack-based                  -- 2093                    -- 2831
+binarized-decsai/33b.png         -- CPU one-pass                     -- 1356                    -- 1423
+binarized-decsai/33b.png         -- CPU union-find                   -- 1196                    -- 1294
+binarized-decsai/33b.png         -- CPU linear two-scan              -- 1301                    -- 1384
+binarized-decsai/33b.png         -- CPU front back scan              -- 4810                    -- 5024
+binarized-decsai/33b.png         -- GPU neighbour propagation        -- 16955                   -- 17734
+binarized-decsai/33b.png         -- GPU neighbour propagation +local -- 10491                   -- 11225
+binarized-decsai/33b.png         -- GPU union-find                   -- 710                     -- 1431
+binarized-decsai/33b.png         -- GPU union-find +local            -- 2002                    -- 2716
+binarized-decsai/33b.png         -- GPU plus propagation             -- 21144                   -- 21860
+binarized-decsai/33b.png         -- GPU line editing                 -- 10528                   -- 11245
+binarized-decsai/33b.png         -- GPU lines                        -- 14834                   -- 15544
+binarized-decsai/33b.png         -- GPU stack-based                  -- 2030                    -- 2746
+binarized-decsai/33.png          -- CPU one-pass                     -- 730                     -- 798
+binarized-decsai/33.png          -- CPU union-find                   -- 760                     -- 846
+binarized-decsai/33.png          -- CPU linear two-scan              -- 1030                    -- 1108
+binarized-decsai/33.png          -- CPU front back scan              -- 2609                    -- 2820
+binarized-decsai/33.png          -- GPU neighbour propagation        -- 11693                   -- 12476
+binarized-decsai/33.png          -- GPU neighbour propagation +local -- 5171                    -- 5903
+binarized-decsai/33.png          -- GPU union-find                   -- 544                     -- 1264
+binarized-decsai/33.png          -- GPU union-find +local            -- 1161                    -- 1883
+binarized-decsai/33.png          -- GPU plus propagation             -- 7384                    -- 8103
+binarized-decsai/33.png          -- GPU line editing                 -- 11781                   -- 12492
+binarized-decsai/33.png          -- GPU lines                        -- 12506                   -- 13217
+binarized-decsai/33.png          -- GPU stack-based                  -- 1250                    -- 1959
+binarized-decsai/34.png          -- CPU one-pass                     -- 968                     -- 1039
+binarized-decsai/34.png          -- CPU union-find                   -- 971                     -- 1058
+binarized-decsai/34.png          -- CPU linear two-scan              -- 1421                    -- 1499
+binarized-decsai/34.png          -- CPU front back scan              -- 3501                    -- 3716
+binarized-decsai/34.png          -- GPU neighbour propagation        -- 31687                   -- 32597
+binarized-decsai/34.png          -- GPU neighbour propagation +local -- 12443                   -- 13368
+binarized-decsai/34.png          -- GPU union-find                   -- 693                     -- 1551
+binarized-decsai/34.png          -- GPU union-find +local            -- 1563                    -- 2374
+binarized-decsai/34.png          -- GPU plus propagation             -- 7399                    -- 8210
+binarized-decsai/34.png          -- GPU line editing                 -- 9890                    -- 10658
+binarized-decsai/34.png          -- GPU lines                        -- 11666                   -- 12409
+binarized-decsai/34.png          -- GPU stack-based                  -- 1612                    -- 2338
+binarized-decsai/35.png          -- CPU one-pass                     -- 1007                    -- 1074
+binarized-decsai/35.png          -- CPU union-find                   -- 960                     -- 1045
+binarized-decsai/35.png          -- CPU linear two-scan              -- 1278                    -- 1354
+binarized-decsai/35.png          -- CPU front back scan              -- 3609                    -- 3824
+binarized-decsai/35.png          -- GPU neighbour propagation        -- 15334                   -- 16110
+binarized-decsai/35.png          -- GPU neighbour propagation +local -- 8381                    -- 9113
+binarized-decsai/35.png          -- GPU union-find                   -- 614                     -- 1339
+binarized-decsai/35.png          -- GPU union-find +local            -- 1591                    -- 2312
+binarized-decsai/35.png          -- GPU plus propagation             -- 6566                    -- 7284
+binarized-decsai/35.png          -- GPU line editing                 -- 8481                    -- 9199
+binarized-decsai/35.png          -- GPU lines                        -- 9826                    -- 10542
+binarized-decsai/35.png          -- GPU stack-based                  -- 1688                    -- 2404
+binarized-decsai/36.png          -- CPU one-pass                     -- 974                     -- 1043
+binarized-decsai/36.png          -- CPU union-find                   -- 939                     -- 1031
+binarized-decsai/36.png          -- CPU linear two-scan              -- 1189                    -- 1269
+binarized-decsai/36.png          -- CPU front back scan              -- 3396                    -- 3610
+binarized-decsai/36.png          -- GPU neighbour propagation        -- 18486                   -- 19271
+binarized-decsai/36.png          -- GPU neighbour propagation +local -- 9097                    -- 9841
+binarized-decsai/36.png          -- GPU union-find                   -- 674                     -- 1408
+binarized-decsai/36.png          -- GPU union-find +local            -- 1442                    -- 2167
+binarized-decsai/36.png          -- GPU plus propagation             -- 11426                   -- 12149
+binarized-decsai/36.png          -- GPU line editing                 -- 11091                   -- 11814
+binarized-decsai/36.png          -- GPU lines                        -- 15016                   -- 15736
+binarized-decsai/36.png          -- GPU stack-based                  -- 2024                    -- 2744
+binarized-decsai/37.png          -- CPU one-pass                     -- 1082                    -- 1150
+binarized-decsai/37.png          -- CPU union-find                   -- 1068                    -- 1155
+binarized-decsai/37.png          -- CPU linear two-scan              -- 1813                    -- 1894
+binarized-decsai/37.png          -- CPU front back scan              -- 3815                    -- 4031
+binarized-decsai/37.png          -- GPU neighbour propagation        -- 31714                   -- 32503
+binarized-decsai/37.png          -- GPU neighbour propagation +local -- 15069                   -- 15817
+binarized-decsai/37.png          -- GPU union-find                   -- 659                     -- 1397
+binarized-decsai/37.png          -- GPU union-find +local            -- 1535                    -- 2263
+binarized-decsai/37.png          -- GPU plus propagation             -- 14928                   -- 15654
+binarized-decsai/37.png          -- GPU line editing                 -- 19798                   -- 20523
+binarized-decsai/37.png          -- GPU lines                        -- 22698                   -- 23433
+binarized-decsai/37.png          -- GPU stack-based                  -- 1948                    -- 2674
+binarized-decsai/38.png          -- CPU one-pass                     -- 1160                    -- 1227
+binarized-decsai/38.png          -- CPU union-find                   -- 993                     -- 1088
+binarized-decsai/38.png          -- CPU linear two-scan              -- 1220                    -- 1311
+binarized-decsai/38.png          -- CPU front back scan              -- 3881                    -- 4095
+binarized-decsai/38.png          -- GPU neighbour propagation        -- 32519                   -- 33309
+binarized-decsai/38.png          -- GPU neighbour propagation +local -- 18658                   -- 19432
+binarized-decsai/38.png          -- GPU union-find                   -- 920                     -- 1677
+binarized-decsai/38.png          -- GPU union-find +local            -- 1772                    -- 2532
+binarized-decsai/38.png          -- GPU plus propagation             -- 46665                   -- 47424
+binarized-decsai/38.png          -- GPU line editing                 -- 19740                   -- 20493
+binarized-decsai/38.png          -- GPU lines                        -- 23010                   -- 23770
+binarized-decsai/38.png          -- GPU stack-based                  -- 2861                    -- 3614
+binarized-decsai/39b.png         -- CPU one-pass                     -- 1141                    -- 1212
+binarized-decsai/39b.png         -- CPU union-find                   -- 1016                    -- 1104
+binarized-decsai/39b.png         -- CPU linear two-scan              -- 1252                    -- 1333
+binarized-decsai/39b.png         -- CPU front back scan              -- 3929                    -- 4144
+binarized-decsai/39b.png         -- GPU neighbour propagation        -- 18002                   -- 18780
+binarized-decsai/39b.png         -- GPU neighbour propagation +local -- 9587                    -- 10337
+binarized-decsai/39b.png         -- GPU union-find                   -- 749                     -- 1488
+binarized-decsai/39b.png         -- GPU union-find +local            -- 1759                    -- 2488
+binarized-decsai/39b.png         -- GPU plus propagation             -- 24050                   -- 24779
+binarized-decsai/39b.png         -- GPU line editing                 -- 14783                   -- 15534
+binarized-decsai/39b.png         -- GPU lines                        -- 18745                   -- 19485
+binarized-decsai/39b.png         -- GPU stack-based                  -- 1737                    -- 2467
+binarized-decsai/39.png          -- CPU one-pass                     -- 814                     -- 881
+binarized-decsai/39.png          -- CPU union-find                   -- 759                     -- 856
+binarized-decsai/39.png          -- CPU linear two-scan              -- 947                     -- 1030
+binarized-decsai/39.png          -- CPU front back scan              -- 2940                    -- 3151
+binarized-decsai/39.png          -- GPU neighbour propagation        -- 15482                   -- 16270
+binarized-decsai/39.png          -- GPU neighbour propagation +local -- 8636                    -- 9374
+binarized-decsai/39.png          -- GPU union-find                   -- 606                     -- 1334
+binarized-decsai/39.png          -- GPU union-find +local            -- 1360                    -- 2088
+binarized-decsai/39.png          -- GPU plus propagation             -- 9853                    -- 10575
+binarized-decsai/39.png          -- GPU line editing                 -- 6629                    -- 7374
+binarized-decsai/39.png          -- GPU lines                        -- 7809                    -- 8543
+binarized-decsai/39.png          -- GPU stack-based                  -- 1513                    -- 2242
+binarized-decsai/3.png           -- CPU one-pass                     -- 852                     -- 920
+binarized-decsai/3.png           -- CPU union-find                   -- 840                     -- 929
+binarized-decsai/3.png           -- CPU linear two-scan              -- 1126                    -- 1207
+binarized-decsai/3.png           -- CPU front back scan              -- 3060                    -- 3275
+binarized-decsai/3.png           -- GPU neighbour propagation        -- 20628                   -- 21414
+binarized-decsai/3.png           -- GPU neighbour propagation +local -- 12416                   -- 13156
+binarized-decsai/3.png           -- GPU union-find                   -- 575                     -- 1305
+binarized-decsai/3.png           -- GPU union-find +local            -- 1380                    -- 2110
+binarized-decsai/3.png           -- GPU plus propagation             -- 36435                   -- 37159
+binarized-decsai/3.png           -- GPU line editing                 -- 27559                   -- 28283
+binarized-decsai/3.png           -- GPU lines                        -- 37236                   -- 37954
+binarized-decsai/3.png           -- GPU stack-based                  -- 1736                    -- 2459
+binarized-decsai/40b.png         -- CPU one-pass                     -- 1420                    -- 1488
+binarized-decsai/40b.png         -- CPU union-find                   -- 1253                    -- 1344
+binarized-decsai/40b.png         -- CPU linear two-scan              -- 1612                    -- 1694
+binarized-decsai/40b.png         -- CPU front back scan              -- 4902                    -- 5115
+binarized-decsai/40b.png         -- GPU neighbour propagation        -- 27097                   -- 27892
+binarized-decsai/40b.png         -- GPU neighbour propagation +local -- 17238                   -- 17989
+binarized-decsai/40b.png         -- GPU union-find                   -- 693                     -- 1437
+binarized-decsai/40b.png         -- GPU union-find +local            -- 2031                    -- 2767
+binarized-decsai/40b.png         -- GPU plus propagation             -- 39624                   -- 40360
+binarized-decsai/40b.png         -- GPU line editing                 -- 20974                   -- 21709
+binarized-decsai/40b.png         -- GPU lines                        -- 26919                   -- 27656
+binarized-decsai/40b.png         -- GPU stack-based                  -- 2253                    -- 2993
+binarized-decsai/40.png          -- CPU one-pass                     -- 1057                    -- 1124
+binarized-decsai/40.png          -- CPU union-find                   -- 1016                    -- 1106
+binarized-decsai/40.png          -- CPU linear two-scan              -- 1320                    -- 1401
+binarized-decsai/40.png          -- CPU front back scan              -- 3900                    -- 4114
+binarized-decsai/40.png          -- GPU neighbour propagation        -- 27079                   -- 27869
+binarized-decsai/40.png          -- GPU neighbour propagation +local -- 18726                   -- 19461
+binarized-decsai/40.png          -- GPU union-find                   -- 790                     -- 1527
+binarized-decsai/40.png          -- GPU union-find +local            -- 1790                    -- 2520
+binarized-decsai/40.png          -- GPU plus propagation             -- 12210                   -- 12938
+binarized-decsai/40.png          -- GPU line editing                 -- 8658                    -- 9383
+binarized-decsai/40.png          -- GPU lines                        -- 10938                   -- 11656
+binarized-decsai/40.png          -- GPU stack-based                  -- 2022                    -- 2742
+binarized-decsai/41b.png         -- CPU one-pass                     -- 1203                    -- 1271
+binarized-decsai/41b.png         -- CPU union-find                   -- 1060                    -- 1155
+binarized-decsai/41b.png         -- CPU linear two-scan              -- 1162                    -- 1249
+binarized-decsai/41b.png         -- CPU front back scan              -- 4511                    -- 4720
+binarized-decsai/41b.png         -- GPU neighbour propagation        -- 59976                   -- 60761
+binarized-decsai/41b.png         -- GPU neighbour propagation +local -- 44569                   -- 45319
+binarized-decsai/41b.png         -- GPU union-find                   -- 763                     -- 1499
+binarized-decsai/41b.png         -- GPU union-find +local            -- 2031                    -- 2769
+binarized-decsai/41b.png         -- GPU plus propagation             -- 19348                   -- 20088
+binarized-decsai/41b.png         -- GPU line editing                 -- 5996                    -- 6730
+binarized-decsai/41b.png         -- GPU lines                        -- 8616                    -- 9351
+binarized-decsai/41b.png         -- GPU stack-based                  -- 2899                    -- 3629
+binarized-decsai/41.png          -- CPU one-pass                     -- 1294                    -- 1361
+binarized-decsai/41.png          -- CPU union-find                   -- 1187                    -- 1278
+binarized-decsai/41.png          -- CPU linear two-scan              -- 1830                    -- 1914
+binarized-decsai/41.png          -- CPU front back scan              -- 4855                    -- 5066
+binarized-decsai/41.png          -- GPU neighbour propagation        -- 38602                   -- 39385
+binarized-decsai/41.png          -- GPU neighbour propagation +local -- 26542                   -- 27292
+binarized-decsai/41.png          -- GPU union-find                   -- 761                     -- 1505
+binarized-decsai/41.png          -- GPU union-find +local            -- 2064                    -- 2800
+binarized-decsai/41.png          -- GPU plus propagation             -- 19378                   -- 20107
+binarized-decsai/41.png          -- GPU line editing                 -- 9685                    -- 10419
+binarized-decsai/41.png          -- GPU lines                        -- 13693                   -- 14430
+binarized-decsai/41.png          -- GPU stack-based                  -- 2230                    -- 2968
+binarized-decsai/42.png          -- CPU one-pass                     -- 1292                    -- 1362
+binarized-decsai/42.png          -- CPU union-find                   -- 1126                    -- 1217
+binarized-decsai/42.png          -- CPU linear two-scan              -- 2170                    -- 2254
+binarized-decsai/42.png          -- CPU front back scan              -- 4725                    -- 4935
+binarized-decsai/42.png          -- GPU neighbour propagation        -- 33375                   -- 34165
+binarized-decsai/42.png          -- GPU neighbour propagation +local -- 26382                   -- 27144
+binarized-decsai/42.png          -- GPU union-find                   -- 673                     -- 1414
+binarized-decsai/42.png          -- GPU union-find +local            -- 2029                    -- 2767
+binarized-decsai/42.png          -- GPU plus propagation             -- 53445                   -- 54183
+binarized-decsai/42.png          -- GPU line editing                 -- 20298                   -- 21034
+binarized-decsai/42.png          -- GPU lines                        -- 27167                   -- 27905
+binarized-decsai/42.png          -- GPU stack-based                  -- 2082                    -- 2831
+binarized-decsai/43.png          -- CPU one-pass                     -- 655                     -- 730
+binarized-decsai/43.png          -- CPU union-find                   -- 682                     -- 769
+binarized-decsai/43.png          -- CPU linear two-scan              -- 950                     -- 1028
+binarized-decsai/43.png          -- CPU front back scan              -- 2298                    -- 2519
+binarized-decsai/43.png          -- GPU neighbour propagation        -- 8889                    -- 9671
+binarized-decsai/43.png          -- GPU neighbour propagation +local -- 4519                    -- 5248
+binarized-decsai/43.png          -- GPU union-find                   -- 532                     -- 1258
+binarized-decsai/43.png          -- GPU union-find +local            -- 1048                    -- 1761
+binarized-decsai/43.png          -- GPU plus propagation             -- 2965                    -- 3680
+binarized-decsai/43.png          -- GPU line editing                 -- 7185                    -- 7899
+binarized-decsai/43.png          -- GPU lines                        -- 6877                    -- 7605
+binarized-decsai/43.png          -- GPU stack-based                  -- 1060                    -- 1778
+binarized-decsai/44.png          -- CPU one-pass                     -- 1716                    -- 1784
+binarized-decsai/44.png          -- CPU union-find                   -- 1602                    -- 1688
+binarized-decsai/44.png          -- CPU linear two-scan              -- 2846                    -- 2932
+binarized-decsai/44.png          -- CPU front back scan              -- 5314                    -- 5534
+binarized-decsai/44.png          -- GPU neighbour propagation        -- 20183                   -- 20970
+binarized-decsai/44.png          -- GPU neighbour propagation +local -- 9472                    -- 10224
+binarized-decsai/44.png          -- GPU union-find                   -- 682                     -- 1409
+binarized-decsai/44.png          -- GPU union-find +local            -- 1629                    -- 2352
+binarized-decsai/44.png          -- GPU plus propagation             -- 14080                   -- 14801
+binarized-decsai/44.png          -- GPU line editing                 -- 34329                   -- 35057
+binarized-decsai/44.png          -- GPU lines                        -- 41825                   -- 42565
+binarized-decsai/44.png          -- GPU stack-based                  -- 1882                    -- 2627
+binarized-decsai/45.png          -- CPU one-pass                     -- 1070                    -- 1137
+binarized-decsai/45.png          -- CPU union-find                   -- 937                     -- 1030
+binarized-decsai/45.png          -- CPU linear two-scan              -- 1151                    -- 1237
+binarized-decsai/45.png          -- CPU front back scan              -- 3693                    -- 3906
+binarized-decsai/45.png          -- GPU neighbour propagation        -- 19430                   -- 20214
+binarized-decsai/45.png          -- GPU neighbour propagation +local -- 11104                   -- 11861
+binarized-decsai/45.png          -- GPU union-find                   -- 650                     -- 1389
+binarized-decsai/45.png          -- GPU union-find +local            -- 1676                    -- 2415
+binarized-decsai/45.png          -- GPU plus propagation             -- 13119                   -- 13857
+binarized-decsai/45.png          -- GPU line editing                 -- 6080                    -- 6813
+binarized-decsai/45.png          -- GPU lines                        -- 8498                    -- 9235
+binarized-decsai/45.png          -- GPU stack-based                  -- 1895                    -- 2632
+binarized-decsai/46b.png         -- CPU one-pass                     -- 724                     -- 792
+binarized-decsai/46b.png         -- CPU union-find                   -- 746                     -- 834
+binarized-decsai/46b.png         -- CPU linear two-scan              -- 1042                    -- 1121
+binarized-decsai/46b.png         -- CPU front back scan              -- 2748                    -- 2964
+binarized-decsai/46b.png         -- GPU neighbour propagation        -- 15801                   -- 16586
+binarized-decsai/46b.png         -- GPU neighbour propagation +local -- 7638                    -- 8377
+binarized-decsai/46b.png         -- GPU union-find                   -- 567                     -- 1293
+binarized-decsai/46b.png         -- GPU union-find +local            -- 1271                    -- 1994
+binarized-decsai/46b.png         -- GPU plus propagation             -- 5224                    -- 5956
+binarized-decsai/46b.png         -- GPU line editing                 -- 6494                    -- 7214
+binarized-decsai/46b.png         -- GPU lines                        -- 6629                    -- 7354
+binarized-decsai/46b.png         -- GPU stack-based                  -- 1297                    -- 2012
+binarized-decsai/46.png          -- CPU one-pass                     -- 1033                    -- 1100
+binarized-decsai/46.png          -- CPU union-find                   -- 998                     -- 1085
+binarized-decsai/46.png          -- CPU linear two-scan              -- 1360                    -- 1440
+binarized-decsai/46.png          -- CPU front back scan              -- 3553                    -- 3774
+binarized-decsai/46.png          -- GPU neighbour propagation        -- 19071                   -- 19860
+binarized-decsai/46.png          -- GPU neighbour propagation +local -- 8665                    -- 9409
+binarized-decsai/46.png          -- GPU union-find                   -- 670                     -- 1401
+binarized-decsai/46.png          -- GPU union-find +local            -- 1442                    -- 2165
+binarized-decsai/46.png          -- GPU plus propagation             -- 8579                    -- 9309
+binarized-decsai/46.png          -- GPU line editing                 -- 9000                    -- 9721
+binarized-decsai/46.png          -- GPU lines                        -- 12305                   -- 13037
+binarized-decsai/46.png          -- GPU stack-based                  -- 1669                    -- 2393
+binarized-decsai/47.png          -- CPU one-pass                     -- 1493                    -- 1561
+binarized-decsai/47.png          -- CPU union-find                   -- 1447                    -- 1549
+binarized-decsai/47.png          -- CPU linear two-scan              -- 2584                    -- 2668
+binarized-decsai/47.png          -- CPU front back scan              -- 5104                    -- 5324
+binarized-decsai/47.png          -- GPU neighbour propagation        -- 31814                   -- 32605
+binarized-decsai/47.png          -- GPU neighbour propagation +local -- 22990                   -- 23723
+binarized-decsai/47.png          -- GPU union-find                   -- 682                     -- 1431
+binarized-decsai/47.png          -- GPU union-find +local            -- 2174                    -- 2903
+binarized-decsai/47.png          -- GPU plus propagation             -- 27859                   -- 28581
+binarized-decsai/47.png          -- GPU line editing                 -- 25871                   -- 26593
+binarized-decsai/47.png          -- GPU lines                        -- 33618                   -- 34340
+binarized-decsai/47.png          -- GPU stack-based                  -- 2184                    -- 2917
+binarized-decsai/48.png          -- CPU one-pass                     -- 1319                    -- 1386
+binarized-decsai/48.png          -- CPU union-find                   -- 1100                    -- 1195
+binarized-decsai/48.png          -- CPU linear two-scan              -- 1469                    -- 1557
+binarized-decsai/48.png          -- CPU front back scan              -- 4815                    -- 5032
+binarized-decsai/48.png          -- GPU neighbour propagation        -- 42656                   -- 43443
+binarized-decsai/48.png          -- GPU neighbour propagation +local -- 30018                   -- 30788
+binarized-decsai/48.png          -- GPU union-find                   -- 920                     -- 1682
+binarized-decsai/48.png          -- GPU union-find +local            -- 2153                    -- 2917
+binarized-decsai/48.png          -- GPU plus propagation             -- 21922                   -- 22678
+binarized-decsai/48.png          -- GPU line editing                 -- 6953                    -- 7707
+binarized-decsai/48.png          -- GPU lines                        -- 8957                    -- 9714
+binarized-decsai/48.png          -- GPU stack-based                  -- 3092                    -- 3846
+binarized-decsai/49.png          -- CPU one-pass                     -- 1129                    -- 1197
+binarized-decsai/49.png          -- CPU union-find                   -- 949                     -- 1036
+binarized-decsai/49.png          -- CPU linear two-scan              -- 1146                    -- 1228
+binarized-decsai/49.png          -- CPU front back scan              -- 2219                    -- 2436
+binarized-decsai/49.png          -- GPU neighbour propagation        -- 16403                   -- 17191
+binarized-decsai/49.png          -- GPU neighbour propagation +local -- 9742                    -- 10480
+binarized-decsai/49.png          -- GPU union-find                   -- 668                     -- 1389
+binarized-decsai/49.png          -- GPU union-find +local            -- 1437                    -- 2184
+binarized-decsai/49.png          -- GPU plus propagation             -- 7473                    -- 8219
+binarized-decsai/49.png          -- GPU line editing                 -- 5435                    -- 6163
+binarized-decsai/49.png          -- GPU lines                        -- 3694                    -- 4415
+binarized-decsai/49.png          -- GPU stack-based                  -- 1661                    -- 2378
+binarized-decsai/51b.png         -- CPU one-pass                     -- 762                     -- 830
+binarized-decsai/51b.png         -- CPU union-find                   -- 696                     -- 784
+binarized-decsai/51b.png         -- CPU linear two-scan              -- 906                     -- 998
+binarized-decsai/51b.png         -- CPU front back scan              -- 2730                    -- 2946
+binarized-decsai/51b.png         -- GPU neighbour propagation        -- 17131                   -- 17908
+binarized-decsai/51b.png         -- GPU neighbour propagation +local -- 8404                    -- 9156
+binarized-decsai/51b.png         -- GPU union-find                   -- 716                     -- 1476
+binarized-decsai/51b.png         -- GPU union-find +local            -- 1354                    -- 2091
+binarized-decsai/51b.png         -- GPU plus propagation             -- 12280                   -- 13007
+binarized-decsai/51b.png         -- GPU line editing                 -- 8890                    -- 9619
+binarized-decsai/51b.png         -- GPU lines                        -- 10057                   -- 10790
+binarized-decsai/51b.png         -- GPU stack-based                  -- 1547                    -- 2275
+binarized-decsai/5.2.09.png      -- CPU one-pass                     -- 1486                    -- 1554
+binarized-decsai/5.2.09.png      -- CPU union-find                   -- 1346                    -- 1438
+binarized-decsai/5.2.09.png      -- CPU linear two-scan              -- 3735                    -- 3821
+binarized-decsai/5.2.09.png      -- CPU front back scan              -- 5630                    -- 5840
+binarized-decsai/5.2.09.png      -- GPU neighbour propagation        -- 35517                   -- 36305
+binarized-decsai/5.2.09.png      -- GPU neighbour propagation +local -- 31551                   -- 32300
+binarized-decsai/5.2.09.png      -- GPU union-find                   -- 944                     -- 1688
+binarized-decsai/5.2.09.png      -- GPU union-find +local            -- 2445                    -- 3183
+binarized-decsai/5.2.09.png      -- GPU plus propagation             -- 37395                   -- 38127
+binarized-decsai/5.2.09.png      -- GPU line editing                 -- 14060                   -- 14796
+binarized-decsai/5.2.09.png      -- GPU lines                        -- 19325                   -- 20056
+binarized-decsai/5.2.09.png      -- GPU stack-based                  -- 3108                    -- 3843
+binarized-decsai/57b.png         -- CPU one-pass                     -- 951                     -- 1019
+binarized-decsai/57b.png         -- CPU union-find                   -- 808                     -- 901
+binarized-decsai/57b.png         -- CPU linear two-scan              -- 1005                    -- 1091
+binarized-decsai/57b.png         -- CPU front back scan              -- 3245                    -- 3457
+binarized-decsai/57b.png         -- GPU neighbour propagation        -- 25836                   -- 26628
+binarized-decsai/57b.png         -- GPU neighbour propagation +local -- 11375                   -- 12142
+binarized-decsai/57b.png         -- GPU union-find                   -- 651                     -- 1412
+binarized-decsai/57b.png         -- GPU union-find +local            -- 1431                    -- 2192
+binarized-decsai/57b.png         -- GPU plus propagation             -- 9910                    -- 10668
+binarized-decsai/57b.png         -- GPU line editing                 -- 5901                    -- 6647
+binarized-decsai/57b.png         -- GPU lines                        -- 6593                    -- 7352
+binarized-decsai/57b.png         -- GPU stack-based                  -- 1983                    -- 2738
+binarized-decsai/58b.png         -- CPU one-pass                     -- 1131                    -- 1200
+binarized-decsai/58b.png         -- CPU union-find                   -- 1014                    -- 1106
+binarized-decsai/58b.png         -- CPU linear two-scan              -- 1511                    -- 1596
+binarized-decsai/58b.png         -- CPU front back scan              -- 4319                    -- 4528
+binarized-decsai/58b.png         -- GPU neighbour propagation        -- 33042                   -- 33830
+binarized-decsai/58b.png         -- GPU neighbour propagation +local -- 26596                   -- 27341
+binarized-decsai/58b.png         -- GPU union-find                   -- 873                     -- 1617
+binarized-decsai/58b.png         -- GPU union-find +local            -- 1971                    -- 2711
+binarized-decsai/58b.png         -- GPU plus propagation             -- 26588                   -- 27320
+binarized-decsai/58b.png         -- GPU line editing                 -- 10389                   -- 11130
+binarized-decsai/58b.png         -- GPU lines                        -- 14532                   -- 15275
+binarized-decsai/58b.png         -- GPU stack-based                  -- 2759                    -- 3499
+binarized-decsai/59b.png         -- CPU one-pass                     -- 1213                    -- 1282
+binarized-decsai/59b.png         -- CPU union-find                   -- 1113                    -- 1204
+binarized-decsai/59b.png         -- CPU linear two-scan              -- 1580                    -- 1663
+binarized-decsai/59b.png         -- CPU front back scan              -- 4312                    -- 4526
+binarized-decsai/59b.png         -- GPU neighbour propagation        -- 27279                   -- 28066
+binarized-decsai/59b.png         -- GPU neighbour propagation +local -- 13856                   -- 14606
+binarized-decsai/59b.png         -- GPU union-find                   -- 833                     -- 1572
+binarized-decsai/59b.png         -- GPU union-find +local            -- 2017                    -- 2747
+binarized-decsai/59b.png         -- GPU plus propagation             -- 31661                   -- 32398
+binarized-decsai/59b.png         -- GPU line editing                 -- 18428                   -- 19165
+binarized-decsai/59b.png         -- GPU lines                        -- 24521                   -- 25255
+binarized-decsai/59b.png         -- GPU stack-based                  -- 2159                    -- 2900
+binarized-decsai/61b.png         -- CPU one-pass                     -- 969                     -- 1038
+binarized-decsai/61b.png         -- CPU union-find                   -- 842                     -- 931
+binarized-decsai/61b.png         -- CPU linear two-scan              -- 1136                    -- 1219
+binarized-decsai/61b.png         -- CPU front back scan              -- 3105                    -- 3317
+binarized-decsai/61b.png         -- GPU neighbour propagation        -- 20954                   -- 21736
+binarized-decsai/61b.png         -- GPU neighbour propagation +local -- 7027                    -- 7789
+binarized-decsai/61b.png         -- GPU union-find                   -- 821                     -- 1567
+binarized-decsai/61b.png         -- GPU union-find +local            -- 1309                    -- 2046
+binarized-decsai/61b.png         -- GPU plus propagation             -- 28566                   -- 29306
+binarized-decsai/61b.png         -- GPU line editing                 -- 16533                   -- 17278
+binarized-decsai/61b.png         -- GPU lines                        -- 18432                   -- 19178
+binarized-decsai/61b.png         -- GPU stack-based                  -- 1908                    -- 2644
+binarized-decsai/66b.png         -- CPU one-pass                     -- 712                     -- 780
+binarized-decsai/66b.png         -- CPU union-find                   -- 777                     -- 864
+binarized-decsai/66b.png         -- CPU linear two-scan              -- 1212                    -- 1295
+binarized-decsai/66b.png         -- CPU front back scan              -- 2576                    -- 2791
+binarized-decsai/66b.png         -- GPU neighbour propagation        -- 10276                   -- 11060
+binarized-decsai/66b.png         -- GPU neighbour propagation +local -- 4292                    -- 5030
+binarized-decsai/66b.png         -- GPU union-find                   -- 531                     -- 1248
+binarized-decsai/66b.png         -- GPU union-find +local            -- 1068                    -- 1788
+binarized-decsai/66b.png         -- GPU plus propagation             -- 4341                    -- 5061
+binarized-decsai/66b.png         -- GPU line editing                 -- 11488                   -- 12205
+binarized-decsai/66b.png         -- GPU lines                        -- 11827                   -- 12543
+binarized-decsai/66b.png         -- GPU stack-based                  -- 985                     -- 1698
+binarized-decsai/67b.png         -- CPU one-pass                     -- 1339                    -- 1409
+binarized-decsai/67b.png         -- CPU union-find                   -- 1144                    -- 1237
+binarized-decsai/67b.png         -- CPU linear two-scan              -- 1576                    -- 1668
+binarized-decsai/67b.png         -- CPU front back scan              -- 4220                    -- 4442
+binarized-decsai/67b.png         -- GPU neighbour propagation        -- 30090                   -- 30882
+binarized-decsai/67b.png         -- GPU neighbour propagation +local -- 16851                   -- 17608
+binarized-decsai/67b.png         -- GPU union-find                   -- 782                     -- 1530
+binarized-decsai/67b.png         -- GPU union-find +local            -- 1836                    -- 2572
+binarized-decsai/67b.png         -- GPU plus propagation             -- 21892                   -- 22630
+binarized-decsai/67b.png         -- GPU line editing                 -- 10855                   -- 11601
+binarized-decsai/67b.png         -- GPU lines                        -- 13775                   -- 14530
+binarized-decsai/67b.png         -- GPU stack-based                  -- 2025                    -- 2771
+binarized-decsai/69b.png         -- CPU one-pass                     -- 1228                    -- 1296
+binarized-decsai/69b.png         -- CPU union-find                   -- 1021                    -- 1115
+binarized-decsai/69b.png         -- CPU linear two-scan              -- 1215                    -- 1305
+binarized-decsai/69b.png         -- CPU front back scan              -- 4109                    -- 4319
+binarized-decsai/69b.png         -- GPU neighbour propagation        -- 27327                   -- 28122
+binarized-decsai/69b.png         -- GPU neighbour propagation +local -- 16047                   -- 16817
+binarized-decsai/69b.png         -- GPU union-find                   -- 855                     -- 1617
+binarized-decsai/69b.png         -- GPU union-find +local            -- 1833                    -- 2591
+binarized-decsai/69b.png         -- GPU plus propagation             -- 32786                   -- 33549
+binarized-decsai/69b.png         -- GPU line editing                 -- 11970                   -- 12735
+binarized-decsai/69b.png         -- GPU lines                        -- 14421                   -- 15188
+binarized-decsai/69b.png         -- GPU stack-based                  -- 2545                    -- 3302
+binarized-decsai/70b.png         -- CPU one-pass                     -- 1373                    -- 1441
+binarized-decsai/70b.png         -- CPU union-find                   -- 1109                    -- 1207
+binarized-decsai/70b.png         -- CPU linear two-scan              -- 1223                    -- 1315
+binarized-decsai/70b.png         -- CPU front back scan              -- 4678                    -- 4889
+binarized-decsai/70b.png         -- GPU neighbour propagation        -- 39774                   -- 40568
+binarized-decsai/70b.png         -- GPU neighbour propagation +local -- 28675                   -- 29453
+binarized-decsai/70b.png         -- GPU union-find                   -- 782                     -- 1550
+binarized-decsai/70b.png         -- GPU union-find +local            -- 2129                    -- 2894
+binarized-decsai/70b.png         -- GPU plus propagation             -- 45938                   -- 46694
+binarized-decsai/70b.png         -- GPU line editing                 -- 14085                   -- 14851
+binarized-decsai/70b.png         -- GPU lines                        -- 17161                   -- 17926
+binarized-decsai/70b.png         -- GPU stack-based                  -- 2624                    -- 3394
+binarized-decsai/7.1.01.png      -- CPU one-pass                     -- 1327                    -- 1397
+binarized-decsai/7.1.01.png      -- CPU union-find                   -- 1188                    -- 1280
+binarized-decsai/7.1.01.png      -- CPU linear two-scan              -- 2055                    -- 2140
+binarized-decsai/7.1.01.png      -- CPU front back scan              -- 4942                    -- 5154
+binarized-decsai/7.1.01.png      -- GPU neighbour propagation        -- 35893                   -- 36679
+binarized-decsai/7.1.01.png      -- GPU neighbour propagation +local -- 28762                   -- 29512
+binarized-decsai/7.1.01.png      -- GPU union-find                   -- 717                     -- 1474
+binarized-decsai/7.1.01.png      -- GPU union-find +local            -- 2203                    -- 2946
+binarized-decsai/7.1.01.png      -- GPU plus propagation             -- 32050                   -- 32786
+binarized-decsai/7.1.01.png      -- GPU line editing                 -- 12642                   -- 13387
+binarized-decsai/7.1.01.png      -- GPU lines                        -- 16671                   -- 17406
+binarized-decsai/7.1.01.png      -- GPU stack-based                  -- 1897                    -- 2632
+binarized-decsai/7.1.02.png      -- CPU one-pass                     -- 3401                    -- 3521
+binarized-decsai/7.1.02.png      -- CPU union-find                   -- 1928                    -- 2068
+binarized-decsai/7.1.02.png      -- CPU linear two-scan              -- 2144                    -- 2274
+binarized-decsai/7.1.02.png      -- CPU front back scan              -- 4464                    -- 4586
+binarized-decsai/7.1.02.png      -- GPU neighbour propagation        -- 42985                   -- 43823
+binarized-decsai/7.1.02.png      -- GPU neighbour propagation +local -- 33638                   -- 34442
+binarized-decsai/7.1.02.png      -- GPU union-find                   -- 854                     -- 1643
+binarized-decsai/7.1.02.png      -- GPU union-find +local            -- 2123                    -- 2914
+binarized-decsai/7.1.02.png      -- GPU plus propagation             -- 44183                   -- 44972
+binarized-decsai/7.1.02.png      -- GPU line editing                 -- 5660                    -- 6444
+binarized-decsai/7.1.02.png      -- GPU lines                        -- 7624                    -- 8415
+binarized-decsai/7.1.02.png      -- GPU stack-based                  -- 3747                    -- 4537
+binarized-decsai/7.1.05.png      -- CPU one-pass                     -- 1279                    -- 1347
+binarized-decsai/7.1.05.png      -- CPU union-find                   -- 1283                    -- 1369
+binarized-decsai/7.1.05.png      -- CPU linear two-scan              -- 4753                    -- 4833
+binarized-decsai/7.1.05.png      -- CPU front back scan              -- 4820                    -- 5032
+binarized-decsai/7.1.05.png      -- GPU neighbour propagation        -- 35759                   -- 36545
+binarized-decsai/7.1.05.png      -- GPU neighbour propagation +local -- 27331                   -- 28067
+binarized-decsai/7.1.05.png      -- GPU union-find                   -- 704                     -- 1434
+binarized-decsai/7.1.05.png      -- GPU union-find +local            -- 2002                    -- 2718
+binarized-decsai/7.1.05.png      -- GPU plus propagation             -- 17385                   -- 18108
+binarized-decsai/7.1.05.png      -- GPU line editing                 -- 21359                   -- 22080
+binarized-decsai/7.1.05.png      -- GPU lines                        -- 27635                   -- 28362
+binarized-decsai/7.1.05.png      -- GPU stack-based                  -- 2093                    -- 2834
+binarized-decsai/71b.png         -- CPU one-pass                     -- 1019                    -- 1089
+binarized-decsai/71b.png         -- CPU union-find                   -- 1026                    -- 1115
+binarized-decsai/71b.png         -- CPU linear two-scan              -- 2167                    -- 2248
+binarized-decsai/71b.png         -- CPU front back scan              -- 3808                    -- 4024
+binarized-decsai/71b.png         -- GPU neighbour propagation        -- 28060                   -- 28843
+binarized-decsai/71b.png         -- GPU neighbour propagation +local -- 16688                   -- 17423
+binarized-decsai/71b.png         -- GPU union-find                   -- 611                     -- 1340
+binarized-decsai/71b.png         -- GPU union-find +local            -- 1599                    -- 2333
+binarized-decsai/71b.png         -- GPU plus propagation             -- 12907                   -- 13636
+binarized-decsai/71b.png         -- GPU line editing                 -- 14557                   -- 15278
+binarized-decsai/71b.png         -- GPU lines                        -- 17883                   -- 18605
+binarized-decsai/71b.png         -- GPU stack-based                  -- 2006                    -- 2730
+binarized-decsai/73b.png         -- CPU one-pass                     -- 732                     -- 799
+binarized-decsai/73b.png         -- CPU union-find                   -- 744                     -- 829
+binarized-decsai/73b.png         -- CPU linear two-scan              -- 1032                    -- 1108
+binarized-decsai/73b.png         -- CPU front back scan              -- 2743                    -- 2956
+binarized-decsai/73b.png         -- GPU neighbour propagation        -- 13946                   -- 14720
+binarized-decsai/73b.png         -- GPU neighbour propagation +local -- 6834                    -- 7558
+binarized-decsai/73b.png         -- GPU union-find                   -- 547                     -- 1280
+binarized-decsai/73b.png         -- GPU union-find +local            -- 1470                    -- 2186
+binarized-decsai/73b.png         -- GPU plus propagation             -- 10341                   -- 11059
+binarized-decsai/73b.png         -- GPU line editing                 -- 13190                   -- 13905
+binarized-decsai/73b.png         -- GPU lines                        -- 16087                   -- 16801
+binarized-decsai/73b.png         -- GPU stack-based                  -- 1281                    -- 1989
+binarized-decsai/75b.png         -- CPU one-pass                     -- 1355                    -- 1423
+binarized-decsai/75b.png         -- CPU union-find                   -- 1411                    -- 1497
+binarized-decsai/75b.png         -- CPU linear two-scan              -- 2255                    -- 2336
+binarized-decsai/75b.png         -- CPU front back scan              -- 4858                    -- 5075
+binarized-decsai/75b.png         -- GPU neighbour propagation        -- 29212                   -- 30002
+binarized-decsai/75b.png         -- GPU neighbour propagation +local -- 14960                   -- 15701
+binarized-decsai/75b.png         -- GPU union-find                   -- 681                     -- 1405
+binarized-decsai/75b.png         -- GPU union-find +local            -- 1914                    -- 2631
+binarized-decsai/75b.png         -- GPU plus propagation             -- 26778                   -- 27498
+binarized-decsai/75b.png         -- GPU line editing                 -- 28402                   -- 29146
+binarized-decsai/75b.png         -- GPU lines                        -- 35711                   -- 36438
+binarized-decsai/75b.png         -- GPU stack-based                  -- 2395                    -- 3122
+binarized-decsai/76b.png         -- CPU one-pass                     -- 1094                    -- 1160
+binarized-decsai/76b.png         -- CPU union-find                   -- 1014                    -- 1102
+binarized-decsai/76b.png         -- CPU linear two-scan              -- 1225                    -- 1305
+binarized-decsai/76b.png         -- CPU front back scan              -- 3805                    -- 4026
+binarized-decsai/76b.png         -- GPU neighbour propagation        -- 18640                   -- 19430
+binarized-decsai/76b.png         -- GPU neighbour propagation +local -- 10276                   -- 11014
+binarized-decsai/76b.png         -- GPU union-find                   -- 631                     -- 1354
+binarized-decsai/76b.png         -- GPU union-find +local            -- 1587                    -- 2333
+binarized-decsai/76b.png         -- GPU plus propagation             -- 11032                   -- 11759
+binarized-decsai/76b.png         -- GPU line editing                 -- 10782                   -- 11509
+binarized-decsai/76b.png         -- GPU lines                        -- 12037                   -- 12759
+binarized-decsai/76b.png         -- GPU stack-based                  -- 1642                    -- 2362
+binarized-decsai/78b.png         -- CPU one-pass                     -- 820                     -- 887
+binarized-decsai/78b.png         -- CPU union-find                   -- 833                     -- 920
+binarized-decsai/78b.png         -- CPU linear two-scan              -- 1357                    -- 1438
+binarized-decsai/78b.png         -- CPU front back scan              -- 2960                    -- 3175
+binarized-decsai/78b.png         -- GPU neighbour propagation        -- 15621                   -- 16406
+binarized-decsai/78b.png         -- GPU neighbour propagation +local -- 9695                    -- 10436
+binarized-decsai/78b.png         -- GPU union-find                   -- 557                     -- 1279
+binarized-decsai/78b.png         -- GPU union-find +local            -- 1271                    -- 1987
+binarized-decsai/78b.png         -- GPU plus propagation             -- 8557                    -- 9270
+binarized-decsai/78b.png         -- GPU line editing                 -- 11512                   -- 12232
+binarized-decsai/78b.png         -- GPU lines                        -- 12162                   -- 12878
+binarized-decsai/78b.png         -- GPU stack-based                  -- 1166                    -- 1878
+binarized-decsai/7.png           -- CPU one-pass                     -- 1224                    -- 1291
+binarized-decsai/7.png           -- CPU union-find                   -- 1148                    -- 1237
+binarized-decsai/7.png           -- CPU linear two-scan              -- 1747                    -- 1828
+binarized-decsai/7.png           -- CPU front back scan              -- 4590                    -- 4804
+binarized-decsai/7.png           -- GPU neighbour propagation        -- 39990                   -- 40769
+binarized-decsai/7.png           -- GPU neighbour propagation +local -- 27207                   -- 27947
+binarized-decsai/7.png           -- GPU union-find                   -- 697                     -- 1425
+binarized-decsai/7.png           -- GPU union-find +local            -- 1919                    -- 2641
+binarized-decsai/7.png           -- GPU plus propagation             -- 23528                   -- 24245
+binarized-decsai/7.png           -- GPU line editing                 -- 12741                   -- 13461
+binarized-decsai/7.png           -- GPU lines                        -- 16341                   -- 17068
+binarized-decsai/7.png           -- GPU stack-based                  -- 2470                    -- 3188
+binarized-decsai/86b.png         -- CPU one-pass                     -- 848                     -- 915
+binarized-decsai/86b.png         -- CPU union-find                   -- 914                     -- 1000
+binarized-decsai/86b.png         -- CPU linear two-scan              -- 1171                    -- 1250
+binarized-decsai/86b.png         -- CPU front back scan              -- 3146                    -- 3360
+binarized-decsai/86b.png         -- GPU neighbour propagation        -- 12941                   -- 13721
+binarized-decsai/86b.png         -- GPU neighbour propagation +local -- 7820                    -- 8548
+binarized-decsai/86b.png         -- GPU union-find                   -- 596                     -- 1311
+binarized-decsai/86b.png         -- GPU union-find +local            -- 1291                    -- 1999
+binarized-decsai/86b.png         -- GPU plus propagation             -- 45636                   -- 46348
+binarized-decsai/86b.png         -- GPU line editing                 -- 60628                   -- 61369
+binarized-decsai/86b.png         -- GPU lines                        -- 67236                   -- 67949
+binarized-decsai/86b.png         -- GPU stack-based                  -- 1348                    -- 2059
+binarized-decsai/96b.png         -- CPU one-pass                     -- 1020                    -- 1086
+binarized-decsai/96b.png         -- CPU union-find                   -- 1001                    -- 1089
+binarized-decsai/96b.png         -- CPU linear two-scan              -- 1534                    -- 1612
+binarized-decsai/96b.png         -- CPU front back scan              -- 3899                    -- 4117
+binarized-decsai/96b.png         -- GPU neighbour propagation        -- 26301                   -- 27081
+binarized-decsai/96b.png         -- GPU neighbour propagation +local -- 18365                   -- 19099
+binarized-decsai/96b.png         -- GPU union-find                   -- 677                     -- 1395
+binarized-decsai/96b.png         -- GPU union-find +local            -- 2049                    -- 2766
+binarized-decsai/96b.png         -- GPU plus propagation             -- 21440                   -- 22154
+binarized-decsai/96b.png         -- GPU line editing                 -- 17307                   -- 18027
+binarized-decsai/96b.png         -- GPU lines                        -- 22833                   -- 23547
+binarized-decsai/96b.png         -- GPU stack-based                  -- 2184                    -- 2897
+binarized-decsai/97b.png         -- CPU one-pass                     -- 1059                    -- 1126
+binarized-decsai/97b.png         -- CPU union-find                   -- 847                     -- 939
+binarized-decsai/97b.png         -- CPU linear two-scan              -- 1014                    -- 1101
+binarized-decsai/97b.png         -- CPU front back scan              -- 3468                    -- 3678
+binarized-decsai/97b.png         -- GPU neighbour propagation        -- 19602                   -- 20395
+binarized-decsai/97b.png         -- GPU neighbour propagation +local -- 13104                   -- 13866
+binarized-decsai/97b.png         -- GPU union-find                   -- 772                     -- 1527
+binarized-decsai/97b.png         -- GPU union-find +local            -- 1496                    -- 2249
+binarized-decsai/97b.png         -- GPU plus propagation             -- 20939                   -- 21686
+binarized-decsai/97b.png         -- GPU line editing                 -- 7206                    -- 7960
+binarized-decsai/97b.png         -- GPU lines                        -- 8301                    -- 9050
+binarized-decsai/97b.png         -- GPU stack-based                  -- 1869                    -- 2616
+binarized-decsai/98b.png         -- CPU one-pass                     -- 1054                    -- 1120
+binarized-decsai/98b.png         -- CPU union-find                   -- 1041                    -- 1131
+binarized-decsai/98b.png         -- CPU linear two-scan              -- 1334                    -- 1433
+binarized-decsai/98b.png         -- CPU front back scan              -- 3865                    -- 4081
+binarized-decsai/98b.png         -- GPU neighbour propagation        -- 21838                   -- 22622
+binarized-decsai/98b.png         -- GPU neighbour propagation +local -- 10982                   -- 11724
+binarized-decsai/98b.png         -- GPU union-find                   -- 697                     -- 1431
+binarized-decsai/98b.png         -- GPU union-find +local            -- 1570                    -- 2294
+binarized-decsai/98b.png         -- GPU plus propagation             -- 16201                   -- 16932
+binarized-decsai/98b.png         -- GPU line editing                 -- 10589                   -- 11318
+binarized-decsai/98b.png         -- GPU lines                        -- 13137                   -- 13880
+binarized-decsai/98b.png         -- GPU stack-based                  -- 1899                    -- 2625
+binarized-decsai/99b.png         -- CPU one-pass                     -- 888                     -- 956
+binarized-decsai/99b.png         -- CPU union-find                   -- 886                     -- 970
+binarized-decsai/99b.png         -- CPU linear two-scan              -- 1145                    -- 1223
+binarized-decsai/99b.png         -- CPU front back scan              -- 3418                    -- 3633
+binarized-decsai/99b.png         -- GPU neighbour propagation        -- 23260                   -- 24037
+binarized-decsai/99b.png         -- GPU neighbour propagation +local -- 16381                   -- 17111
+binarized-decsai/99b.png         -- GPU union-find                   -- 637                     -- 1351
+binarized-decsai/99b.png         -- GPU union-find +local            -- 1801                    -- 2512
+binarized-decsai/99b.png         -- GPU plus propagation             -- 24451                   -- 25164
+binarized-decsai/99b.png         -- GPU line editing                 -- 20183                   -- 20893
+binarized-decsai/99b.png         -- GPU lines                        -- 25764                   -- 26504
+binarized-decsai/99b.png         -- GPU stack-based                  -- 1589                    -- 2313
+binarized-decsai/aerial1.png     -- CPU one-pass                     -- 959                     -- 1025
+binarized-decsai/aerial1.png     -- CPU union-find                   -- 987                     -- 1076
+binarized-decsai/aerial1.png     -- CPU linear two-scan              -- 1326                    -- 1406
+binarized-decsai/aerial1.png     -- CPU front back scan              -- 3415                    -- 3629
+binarized-decsai/aerial1.png     -- GPU neighbour propagation        -- 13093                   -- 13875
+binarized-decsai/aerial1.png     -- GPU neighbour propagation +local -- 9010                    -- 9735
+binarized-decsai/aerial1.png     -- GPU union-find                   -- 658                     -- 1376
+binarized-decsai/aerial1.png     -- GPU union-find +local            -- 1363                    -- 2083
+binarized-decsai/aerial1.png     -- GPU plus propagation             -- 9659                    -- 10371
+binarized-decsai/aerial1.png     -- GPU line editing                 -- 13258                   -- 13970
+binarized-decsai/aerial1.png     -- GPU lines                        -- 15091                   -- 15806
+binarized-decsai/aerial1.png     -- GPU stack-based                  -- 1334                    -- 2051
+binarized-decsai/aerial2.png     -- CPU one-pass                     -- 1583                    -- 1650
+binarized-decsai/aerial2.png     -- CPU union-find                   -- 1547                    -- 1650
+binarized-decsai/aerial2.png     -- CPU linear two-scan              -- 9541                    -- 9630
+binarized-decsai/aerial2.png     -- CPU front back scan              -- 5869                    -- 6079
+binarized-decsai/aerial2.png     -- GPU neighbour propagation        -- 38857                   -- 39650
+binarized-decsai/aerial2.png     -- GPU neighbour propagation +local -- 29660                   -- 30396
+binarized-decsai/aerial2.png     -- GPU union-find                   -- 745                     -- 1481
+binarized-decsai/aerial2.png     -- GPU union-find +local            -- 2261                    -- 3004
+binarized-decsai/aerial2.png     -- GPU plus propagation             -- 35890                   -- 36625
+binarized-decsai/aerial2.png     -- GPU line editing                 -- 26625                   -- 27355
+binarized-decsai/aerial2.png     -- GPU lines                        -- 36519                   -- 37253
+binarized-decsai/aerial2.png     -- GPU stack-based                  -- 2005                    -- 2746
+binarized-decsai/bike3.png       -- CPU one-pass                     -- 1291                    -- 1358
+binarized-decsai/bike3.png       -- CPU union-find                   -- 1118                    -- 1207
+binarized-decsai/bike3.png       -- CPU linear two-scan              -- 1346                    -- 1429
+binarized-decsai/bike3.png       -- CPU front back scan              -- 4699                    -- 4909
+binarized-decsai/bike3.png       -- GPU neighbour propagation        -- 35991                   -- 36779
+binarized-decsai/bike3.png       -- GPU neighbour propagation +local -- 25972                   -- 26716
+binarized-decsai/bike3.png       -- GPU union-find                   -- 836                     -- 1571
+binarized-decsai/bike3.png       -- GPU union-find +local            -- 2243                    -- 2970
+binarized-decsai/bike3.png       -- GPU plus propagation             -- 34027                   -- 34752
+binarized-decsai/bike3.png       -- GPU line editing                 -- 12758                   -- 13484
+binarized-decsai/bike3.png       -- GPU lines                        -- 16448                   -- 17178
+binarized-decsai/bike3.png       -- GPU stack-based                  -- 2388                    -- 3117
+binarized-decsai/bike.png        -- CPU one-pass                     -- 1350                    -- 1418
+binarized-decsai/bike.png        -- CPU union-find                   -- 1238                    -- 1326
+binarized-decsai/bike.png        -- CPU linear two-scan              -- 1949                    -- 2032
+binarized-decsai/bike.png        -- CPU front back scan              -- 4936                    -- 5147
+binarized-decsai/bike.png        -- GPU neighbour propagation        -- 42580                   -- 43361
+binarized-decsai/bike.png        -- GPU neighbour propagation +local -- 28647                   -- 29406
+binarized-decsai/bike.png        -- GPU union-find                   -- 877                     -- 1614
+binarized-decsai/bike.png        -- GPU union-find +local            -- 2072                    -- 2808
+binarized-decsai/bike.png        -- GPU plus propagation             -- 23260                   -- 23985
+binarized-decsai/bike.png        -- GPU line editing                 -- 9868                    -- 10592
+binarized-decsai/bike.png        -- GPU lines                        -- 13651                   -- 14374
+binarized-decsai/bike.png        -- GPU stack-based                  -- 2457                    -- 3211
+binarized-decsai/blackb.png      -- CPU one-pass                     -- 514                     -- 581
+binarized-decsai/blackb.png      -- CPU union-find                   -- 590                     -- 675
+binarized-decsai/blackb.png      -- CPU linear two-scan              -- 893                     -- 971
+binarized-decsai/blackb.png      -- CPU front back scan              -- 2044                    -- 2259
+binarized-decsai/blackb.png      -- GPU neighbour propagation        -- 25158                   -- 25934
+binarized-decsai/blackb.png      -- GPU neighbour propagation +local -- 8626                    -- 9357
+binarized-decsai/blackb.png      -- GPU union-find                   -- 502                     -- 1216
+binarized-decsai/blackb.png      -- GPU union-find +local            -- 1015                    -- 1728
+binarized-decsai/blackb.png      -- GPU plus propagation             -- 32671                   -- 33378
+binarized-decsai/blackb.png      -- GPU line editing                 -- 40228                   -- 40937
+binarized-decsai/blackb.png      -- GPU lines                        -- 41126                   -- 41840
+binarized-decsai/blackb.png      -- GPU stack-based                  -- 1485                    -- 2192
+binarized-decsai/cmpndd.png      -- CPU one-pass                     -- 1500                    -- 1567
+binarized-decsai/cmpndd.png      -- CPU union-find                   -- 1009                    -- 1109
+binarized-decsai/cmpndd.png      -- CPU linear two-scan              -- 1316                    -- 1418
+binarized-decsai/cmpndd.png      -- CPU front back scan              -- 4231                    -- 4333
+binarized-decsai/cmpndd.png      -- GPU neighbour propagation        -- 36947                   -- 37752
+binarized-decsai/cmpndd.png      -- GPU neighbour propagation +local -- 24400                   -- 25197
+binarized-decsai/cmpndd.png      -- GPU union-find                   -- 889                     -- 1677
+binarized-decsai/cmpndd.png      -- GPU union-find +local            -- 1991                    -- 2776
+binarized-decsai/cmpndd.png      -- GPU plus propagation             -- 42366                   -- 43329
+binarized-decsai/cmpndd.png      -- GPU line editing                 -- 8198                    -- 9261
+binarized-decsai/cmpndd.png      -- GPU lines                        -- 9422                    -- 10366
+binarized-decsai/cmpndd.png      -- GPU stack-based                  -- 3113                    -- 3996
+binarized-decsai/elaine.512.png  -- CPU one-pass                     -- 1439                    -- 1525
+binarized-decsai/elaine.512.png  -- CPU union-find                   -- 1259                    -- 1363
+binarized-decsai/elaine.512.png  -- CPU linear two-scan              -- 1700                    -- 1791
+binarized-decsai/elaine.512.png  -- CPU front back scan              -- 4263                    -- 4500
+binarized-decsai/elaine.512.png  -- GPU neighbour propagation        -- 30026                   -- 30819
+binarized-decsai/elaine.512.png  -- GPU neighbour propagation +local -- 19543                   -- 20276
+binarized-decsai/elaine.512.png  -- GPU union-find                   -- 645                     -- 1378
+binarized-decsai/elaine.512.png  -- GPU union-find +local            -- 1694                    -- 2422
+binarized-decsai/elaine.512.png  -- GPU plus propagation             -- 11443                   -- 12197
+binarized-decsai/elaine.512.png  -- GPU line editing                 -- 10815                   -- 11547
+binarized-decsai/elaine.512.png  -- GPU lines                        -- 12717                   -- 13439
+binarized-decsai/elaine.512.png  -- GPU stack-based                  -- 1807                    -- 2532
+binarized-decsai/faces.png       -- CPU one-pass                     -- 1170                    -- 1238
+binarized-decsai/faces.png       -- CPU union-find                   -- 1331                    -- 1418
+binarized-decsai/faces.png       -- CPU linear two-scan              -- 2449                    -- 2529
+binarized-decsai/faces.png       -- CPU front back scan              -- 4591                    -- 4797
+binarized-decsai/faces.png       -- GPU neighbour propagation        -- 40880                   -- 41671
+binarized-decsai/faces.png       -- GPU neighbour propagation +local -- 27110                   -- 27848
+binarized-decsai/faces.png       -- GPU union-find                   -- 695                     -- 1420
+binarized-decsai/faces.png       -- GPU union-find +local            -- 2082                    -- 2798
+binarized-decsai/faces.png       -- GPU plus propagation             -- 17265                   -- 17979
+binarized-decsai/faces.png       -- GPU line editing                 -- 6188                    -- 6907
+binarized-decsai/faces.png       -- GPU lines                        -- 7684                    -- 8404
+binarized-decsai/faces.png       -- GPU stack-based                  -- 1854                    -- 2584
+binarized-decsai/france.png      -- CPU one-pass                     -- 808                     -- 876
+binarized-decsai/france.png      -- CPU union-find                   -- 752                     -- 841
+binarized-decsai/france.png      -- CPU linear two-scan              -- 1081                    -- 1163
+binarized-decsai/france.png      -- CPU front back scan              -- 2983                    -- 3189
+binarized-decsai/france.png      -- GPU neighbour propagation        -- 17224                   -- 18007
+binarized-decsai/france.png      -- GPU neighbour propagation +local -- 7512                    -- 8264
+binarized-decsai/france.png      -- GPU union-find                   -- 605                     -- 1341
+binarized-decsai/france.png      -- GPU union-find +local            -- 1312                    -- 2042
+binarized-decsai/france.png      -- GPU plus propagation             -- 12470                   -- 13197
+binarized-decsai/france.png      -- GPU line editing                 -- 7012                    -- 7737
+binarized-decsai/france.png      -- GPU lines                        -- 8717                    -- 9460
+binarized-decsai/france.png      -- GPU stack-based                  -- 1447                    -- 2188
+binarized-decsai/gray21.512.png  -- CPU one-pass                     -- 1217                    -- 1284
+binarized-decsai/gray21.512.png  -- CPU union-find                   -- 740                     -- 841
+binarized-decsai/gray21.512.png  -- CPU linear two-scan              -- 970                     -- 1071
+binarized-decsai/gray21.512.png  -- CPU front back scan              -- 1896                    -- 1996
+binarized-decsai/gray21.512.png  -- GPU neighbour propagation        -- 26762                   -- 27562
+binarized-decsai/gray21.512.png  -- GPU neighbour propagation +local -- 19593                   -- 20384
+binarized-decsai/gray21.512.png  -- GPU union-find                   -- 594                     -- 1386
+binarized-decsai/gray21.512.png  -- GPU union-find +local            -- 1401                    -- 2185
+binarized-decsai/gray21.512.png  -- GPU plus propagation             -- 6076                    -- 6864
+binarized-decsai/gray21.512.png  -- GPU line editing                 -- 1505                    -- 2295
+binarized-decsai/gray21.512.png  -- GPU lines                        -- 1132                    -- 1917
+binarized-decsai/gray21.512.png  -- GPU stack-based                  -- 2420                    -- 3206
+binarized-decsai/lena.png        -- CPU one-pass                     -- 1131                    -- 1198
+binarized-decsai/lena.png        -- CPU union-find                   -- 1009                    -- 1100
+binarized-decsai/lena.png        -- CPU linear two-scan              -- 1757                    -- 1844
+binarized-decsai/lena.png        -- CPU front back scan              -- 4103                    -- 4313
+binarized-decsai/lena.png        -- GPU neighbour propagation        -- 36192                   -- 36968
+binarized-decsai/lena.png        -- GPU neighbour propagation +local -- 27389                   -- 28136
+binarized-decsai/lena.png        -- GPU union-find                   -- 697                     -- 1442
+binarized-decsai/lena.png        -- GPU union-find +local            -- 1874                    -- 2611
+binarized-decsai/lena.png        -- GPU plus propagation             -- 50280                   -- 51014
+binarized-decsai/lena.png        -- GPU line editing                 -- 23701                   -- 24433
+binarized-decsai/lena.png        -- GPU lines                        -- 31426                   -- 32162
+binarized-decsai/lena.png        -- GPU stack-based                  -- 2006                    -- 2741
+binarized-decsai/micro23.png     -- CPU one-pass                     -- 1228                    -- 1296
+binarized-decsai/micro23.png     -- CPU union-find                   -- 1064                    -- 1157
+binarized-decsai/micro23.png     -- CPU linear two-scan              -- 2193                    -- 2278
+binarized-decsai/micro23.png     -- CPU front back scan              -- 4290                    -- 4499
+binarized-decsai/micro23.png     -- GPU neighbour propagation        -- 31140                   -- 31919
+binarized-decsai/micro23.png     -- GPU neighbour propagation +local -- 27110                   -- 27861
+binarized-decsai/micro23.png     -- GPU union-find                   -- 705                     -- 1485
+binarized-decsai/micro23.png     -- GPU union-find +local            -- 1932                    -- 2672
+binarized-decsai/micro23.png     -- GPU plus propagation             -- 20237                   -- 20974
+binarized-decsai/micro23.png     -- GPU line editing                 -- 9831                    -- 10566
+binarized-decsai/micro23.png     -- GPU lines                        -- 12685                   -- 13439
+binarized-decsai/micro23.png     -- GPU stack-based                  -- 2026                    -- 2783
+binarized-decsai/micro26.png     -- CPU one-pass                     -- 755                     -- 824
+binarized-decsai/micro26.png     -- CPU union-find                   -- 702                     -- 789
+binarized-decsai/micro26.png     -- CPU linear two-scan              -- 1142                    -- 1227
+binarized-decsai/micro26.png     -- CPU front back scan              -- 2596                    -- 2807
+binarized-decsai/micro26.png     -- GPU neighbour propagation        -- 19788                   -- 20576
+binarized-decsai/micro26.png     -- GPU neighbour propagation +local -- 13303                   -- 14048
+binarized-decsai/micro26.png     -- GPU union-find                   -- 547                     -- 1280
+binarized-decsai/micro26.png     -- GPU union-find +local            -- 1197                    -- 1924
+binarized-decsai/micro26.png     -- GPU plus propagation             -- 7002                    -- 7728
+binarized-decsai/micro26.png     -- GPU line editing                 -- 5662                    -- 6388
+binarized-decsai/micro26.png     -- GPU lines                        -- 7380                    -- 8112
+binarized-decsai/micro26.png     -- GPU stack-based                  -- 1397                    -- 2126
+binarized-decsai/peppers.png     -- CPU one-pass                     -- 1024                    -- 1091
+binarized-decsai/peppers.png     -- CPU union-find                   -- 917                     -- 1004
+binarized-decsai/peppers.png     -- CPU linear two-scan              -- 1172                    -- 1254
+binarized-decsai/peppers.png     -- CPU front back scan              -- 3692                    -- 3904
+binarized-decsai/peppers.png     -- GPU neighbour propagation        -- 20935                   -- 21714
+binarized-decsai/peppers.png     -- GPU neighbour propagation +local -- 18159                   -- 18895
+binarized-decsai/peppers.png     -- GPU union-find                   -- 553                     -- 1275
+binarized-decsai/peppers.png     -- GPU union-find +local            -- 1704                    -- 2426
+binarized-decsai/peppers.png     -- GPU plus propagation             -- 16572                   -- 17287
+binarized-decsai/peppers.png     -- GPU line editing                 -- 8677                    -- 9395
+binarized-decsai/peppers.png     -- GPU lines                        -- 10758                   -- 11480
+binarized-decsai/peppers.png     -- GPU stack-based                  -- 1291                    -- 2006
+binarized-decsai/portofino.png   -- CPU one-pass                     -- 636                     -- 704
+binarized-decsai/portofino.png   -- CPU union-find                   -- 672                     -- 757
+binarized-decsai/portofino.png   -- CPU linear two-scan              -- 954                     -- 1034
+binarized-decsai/portofino.png   -- CPU front back scan              -- 2360                    -- 2576
+binarized-decsai/portofino.png   -- GPU neighbour propagation        -- 23963                   -- 24742
+binarized-decsai/portofino.png   -- GPU neighbour propagation +local -- 9518                    -- 10260
+binarized-decsai/portofino.png   -- GPU union-find                   -- 559                     -- 1298
+binarized-decsai/portofino.png   -- GPU union-find +local            -- 1113                    -- 1837
+binarized-decsai/portofino.png   -- GPU plus propagation             -- 6925                    -- 7644
+binarized-decsai/portofino.png   -- GPU line editing                 -- 9827                    -- 10546
+binarized-decsai/portofino.png   -- GPU lines                        -- 10559                   -- 11285
+binarized-decsai/portofino.png   -- GPU stack-based                  -- 1480                    -- 2198
+binarized-decsai/ruler.512.png   -- CPU one-pass                     -- 1624                    -- 1691
+binarized-decsai/ruler.512.png   -- CPU union-find                   -- 1156                    -- 1244
+binarized-decsai/ruler.512.png   -- CPU linear two-scan              -- 1142                    -- 1224
+binarized-decsai/ruler.512.png   -- CPU front back scan              -- 3017                    -- 3228
+binarized-decsai/ruler.512.png   -- GPU neighbour propagation        -- 9250                    -- 10031
+binarized-decsai/ruler.512.png   -- GPU neighbour propagation +local -- 5300                    -- 6025
+binarized-decsai/ruler.512.png   -- GPU union-find                   -- 688                     -- 1407
+binarized-decsai/ruler.512.png   -- GPU union-find +local            -- 1712                    -- 2427
+binarized-decsai/ruler.512.png   -- GPU plus propagation             -- 2798                    -- 3511
+binarized-decsai/ruler.512.png   -- GPU line editing                 -- 3529                    -- 4241
+binarized-decsai/ruler.512.png   -- GPU lines                        -- 4567                    -- 5280
+binarized-decsai/ruler.512.png   -- GPU stack-based                  -- 1635                    -- 2347
+binarized-decsai/sar-large.png   -- CPU one-pass                     -- 2061                    -- 2128
+binarized-decsai/sar-large.png   -- CPU union-find                   -- 1978                    -- 2068
+binarized-decsai/sar-large.png   -- CPU linear two-scan              -- 4944                    -- 5033
+binarized-decsai/sar-large.png   -- CPU front back scan              -- 6652                    -- 6871
+binarized-decsai/sar-large.png   -- GPU neighbour propagation        -- 40067                   -- 40852
+binarized-decsai/sar-large.png   -- GPU neighbour propagation +local -- 20118                   -- 20862
+binarized-decsai/sar-large.png   -- GPU union-find                   -- 717                     -- 1450
+binarized-decsai/sar-large.png   -- GPU union-find +local            -- 2044                    -- 2770
+binarized-decsai/sar-large.png   -- GPU plus propagation             -- 29819                   -- 30543
+binarized-decsai/sar-large.png   -- GPU line editing                 -- 72181                   -- 72907
+binarized-decsai/sar-large.png   -- GPU lines                        -- 89162                   -- 89895
+binarized-decsai/sar-large.png   -- GPU stack-based                  -- 2202                    -- 3180
+binarized-decsai/sf-large.png    -- CPU one-pass                     -- 1427                    -- 1512
+binarized-decsai/sf-large.png    -- CPU union-find                   -- 1122                    -- 1250
+binarized-decsai/sf-large.png    -- CPU linear two-scan              -- 1539                    -- 1653
+binarized-decsai/sf-large.png    -- CPU front back scan              -- 4003                    -- 4235
+binarized-decsai/sf-large.png    -- GPU neighbour propagation        -- 25376                   -- 26188
+binarized-decsai/sf-large.png    -- GPU neighbour propagation +local -- 17436                   -- 18218
+binarized-decsai/sf-large.png    -- GPU union-find                   -- 607                     -- 1378
+binarized-decsai/sf-large.png    -- GPU union-find +local            -- 1584                    -- 2356
+binarized-decsai/sf-large.png    -- GPU plus propagation             -- 22884                   -- 23653
+binarized-decsai/sf-large.png    -- GPU line editing                 -- 10561                   -- 11345
+binarized-decsai/sf-large.png    -- GPU lines                        -- 13548                   -- 14314
+binarized-decsai/sf-large.png    -- GPU stack-based                  -- 2476                    -- 3240
+binarized-decsai/srl2-angkor.png -- CPU one-pass                     -- 1452                    -- 1520
+binarized-decsai/srl2-angkor.png -- CPU union-find                   -- 1393                    -- 1483
+binarized-decsai/srl2-angkor.png -- CPU linear two-scan              -- 5029                    -- 5112
+binarized-decsai/srl2-angkor.png -- CPU front back scan              -- 5106                    -- 5334
+binarized-decsai/srl2-angkor.png -- GPU neighbour propagation        -- 36888                   -- 37689
+binarized-decsai/srl2-angkor.png -- GPU neighbour propagation +local -- 23731                   -- 24493
+binarized-decsai/srl2-angkor.png -- GPU union-find                   -- 828                     -- 1589
+binarized-decsai/srl2-angkor.png -- GPU union-find +local            -- 1981                    -- 2727
+binarized-decsai/srl2-angkor.png -- GPU plus propagation             -- 46976                   -- 47721
+binarized-decsai/srl2-angkor.png -- GPU line editing                 -- 37174                   -- 37923
+binarized-decsai/srl2-angkor.png -- GPU lines                        -- 46721                   -- 47471
+binarized-decsai/srl2-angkor.png -- GPU stack-based                  -- 2292                    -- 3040
+binarized-decsai/srl2-teide.png  -- CPU one-pass                     -- 1029                    -- 1097
+binarized-decsai/srl2-teide.png  -- CPU union-find                   -- 1020                    -- 1107
+binarized-decsai/srl2-teide.png  -- CPU linear two-scan              -- 2902                    -- 2983
+binarized-decsai/srl2-teide.png  -- CPU front back scan              -- 3623                    -- 3846
+binarized-decsai/srl2-teide.png  -- GPU neighbour propagation        -- 20543                   -- 21338
+binarized-decsai/srl2-teide.png  -- GPU neighbour propagation +local -- 14185                   -- 14937
+binarized-decsai/srl2-teide.png  -- GPU union-find                   -- 617                     -- 1357
+binarized-decsai/srl2-teide.png  -- GPU union-find +local            -- 1439                    -- 2176
+binarized-decsai/srl2-teide.png  -- GPU plus propagation             -- 17040                   -- 17773
+binarized-decsai/srl2-teide.png  -- GPU line editing                 -- 22800                   -- 23535
+binarized-decsai/srl2-teide.png  -- GPU lines                        -- 27889                   -- 28628
+binarized-decsai/srl2-teide.png  -- GPU stack-based                  -- 1783                    -- 2532
+binarized-decsai/Stanwick.png    -- CPU one-pass                     -- 1743                    -- 1811
+binarized-decsai/Stanwick.png    -- CPU union-find                   -- 1629                    -- 1720
+binarized-decsai/Stanwick.png    -- CPU linear two-scan              -- 2854                    -- 2936
+binarized-decsai/Stanwick.png    -- CPU front back scan              -- 5307                    -- 5543
+binarized-decsai/Stanwick.png    -- GPU neighbour propagation        -- 19914                   -- 20714
+binarized-decsai/Stanwick.png    -- GPU neighbour propagation +local -- 9501                    -- 10253
+binarized-decsai/Stanwick.png    -- GPU union-find                   -- 745                     -- 1487
+binarized-decsai/Stanwick.png    -- GPU union-find +local            -- 1795                    -- 2534
+binarized-decsai/Stanwick.png    -- GPU plus propagation             -- 13799                   -- 14534
+binarized-decsai/Stanwick.png    -- GPU line editing                 -- 35386                   -- 36169
+binarized-decsai/Stanwick.png    -- GPU lines                        -- 41477                   -- 42221
+binarized-decsai/Stanwick.png    -- GPU stack-based                  -- 1867                    -- 2609
+binarized-decsai/washsat.png     -- CPU one-pass                     -- 1067                    -- 1137
+binarized-decsai/washsat.png     -- CPU union-find                   -- 1020                    -- 1111
+binarized-decsai/washsat.png     -- CPU linear two-scan              -- 1313                    -- 1402
+binarized-decsai/washsat.png     -- CPU front back scan              -- 3166                    -- 3381
+binarized-decsai/washsat.png     -- GPU neighbour propagation        -- 7269                    -- 8068
+binarized-decsai/washsat.png     -- GPU neighbour propagation +local -- 3454                    -- 4201
+binarized-decsai/washsat.png     -- GPU union-find                   -- 564                     -- 1302
+binarized-decsai/washsat.png     -- GPU union-find +local            -- 1222                    -- 1959
+binarized-decsai/washsat.png     -- GPU plus propagation             -- 3761                    -- 4491
+binarized-decsai/washsat.png     -- GPU line editing                 -- 12707                   -- 13435
+binarized-decsai/washsat.png     -- GPU lines                        -- 13299                   -- 14034
+binarized-decsai/washsat.png     -- GPU stack-based                  -- 1176                    -- 1904
+binarized-decsai/zelda.png       -- CPU one-pass                     -- 1046                    -- 1112
+binarized-decsai/zelda.png       -- CPU union-find                   -- 980                     -- 1087
+binarized-decsai/zelda.png       -- CPU linear two-scan              -- 1498                    -- 1594
+binarized-decsai/zelda.png       -- CPU front back scan              -- 3901                    -- 4113
+binarized-decsai/zelda.png       -- GPU neighbour propagation        -- 27814                   -- 28596
+binarized-decsai/zelda.png       -- GPU neighbour propagation +local -- 22707                   -- 23469
+binarized-decsai/zelda.png       -- GPU union-find                   -- 648                     -- 1400
+binarized-decsai/zelda.png       -- GPU union-find +local            -- 1766                    -- 2513
+binarized-decsai/zelda.png       -- GPU plus propagation             -- 10468                   -- 11216
+binarized-decsai/zelda.png       -- GPU line editing                 -- 7875                    -- 8617
+binarized-decsai/zelda.png       -- GPU lines                        -- 9162                    -- 9910
+binarized-decsai/zelda.png       -- GPU stack-based                  -- 1752                    -- 2534
