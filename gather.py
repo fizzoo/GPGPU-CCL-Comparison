@@ -23,11 +23,13 @@ for key, value in mappy.items():
 
     dev_wo = int(stdev( withoutprep ))
     dev_w  = int(stdev( withprep ))
+
+    string_meandiff = str(int(mean( [x-y for x,y in value] )))
     
     string_wo = str(mean_wo).ljust(10) + " ( " + str(dev_wo).ljust(10) + ")"
     string_w  = str(mean_w).ljust(10)  + " ( " + str(dev_w).ljust(10) + ")"
     
-    outputs.append(key + " " + string_wo + " " + string_w)
+    outputs.append(key + " " + string_wo + " " + string_w + " {{ " + string_meandiff)
 
 for string in sorted(outputs):
     print(string)
