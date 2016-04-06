@@ -5,8 +5,9 @@
 #include "LabelData.h"
 
 /**
+ * ABC representing a strategy for solving CCL.
  * Shouldn't need to allocate anything.
- * As we want to store a few objects, constructor/destructor shouldn't do much.
+ * As we want to store a few objects without any side effects, constructor/destructor shouldn't do much.
  */
 class Strategy {
 private:
@@ -23,7 +24,7 @@ public:
 
   /**
    * Memory transfer which we shouldn't time.
-   * CPU algorithms aswell should make a copy in order to not edit our input.
+   * CPU algorithms should also make a copy in order to not edit our input.
    */
   virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
                        cl::CommandQueue *) = 0;
@@ -54,6 +55,7 @@ public:
   virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
                        cl::CommandQueue *);
   virtual LabelData copy_from();
+  virtual ~CPUBase() {}
 };
 
 /**
@@ -69,6 +71,7 @@ public:
 
 /**
  * One-pass algorithm, explores entire components at a time.
+ * Uses a queue to record pixels to be explored, and propagates thusly.
  */
 class CPUOnePass : public CPUBase {
 public:
@@ -89,8 +92,8 @@ public:
 };
 
 /**
- * Two-pass algorithm proposed by Lifeng He, Yuyan Chao and
- * Kenju Suzuki
+ * Two-pass algorithm as proposed by Lifeng He, Yuyan Chao and
+ * Kenju Suzuki.
  */
 class CPULinearTwoScan : public CPUBase {
 public:
@@ -99,7 +102,7 @@ public:
 };
 
 /**
- * multipass algorithm by Kenji Suzuki, Isao Horiba and Noboru Sugie
+ * Multipass algorithm as proposed by Kenji Suzuki, Isao Horiba and Noboru Sugie.
  */
 class CPUFrontBack : public CPUBase {
   virtual std::string name() { return "CPU front back scan"; }
@@ -107,7 +110,7 @@ class CPUFrontBack : public CPUBase {
 };
 
 /**
- * ABC for GPU algorithms that keep a cl::Buffer.
+ * ABC for GPU algorithms that keep a cl::Buffer and queues work.
  */
 class GPUBase : public Strategy {
 protected:
@@ -141,6 +144,9 @@ public:
   virtual void execute();
 };
 
+/**
+ * Neighbour propagation that solves the problem locally between iterations.
+ */
 class GPUNeighbourPropagation_Localer : public GPUBase {
 public:
   virtual std::string name() { return "GPU neighbour propagation, loc"; }
@@ -148,7 +154,8 @@ public:
 };
 
 /**
- * Looks at pixels straight up/down/left/right while inside a component.
+ * Like neighbour propagation, but looks at all the pixels in a line towards
+ * up/down/left/right while inside a component.
  */
 class GPUPlusPropagation : public GPUBase {
 public:
@@ -157,8 +164,12 @@ public:
 };
 
 /**
- * Union-Find, sort of like neighbourpropagation except you keep following the
- * neighbours until you find a root that's low.
+ * Union-Find, checks which trees its neighbours belong to and follows it to
+ * the root, whereupon it picks the smallest root and modifies relevant nearby
+ * pixels to match that.  Essentially we then have a full root-compression
+ * scheme.  The tree structure itself is embedded in the label data, through
+ * the labels corresponding to the pixel at index label-2.  A root of a tree
+ * then has the label of its own index+2.
  */
 class GPUUnionFind : public GPUBase {
 public:
@@ -166,15 +177,12 @@ public:
   virtual void execute();
 };
 
+/**
+ * Union-find as above, augmented with a local solving inbetween iterations.
+ */
 class GPUUnionFind_Localer : public GPUBase {
 public:
   virtual std::string name() { return "GPU Union-find, localer"; }
-  virtual void execute();
-};
-
-class GPUUnionFind_Oneshot : public GPUBase {
-public:
-  virtual std::string name() { return "GPU Union-find + oneshot"; }
   virtual void execute();
 };
 
@@ -197,9 +205,13 @@ public:
 };
 
 /**
- * Acts like the gpu has recursive calls and does the best it can.
+ * Uses a stack, similar to the one-pass of the cpu, except that due to
+ * limitations in stack size we will need to iterate until convergence.  Every
+ * workgroup has its own stack, and picks one of the local labels to work on in
+ * case there is one that can be spread.  The workgroup then cooperates with
+ * working off the stack, propagating the results and then adding to the stack.
  */
-class GPURecursive : public GPUBase {
+class GPUStackOnePass : public GPUBase {
 public:
   virtual std::string name() { return "GPU recursive"; }
   virtual void execute();

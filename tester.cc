@@ -53,11 +53,10 @@ int main(int argc, const char *argv[]) {
     strats.push_back(new GPUNeighbourPropagation_Localer);
     strats.push_back(new GPUUnionFind);
     strats.push_back(new GPUUnionFind_Localer);
-    strats.push_back(new GPUUnionFind_Oneshot);
     strats.push_back(new GPUPlusPropagation);
     strats.push_back(new GPULineEditing);
     strats.push_back(new GPULines);
-    strats.push_back(new GPURecursive);
+    strats.push_back(new GPUStackOnePass);
 
     strats[0]->copy_to(&input, &context, &program, &queue);
     strats[0]->execute();
