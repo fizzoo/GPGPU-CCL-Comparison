@@ -1,14 +1,14 @@
 Note: only one sample run
 
- CPU front back scan               19663      ( 18091     ) 20739      ( 18559     ) {{ -1076
- CPU linear two-scan               9642       ( 15894     ) 10623      ( 16049     ) {{ -980
- CPU one-pass                      6928       ( 7691      ) 7877       ( 8106      ) {{ -948
- CPU union-find                    5192       ( 3771      ) 6166       ( 4294      ) {{ -974
- GPU line editing                  55153      ( 50797     ) 58180      ( 51149     ) {{ -3027
- GPU lines                         87392      ( 81249     ) 90425      ( 81692     ) {{ -3032
- GPU neighbour propagation         290533     ( 416956    ) 293562     ( 417905    ) {{ -3028
- GPU neighbour propagation +local  199230     ( 392426    ) 202250     ( 393297    ) {{ -3019
- GPU plus propagation              760029     ( 1969746   ) 763052     ( 1970326   ) {{ -3023
- GPU stack-based                   15105      ( 42821     ) 18151      ( 43737     ) {{ -3045
- GPU union-find                    2054       ( 1248      ) 5069       ( 2381      ) {{ -3015
- GPU union-find +local             6898       ( 6436      ) 9917       ( 7383      ) {{ -3018
+ CPU front back scan               23033      ( 17717     ) 24056      ( 18263     ) {{ -1022
+ CPU linear two-scan               9230       ( 7230      ) 10168      ( 7646      ) {{ -938
+ CPU one-pass                      8128       ( 7650      ) 9044       ( 8136      ) {{ -915
+ CPU union-find                    5925       ( 3811      ) 6863       ( 4379      ) {{ -938
+ GPU line editing                  69249      ( 98195     ) 72241      ( 98382     ) {{ -2992
+ GPU lines                         117013     ( 168641    ) 120005     ( 168922    ) {{ -2992
+ GPU neighbour propagation         361002     ( 429830    ) 364006     ( 430937    ) {{ -3004
+ GPU neighbour propagation +local  255590     ( 394451    ) 258588     ( 395462    ) {{ -2997
+ GPU plus propagation              857657     ( 1637376   ) 860660     ( 1637890   ) {{ -3002
+ GPU stack-based                   19927      ( 41721     ) 22935      ( 42445     ) {{ -3007
+ GPU union-find                    2361       ( 1217      ) 5359       ( 2395      ) {{ -2998
+ GPU union-find +local             8207       ( 6267      ) 11200      ( 7349      ) {{ -2993
