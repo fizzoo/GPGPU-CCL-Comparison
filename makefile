@@ -6,7 +6,7 @@ tester: $(SRC)
 	$(CXX) $(CXXFLAGS) -g $(SRC) $(LDLIBS) -o $@
 
 fasts:  $(SRC)
-	$(CXX) -DNDEBUG $(CXXFLAGS) -O3 $(SRC) $(LDLIBS) -o $@
+	$(CXX) -DNDEBUG $(CXXFLAGS) -O3 -march=native $(SRC) $(LDLIBS) -o $@
 
 format:
 	zsh -c 'for f in *.cc *.h kernel.cl; do clang-format -i $$f; done'

@@ -1,0 +1,648 @@
+binarized-sipi1024/1.3.01.png    -- CPU one-pass                     -- 6444                    -- 7317
+binarized-sipi1024/1.3.01.png    -- CPU union-find                   -- 5465                    -- 6315
+binarized-sipi1024/1.3.01.png    -- CPU linear two-scan              -- 162177                  -- 163026
+binarized-sipi1024/1.3.01.png    -- CPU front back scan              -- 19946                   -- 20805
+binarized-sipi1024/1.3.01.png    -- GPU neighbour propagation        -- 224838                  -- 227006
+binarized-sipi1024/1.3.01.png    -- GPU neighbour propagation +local -- 193432                  -- 195597
+binarized-sipi1024/1.3.01.png    -- GPU union-find                   -- 2051                    -- 4206
+binarized-sipi1024/1.3.01.png    -- GPU union-find +local            -- 7359                    -- 9515
+binarized-sipi1024/1.3.01.png    -- GPU plus propagation             -- 181322                  -- 183485
+binarized-sipi1024/1.3.01.png    -- GPU line editing                 -- 123251                  -- 125422
+binarized-sipi1024/1.3.01.png    -- GPU lines                        -- 177745                  -- 179917
+binarized-sipi1024/1.3.01.png    -- GPU stack-based                  -- 6286                    -- 8444
+binarized-sipi1024/1.3.02.png    -- CPU one-pass                     -- 5964                    -- 6924
+binarized-sipi1024/1.3.02.png    -- CPU union-find                   -- 5248                    -- 6202
+binarized-sipi1024/1.3.02.png    -- CPU linear two-scan              -- 26992                   -- 27943
+binarized-sipi1024/1.3.02.png    -- CPU front back scan              -- 19952                   -- 20899
+binarized-sipi1024/1.3.02.png    -- GPU neighbour propagation        -- 188528                  -- 190695
+binarized-sipi1024/1.3.02.png    -- GPU neighbour propagation +local -- 184270                  -- 186450
+binarized-sipi1024/1.3.02.png    -- GPU union-find                   -- 1990                    -- 4172
+binarized-sipi1024/1.3.02.png    -- GPU union-find +local            -- 7132                    -- 9296
+binarized-sipi1024/1.3.02.png    -- GPU plus propagation             -- 54100                   -- 56277
+binarized-sipi1024/1.3.02.png    -- GPU line editing                 -- 45581                   -- 47766
+binarized-sipi1024/1.3.02.png    -- GPU lines                        -- 73099                   -- 75264
+binarized-sipi1024/1.3.02.png    -- GPU stack-based                  -- 5542                    -- 7722
+binarized-sipi1024/1.3.03.png    -- CPU one-pass                     -- 6192                    -- 7069
+binarized-sipi1024/1.3.03.png    -- CPU union-find                   -- 5223                    -- 6090
+binarized-sipi1024/1.3.03.png    -- CPU linear two-scan              -- 185302                  -- 186164
+binarized-sipi1024/1.3.03.png    -- CPU front back scan              -- 19396                   -- 20256
+binarized-sipi1024/1.3.03.png    -- GPU neighbour propagation        -- 268167                  -- 270362
+binarized-sipi1024/1.3.03.png    -- GPU neighbour propagation +local -- 214671                  -- 216847
+binarized-sipi1024/1.3.03.png    -- GPU union-find                   -- 1956                    -- 4132
+binarized-sipi1024/1.3.03.png    -- GPU union-find +local            -- 6013                    -- 8181
+binarized-sipi1024/1.3.03.png    -- GPU plus propagation             -- 214450                  -- 216630
+binarized-sipi1024/1.3.03.png    -- GPU line editing                 -- 110764                  -- 112931
+binarized-sipi1024/1.3.03.png    -- GPU lines                        -- 159630                  -- 161800
+binarized-sipi1024/1.3.03.png    -- GPU stack-based                  -- 7820                    -- 9997
+binarized-sipi1024/1.3.04.png    -- CPU one-pass                     -- 4941                    -- 5892
+binarized-sipi1024/1.3.04.png    -- CPU union-find                   -- 4917                    -- 5848
+binarized-sipi1024/1.3.04.png    -- CPU linear two-scan              -- 8148                    -- 9081
+binarized-sipi1024/1.3.04.png    -- CPU front back scan              -- 16044                   -- 16989
+binarized-sipi1024/1.3.04.png    -- GPU neighbour propagation        -- 69166                   -- 71361
+binarized-sipi1024/1.3.04.png    -- GPU neighbour propagation +local -- 42176                   -- 44376
+binarized-sipi1024/1.3.04.png    -- GPU union-find                   -- 1738                    -- 3922
+binarized-sipi1024/1.3.04.png    -- GPU union-find +local            -- 5152                    -- 7347
+binarized-sipi1024/1.3.04.png    -- GPU plus propagation             -- 45700                   -- 47874
+binarized-sipi1024/1.3.04.png    -- GPU line editing                 -- 59841                   -- 62022
+binarized-sipi1024/1.3.04.png    -- GPU lines                        -- 74843                   -- 77022
+binarized-sipi1024/1.3.04.png    -- GPU stack-based                  -- 3655                    -- 5824
+binarized-sipi1024/1.3.05.png    -- CPU one-pass                     -- 4719                    -- 5683
+binarized-sipi1024/1.3.05.png    -- CPU union-find                   -- 4978                    -- 5920
+binarized-sipi1024/1.3.05.png    -- CPU linear two-scan              -- 14347                   -- 15278
+binarized-sipi1024/1.3.05.png    -- CPU front back scan              -- 16927                   -- 17878
+binarized-sipi1024/1.3.05.png    -- GPU neighbour propagation        -- 191366                  -- 193535
+binarized-sipi1024/1.3.05.png    -- GPU neighbour propagation +local -- 108148                  -- 110333
+binarized-sipi1024/1.3.05.png    -- GPU union-find                   -- 1905                    -- 4078
+binarized-sipi1024/1.3.05.png    -- GPU union-find +local            -- 6320                    -- 8482
+binarized-sipi1024/1.3.05.png    -- GPU plus propagation             -- 92301                   -- 94468
+binarized-sipi1024/1.3.05.png    -- GPU line editing                 -- 115469                  -- 117641
+binarized-sipi1024/1.3.05.png    -- GPU lines                        -- 171043                  -- 173214
+binarized-sipi1024/1.3.05.png    -- GPU stack-based                  -- 4805                    -- 6974
+binarized-sipi1024/1.3.06.png    -- CPU one-pass                     -- 4980                    -- 5858
+binarized-sipi1024/1.3.06.png    -- CPU union-find                   -- 4947                    -- 5801
+binarized-sipi1024/1.3.06.png    -- CPU linear two-scan              -- 6802                    -- 7659
+binarized-sipi1024/1.3.06.png    -- CPU front back scan              -- 16342                   -- 17210
+binarized-sipi1024/1.3.06.png    -- GPU neighbour propagation        -- 51624                   -- 53804
+binarized-sipi1024/1.3.06.png    -- GPU neighbour propagation +local -- 32595                   -- 34780
+binarized-sipi1024/1.3.06.png    -- GPU union-find                   -- 1843                    -- 4017
+binarized-sipi1024/1.3.06.png    -- GPU union-find +local            -- 4989                    -- 7167
+binarized-sipi1024/1.3.06.png    -- GPU plus propagation             -- 30601                   -- 32787
+binarized-sipi1024/1.3.06.png    -- GPU line editing                 -- 42023                   -- 44192
+binarized-sipi1024/1.3.06.png    -- GPU lines                        -- 52432                   -- 54600
+binarized-sipi1024/1.3.06.png    -- GPU stack-based                  -- 3744                    -- 5933
+binarized-sipi1024/1.3.07.png    -- CPU one-pass                     -- 6649                    -- 7605
+binarized-sipi1024/1.3.07.png    -- CPU union-find                   -- 5580                    -- 6519
+binarized-sipi1024/1.3.07.png    -- CPU linear two-scan              -- 122749                  -- 123620
+binarized-sipi1024/1.3.07.png    -- CPU front back scan              -- 21248                   -- 22148
+binarized-sipi1024/1.3.07.png    -- GPU neighbour propagation        -- 225011                  -- 227179
+binarized-sipi1024/1.3.07.png    -- GPU neighbour propagation +local -- 214018                  -- 216205
+binarized-sipi1024/1.3.07.png    -- GPU union-find                   -- 2137                    -- 4303
+binarized-sipi1024/1.3.07.png    -- GPU union-find +local            -- 7270                    -- 9462
+binarized-sipi1024/1.3.07.png    -- GPU plus propagation             -- 85350                   -- 87514
+binarized-sipi1024/1.3.07.png    -- GPU line editing                 -- 59085                   -- 61269
+binarized-sipi1024/1.3.07.png    -- GPU lines                        -- 88567                   -- 90742
+binarized-sipi1024/1.3.07.png    -- GPU stack-based                  -- 6049                    -- 8222
+binarized-sipi1024/1.3.08.png    -- CPU one-pass                     -- 7684                    -- 8567
+binarized-sipi1024/1.3.08.png    -- CPU union-find                   -- 7397                    -- 8259
+binarized-sipi1024/1.3.08.png    -- CPU linear two-scan              -- 109592                  -- 110459
+binarized-sipi1024/1.3.08.png    -- CPU front back scan              -- 25382                   -- 26258
+binarized-sipi1024/1.3.08.png    -- GPU neighbour propagation        -- 206396                  -- 208579
+binarized-sipi1024/1.3.08.png    -- GPU neighbour propagation +local -- 182045                  -- 184226
+binarized-sipi1024/1.3.08.png    -- GPU union-find                   -- 2035                    -- 4210
+binarized-sipi1024/1.3.08.png    -- GPU union-find +local            -- 7043                    -- 9206
+binarized-sipi1024/1.3.08.png    -- GPU plus propagation             -- 194677                  -- 196856
+binarized-sipi1024/1.3.08.png    -- GPU line editing                 -- 150282                  -- 152477
+binarized-sipi1024/1.3.08.png    -- GPU lines                        -- 218116                  -- 220303
+binarized-sipi1024/1.3.08.png    -- GPU stack-based                  -- 4898                    -- 7071
+binarized-sipi1024/1.3.09.png    -- CPU one-pass                     -- 8158                    -- 9040
+binarized-sipi1024/1.3.09.png    -- CPU union-find                   -- 5174                    -- 6034
+binarized-sipi1024/1.3.09.png    -- CPU linear two-scan              -- 38123                   -- 38978
+binarized-sipi1024/1.3.09.png    -- CPU front back scan              -- 21530                   -- 22381
+binarized-sipi1024/1.3.09.png    -- GPU neighbour propagation        -- 266381                  -- 268563
+binarized-sipi1024/1.3.09.png    -- GPU neighbour propagation +local -- 270829                  -- 272994
+binarized-sipi1024/1.3.09.png    -- GPU union-find                   -- 2155                    -- 4330
+binarized-sipi1024/1.3.09.png    -- GPU union-find +local            -- 7507                    -- 9693
+binarized-sipi1024/1.3.09.png    -- GPU plus propagation             -- 257104                  -- 259280
+binarized-sipi1024/1.3.09.png    -- GPU line editing                 -- 34395                   -- 36579
+binarized-sipi1024/1.3.09.png    -- GPU lines                        -- 73160                   -- 75338
+binarized-sipi1024/1.3.09.png    -- GPU stack-based                  -- 10540                   -- 12721
+binarized-sipi1024/1.3.10.png    -- CPU one-pass                     -- 5172                    -- 6134
+binarized-sipi1024/1.3.10.png    -- CPU union-find                   -- 5143                    -- 6070
+binarized-sipi1024/1.3.10.png    -- CPU linear two-scan              -- 22859                   -- 23795
+binarized-sipi1024/1.3.10.png    -- CPU front back scan              -- 17959                   -- 18903
+binarized-sipi1024/1.3.10.png    -- GPU neighbour propagation        -- 198825                  -- 201014
+binarized-sipi1024/1.3.10.png    -- GPU neighbour propagation +local -- 131690                  -- 133874
+binarized-sipi1024/1.3.10.png    -- GPU union-find                   -- 2137                    -- 4303
+binarized-sipi1024/1.3.10.png    -- GPU union-find +local            -- 6276                    -- 8463
+binarized-sipi1024/1.3.10.png    -- GPU plus propagation             -- 94076                   -- 96257
+binarized-sipi1024/1.3.10.png    -- GPU line editing                 -- 83477                   -- 85654
+binarized-sipi1024/1.3.10.png    -- GPU lines                        -- 118733                  -- 120902
+binarized-sipi1024/1.3.10.png    -- GPU stack-based                  -- 4346                    -- 6517
+binarized-sipi1024/1.3.11.png    -- CPU one-pass                     -- 5940                    -- 6818
+binarized-sipi1024/1.3.11.png    -- CPU union-find                   -- 5913                    -- 6773
+binarized-sipi1024/1.3.11.png    -- CPU linear two-scan              -- 61947                   -- 62814
+binarized-sipi1024/1.3.11.png    -- CPU front back scan              -- 21026                   -- 21896
+binarized-sipi1024/1.3.11.png    -- GPU neighbour propagation        -- 188864                  -- 191049
+binarized-sipi1024/1.3.11.png    -- GPU neighbour propagation +local -- 137605                  -- 139791
+binarized-sipi1024/1.3.11.png    -- GPU union-find                   -- 2061                    -- 4258
+binarized-sipi1024/1.3.11.png    -- GPU union-find +local            -- 6931                    -- 9100
+binarized-sipi1024/1.3.11.png    -- GPU plus propagation             -- 123838                  -- 126019
+binarized-sipi1024/1.3.11.png    -- GPU line editing                 -- 86209                   -- 88387
+binarized-sipi1024/1.3.11.png    -- GPU lines                        -- 120478                  -- 122682
+binarized-sipi1024/1.3.11.png    -- GPU stack-based                  -- 6329                    -- 8510
+binarized-sipi1024/1.3.12.png    -- CPU one-pass                     -- 7558                    -- 8516
+binarized-sipi1024/1.3.12.png    -- CPU union-find                   -- 5461                    -- 6403
+binarized-sipi1024/1.3.12.png    -- CPU linear two-scan              -- 16206                   -- 17146
+binarized-sipi1024/1.3.12.png    -- CPU front back scan              -- 21930                   -- 22825
+binarized-sipi1024/1.3.12.png    -- GPU neighbour propagation        -- 248652                  -- 250823
+binarized-sipi1024/1.3.12.png    -- GPU neighbour propagation +local -- 315071                  -- 317245
+binarized-sipi1024/1.3.12.png    -- GPU union-find                   -- 1987                    -- 4161
+binarized-sipi1024/1.3.12.png    -- GPU union-find +local            -- 7837                    -- 10021
+binarized-sipi1024/1.3.12.png    -- GPU plus propagation             -- 233427                  -- 235598
+binarized-sipi1024/1.3.12.png    -- GPU line editing                 -- 28335                   -- 30511
+binarized-sipi1024/1.3.12.png    -- GPU lines                        -- 50305                   -- 52493
+binarized-sipi1024/1.3.12.png    -- GPU stack-based                  -- 7236                    -- 9425
+binarized-sipi1024/1.3.13.png    -- CPU one-pass                     -- 5810                    -- 6696
+binarized-sipi1024/1.3.13.png    -- CPU union-find                   -- 4779                    -- 5642
+binarized-sipi1024/1.3.13.png    -- CPU linear two-scan              -- 94625                   -- 95498
+binarized-sipi1024/1.3.13.png    -- CPU front back scan              -- 17472                   -- 18291
+binarized-sipi1024/1.3.13.png    -- GPU neighbour propagation        -- 211265                  -- 213460
+binarized-sipi1024/1.3.13.png    -- GPU neighbour propagation +local -- 178724                  -- 180896
+binarized-sipi1024/1.3.13.png    -- GPU union-find                   -- 1913                    -- 4088
+binarized-sipi1024/1.3.13.png    -- GPU union-find +local            -- 6189                    -- 8374
+binarized-sipi1024/1.3.13.png    -- GPU plus propagation             -- 84694                   -- 86866
+binarized-sipi1024/1.3.13.png    -- GPU line editing                 -- 80718                   -- 82909
+binarized-sipi1024/1.3.13.png    -- GPU lines                        -- 106248                  -- 108432
+binarized-sipi1024/1.3.13.png    -- GPU stack-based                  -- 5706                    -- 7913
+binarized-sipi1024/1.4.01.png    -- CPU one-pass                     -- 2860                    -- 3821
+binarized-sipi1024/1.4.01.png    -- CPU union-find                   -- 2949                    -- 3883
+binarized-sipi1024/1.4.01.png    -- CPU linear two-scan              -- 9090                    -- 10017
+binarized-sipi1024/1.4.01.png    -- CPU front back scan              -- 9944                    -- 10878
+binarized-sipi1024/1.4.01.png    -- GPU neighbour propagation        -- 482753                  -- 484928
+binarized-sipi1024/1.4.01.png    -- GPU neighbour propagation +local -- 202142                  -- 204338
+binarized-sipi1024/1.4.01.png    -- GPU union-find                   -- 1626                    -- 3810
+binarized-sipi1024/1.4.01.png    -- GPU union-find +local            -- 4086                    -- 6256
+binarized-sipi1024/1.4.01.png    -- GPU plus propagation             -- 617915                  -- 620107
+binarized-sipi1024/1.4.01.png    -- GPU line editing                 -- 652938                  -- 655134
+binarized-sipi1024/1.4.01.png    -- GPU lines                        -- 830489                  -- 832678
+binarized-sipi1024/1.4.01.png    -- GPU stack-based                  -- 10695                   -- 12866
+binarized-sipi1024/1.4.02.png    -- CPU one-pass                     -- 4834                    -- 5716
+binarized-sipi1024/1.4.02.png    -- CPU union-find                   -- 4182                    -- 4983
+binarized-sipi1024/1.4.02.png    -- CPU linear two-scan              -- 5822                    -- 6618
+binarized-sipi1024/1.4.02.png    -- CPU front back scan              -- 16157                   -- 16968
+binarized-sipi1024/1.4.02.png    -- GPU neighbour propagation        -- 163527                  -- 165710
+binarized-sipi1024/1.4.02.png    -- GPU neighbour propagation +local -- 78995                   -- 81185
+binarized-sipi1024/1.4.02.png    -- GPU union-find                   -- 1766                    -- 3931
+binarized-sipi1024/1.4.02.png    -- GPU union-find +local            -- 6935                    -- 9102
+binarized-sipi1024/1.4.02.png    -- GPU plus propagation             -- 108072                  -- 110232
+binarized-sipi1024/1.4.02.png    -- GPU line editing                 -- 40434                   -- 42624
+binarized-sipi1024/1.4.02.png    -- GPU lines                        -- 55776                   -- 57963
+binarized-sipi1024/1.4.02.png    -- GPU stack-based                  -- 5607                    -- 7778
+binarized-sipi1024/1.4.03.png    -- CPU one-pass                     -- 5974                    -- 6945
+binarized-sipi1024/1.4.03.png    -- CPU union-find                   -- 4410                    -- 5359
+binarized-sipi1024/1.4.03.png    -- CPU linear two-scan              -- 5955                    -- 6855
+binarized-sipi1024/1.4.03.png    -- CPU front back scan              -- 18673                   -- 19570
+binarized-sipi1024/1.4.03.png    -- GPU neighbour propagation        -- 215104                  -- 217283
+binarized-sipi1024/1.4.03.png    -- GPU neighbour propagation +local -- 166453                  -- 168643
+binarized-sipi1024/1.4.03.png    -- GPU union-find                   -- 1833                    -- 4012
+binarized-sipi1024/1.4.03.png    -- GPU union-find +local            -- 7142                    -- 9319
+binarized-sipi1024/1.4.03.png    -- GPU plus propagation             -- 276124                  -- 278305
+binarized-sipi1024/1.4.03.png    -- GPU line editing                 -- 45222                   -- 47409
+binarized-sipi1024/1.4.03.png    -- GPU lines                        -- 71371                   -- 73554
+binarized-sipi1024/1.4.03.png    -- GPU stack-based                  -- 5337                    -- 7520
+binarized-sipi1024/1.4.04.png    -- CPU one-pass                     -- 9942                    -- 10430
+binarized-sipi1024/1.4.04.png    -- CPU union-find                   -- 4294                    -- 4762
+binarized-sipi1024/1.4.04.png    -- CPU linear two-scan              -- 4682                    -- 5149
+binarized-sipi1024/1.4.04.png    -- CPU front back scan              -- 19812                   -- 20285
+binarized-sipi1024/1.4.04.png    -- GPU neighbour propagation        -- 211148                  -- 212899
+binarized-sipi1024/1.4.04.png    -- GPU neighbour propagation +local -- 206924                  -- 208677
+binarized-sipi1024/1.4.04.png    -- GPU union-find                   -- 1996                    -- 3748
+binarized-sipi1024/1.4.04.png    -- GPU union-find +local            -- 6877                    -- 8632
+binarized-sipi1024/1.4.04.png    -- GPU plus propagation             -- 333003                  -- 334740
+binarized-sipi1024/1.4.04.png    -- GPU line editing                 -- 8194                    -- 9940
+binarized-sipi1024/1.4.04.png    -- GPU lines                        -- 10111                   -- 11862
+binarized-sipi1024/1.4.04.png    -- GPU stack-based                  -- 20674                   -- 22432
+binarized-sipi1024/1.4.05.png    -- CPU one-pass                     -- 4980                    -- 5482
+binarized-sipi1024/1.4.05.png    -- CPU union-find                   -- 3577                    -- 4048
+binarized-sipi1024/1.4.05.png    -- CPU linear two-scan              -- 14089                   -- 14559
+binarized-sipi1024/1.4.05.png    -- CPU front back scan              -- 14335                   -- 15218
+binarized-sipi1024/1.4.05.png    -- GPU neighbour propagation        -- 206382                  -- 208134
+binarized-sipi1024/1.4.05.png    -- GPU neighbour propagation +local -- 110597                  -- 112348
+binarized-sipi1024/1.4.05.png    -- GPU union-find                   -- 2022                    -- 3763
+binarized-sipi1024/1.4.05.png    -- GPU union-find +local            -- 5481                    -- 7232
+binarized-sipi1024/1.4.05.png    -- GPU plus propagation             -- 466669                  -- 468427
+binarized-sipi1024/1.4.05.png    -- GPU line editing                 -- 49596                   -- 51345
+binarized-sipi1024/1.4.05.png    -- GPU lines                        -- 55017                   -- 56759
+binarized-sipi1024/1.4.05.png    -- GPU stack-based                  -- 9980                    -- 11727
+binarized-sipi1024/1.4.06.png    -- CPU one-pass                     -- 6112                    -- 6620
+binarized-sipi1024/1.4.06.png    -- CPU union-find                   -- 5276                    -- 5747
+binarized-sipi1024/1.4.06.png    -- CPU linear two-scan              -- 40010                   -- 40477
+binarized-sipi1024/1.4.06.png    -- CPU front back scan              -- 20073                   -- 20912
+binarized-sipi1024/1.4.06.png    -- GPU neighbour propagation        -- 135542                  -- 137299
+binarized-sipi1024/1.4.06.png    -- GPU neighbour propagation +local -- 165598                  -- 167355
+binarized-sipi1024/1.4.06.png    -- GPU union-find                   -- 1882                    -- 3630
+binarized-sipi1024/1.4.06.png    -- GPU union-find +local            -- 6383                    -- 8131
+binarized-sipi1024/1.4.06.png    -- GPU plus propagation             -- 441764                  -- 443510
+binarized-sipi1024/1.4.06.png    -- GPU line editing                 -- 43637                   -- 45396
+binarized-sipi1024/1.4.06.png    -- GPU lines                        -- 84951                   -- 86708
+binarized-sipi1024/1.4.06.png    -- GPU stack-based                  -- 5253                    -- 7003
+binarized-sipi1024/1.4.07.png    -- CPU one-pass                     -- 10220                   -- 10717
+binarized-sipi1024/1.4.07.png    -- CPU union-find                   -- 4489                    -- 4965
+binarized-sipi1024/1.4.07.png    -- CPU linear two-scan              -- 4794                    -- 5262
+binarized-sipi1024/1.4.07.png    -- CPU front back scan              -- 20790                   -- 21256
+binarized-sipi1024/1.4.07.png    -- GPU neighbour propagation        -- 169512                  -- 171258
+binarized-sipi1024/1.4.07.png    -- GPU neighbour propagation +local -- 230803                  -- 232556
+binarized-sipi1024/1.4.07.png    -- GPU union-find                   -- 1723                    -- 3479
+binarized-sipi1024/1.4.07.png    -- GPU union-find +local            -- 7203                    -- 8952
+binarized-sipi1024/1.4.07.png    -- GPU plus propagation             -- 326318                  -- 328053
+binarized-sipi1024/1.4.07.png    -- GPU line editing                 -- 11456                   -- 13202
+binarized-sipi1024/1.4.07.png    -- GPU lines                        -- 17557                   -- 19302
+binarized-sipi1024/1.4.07.png    -- GPU stack-based                  -- 17692                   -- 19446
+binarized-sipi1024/1.4.08.png    -- CPU one-pass                     -- 10642                   -- 11135
+binarized-sipi1024/1.4.08.png    -- CPU union-find                   -- 4490                    -- 4958
+binarized-sipi1024/1.4.08.png    -- CPU linear two-scan              -- 4769                    -- 5239
+binarized-sipi1024/1.4.08.png    -- CPU front back scan              -- 12408                   -- 12875
+binarized-sipi1024/1.4.08.png    -- GPU neighbour propagation        -- 167645                  -- 169405
+binarized-sipi1024/1.4.08.png    -- GPU neighbour propagation +local -- 229326                  -- 231080
+binarized-sipi1024/1.4.08.png    -- GPU union-find                   -- 1697                    -- 3459
+binarized-sipi1024/1.4.08.png    -- GPU union-find +local            -- 8563                    -- 10327
+binarized-sipi1024/1.4.08.png    -- GPU plus propagation             -- 233510                  -- 235267
+binarized-sipi1024/1.4.08.png    -- GPU line editing                 -- 8315                    -- 10065
+binarized-sipi1024/1.4.08.png    -- GPU lines                        -- 12586                   -- 14333
+binarized-sipi1024/1.4.08.png    -- GPU stack-based                  -- 12025                   -- 13783
+binarized-sipi1024/1.4.09.png    -- CPU one-pass                     -- 3620                    -- 4113
+binarized-sipi1024/1.4.09.png    -- CPU union-find                   -- 3002                    -- 3479
+binarized-sipi1024/1.4.09.png    -- CPU linear two-scan              -- 10727                   -- 11204
+binarized-sipi1024/1.4.09.png    -- CPU front back scan              -- 9841                    -- 10719
+binarized-sipi1024/1.4.09.png    -- GPU neighbour propagation        -- 277401                  -- 279157
+binarized-sipi1024/1.4.09.png    -- GPU neighbour propagation +local -- 150606                  -- 152347
+binarized-sipi1024/1.4.09.png    -- GPU union-find                   -- 1788                    -- 3524
+binarized-sipi1024/1.4.09.png    -- GPU union-find +local            -- 3030                    -- 4786
+binarized-sipi1024/1.4.09.png    -- GPU plus propagation             -- 67961                   -- 69714
+binarized-sipi1024/1.4.09.png    -- GPU line editing                 -- 12735                   -- 14493
+binarized-sipi1024/1.4.09.png    -- GPU lines                        -- 17749                   -- 19504
+binarized-sipi1024/1.4.09.png    -- GPU stack-based                  -- 6683                    -- 8435
+binarized-sipi1024/1.4.10.png    -- CPU one-pass                     -- 6480                    -- 6975
+binarized-sipi1024/1.4.10.png    -- CPU union-find                   -- 6232                    -- 6705
+binarized-sipi1024/1.4.10.png    -- CPU linear two-scan              -- 427067                  -- 427544
+binarized-sipi1024/1.4.10.png    -- CPU front back scan              -- 22224                   -- 23183
+binarized-sipi1024/1.4.10.png    -- GPU neighbour propagation        -- 217469                  -- 219227
+binarized-sipi1024/1.4.10.png    -- GPU neighbour propagation +local -- 183035                  -- 184787
+binarized-sipi1024/1.4.10.png    -- GPU union-find                   -- 2160                    -- 3918
+binarized-sipi1024/1.4.10.png    -- GPU union-find +local            -- 6461                    -- 8213
+binarized-sipi1024/1.4.10.png    -- GPU plus propagation             -- 103621                  -- 105379
+binarized-sipi1024/1.4.10.png    -- GPU line editing                 -- 108437                  -- 110186
+binarized-sipi1024/1.4.10.png    -- GPU lines                        -- 146240                  -- 147988
+binarized-sipi1024/1.4.10.png    -- GPU stack-based                  -- 6442                    -- 8191
+binarized-sipi1024/1.4.11.png    -- CPU one-pass                     -- 9543                    -- 10039
+binarized-sipi1024/1.4.11.png    -- CPU union-find                   -- 5292                    -- 5768
+binarized-sipi1024/1.4.11.png    -- CPU linear two-scan              -- 33922                   -- 34402
+binarized-sipi1024/1.4.11.png    -- CPU front back scan              -- 21879                   -- 22360
+binarized-sipi1024/1.4.11.png    -- GPU neighbour propagation        -- 210239                  -- 212001
+binarized-sipi1024/1.4.11.png    -- GPU neighbour propagation +local -- 224339                  -- 226093
+binarized-sipi1024/1.4.11.png    -- GPU union-find                   -- 2048                    -- 3807
+binarized-sipi1024/1.4.11.png    -- GPU union-find +local            -- 9090                    -- 10839
+binarized-sipi1024/1.4.11.png    -- GPU plus propagation             -- 452068                  -- 453836
+binarized-sipi1024/1.4.11.png    -- GPU line editing                 -- 61755                   -- 63502
+binarized-sipi1024/1.4.11.png    -- GPU lines                        -- 111202                  -- 112957
+binarized-sipi1024/1.4.11.png    -- GPU stack-based                  -- 8468                    -- 10217
+binarized-sipi1024/1.4.12.png    -- CPU one-pass                     -- 10079                   -- 10583
+binarized-sipi1024/1.4.12.png    -- CPU union-find                   -- 4464                    -- 4946
+binarized-sipi1024/1.4.12.png    -- CPU linear two-scan              -- 5067                    -- 5540
+binarized-sipi1024/1.4.12.png    -- CPU front back scan              -- 12252                   -- 12731
+binarized-sipi1024/1.4.12.png    -- GPU neighbour propagation        -- 217590                  -- 219356
+binarized-sipi1024/1.4.12.png    -- GPU neighbour propagation +local -- 230663                  -- 232423
+binarized-sipi1024/1.4.12.png    -- GPU union-find                   -- 1778                    -- 3535
+binarized-sipi1024/1.4.12.png    -- GPU union-find +local            -- 7159                    -- 8905
+binarized-sipi1024/1.4.12.png    -- GPU plus propagation             -- 224940                  -- 226700
+binarized-sipi1024/1.4.12.png    -- GPU line editing                 -- 8276                    -- 10029
+binarized-sipi1024/1.4.12.png    -- GPU lines                        -- 15350                   -- 17098
+binarized-sipi1024/1.4.12.png    -- GPU stack-based                  -- 27705                   -- 29448
+binarized-sipi1024/2.2.01.png    -- CPU one-pass                     -- 5871                    -- 6366
+binarized-sipi1024/2.2.01.png    -- CPU union-find                   -- 4644                    -- 5124
+binarized-sipi1024/2.2.01.png    -- CPU linear two-scan              -- 50081                   -- 50555
+binarized-sipi1024/2.2.01.png    -- CPU front back scan              -- 17918                   -- 18800
+binarized-sipi1024/2.2.01.png    -- GPU neighbour propagation        -- 127855                  -- 129598
+binarized-sipi1024/2.2.01.png    -- GPU neighbour propagation +local -- 176777                  -- 178516
+binarized-sipi1024/2.2.01.png    -- GPU union-find                   -- 1708                    -- 3451
+binarized-sipi1024/2.2.01.png    -- GPU union-find +local            -- 6166                    -- 7902
+binarized-sipi1024/2.2.01.png    -- GPU plus propagation             -- 163065                  -- 164816
+binarized-sipi1024/2.2.01.png    -- GPU line editing                 -- 62927                   -- 64677
+binarized-sipi1024/2.2.01.png    -- GPU lines                        -- 89219                   -- 90971
+binarized-sipi1024/2.2.01.png    -- GPU stack-based                  -- 4317                    -- 6068
+binarized-sipi1024/2.2.02.png    -- CPU one-pass                     -- 2620                    -- 3116
+binarized-sipi1024/2.2.02.png    -- CPU union-find                   -- 2681                    -- 3141
+binarized-sipi1024/2.2.02.png    -- CPU linear two-scan              -- 8065                    -- 8527
+binarized-sipi1024/2.2.02.png    -- CPU front back scan              -- 9227                    -- 10112
+binarized-sipi1024/2.2.02.png    -- GPU neighbour propagation        -- 126224                  -- 127982
+binarized-sipi1024/2.2.02.png    -- GPU neighbour propagation +local -- 58544                   -- 60306
+binarized-sipi1024/2.2.02.png    -- GPU union-find                   -- 1124                    -- 2870
+binarized-sipi1024/2.2.02.png    -- GPU union-find +local            -- 3513                    -- 5268
+binarized-sipi1024/2.2.02.png    -- GPU plus propagation             -- 50651                   -- 52408
+binarized-sipi1024/2.2.02.png    -- GPU line editing                 -- 68980                   -- 70730
+binarized-sipi1024/2.2.02.png    -- GPU lines                        -- 79235                   -- 80978
+binarized-sipi1024/2.2.02.png    -- GPU stack-based                  -- 3214                    -- 4965
+binarized-sipi1024/2.2.03.png    -- CPU one-pass                     -- 6821                    -- 7314
+binarized-sipi1024/2.2.03.png    -- CPU union-find                   -- 5946                    -- 6426
+binarized-sipi1024/2.2.03.png    -- CPU linear two-scan              -- 182358                  -- 182847
+binarized-sipi1024/2.2.03.png    -- CPU front back scan              -- 22738                   -- 23697
+binarized-sipi1024/2.2.03.png    -- GPU neighbour propagation        -- 205472                  -- 207226
+binarized-sipi1024/2.2.03.png    -- GPU neighbour propagation +local -- 218256                  -- 219997
+binarized-sipi1024/2.2.03.png    -- GPU union-find                   -- 2395                    -- 4147
+binarized-sipi1024/2.2.03.png    -- GPU union-find +local            -- 8362                    -- 10101
+binarized-sipi1024/2.2.03.png    -- GPU plus propagation             -- 257347                  -- 259094
+binarized-sipi1024/2.2.03.png    -- GPU line editing                 -- 118889                  -- 120630
+binarized-sipi1024/2.2.03.png    -- GPU lines                        -- 178396                  -- 180146
+binarized-sipi1024/2.2.03.png    -- GPU stack-based                  -- 6701                    -- 8440
+binarized-sipi1024/2.2.04.png    -- CPU one-pass                     -- 6481                    -- 6982
+binarized-sipi1024/2.2.04.png    -- CPU union-find                   -- 5589                    -- 6071
+binarized-sipi1024/2.2.04.png    -- CPU linear two-scan              -- 94455                   -- 94934
+binarized-sipi1024/2.2.04.png    -- CPU front back scan              -- 20338                   -- 21219
+binarized-sipi1024/2.2.04.png    -- GPU neighbour propagation        -- 281906                  -- 283666
+binarized-sipi1024/2.2.04.png    -- GPU neighbour propagation +local -- 223652                  -- 225415
+binarized-sipi1024/2.2.04.png    -- GPU union-find                   -- 1953                    -- 3696
+binarized-sipi1024/2.2.04.png    -- GPU union-find +local            -- 7199                    -- 8960
+binarized-sipi1024/2.2.04.png    -- GPU plus propagation             -- 651346                  -- 653106
+binarized-sipi1024/2.2.04.png    -- GPU line editing                 -- 205344                  -- 207090
+binarized-sipi1024/2.2.04.png    -- GPU lines                        -- 308939                  -- 310685
+binarized-sipi1024/2.2.04.png    -- GPU stack-based                  -- 6276                    -- 8036
+binarized-sipi1024/2.2.05.png    -- CPU one-pass                     -- 4138                    -- 4638
+binarized-sipi1024/2.2.05.png    -- CPU union-find                   -- 3947                    -- 4410
+binarized-sipi1024/2.2.05.png    -- CPU linear two-scan              -- 7995                    -- 8463
+binarized-sipi1024/2.2.05.png    -- CPU front back scan              -- 13411                   -- 14368
+binarized-sipi1024/2.2.05.png    -- GPU neighbour propagation        -- 138658                  -- 140413
+binarized-sipi1024/2.2.05.png    -- GPU neighbour propagation +local -- 64808                   -- 66556
+binarized-sipi1024/2.2.05.png    -- GPU union-find                   -- 1578                    -- 3332
+binarized-sipi1024/2.2.05.png    -- GPU union-find +local            -- 4469                    -- 6224
+binarized-sipi1024/2.2.05.png    -- GPU plus propagation             -- 111490                  -- 113245
+binarized-sipi1024/2.2.05.png    -- GPU line editing                 -- 120137                  -- 121886
+binarized-sipi1024/2.2.05.png    -- GPU lines                        -- 145892                  -- 147682
+binarized-sipi1024/2.2.05.png    -- GPU stack-based                  -- 5649                    -- 7402
+binarized-sipi1024/2.2.06.png    -- CPU one-pass                     -- 6136                    -- 6639
+binarized-sipi1024/2.2.06.png    -- CPU union-find                   -- 5396                    -- 5881
+binarized-sipi1024/2.2.06.png    -- CPU linear two-scan              -- 40814                   -- 41298
+binarized-sipi1024/2.2.06.png    -- CPU front back scan              -- 18571                   -- 19465
+binarized-sipi1024/2.2.06.png    -- GPU neighbour propagation        -- 198215                  -- 199970
+binarized-sipi1024/2.2.06.png    -- GPU neighbour propagation +local -- 110240                  -- 111988
+binarized-sipi1024/2.2.06.png    -- GPU union-find                   -- 1667                    -- 3415
+binarized-sipi1024/2.2.06.png    -- GPU union-find +local            -- 5536                    -- 7289
+binarized-sipi1024/2.2.06.png    -- GPU plus propagation             -- 191126                  -- 192873
+binarized-sipi1024/2.2.06.png    -- GPU line editing                 -- 179264                  -- 181012
+binarized-sipi1024/2.2.06.png    -- GPU lines                        -- 238711                  -- 240470
+binarized-sipi1024/2.2.06.png    -- GPU stack-based                  -- 4370                    -- 6123
+binarized-sipi1024/2.2.07.png    -- CPU one-pass                     -- 6029                    -- 6527
+binarized-sipi1024/2.2.07.png    -- CPU union-find                   -- 5271                    -- 5747
+binarized-sipi1024/2.2.07.png    -- CPU linear two-scan              -- 33905                   -- 34377
+binarized-sipi1024/2.2.07.png    -- CPU front back scan              -- 20144                   -- 21024
+binarized-sipi1024/2.2.07.png    -- GPU neighbour propagation        -- 156832                  -- 158590
+binarized-sipi1024/2.2.07.png    -- GPU neighbour propagation +local -- 104029                  -- 105772
+binarized-sipi1024/2.2.07.png    -- GPU union-find                   -- 1939                    -- 3689
+binarized-sipi1024/2.2.07.png    -- GPU union-find +local            -- 6533                    -- 8291
+binarized-sipi1024/2.2.07.png    -- GPU plus propagation             -- 248040                  -- 249784
+binarized-sipi1024/2.2.07.png    -- GPU line editing                 -- 81951                   -- 83691
+binarized-sipi1024/2.2.07.png    -- GPU lines                        -- 119527                  -- 121286
+binarized-sipi1024/2.2.07.png    -- GPU stack-based                  -- 6753                    -- 8497
+binarized-sipi1024/2.2.08.png    -- CPU one-pass                     -- 5655                    -- 6142
+binarized-sipi1024/2.2.08.png    -- CPU union-find                   -- 4545                    -- 5022
+binarized-sipi1024/2.2.08.png    -- CPU linear two-scan              -- 48553                   -- 49030
+binarized-sipi1024/2.2.08.png    -- CPU front back scan              -- 17324                   -- 18178
+binarized-sipi1024/2.2.08.png    -- GPU neighbour propagation        -- 127540                  -- 129298
+binarized-sipi1024/2.2.08.png    -- GPU neighbour propagation +local -- 157781                  -- 159529
+binarized-sipi1024/2.2.08.png    -- GPU union-find                   -- 1763                    -- 3518
+binarized-sipi1024/2.2.08.png    -- GPU union-find +local            -- 5968                    -- 7728
+binarized-sipi1024/2.2.08.png    -- GPU plus propagation             -- 208445                  -- 210191
+binarized-sipi1024/2.2.08.png    -- GPU line editing                 -- 97512                   -- 99267
+binarized-sipi1024/2.2.08.png    -- GPU lines                        -- 139171                  -- 140926
+binarized-sipi1024/2.2.08.png    -- GPU stack-based                  -- 5749                    -- 7499
+binarized-sipi1024/2.2.09.png    -- CPU one-pass                     -- 6213                    -- 6719
+binarized-sipi1024/2.2.09.png    -- CPU union-find                   -- 4933                    -- 5413
+binarized-sipi1024/2.2.09.png    -- CPU linear two-scan              -- 32917                   -- 33396
+binarized-sipi1024/2.2.09.png    -- CPU front back scan              -- 18855                   -- 19777
+binarized-sipi1024/2.2.09.png    -- GPU neighbour propagation        -- 185625                  -- 187380
+binarized-sipi1024/2.2.09.png    -- GPU neighbour propagation +local -- 160848                  -- 162595
+binarized-sipi1024/2.2.09.png    -- GPU union-find                   -- 2024                    -- 3771
+binarized-sipi1024/2.2.09.png    -- GPU union-find +local            -- 6376                    -- 8131
+binarized-sipi1024/2.2.09.png    -- GPU plus propagation             -- 512328                  -- 514076
+binarized-sipi1024/2.2.09.png    -- GPU line editing                 -- 91596                   -- 93340
+binarized-sipi1024/2.2.09.png    -- GPU lines                        -- 150462                  -- 152204
+binarized-sipi1024/2.2.09.png    -- GPU stack-based                  -- 6673                    -- 8425
+binarized-sipi1024/2.2.10.png    -- CPU one-pass                     -- 7445                    -- 7929
+binarized-sipi1024/2.2.10.png    -- CPU union-find                   -- 5065                    -- 5538
+binarized-sipi1024/2.2.10.png    -- CPU linear two-scan              -- 19041                   -- 19519
+binarized-sipi1024/2.2.10.png    -- CPU front back scan              -- 20324                   -- 21202
+binarized-sipi1024/2.2.10.png    -- GPU neighbour propagation        -- 183096                  -- 184845
+binarized-sipi1024/2.2.10.png    -- GPU neighbour propagation +local -- 196225                  -- 197982
+binarized-sipi1024/2.2.10.png    -- GPU union-find                   -- 1922                    -- 3664
+binarized-sipi1024/2.2.10.png    -- GPU union-find +local            -- 7153                    -- 8904
+binarized-sipi1024/2.2.10.png    -- GPU plus propagation             -- 546555                  -- 548298
+binarized-sipi1024/2.2.10.png    -- GPU line editing                 -- 51463                   -- 53208
+binarized-sipi1024/2.2.10.png    -- GPU lines                        -- 88249                   -- 89994
+binarized-sipi1024/2.2.10.png    -- GPU stack-based                  -- 7543                    -- 9297
+binarized-sipi1024/2.2.11.png    -- CPU one-pass                     -- 6193                    -- 6700
+binarized-sipi1024/2.2.11.png    -- CPU union-find                   -- 5853                    -- 6326
+binarized-sipi1024/2.2.11.png    -- CPU linear two-scan              -- 151012                  -- 151482
+binarized-sipi1024/2.2.11.png    -- CPU front back scan              -- 20868                   -- 21746
+binarized-sipi1024/2.2.11.png    -- GPU neighbour propagation        -- 210655                  -- 212410
+binarized-sipi1024/2.2.11.png    -- GPU neighbour propagation +local -- 159648                  -- 161398
+binarized-sipi1024/2.2.11.png    -- GPU union-find                   -- 1951                    -- 3709
+binarized-sipi1024/2.2.11.png    -- GPU union-find +local            -- 7319                    -- 9084
+binarized-sipi1024/2.2.11.png    -- GPU plus propagation             -- 172283                  -- 174034
+binarized-sipi1024/2.2.11.png    -- GPU line editing                 -- 130917                  -- 132678
+binarized-sipi1024/2.2.11.png    -- GPU lines                        -- 182862                  -- 184615
+binarized-sipi1024/2.2.11.png    -- GPU stack-based                  -- 4710                    -- 6463
+binarized-sipi1024/2.2.12.png    -- CPU one-pass                     -- 7074                    -- 7574
+binarized-sipi1024/2.2.12.png    -- CPU union-find                   -- 5369                    -- 5847
+binarized-sipi1024/2.2.12.png    -- CPU linear two-scan              -- 50936                   -- 51416
+binarized-sipi1024/2.2.12.png    -- CPU front back scan              -- 21154                   -- 22010
+binarized-sipi1024/2.2.12.png    -- GPU neighbour propagation        -- 209025                  -- 210770
+binarized-sipi1024/2.2.12.png    -- GPU neighbour propagation +local -- 200084                  -- 201848
+binarized-sipi1024/2.2.12.png    -- GPU union-find                   -- 1987                    -- 3743
+binarized-sipi1024/2.2.12.png    -- GPU union-find +local            -- 8131                    -- 9883
+binarized-sipi1024/2.2.12.png    -- GPU plus propagation             -- 2152517                 -- 2154278
+binarized-sipi1024/2.2.12.png    -- GPU line editing                 -- 221412                  -- 223155
+binarized-sipi1024/2.2.12.png    -- GPU lines                        -- 377108                  -- 378860
+binarized-sipi1024/2.2.12.png    -- GPU stack-based                  -- 6629                    -- 8383
+binarized-sipi1024/2.2.13.png    -- CPU one-pass                     -- 5303                    -- 5808
+binarized-sipi1024/2.2.13.png    -- CPU union-find                   -- 4710                    -- 5201
+binarized-sipi1024/2.2.13.png    -- CPU linear two-scan              -- 35545                   -- 36032
+binarized-sipi1024/2.2.13.png    -- CPU front back scan              -- 24272                   -- 25165
+binarized-sipi1024/2.2.13.png    -- GPU neighbour propagation        -- 198419                  -- 200162
+binarized-sipi1024/2.2.13.png    -- GPU neighbour propagation +local -- 152277                  -- 154028
+binarized-sipi1024/2.2.13.png    -- GPU union-find                   -- 1999                    -- 3745
+binarized-sipi1024/2.2.13.png    -- GPU union-find +local            -- 6499                    -- 8257
+binarized-sipi1024/2.2.13.png    -- GPU plus propagation             -- 184826                  -- 186581
+binarized-sipi1024/2.2.13.png    -- GPU line editing                 -- 73632                   -- 75377
+binarized-sipi1024/2.2.13.png    -- GPU lines                        -- 98523                   -- 100262
+binarized-sipi1024/2.2.13.png    -- GPU stack-based                  -- 6259                    -- 7998
+binarized-sipi1024/2.2.14.png    -- CPU one-pass                     -- 5632                    -- 6134
+binarized-sipi1024/2.2.14.png    -- CPU union-find                   -- 5464                    -- 5942
+binarized-sipi1024/2.2.14.png    -- CPU linear two-scan              -- 80314                   -- 80796
+binarized-sipi1024/2.2.14.png    -- CPU front back scan              -- 18835                   -- 19713
+binarized-sipi1024/2.2.14.png    -- GPU neighbour propagation        -- 167993                  -- 169748
+binarized-sipi1024/2.2.14.png    -- GPU neighbour propagation +local -- 128878                  -- 130622
+binarized-sipi1024/2.2.14.png    -- GPU union-find                   -- 1783                    -- 3549
+binarized-sipi1024/2.2.14.png    -- GPU union-find +local            -- 6065                    -- 7815
+binarized-sipi1024/2.2.14.png    -- GPU plus propagation             -- 109731                  -- 111486
+binarized-sipi1024/2.2.14.png    -- GPU line editing                 -- 102501                  -- 104260
+binarized-sipi1024/2.2.14.png    -- GPU lines                        -- 133749                  -- 135497
+binarized-sipi1024/2.2.14.png    -- GPU stack-based                  -- 4327                    -- 6072
+binarized-sipi1024/2.2.15.png    -- CPU one-pass                     -- 4225                    -- 4719
+binarized-sipi1024/2.2.15.png    -- CPU union-find                   -- 4305                    -- 4779
+binarized-sipi1024/2.2.15.png    -- CPU linear two-scan              -- 41428                   -- 41902
+binarized-sipi1024/2.2.15.png    -- CPU front back scan              -- 14272                   -- 15187
+binarized-sipi1024/2.2.15.png    -- GPU neighbour propagation        -- 114091                  -- 115848
+binarized-sipi1024/2.2.15.png    -- GPU neighbour propagation +local -- 65359                   -- 67110
+binarized-sipi1024/2.2.15.png    -- GPU union-find                   -- 1578                    -- 3351
+binarized-sipi1024/2.2.15.png    -- GPU union-find +local            -- 4454                    -- 6203
+binarized-sipi1024/2.2.15.png    -- GPU plus propagation             -- 83018                   -- 84776
+binarized-sipi1024/2.2.15.png    -- GPU line editing                 -- 150078                  -- 151839
+binarized-sipi1024/2.2.15.png    -- GPU lines                        -- 178461                  -- 180217
+binarized-sipi1024/2.2.15.png    -- GPU stack-based                  -- 4093                    -- 5843
+binarized-sipi1024/2.2.16.png    -- CPU one-pass                     -- 6162                    -- 6657
+binarized-sipi1024/2.2.16.png    -- CPU union-find                   -- 5049                    -- 5533
+binarized-sipi1024/2.2.16.png    -- CPU linear two-scan              -- 39812                   -- 40289
+binarized-sipi1024/2.2.16.png    -- CPU front back scan              -- 18465                   -- 19425
+binarized-sipi1024/2.2.16.png    -- GPU neighbour propagation        -- 179443                  -- 181200
+binarized-sipi1024/2.2.16.png    -- GPU neighbour propagation +local -- 125978                  -- 127727
+binarized-sipi1024/2.2.16.png    -- GPU union-find                   -- 2251                    -- 4001
+binarized-sipi1024/2.2.16.png    -- GPU union-find +local            -- 5771                    -- 7526
+binarized-sipi1024/2.2.16.png    -- GPU plus propagation             -- 292406                  -- 294166
+binarized-sipi1024/2.2.16.png    -- GPU line editing                 -- 105497                  -- 107256
+binarized-sipi1024/2.2.16.png    -- GPU lines                        -- 147957                  -- 149715
+binarized-sipi1024/2.2.16.png    -- GPU stack-based                  -- 7237                    -- 8996
+binarized-sipi1024/2.2.17.png    -- CPU one-pass                     -- 5713                    -- 6219
+binarized-sipi1024/2.2.17.png    -- CPU union-find                   -- 5589                    -- 6061
+binarized-sipi1024/2.2.17.png    -- CPU linear two-scan              -- 201849                  -- 202316
+binarized-sipi1024/2.2.17.png    -- CPU front back scan              -- 19854                   -- 20811
+binarized-sipi1024/2.2.17.png    -- GPU neighbour propagation        -- 227810                  -- 229563
+binarized-sipi1024/2.2.17.png    -- GPU neighbour propagation +local -- 168644                  -- 170406
+binarized-sipi1024/2.2.17.png    -- GPU union-find                   -- 2209                    -- 3972
+binarized-sipi1024/2.2.17.png    -- GPU union-find +local            -- 6816                    -- 8579
+binarized-sipi1024/2.2.17.png    -- GPU plus propagation             -- 128411                  -- 130160
+binarized-sipi1024/2.2.17.png    -- GPU line editing                 -- 116159                  -- 117908
+binarized-sipi1024/2.2.17.png    -- GPU lines                        -- 163384                  -- 165135
+binarized-sipi1024/2.2.17.png    -- GPU stack-based                  -- 5574                    -- 7336
+binarized-sipi1024/2.2.18.png    -- CPU one-pass                     -- 5597                    -- 6109
+binarized-sipi1024/2.2.18.png    -- CPU union-find                   -- 5272                    -- 5758
+binarized-sipi1024/2.2.18.png    -- CPU linear two-scan              -- 89764                   -- 90250
+binarized-sipi1024/2.2.18.png    -- CPU front back scan              -- 18358                   -- 19233
+binarized-sipi1024/2.2.18.png    -- GPU neighbour propagation        -- 208887                  -- 210639
+binarized-sipi1024/2.2.18.png    -- GPU neighbour propagation +local -- 133984                  -- 135735
+binarized-sipi1024/2.2.18.png    -- GPU union-find                   -- 1792                    -- 3548
+binarized-sipi1024/2.2.18.png    -- GPU union-find +local            -- 6288                    -- 8051
+binarized-sipi1024/2.2.18.png    -- GPU plus propagation             -- 132525                  -- 134282
+binarized-sipi1024/2.2.18.png    -- GPU line editing                 -- 128773                  -- 130533
+binarized-sipi1024/2.2.18.png    -- GPU lines                        -- 170610                  -- 172378
+binarized-sipi1024/2.2.18.png    -- GPU stack-based                  -- 5258                    -- 7003
+binarized-sipi1024/2.2.19.png    -- CPU one-pass                     -- 6768                    -- 7265
+binarized-sipi1024/2.2.19.png    -- CPU union-find                   -- 6142                    -- 6607
+binarized-sipi1024/2.2.19.png    -- CPU linear two-scan              -- 118841                  -- 119308
+binarized-sipi1024/2.2.19.png    -- CPU front back scan              -- 22310                   -- 23191
+binarized-sipi1024/2.2.19.png    -- GPU neighbour propagation        -- 199088                  -- 200837
+binarized-sipi1024/2.2.19.png    -- GPU neighbour propagation +local -- 187280                  -- 189029
+binarized-sipi1024/2.2.19.png    -- GPU union-find                   -- 2248                    -- 4005
+binarized-sipi1024/2.2.19.png    -- GPU union-find +local            -- 6995                    -- 8750
+binarized-sipi1024/2.2.19.png    -- GPU plus propagation             -- 350125                  -- 351872
+binarized-sipi1024/2.2.19.png    -- GPU line editing                 -- 170748                  -- 172510
+binarized-sipi1024/2.2.19.png    -- GPU lines                        -- 257781                  -- 259538
+binarized-sipi1024/2.2.19.png    -- GPU stack-based                  -- 4221                    -- 5972
+binarized-sipi1024/2.2.20.png    -- CPU one-pass                     -- 3548                    -- 4104
+binarized-sipi1024/2.2.20.png    -- CPU union-find                   -- 3236                    -- 3769
+binarized-sipi1024/2.2.20.png    -- CPU linear two-scan              -- 8121                    -- 8653
+binarized-sipi1024/2.2.20.png    -- CPU front back scan              -- 10746                   -- 11590
+binarized-sipi1024/2.2.20.png    -- GPU neighbour propagation        -- 165543                  -- 167296
+binarized-sipi1024/2.2.20.png    -- GPU neighbour propagation +local -- 64067                   -- 65819
+binarized-sipi1024/2.2.20.png    -- GPU union-find                   -- 1338                    -- 3103
+binarized-sipi1024/2.2.20.png    -- GPU union-find +local            -- 3514                    -- 5266
+binarized-sipi1024/2.2.20.png    -- GPU plus propagation             -- 165798                  -- 167537
+binarized-sipi1024/2.2.20.png    -- GPU line editing                 -- 172272                  -- 174029
+binarized-sipi1024/2.2.20.png    -- GPU lines                        -- 202568                  -- 204317
+binarized-sipi1024/2.2.20.png    -- GPU stack-based                  -- 6300                    -- 8043
+binarized-sipi1024/2.2.21.png    -- CPU one-pass                     -- 6547                    -- 7043
+binarized-sipi1024/2.2.21.png    -- CPU union-find                   -- 5472                    -- 5948
+binarized-sipi1024/2.2.21.png    -- CPU linear two-scan              -- 95924                   -- 96414
+binarized-sipi1024/2.2.21.png    -- CPU front back scan              -- 20629                   -- 21509
+binarized-sipi1024/2.2.21.png    -- GPU neighbour propagation        -- 206314                  -- 208066
+binarized-sipi1024/2.2.21.png    -- GPU neighbour propagation +local -- 166580                  -- 168328
+binarized-sipi1024/2.2.21.png    -- GPU union-find                   -- 2018                    -- 3770
+binarized-sipi1024/2.2.21.png    -- GPU union-find +local            -- 6487                    -- 8246
+binarized-sipi1024/2.2.21.png    -- GPU plus propagation             -- 288649                  -- 290411
+binarized-sipi1024/2.2.21.png    -- GPU line editing                 -- 88911                   -- 90670
+binarized-sipi1024/2.2.21.png    -- GPU lines                        -- 149781                  -- 151530
+binarized-sipi1024/2.2.21.png    -- GPU stack-based                  -- 8811                    -- 10568
+binarized-sipi1024/2.2.22.png    -- CPU one-pass                     -- 6731                    -- 7231
+binarized-sipi1024/2.2.22.png    -- CPU union-find                   -- 5282                    -- 5764
+binarized-sipi1024/2.2.22.png    -- CPU linear two-scan              -- 48947                   -- 49430
+binarized-sipi1024/2.2.22.png    -- CPU front back scan              -- 20317                   -- 21198
+binarized-sipi1024/2.2.22.png    -- GPU neighbour propagation        -- 153719                  -- 155472
+binarized-sipi1024/2.2.22.png    -- GPU neighbour propagation +local -- 174310                  -- 176053
+binarized-sipi1024/2.2.22.png    -- GPU union-find                   -- 1861                    -- 3613
+binarized-sipi1024/2.2.22.png    -- GPU union-find +local            -- 7365                    -- 9112
+binarized-sipi1024/2.2.22.png    -- GPU plus propagation             -- 292267                  -- 294019
+binarized-sipi1024/2.2.22.png    -- GPU line editing                 -- 65594                   -- 67338
+binarized-sipi1024/2.2.22.png    -- GPU lines                        -- 110527                  -- 112281
+binarized-sipi1024/2.2.22.png    -- GPU stack-based                  -- 5174                    -- 6929
+binarized-sipi1024/2.2.23.png    -- CPU one-pass                     -- 2829                    -- 3319
+binarized-sipi1024/2.2.23.png    -- CPU union-find                   -- 2761                    -- 3222
+binarized-sipi1024/2.2.23.png    -- CPU linear two-scan              -- 7768                    -- 8230
+binarized-sipi1024/2.2.23.png    -- CPU front back scan              -- 9772                    -- 10684
+binarized-sipi1024/2.2.23.png    -- GPU neighbour propagation        -- 102153                  -- 103912
+binarized-sipi1024/2.2.23.png    -- GPU neighbour propagation +local -- 41440                   -- 43177
+binarized-sipi1024/2.2.23.png    -- GPU union-find                   -- 1353                    -- 3100
+binarized-sipi1024/2.2.23.png    -- GPU union-find +local            -- 3348                    -- 5104
+binarized-sipi1024/2.2.23.png    -- GPU plus propagation             -- 54339                   -- 56093
+binarized-sipi1024/2.2.23.png    -- GPU line editing                 -- 43825                   -- 45574
+binarized-sipi1024/2.2.23.png    -- GPU lines                        -- 49198                   -- 50950
+binarized-sipi1024/2.2.23.png    -- GPU stack-based                  -- 3021                    -- 4772
+binarized-sipi1024/2.2.24.png    -- CPU one-pass                     -- 4990                    -- 5562
+binarized-sipi1024/2.2.24.png    -- CPU union-find                   -- 4489                    -- 5025
+binarized-sipi1024/2.2.24.png    -- CPU linear two-scan              -- 28123                   -- 28658
+binarized-sipi1024/2.2.24.png    -- CPU front back scan              -- 15999                   -- 16843
+binarized-sipi1024/2.2.24.png    -- GPU neighbour propagation        -- 168339                  -- 170089
+binarized-sipi1024/2.2.24.png    -- GPU neighbour propagation +local -- 125321                  -- 127087
+binarized-sipi1024/2.2.24.png    -- GPU union-find                   -- 1839                    -- 3597
+binarized-sipi1024/2.2.24.png    -- GPU union-find +local            -- 5596                    -- 7340
+binarized-sipi1024/2.2.24.png    -- GPU plus propagation             -- 133400                  -- 135160
+binarized-sipi1024/2.2.24.png    -- GPU line editing                 -- 88463                   -- 90216
+binarized-sipi1024/2.2.24.png    -- GPU lines                        -- 119017                  -- 120772
+binarized-sipi1024/2.2.24.png    -- GPU stack-based                  -- 3986                    -- 5744
+binarized-sipi1024/3.2.25.png    -- CPU one-pass                     -- 5481                    -- 5977
+binarized-sipi1024/3.2.25.png    -- CPU union-find                   -- 5048                    -- 5518
+binarized-sipi1024/3.2.25.png    -- CPU linear two-scan              -- 45903                   -- 46370
+binarized-sipi1024/3.2.25.png    -- CPU front back scan              -- 17771                   -- 18628
+binarized-sipi1024/3.2.25.png    -- GPU neighbour propagation        -- 208475                  -- 210224
+binarized-sipi1024/3.2.25.png    -- GPU neighbour propagation +local -- 140530                  -- 142300
+binarized-sipi1024/3.2.25.png    -- GPU union-find                   -- 2065                    -- 3818
+binarized-sipi1024/3.2.25.png    -- GPU union-find +local            -- 5827                    -- 7585
+binarized-sipi1024/3.2.25.png    -- GPU plus propagation             -- 263317                  -- 265066
+binarized-sipi1024/3.2.25.png    -- GPU line editing                 -- 189972                  -- 191730
+binarized-sipi1024/3.2.25.png    -- GPU lines                        -- 250922                  -- 252677
+binarized-sipi1024/3.2.25.png    -- GPU stack-based                  -- 5299                    -- 7044
+binarized-sipi1024/5.3.01.png    -- CPU one-pass                     -- 4784                    -- 5289
+binarized-sipi1024/5.3.01.png    -- CPU union-find                   -- 3910                    -- 4387
+binarized-sipi1024/5.3.01.png    -- CPU linear two-scan              -- 8063                    -- 8537
+binarized-sipi1024/5.3.01.png    -- CPU front back scan              -- 15388                   -- 16280
+binarized-sipi1024/5.3.01.png    -- GPU neighbour propagation        -- 237007                  -- 238759
+binarized-sipi1024/5.3.01.png    -- GPU neighbour propagation +local -- 201797                  -- 203539
+binarized-sipi1024/5.3.01.png    -- GPU union-find                   -- 1692                    -- 3449
+binarized-sipi1024/5.3.01.png    -- GPU union-find +local            -- 5871                    -- 7628
+binarized-sipi1024/5.3.01.png    -- GPU plus propagation             -- 231547                  -- 233285
+binarized-sipi1024/5.3.01.png    -- GPU line editing                 -- 58977                   -- 60722
+binarized-sipi1024/5.3.01.png    -- GPU lines                        -- 86412                   -- 88159
+binarized-sipi1024/5.3.01.png    -- GPU stack-based                  -- 6181                    -- 7937
+binarized-sipi1024/5.3.02.png    -- CPU one-pass                     -- 4055                    -- 4549
+binarized-sipi1024/5.3.02.png    -- CPU union-find                   -- 3687                    -- 4156
+binarized-sipi1024/5.3.02.png    -- CPU linear two-scan              -- 7003                    -- 7470
+binarized-sipi1024/5.3.02.png    -- CPU front back scan              -- 12728                   -- 13641
+binarized-sipi1024/5.3.02.png    -- GPU neighbour propagation        -- 96525                   -- 98269
+binarized-sipi1024/5.3.02.png    -- GPU neighbour propagation +local -- 79535                   -- 81276
+binarized-sipi1024/5.3.02.png    -- GPU union-find                   -- 1658                    -- 3400
+binarized-sipi1024/5.3.02.png    -- GPU union-find +local            -- 4156                    -- 5911
+binarized-sipi1024/5.3.02.png    -- GPU plus propagation             -- 46030                   -- 47781
+binarized-sipi1024/5.3.02.png    -- GPU line editing                 -- 46181                   -- 47931
+binarized-sipi1024/5.3.02.png    -- GPU lines                        -- 59234                   -- 60974
+binarized-sipi1024/5.3.02.png    -- GPU stack-based                  -- 3306                    -- 5065
+binarized-sipi1024/7.2.01.png    -- CPU one-pass                     -- 1670                    -- 2169
+binarized-sipi1024/7.2.01.png    -- CPU union-find                   -- 1788                    -- 2254
+binarized-sipi1024/7.2.01.png    -- CPU linear two-scan              -- 2988                    -- 3446
+binarized-sipi1024/7.2.01.png    -- CPU front back scan              -- 5689                    -- 6527
+binarized-sipi1024/7.2.01.png    -- GPU neighbour propagation        -- 43571                   -- 45319
+binarized-sipi1024/7.2.01.png    -- GPU neighbour propagation +local -- 18973                   -- 20712
+binarized-sipi1024/7.2.01.png    -- GPU union-find                   -- 918                     -- 2671
+binarized-sipi1024/7.2.01.png    -- GPU union-find +local            -- 2021                    -- 3766
+binarized-sipi1024/7.2.01.png    -- GPU plus propagation             -- 9980                    -- 11731
+binarized-sipi1024/7.2.01.png    -- GPU line editing                 -- 22067                   -- 23822
+binarized-sipi1024/7.2.01.png    -- GPU lines                        -- 20040                   -- 21789
+binarized-sipi1024/7.2.01.png    -- GPU stack-based                  -- 2340                    -- 4091
+binarized-sipi1024/testpat.1k.png -- CPU one-pass                     -- 6449                    -- 6939
+binarized-sipi1024/testpat.1k.png -- CPU union-find                   -- 3610                    -- 4076
+binarized-sipi1024/testpat.1k.png -- CPU linear two-scan              -- 4859                    -- 5327
+binarized-sipi1024/testpat.1k.png -- CPU front back scan              -- 15821                   -- 16786
+binarized-sipi1024/testpat.1k.png -- GPU neighbour propagation        -- 200583                  -- 202335
+binarized-sipi1024/testpat.1k.png -- GPU neighbour propagation +local -- 167589                  -- 169320
+binarized-sipi1024/testpat.1k.png -- GPU union-find                   -- 1840                    -- 3593
+binarized-sipi1024/testpat.1k.png -- GPU union-find +local            -- 6168                    -- 7913
+binarized-sipi1024/testpat.1k.png -- GPU plus propagation             -- 2198034                 -- 2199794
+binarized-sipi1024/testpat.1k.png -- GPU line editing                 -- 97789                   -- 99526
+binarized-sipi1024/testpat.1k.png -- GPU lines                        -- 132906                  -- 134653
+binarized-sipi1024/testpat.1k.png -- GPU stack-based                  -- 15055                   -- 16807
