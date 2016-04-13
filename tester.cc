@@ -25,7 +25,7 @@ int main(int argc, const char *argv[]) {
   }
 
   {
-#ifdef __linux__
+#ifdef __unix__
     int err = mkdir("out", 0777);
 #else
     int err = mkdir("out");
