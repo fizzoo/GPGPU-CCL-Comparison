@@ -413,7 +413,7 @@ kernel void id_accessor(global int *data, int w) {
 }
 
 // Can't allocate if not known at compile-time anyway
-#define lw 16
+#define lw 32
 #define lh 8
 
 kernel void solve_locally_nprop(global int *data, int w, int h) {
