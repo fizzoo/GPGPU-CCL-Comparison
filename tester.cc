@@ -51,17 +51,17 @@ int main(int argc, const char *argv[]) {
     std::vector<Strategy *> strats;
     // strats.push_back(new IdStrategy);
     strats.push_back(new CPUOnePass);
-    //strats.push_back(new CPUUnionFind);
-    //strats.push_back(new CPULinearTwoScan);
-    //strats.push_back(new CPUFrontBack);
-    //strats.push_back(new GPUNeighbourPropagation);
-    //strats.push_back(new GPUNeighbourPropagation_Localer);
-    //strats.push_back(new GPUUnionFind);
-    //strats.push_back(new GPUUnionFind_Localer);
-    //strats.push_back(new GPUPlusPropagation);
+    strats.push_back(new CPUUnionFind);
+    strats.push_back(new CPULinearTwoScan);
+    strats.push_back(new CPUFrontBack);
+    strats.push_back(new GPUNeighbourPropagation);
+    strats.push_back(new GPUNeighbourPropagation_Localer);
+    strats.push_back(new GPUUnionFind);
+    strats.push_back(new GPUUnionFind_Localer);
+    strats.push_back(new GPUPlusPropagation);
     strats.push_back(new GPULineEditing);
     strats.push_back(new GPULines);
-    //strats.push_back(new GPUStackOnePass);
+    strats.push_back(new GPUStackOnePass);
 
     strats[0]->copy_to(&input, &context, &program, &queue);
     strats[0]->execute();
