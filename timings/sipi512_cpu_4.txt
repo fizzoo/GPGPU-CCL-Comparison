@@ -1,0 +1,308 @@
+binarized-sipi512/1.1.01.png     -- CPU one-pass                     -- 4021                    -- 4504
+binarized-sipi512/1.1.01.png     -- CPU union-find                   -- 2001                    -- 2001
+binarized-sipi512/1.1.01.png     -- CPU linear two-scan              -- 1503                    -- 2005
+binarized-sipi512/1.1.01.png     -- CPU front back scan              -- 6520                    -- 6520
+binarized-sipi512/1.1.02.png     -- CPU one-pass                     -- 2011                    -- 2011
+binarized-sipi512/1.1.02.png     -- CPU union-find                   -- 2011                    -- 2011
+binarized-sipi512/1.1.02.png     -- CPU linear two-scan              -- 990                     -- 1491
+binarized-sipi512/1.1.02.png     -- CPU front back scan              -- 5505                    -- 6005
+binarized-sipi512/1.1.03.png     -- CPU one-pass                     -- 2001                    -- 2492
+binarized-sipi512/1.1.03.png     -- CPU union-find                   -- 1500                    -- 2002
+binarized-sipi512/1.1.03.png     -- CPU linear two-scan              -- 2006                    -- 2006
+binarized-sipi512/1.1.03.png     -- CPU front back scan              -- 6506                    -- 6506
+binarized-sipi512/1.1.04.png     -- CPU one-pass                     -- 2002                    -- 2002
+binarized-sipi512/1.1.04.png     -- CPU union-find                   -- 2001                    -- 2502
+binarized-sipi512/1.1.04.png     -- CPU linear two-scan              -- 1501                    -- 2001
+binarized-sipi512/1.1.04.png     -- CPU front back scan              -- 7007                    -- 7007
+binarized-sipi512/1.1.05.png     -- CPU one-pass                     -- 2001                    -- 2001
+binarized-sipi512/1.1.05.png     -- CPU union-find                   -- 2011                    -- 2011
+binarized-sipi512/1.1.05.png     -- CPU linear two-scan              -- 2013                    -- 2013
+binarized-sipi512/1.1.05.png     -- CPU front back scan              -- 6006                    -- 6006
+binarized-sipi512/1.1.06.png     -- CPU one-pass                     -- 2012                    -- 2502
+binarized-sipi512/1.1.06.png     -- CPU union-find                   -- 2003                    -- 2003
+binarized-sipi512/1.1.06.png     -- CPU linear two-scan              -- 2012                    -- 2012
+binarized-sipi512/1.1.06.png     -- CPU front back scan              -- 6005                    -- 6506
+binarized-sipi512/1.1.07.png     -- CPU one-pass                     -- 2002                    -- 2002
+binarized-sipi512/1.1.07.png     -- CPU union-find                   -- 1987                    -- 2493
+binarized-sipi512/1.1.07.png     -- CPU linear two-scan              -- 1515                    -- 2001
+binarized-sipi512/1.1.07.png     -- CPU front back scan              -- 7516                    -- 7516
+binarized-sipi512/1.1.08.png     -- CPU one-pass                     -- 1501                    -- 2002
+binarized-sipi512/1.1.08.png     -- CPU union-find                   -- 1502                    -- 2002
+binarized-sipi512/1.1.08.png     -- CPU linear two-scan              -- 1511                    -- 1511
+binarized-sipi512/1.1.08.png     -- CPU front back scan              -- 5496                    -- 5996
+binarized-sipi512/1.1.09.png     -- CPU one-pass                     -- 2502                    -- 3002
+binarized-sipi512/1.1.09.png     -- CPU union-find                   -- 1517                    -- 2006
+binarized-sipi512/1.1.09.png     -- CPU linear two-scan              -- 1507                    -- 1507
+binarized-sipi512/1.1.09.png     -- CPU front back scan              -- 6016                    -- 6016
+binarized-sipi512/1.1.10.png     -- CPU one-pass                     -- 1512                    -- 2002
+binarized-sipi512/1.1.10.png     -- CPU union-find                   -- 1511                    -- 1511
+binarized-sipi512/1.1.10.png     -- CPU linear two-scan              -- 1000                    -- 1499
+binarized-sipi512/1.1.10.png     -- CPU front back scan              -- 5515                    -- 6006
+binarized-sipi512/1.1.11.png     -- CPU one-pass                     -- 2494                    -- 2992
+binarized-sipi512/1.1.11.png     -- CPU union-find                   -- 1001                    -- 1501
+binarized-sipi512/1.1.11.png     -- CPU linear two-scan              -- 1006                    -- 1006
+binarized-sipi512/1.1.11.png     -- CPU front back scan              -- 3524                    -- 3524
+binarized-sipi512/1.1.12.png     -- CPU one-pass                     -- 2002                    -- 2502
+binarized-sipi512/1.1.12.png     -- CPU union-find                   -- 2002                    -- 2002
+binarized-sipi512/1.1.12.png     -- CPU linear two-scan              -- 1501                    -- 1501
+binarized-sipi512/1.1.12.png     -- CPU front back scan              -- 6006                    -- 6506
+binarized-sipi512/1.1.13.png     -- CPU one-pass                     -- 1012                    -- 1501
+binarized-sipi512/1.1.13.png     -- CPU union-find                   -- 1496                    -- 1496
+binarized-sipi512/1.1.13.png     -- CPU linear two-scan              -- 1509                    -- 1509
+binarized-sipi512/1.1.13.png     -- CPU front back scan              -- 5006                    -- 5006
+binarized-sipi512/1.2.01.png     -- CPU one-pass                     -- 2012                    -- 2012
+binarized-sipi512/1.2.01.png     -- CPU union-find                   -- 1502                    -- 2002
+binarized-sipi512/1.2.01.png     -- CPU linear two-scan              -- 1513                    -- 1513
+binarized-sipi512/1.2.01.png     -- CPU front back scan              -- 6517                    -- 6517
+binarized-sipi512/1.2.02.png     -- CPU one-pass                     -- 2002                    -- 2002
+binarized-sipi512/1.2.02.png     -- CPU union-find                   -- 1511                    -- 2002
+binarized-sipi512/1.2.02.png     -- CPU linear two-scan              -- 1511                    -- 2000
+binarized-sipi512/1.2.02.png     -- CPU front back scan              -- 5500                    -- 5500
+binarized-sipi512/1.2.03.png     -- CPU one-pass                     -- 1509                    -- 1509
+binarized-sipi512/1.2.03.png     -- CPU union-find                   -- 1996                    -- 1996
+binarized-sipi512/1.2.03.png     -- CPU linear two-scan              -- 1514                    -- 2002
+binarized-sipi512/1.2.03.png     -- CPU front back scan              -- 8517                    -- 9018
+binarized-sipi512/1.2.04.png     -- CPU one-pass                     -- 1511                    -- 2008
+binarized-sipi512/1.2.04.png     -- CPU union-find                   -- 2002                    -- 2492
+binarized-sipi512/1.2.04.png     -- CPU linear two-scan              -- 2012                    -- 2012
+binarized-sipi512/1.2.04.png     -- CPU front back scan              -- 5983                    -- 5983
+binarized-sipi512/1.2.05.png     -- CPU one-pass                     -- 2001                    -- 2001
+binarized-sipi512/1.2.05.png     -- CPU union-find                   -- 2012                    -- 2483
+binarized-sipi512/1.2.05.png     -- CPU linear two-scan              -- 1512                    -- 2001
+binarized-sipi512/1.2.05.png     -- CPU front back scan              -- 6016                    -- 6507
+binarized-sipi512/1.2.06.png     -- CPU one-pass                     -- 2014                    -- 2502
+binarized-sipi512/1.2.06.png     -- CPU union-find                   -- 2001                    -- 2001
+binarized-sipi512/1.2.06.png     -- CPU linear two-scan              -- 2012                    -- 2012
+binarized-sipi512/1.2.06.png     -- CPU front back scan              -- 6516                    -- 6516
+binarized-sipi512/1.2.07.png     -- CPU one-pass                     -- 1506                    -- 1995
+binarized-sipi512/1.2.07.png     -- CPU union-find                   -- 1974                    -- 2499
+binarized-sipi512/1.2.07.png     -- CPU linear two-scan              -- 2002                    -- 2002
+binarized-sipi512/1.2.07.png     -- CPU front back scan              -- 5507                    -- 6007
+binarized-sipi512/1.2.08.png     -- CPU one-pass                     -- 1501                    -- 1501
+binarized-sipi512/1.2.08.png     -- CPU union-find                   -- 2013                    -- 2013
+binarized-sipi512/1.2.08.png     -- CPU linear two-scan              -- 1512                    -- 1512
+binarized-sipi512/1.2.08.png     -- CPU front back scan              -- 6006                    -- 6495
+binarized-sipi512/1.2.09.png     -- CPU one-pass                     -- 1511                    -- 2011
+binarized-sipi512/1.2.09.png     -- CPU union-find                   -- 2006                    -- 2506
+binarized-sipi512/1.2.09.png     -- CPU linear two-scan              -- 1512                    -- 1997
+binarized-sipi512/1.2.09.png     -- CPU front back scan              -- 5505                    -- 5505
+binarized-sipi512/1.2.10.png     -- CPU one-pass                     -- 1511                    -- 1511
+binarized-sipi512/1.2.10.png     -- CPU union-find                   -- 1500                    -- 1995
+binarized-sipi512/1.2.10.png     -- CPU linear two-scan              -- 1000                    -- 1501
+binarized-sipi512/1.2.10.png     -- CPU front back scan              -- 4506                    -- 5003
+binarized-sipi512/1.2.11.png     -- CPU one-pass                     -- 1513                    -- 1513
+binarized-sipi512/1.2.11.png     -- CPU union-find                   -- 2014                    -- 2014
+binarized-sipi512/1.2.11.png     -- CPU linear two-scan              -- 1513                    -- 2001
+binarized-sipi512/1.2.11.png     -- CPU front back scan              -- 5519                    -- 6017
+binarized-sipi512/1.2.12.png     -- CPU one-pass                     -- 1491                    -- 1991
+binarized-sipi512/1.2.12.png     -- CPU union-find                   -- 2003                    -- 2003
+binarized-sipi512/1.2.12.png     -- CPU linear two-scan              -- 1991                    -- 1991
+binarized-sipi512/1.2.12.png     -- CPU front back scan              -- 5506                    -- 6006
+binarized-sipi512/1.2.13.png     -- CPU one-pass                     -- 1511                    -- 1511
+binarized-sipi512/1.2.13.png     -- CPU union-find                   -- 1501                    -- 2002
+binarized-sipi512/1.2.13.png     -- CPU linear two-scan              -- 1000                    -- 1501
+binarized-sipi512/1.2.13.png     -- CPU front back scan              -- 4509                    -- 5009
+binarized-sipi512/1.5.01.png     -- CPU one-pass                     -- 1502                    -- 1502
+binarized-sipi512/1.5.01.png     -- CPU union-find                   -- 1518                    -- 2017
+binarized-sipi512/1.5.01.png     -- CPU linear two-scan              -- 983                     -- 1503
+binarized-sipi512/1.5.01.png     -- CPU front back scan              -- 6005                    -- 6005
+binarized-sipi512/1.5.02.png     -- CPU one-pass                     -- 1991                    -- 1991
+binarized-sipi512/1.5.02.png     -- CPU union-find                   -- 1001                    -- 1001
+binarized-sipi512/1.5.02.png     -- CPU linear two-scan              -- 1010                    -- 1501
+binarized-sipi512/1.5.02.png     -- CPU front back scan              -- 4514                    -- 5005
+binarized-sipi512/1.5.03.png     -- CPU one-pass                     -- 1512                    -- 1512
+binarized-sipi512/1.5.03.png     -- CPU union-find                   -- 1511                    -- 1999
+binarized-sipi512/1.5.03.png     -- CPU linear two-scan              -- 1001                    -- 1511
+binarized-sipi512/1.5.03.png     -- CPU front back scan              -- 6015                    -- 6506
+binarized-sipi512/1.5.04.png     -- CPU one-pass                     -- 2012                    -- 2012
+binarized-sipi512/1.5.04.png     -- CPU union-find                   -- 2002                    -- 2002
+binarized-sipi512/1.5.04.png     -- CPU linear two-scan              -- 1511                    -- 1511
+binarized-sipi512/1.5.04.png     -- CPU front back scan              -- 6006                    -- 6516
+binarized-sipi512/1.5.05.png     -- CPU one-pass                     -- 2002                    -- 2002
+binarized-sipi512/1.5.05.png     -- CPU union-find                   -- 1000                    -- 1498
+binarized-sipi512/1.5.05.png     -- CPU linear two-scan              -- 1011                    -- 1501
+binarized-sipi512/1.5.05.png     -- CPU front back scan              -- 6005                    -- 6005
+binarized-sipi512/1.5.06.png     -- CPU one-pass                     -- 2518                    -- 3008
+binarized-sipi512/1.5.06.png     -- CPU union-find                   -- 2001                    -- 2502
+binarized-sipi512/1.5.06.png     -- CPU linear two-scan              -- 2001                    -- 2001
+binarized-sipi512/1.5.06.png     -- CPU front back scan              -- 6506                    -- 7006
+binarized-sipi512/1.5.07.png     -- CPU one-pass                     -- 1508                    -- 2009
+binarized-sipi512/1.5.07.png     -- CPU union-find                   -- 2001                    -- 2502
+binarized-sipi512/1.5.07.png     -- CPU linear two-scan              -- 1501                    -- 2001
+binarized-sipi512/1.5.07.png     -- CPU front back scan              -- 5505                    -- 6005
+binarized-sipi512/2.1.01.png     -- CPU one-pass                     -- 1511                    -- 1511
+binarized-sipi512/2.1.01.png     -- CPU union-find                   -- 1500                    -- 1500
+binarized-sipi512/2.1.01.png     -- CPU linear two-scan              -- 1002                    -- 1502
+binarized-sipi512/2.1.01.png     -- CPU front back scan              -- 4518                    -- 5006
+binarized-sipi512/2.1.02.png     -- CPU one-pass                     -- 2001                    -- 2001
+binarized-sipi512/2.1.02.png     -- CPU union-find                   -- 1502                    -- 1990
+binarized-sipi512/2.1.02.png     -- CPU linear two-scan              -- 1501                    -- 2001
+binarized-sipi512/2.1.02.png     -- CPU front back scan              -- 5521                    -- 6010
+binarized-sipi512/2.1.03.png     -- CPU one-pass                     -- 501                     -- 1001
+binarized-sipi512/2.1.03.png     -- CPU union-find                   -- 500                     -- 1000
+binarized-sipi512/2.1.03.png     -- CPU linear two-scan              -- 515                     -- 1005
+binarized-sipi512/2.1.03.png     -- CPU front back scan              -- 1512                    -- 2002
+binarized-sipi512/2.1.04.png     -- CPU one-pass                     -- 2993                    -- 2993
+binarized-sipi512/2.1.04.png     -- CPU union-find                   -- 2013                    -- 2013
+binarized-sipi512/2.1.04.png     -- CPU linear two-scan              -- 1503                    -- 1992
+binarized-sipi512/2.1.04.png     -- CPU front back scan              -- 6029                    -- 6029
+binarized-sipi512/2.1.05.png     -- CPU one-pass                     -- 1510                    -- 1510
+binarized-sipi512/2.1.05.png     -- CPU union-find                   -- 1000                    -- 1501
+binarized-sipi512/2.1.05.png     -- CPU linear two-scan              -- 1000                    -- 1000
+binarized-sipi512/2.1.05.png     -- CPU front back scan              -- 3503                    -- 4004
+binarized-sipi512/2.1.06.png     -- CPU one-pass                     -- 2014                    -- 2014
+binarized-sipi512/2.1.06.png     -- CPU union-find                   -- 1498                    -- 1498
+binarized-sipi512/2.1.06.png     -- CPU linear two-scan              -- 1501                    -- 1501
+binarized-sipi512/2.1.06.png     -- CPU front back scan              -- 5005                    -- 5005
+binarized-sipi512/2.1.07.png     -- CPU one-pass                     -- 2012                    -- 2012
+binarized-sipi512/2.1.07.png     -- CPU union-find                   -- 1513                    -- 2002
+binarized-sipi512/2.1.07.png     -- CPU linear two-scan              -- 1513                    -- 2002
+binarized-sipi512/2.1.07.png     -- CPU front back scan              -- 5515                    -- 6005
+binarized-sipi512/2.1.08.png     -- CPU one-pass                     -- 2009                    -- 2503
+binarized-sipi512/2.1.08.png     -- CPU union-find                   -- 2002                    -- 2502
+binarized-sipi512/2.1.08.png     -- CPU linear two-scan              -- 1501                    -- 1501
+binarized-sipi512/2.1.08.png     -- CPU front back scan              -- 6018                    -- 6519
+binarized-sipi512/2.1.09.png     -- CPU one-pass                     -- 1017                    -- 1518
+binarized-sipi512/2.1.09.png     -- CPU union-find                   -- 1024                    -- 1024
+binarized-sipi512/2.1.09.png     -- CPU linear two-scan              -- 991                     -- 991
+binarized-sipi512/2.1.09.png     -- CPU front back scan              -- 2001                    -- 2502
+binarized-sipi512/2.1.10.png     -- CPU one-pass                     -- 1502                    -- 2002
+binarized-sipi512/2.1.10.png     -- CPU union-find                   -- 1512                    -- 2012
+binarized-sipi512/2.1.10.png     -- CPU linear two-scan              -- 1514                    -- 1514
+binarized-sipi512/2.1.10.png     -- CPU front back scan              -- 5014                    -- 5504
+binarized-sipi512/2.1.11.png     -- CPU one-pass                     -- 1014                    -- 1505
+binarized-sipi512/2.1.11.png     -- CPU union-find                   -- 1511                    -- 1511
+binarized-sipi512/2.1.11.png     -- CPU linear two-scan              -- 500                     -- 1000
+binarized-sipi512/2.1.11.png     -- CPU front back scan              -- 3507                    -- 4003
+binarized-sipi512/2.1.12.png     -- CPU one-pass                     -- 1510                    -- 2002
+binarized-sipi512/2.1.12.png     -- CPU union-find                   -- 1502                    -- 1502
+binarized-sipi512/2.1.12.png     -- CPU linear two-scan              -- 1498                    -- 1498
+binarized-sipi512/2.1.12.png     -- CPU front back scan              -- 5516                    -- 6006
+binarized-sipi512/4.2.01.png     -- CPU one-pass                     -- 1009                    -- 1009
+binarized-sipi512/4.2.01.png     -- CPU union-find                   -- 518                     -- 1009
+binarized-sipi512/4.2.01.png     -- CPU linear two-scan              -- 510                     -- 1000
+binarized-sipi512/4.2.01.png     -- CPU front back scan              -- 1000                    -- 1496
+binarized-sipi512/4.2.02.png     -- CPU one-pass                     -- 1512                    -- 2002
+binarized-sipi512/4.2.02.png     -- CPU union-find                   -- 1501                    -- 1501
+binarized-sipi512/4.2.02.png     -- CPU linear two-scan              -- 1000                    -- 1000
+binarized-sipi512/4.2.02.png     -- CPU front back scan              -- 4514                    -- 4993
+binarized-sipi512/4.2.03.png     -- CPU one-pass                     -- 1511                    -- 2002
+binarized-sipi512/4.2.03.png     -- CPU union-find                   -- 1501                    -- 1501
+binarized-sipi512/4.2.03.png     -- CPU linear two-scan              -- 1501                    -- 1501
+binarized-sipi512/4.2.03.png     -- CPU front back scan              -- 5014                    -- 5504
+binarized-sipi512/4.2.04.png     -- CPU one-pass                     -- 1010                    -- 1501
+binarized-sipi512/4.2.04.png     -- CPU union-find                   -- 983                     -- 983
+binarized-sipi512/4.2.04.png     -- CPU linear two-scan              -- 1001                    -- 1501
+binarized-sipi512/4.2.04.png     -- CPU front back scan              -- 5032                    -- 5531
+binarized-sipi512/4.2.05.png     -- CPU one-pass                     -- 1991                    -- 1991
+binarized-sipi512/4.2.05.png     -- CPU union-find                   -- 1512                    -- 1512
+binarized-sipi512/4.2.05.png     -- CPU linear two-scan              -- 500                     -- 1000
+binarized-sipi512/4.2.05.png     -- CPU front back scan              -- 5517                    -- 5517
+binarized-sipi512/4.2.06.png     -- CPU one-pass                     -- 1500                    -- 1500
+binarized-sipi512/4.2.06.png     -- CPU union-find                   -- 1012                    -- 1503
+binarized-sipi512/4.2.06.png     -- CPU linear two-scan              -- 1011                    -- 1011
+binarized-sipi512/4.2.06.png     -- CPU front back scan              -- 4013                    -- 4013
+binarized-sipi512/4.2.07.png     -- CPU one-pass                     -- 1000                    -- 1501
+binarized-sipi512/4.2.07.png     -- CPU union-find                   -- 1011                    -- 1501
+binarized-sipi512/4.2.07.png     -- CPU linear two-scan              -- 510                     -- 1000
+binarized-sipi512/4.2.07.png     -- CPU front back scan              -- 3513                    -- 3513
+binarized-sipi512/5.2.08.png     -- CPU one-pass                     -- 2001                    -- 2001
+binarized-sipi512/5.2.08.png     -- CPU union-find                   -- 1000                    -- 1500
+binarized-sipi512/5.2.08.png     -- CPU linear two-scan              -- 1000                    -- 1000
+binarized-sipi512/5.2.08.png     -- CPU front back scan              -- 5015                    -- 5015
+binarized-sipi512/5.2.09.png     -- CPU one-pass                     -- 1500                    -- 1992
+binarized-sipi512/5.2.09.png     -- CPU union-find                   -- 1512                    -- 1512
+binarized-sipi512/5.2.09.png     -- CPU linear two-scan              -- 1000                    -- 1000
+binarized-sipi512/5.2.09.png     -- CPU front back scan              -- 5515                    -- 6004
+binarized-sipi512/5.2.10.png     -- CPU one-pass                     -- 1012                    -- 1503
+binarized-sipi512/5.2.10.png     -- CPU union-find                   -- 1012                    -- 1012
+binarized-sipi512/5.2.10.png     -- CPU linear two-scan              -- 500                     -- 1000
+binarized-sipi512/5.2.10.png     -- CPU front back scan              -- 3503                    -- 3503
+binarized-sipi512/7.1.01.png     -- CPU one-pass                     -- 1512                    -- 1512
+binarized-sipi512/7.1.01.png     -- CPU union-find                   -- 1010                    -- 1501
+binarized-sipi512/7.1.01.png     -- CPU linear two-scan              -- 1010                    -- 1501
+binarized-sipi512/7.1.01.png     -- CPU front back scan              -- 5014                    -- 5505
+binarized-sipi512/7.1.02.png     -- CPU one-pass                     -- 2512                    -- 3002
+binarized-sipi512/7.1.02.png     -- CPU union-find                   -- 1001                    -- 1493
+binarized-sipi512/7.1.02.png     -- CPU linear two-scan              -- 1011                    -- 1501
+binarized-sipi512/7.1.02.png     -- CPU front back scan              -- 3513                    -- 4004
+binarized-sipi512/7.1.03.png     -- CPU one-pass                     -- 1501                    -- 1990
+binarized-sipi512/7.1.03.png     -- CPU union-find                   -- 1513                    -- 1513
+binarized-sipi512/7.1.03.png     -- CPU linear two-scan              -- 1000                    -- 1000
+binarized-sipi512/7.1.03.png     -- CPU front back scan              -- 5491                    -- 5491
+binarized-sipi512/7.1.04.png     -- CPU one-pass                     -- 1505                    -- 2013
+binarized-sipi512/7.1.04.png     -- CPU union-find                   -- 1013                    -- 1502
+binarized-sipi512/7.1.04.png     -- CPU linear two-scan              -- 510                     -- 1000
+binarized-sipi512/7.1.04.png     -- CPU front back scan              -- 5504                    -- 5504
+binarized-sipi512/7.1.05.png     -- CPU one-pass                     -- 1507                    -- 2002
+binarized-sipi512/7.1.05.png     -- CPU union-find                   -- 1513                    -- 1513
+binarized-sipi512/7.1.05.png     -- CPU linear two-scan              -- 1000                    -- 1502
+binarized-sipi512/7.1.05.png     -- CPU front back scan              -- 5014                    -- 5505
+binarized-sipi512/7.1.06.png     -- CPU one-pass                     -- 1501                    -- 2001
+binarized-sipi512/7.1.06.png     -- CPU union-find                   -- 1002                    -- 1502
+binarized-sipi512/7.1.06.png     -- CPU linear two-scan              -- 1013                    -- 1501
+binarized-sipi512/7.1.06.png     -- CPU front back scan              -- 5015                    -- 5015
+binarized-sipi512/7.1.07.png     -- CPU one-pass                     -- 2003                    -- 2502
+binarized-sipi512/7.1.07.png     -- CPU union-find                   -- 1511                    -- 2002
+binarized-sipi512/7.1.07.png     -- CPU linear two-scan              -- 1515                    -- 2006
+binarized-sipi512/7.1.07.png     -- CPU front back scan              -- 6015                    -- 6015
+binarized-sipi512/7.1.08.png     -- CPU one-pass                     -- 2001                    -- 2492
+binarized-sipi512/7.1.08.png     -- CPU union-find                   -- 1500                    -- 1500
+binarized-sipi512/7.1.08.png     -- CPU linear two-scan              -- 500                     -- 1000
+binarized-sipi512/7.1.08.png     -- CPU front back scan              -- 3012                    -- 3503
+binarized-sipi512/7.1.09.png     -- CPU one-pass                     -- 1502                    -- 1991
+binarized-sipi512/7.1.09.png     -- CPU union-find                   -- 1005                    -- 1501
+binarized-sipi512/7.1.09.png     -- CPU linear two-scan              -- 510                     -- 1001
+binarized-sipi512/7.1.09.png     -- CPU front back scan              -- 4514                    -- 5004
+binarized-sipi512/7.1.10.png     -- CPU one-pass                     -- 1510                    -- 2001
+binarized-sipi512/7.1.10.png     -- CPU union-find                   -- 1000                    -- 1497
+binarized-sipi512/7.1.10.png     -- CPU linear two-scan              -- 1000                    -- 1496
+binarized-sipi512/7.1.10.png     -- CPU front back scan              -- 4989                    -- 5505
+binarized-sipi512/boat.512.png   -- CPU one-pass                     -- 1500                    -- 1996
+binarized-sipi512/boat.512.png   -- CPU union-find                   -- 1000                    -- 1500
+binarized-sipi512/boat.512.png   -- CPU linear two-scan              -- 1011                    -- 1011
+binarized-sipi512/boat.512.png   -- CPU front back scan              -- 5015                    -- 5015
+binarized-sipi512/elaine.512.png -- CPU one-pass                     -- 1011                    -- 1501
+binarized-sipi512/elaine.512.png -- CPU union-find                   -- 1015                    -- 1515
+binarized-sipi512/elaine.512.png -- CPU linear two-scan              -- 500                     -- 996
+binarized-sipi512/elaine.512.png -- CPU front back scan              -- 4013                    -- 4013
+binarized-sipi512/gray21.512.png -- CPU one-pass                     -- 1510                    -- 1510
+binarized-sipi512/gray21.512.png -- CPU union-find                   -- 500                     -- 991
+binarized-sipi512/gray21.512.png -- CPU linear two-scan              -- 500                     -- 1000
+binarized-sipi512/gray21.512.png -- CPU front back scan              -- 2002                    -- 2002
+binarized-sipi512/house.png      -- CPU one-pass                     -- 2001                    -- 2001
+binarized-sipi512/house.png      -- CPU union-find                   -- 1003                    -- 1503
+binarized-sipi512/house.png      -- CPU linear two-scan              -- 1010                    -- 1010
+binarized-sipi512/house.png      -- CPU front back scan              -- 5014                    -- 5505
+binarized-sipi512/numbers.512.png -- CPU one-pass                     -- 1010                    -- 1496
+binarized-sipi512/numbers.512.png -- CPU union-find                   -- 1496                    -- 1496
+binarized-sipi512/numbers.512.png -- CPU linear two-scan              -- 1011                    -- 1501
+binarized-sipi512/numbers.512.png -- CPU front back scan              -- 4014                    -- 4014
+binarized-sipi512/ruler.512.png  -- CPU one-pass                     -- 2012                    -- 2012
+binarized-sipi512/ruler.512.png  -- CPU union-find                   -- 1500                    -- 1500
+binarized-sipi512/ruler.512.png  -- CPU linear two-scan              -- 1011                    -- 1502
+binarized-sipi512/ruler.512.png  -- CPU front back scan              -- 3002                    -- 3503
+binarized-sipi512/texmos1.p512.png -- CPU one-pass                     -- 2012                    -- 2012
+binarized-sipi512/texmos1.p512.png -- CPU union-find                   -- 2002                    -- 2502
+binarized-sipi512/texmos1.p512.png -- CPU linear two-scan              -- 1511                    -- 2001
+binarized-sipi512/texmos1.p512.png -- CPU front back scan              -- 6005                    -- 6506
+binarized-sipi512/texmos2.p512.png -- CPU one-pass                     -- 2001                    -- 2001
+binarized-sipi512/texmos2.p512.png -- CPU union-find                   -- 2014                    -- 2014
+binarized-sipi512/texmos2.p512.png -- CPU linear two-scan              -- 1501                    -- 2001
+binarized-sipi512/texmos2.p512.png -- CPU front back scan              -- 5504                    -- 6005
+binarized-sipi512/texmos2.s512.png -- CPU one-pass                     -- 1000                    -- 1501
+binarized-sipi512/texmos2.s512.png -- CPU union-find                   -- 500                     -- 1001
+binarized-sipi512/texmos2.s512.png -- CPU linear two-scan              -- 500                     -- 500
+binarized-sipi512/texmos2.s512.png -- CPU front back scan              -- 2502                    -- 2502
+binarized-sipi512/texmos3.p512.png -- CPU one-pass                     -- 1501                    -- 2001
+binarized-sipi512/texmos3.p512.png -- CPU union-find                   -- 2001                    -- 2001
+binarized-sipi512/texmos3.p512.png -- CPU linear two-scan              -- 1501                    -- 2002
+binarized-sipi512/texmos3.p512.png -- CPU front back scan              -- 6506                    -- 7006
+binarized-sipi512/texmos3.s512.png -- CPU one-pass                     -- 1001                    -- 1502
+binarized-sipi512/texmos3.s512.png -- CPU union-find                   -- 512                     -- 1000
+binarized-sipi512/texmos3.s512.png -- CPU linear two-scan              -- 515                     -- 1000
+binarized-sipi512/texmos3.s512.png -- CPU front back scan              -- 1510                    -- 2001
+binarized-sipi512/texmos3b.p512.png -- CPU one-pass                     -- 1510                    -- 1510
+binarized-sipi512/texmos3b.p512.png -- CPU union-find                   -- 2012                    -- 2012
+binarized-sipi512/texmos3b.p512.png -- CPU linear two-scan              -- 1512                    -- 2001
+binarized-sipi512/texmos3b.p512.png -- CPU front back scan              -- 6017                    -- 6017
