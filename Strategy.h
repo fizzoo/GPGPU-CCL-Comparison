@@ -110,9 +110,15 @@ public:
  * the 2nd scan simply assigns the correct label to all the pixels
  */
 class CPULinearTwoScan : public CPUBase {
+private:
+  std::vector<unsigned int> rl_table;
+  std::vector<unsigned int> n_label;
+  std::vector<unsigned int> t_label;
 public:
   virtual std::string name() { return "CPU linear two-scan"; }
   virtual void execute();
+  virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
+                       cl::CommandQueue *);
 };
 
 /**
@@ -125,8 +131,13 @@ public:
  * are done in pairs of one backwards and one forwards scan.
  */
 class CPUFrontBack : public CPUBase {
+private:
+    std::vector<int> labelConnT;
+public:
   virtual std::string name() { return "CPU front back scan"; }
   virtual void execute();
+  virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
+                       cl::CommandQueue *);
 };
 
 /**

@@ -25,7 +25,7 @@ int main(int argc, const char *argv[]) {
   }
 
   {
-    int err = mkdir("out", 0777);
+    int err = mkdir("out"); //, 0777);
     if (err && errno != EEXIST) {
       fail("Couldn't create output directory 'out'.");
     }
