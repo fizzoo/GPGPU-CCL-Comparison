@@ -104,7 +104,6 @@ bool Image::loadpng(const std::string &filename) {
     unsigned char *tmp = data;
     data = new unsigned char[_width * _height * 4];
     if (channels == 1) {
-      std::cerr << "G -> RGBA performed" << std::endl;
       for (size_t i = 0; i < _width * _height; ++i) {
         data[i * 4 + 0] = tmp[i];
         data[i * 4 + 1] = tmp[i];
@@ -112,7 +111,6 @@ bool Image::loadpng(const std::string &filename) {
         data[i * 4 + 3] = 255;
       }
     } else if (channels == 3) {
-      std::cerr << "RGB -> RGBA performed" << std::endl;
       auto *in = tmp;
       auto *out = data;
       while (in != tmp + _height * _width * 3) {

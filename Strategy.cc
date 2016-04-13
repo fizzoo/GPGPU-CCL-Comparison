@@ -365,10 +365,8 @@ LabelData GPUBase::copy_from() {
 void GPUNeighbourPropagation::execute() {
   cl_int err;
 
-  //ALEX 16x8
-  //VICTOR 32x8
   const int wgw = 32;
-  const int wgh = 8;
+  const int wgh = 4;
   const int wsize = round_to_nearest(width, wgw);
   const int hsize = round_to_nearest(height, wgh);
 
@@ -536,9 +534,7 @@ void GPUPlusPropagation::execute() {
 void GPUUnionFind::execute() {
   cl_int err;
 
-  //ALEX 16x8
-  //VICTOR 32x8
-  const int wgw = 32;
+  const int wgw = 16;
   const int wgh = 8;
   const int wsize = round_to_nearest(width, wgw);
   const int hsize = round_to_nearest(height, wgh);
@@ -590,8 +586,6 @@ void GPUUnionFind::execute() {
 void GPUUnionFind_Localer::execute() {
   cl_int err;
 
-  //ALEX 16x8
-  //VICTOR 8x8
   const int wgw = 8;
   const int wgh = 8;
   const int wsize = round_to_nearest(width, wgw);
@@ -810,10 +804,8 @@ void GPULines::execute() {
 void GPUStackOnePass::execute() {
   cl_int err;
 
-  //ALEX 16x8
-  //VICTOR 16x8
-  const int wgw = 16;
-  const int wgh = 8;
+  const int wgw = 32;
+  const int wgh = 2;
   const int wsize = round_to_nearest(width, wgw);
   const int hsize = round_to_nearest(height, wgh);
 

@@ -20,8 +20,6 @@ int main(int argc, const char *argv[]) {
   if (argc < 2) {
     std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
     return 0;
-  } else {
-    std::cerr << std::endl;
   }
 
   {
@@ -45,8 +43,6 @@ int main(int argc, const char *argv[]) {
     }
 
     LabelData input(&rgba_image, rgb_above_128);
-    std::cerr << "Loaded input image '" << filename << "' into a LabelData"
-              << std::endl;
 
     std::vector<Strategy *> strats;
     // strats.push_back(new IdStrategy);
@@ -79,11 +75,6 @@ int main(int argc, const char *argv[]) {
       strat->execute();
       strat->copy_from();
     }
-
-    std::cerr
-        << "(Name of file)                   -- (Name of strategy)         "
-           "      -- (Times in microseconds) -- (Times with prep/cleanup)";
-    std::cerr << std::endl;
 
     for (auto *strat : strats) {
       auto startwithprep = std::chrono::high_resolution_clock::now();
@@ -125,8 +116,6 @@ int main(int argc, const char *argv[]) {
         std::cerr << "Failed writing file." << std::endl;
       }
     }
-
-    std::cerr << std::endl;
 
     for (auto *strat : strats) {
       delete strat;
