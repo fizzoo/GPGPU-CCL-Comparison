@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Script for summarizing the results from the comparison output.
+Reads from stdin, gathers the data and writes the result on stdout.
+"""
 
 import sys
 from statistics import stdev, mean
