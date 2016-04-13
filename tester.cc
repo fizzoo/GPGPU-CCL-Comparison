@@ -25,7 +25,12 @@ int main(int argc, const char *argv[]) {
   }
 
   {
+#ifdef __linux__
     int err = mkdir("out", 0777);
+#else
+    int err = mkdir("out");
+#endif
+
     if (err && errno != EEXIST) {
       fail("Couldn't create output directory 'out'.");
     }
@@ -44,7 +49,7 @@ int main(int argc, const char *argv[]) {
               << std::endl;
 
     std::vector<Strategy *> strats;
-    //strats.push_back(new IdStrategy);
+    // strats.push_back(new IdStrategy);
     strats.push_back(new CPUOnePass);
     strats.push_back(new CPUUnionFind);
     strats.push_back(new CPULinearTwoScan);
