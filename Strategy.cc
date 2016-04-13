@@ -660,9 +660,7 @@ void GPUUnionFind_Localer::execute() {
 void GPULineEditing::execute() {
   cl_int err;
 
-  //ALEX 16
-  //VICTOR 32
-  const int wgs = 32;
+  const int wgs = 2;
   const int wsize = round_to_nearest(width, wgs);
   const int hsize = round_to_nearest(height, wgs);
 
@@ -752,7 +750,7 @@ void GPULineEditing::execute() {
 void GPULines::execute() {
   cl_int err;
 
-  const int wgs = 4;
+  const int wgs = 2;
   const int wsize = round_to_nearest(width, wgs);
   const int hsize = round_to_nearest(height, wgs);
 
