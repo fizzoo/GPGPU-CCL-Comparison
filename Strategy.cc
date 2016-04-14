@@ -80,8 +80,8 @@ void CPUUnionFind::execute() {
   }
 }
 
-void CPULinearTwoScan::copy_to(const LabelData *in, cl::Context *, cl::Program *,
-                      cl::CommandQueue *) {
+void CPULinearTwoScan::copy_to(const LabelData *in, cl::Context *,
+                               cl::Program *, cl::CommandQueue *) {
   l = *in;
   auto w = l.width;
   auto h = l.height;
@@ -94,12 +94,6 @@ void CPULinearTwoScan::execute() {
   auto w = l.width;
   auto h = l.height;
   auto d = l.data;
-
-  //std::vector<unsigned int> rl_table(w * h, 0);
-  // next label
-  //std::vector<unsigned int> n_label(w * h);
-  // tail label
-  //std::vector<unsigned int> t_label(w * h);
 
   int m = 2;
 
@@ -137,7 +131,7 @@ void CPULinearTwoScan::execute() {
 
         unsigned int u = rl_table[lP];
         unsigned int v = rl_table[uP];
-        // this part resolves potential label equvalence
+        // this part resolves potential label equivalence
         if (u > 1 && v > 1 && u != v) {
 
           // can uncomment this section if we prefer lower labels
@@ -158,7 +152,7 @@ void CPULinearTwoScan::execute() {
     }
   }
 
-  // 2nd scan, only asigns correct values
+  // 2nd scan, only assigns correct values
   for (size_t y = 0; y < h; ++y) {
     for (size_t x = 0; x < w; ++x) {
       if (d[y * w + x] != 0) {
@@ -169,13 +163,12 @@ void CPULinearTwoScan::execute() {
 }
 
 void CPUFrontBack::copy_to(const LabelData *in, cl::Context *, cl::Program *,
-                      cl::CommandQueue *) {
+                           cl::CommandQueue *) {
   l = *in;
   auto w = l.width;
   auto h = l.height;
   labelConnT.resize(w * h);
 }
-
 
 void CPUFrontBack::execute() {
   auto w = l.width;
@@ -183,7 +176,7 @@ void CPUFrontBack::execute() {
   auto d = l.data;
 
   // label connection table
-  //std::vector<int> labelConnT(w * h, 0);
+  // std::vector<int> labelConnT(w * h, 0);
   labelConnT[1] = 1;
 
   int m = 2;

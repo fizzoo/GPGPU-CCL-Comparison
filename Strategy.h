@@ -7,7 +7,8 @@
 /**
  * ABC representing a strategy for solving CCL.
  * Shouldn't need to allocate anything.
- * As we want to store a few objects without any side effects, constructor/destructor shouldn't do much.
+ * As we want to store a few objects without any side effects,
+ * constructor/destructor shouldn't do much.
  */
 class Strategy {
 private:
@@ -95,15 +96,15 @@ public:
  * Two-pass algorithm as proposed by Lifeng He, Yuyan Chao and
  * Kenju Suzuki.
  *
- * Initial scan will (if needed) asign a new label or try to asign 
+ * Initial scan will (if needed) assign a new label or try to assign
  * current pixel a existing label. To keep track of label relations
  * three vectors are used. These vectors are the relation label table,
  * the next table and the tail table.
- * If two or more labels are part of the same component then by the 
- * end of the first scan they will both have the same value in the 
- * RL table. This smalest label will have a tail in the tail label, 
+ * If two or more labels are part of the same component then by the
+ * end of the first scan they will both have the same value in the
+ * RL table. This smalest label will have a tail in the tail label,
  * which is the last label in the component.
- * The next label simply points to the next label in the component, 
+ * The next label simply points to the next label in the component,
  * starting at the smalest and ending at the tail
  *
  * Since all the label relations are taken care of in the first scan
@@ -112,8 +113,11 @@ public:
 class CPULinearTwoScan : public CPUBase {
 private:
   std::vector<unsigned int> rl_table;
+  // Next
   std::vector<unsigned int> n_label;
+  // Tail
   std::vector<unsigned int> t_label;
+
 public:
   virtual std::string name() { return "CPU linear two-scan"; }
   virtual void execute();
@@ -122,9 +126,10 @@ public:
 };
 
 /**
- * Multipass algorithm as proposed by Kenji Suzuki, Isao Horiba and Noboru Sugie.
+ * Multipass algorithm as proposed by Kenji Suzuki, Isao Horiba and Noboru
+ * Sugie.
  *
- * The initial scan is used to, in the forward raster direction, asign 
+ * The initial scan is used to, in the forward raster direction, assign
  * initial labels and resolve some simple label eqvivalnces along the way.
  * After that multiple scans in the backwards and forwards raster direction
  * are done until no more change in result is seen. Theses subsequent scans
@@ -132,7 +137,8 @@ public:
  */
 class CPUFrontBack : public CPUBase {
 private:
-    std::vector<int> labelConnT;
+  std::vector<int> labelConnT;
+
 public:
   virtual std::string name() { return "CPU front back scan"; }
   virtual void execute();
