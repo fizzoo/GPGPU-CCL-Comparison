@@ -89,7 +89,7 @@ class CPUUnionFind : public CPUBase {
 public:
   virtual std::string name() { return "CPU union-find"; }
   virtual void execute();
-  int findset(int location);
+  int find_set(int location);
 };
 
 /**

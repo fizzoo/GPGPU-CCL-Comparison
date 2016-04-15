@@ -139,14 +139,13 @@ kernel void plus_propagate(global int *data, int w, int h,
 }
 
 int find_set(global int *data, int loc) {
-  // All loc of found elements should be in range.
-  // Also assuming there are no cycles in the links.
+  // All loc of found elements should be in range.  Also assuming there are no
+  // cycles in the links.  We stop when we encounter a root pixel, such that
+  // it's label is its own index+2.
   while (loc != data[loc] - 2) {
     loc = data[loc] - 2;
   }
-
-  // +2 is the correct LABEL of root at LOCATION loc
-  return loc + 2;
+  return loc;
 }
 
 kernel void union_find(global int *data, int w, int h, global char *changed) {
@@ -174,43 +173,43 @@ kernel void union_find(global int *data, int w, int h, global char *changed) {
 
   if (ok_N) {
     root_N = find_set(data, w * (y - 1) + (x));
-    if (root_N < lowest) {
-      lowest = root_N;
+    if (root_N + 2 < lowest) {
+      lowest = root_N + 2;
     }
   }
   if (ok_E) {
     root_E = find_set(data, w * (y) + (x + 1));
-    if (root_E < lowest) {
-      lowest = root_E;
+    if (root_E + 2 < lowest) {
+      lowest = root_E + 2;
     }
   }
   if (ok_S) {
     root_S = find_set(data, w * (y + 1) + (x));
-    if (root_S < lowest) {
-      lowest = root_S;
+    if (root_S + 2 < lowest) {
+      lowest = root_S + 2;
     }
   }
   if (ok_W) {
     root_W = find_set(data, w * (y) + (x - 1));
-    if (root_W < lowest) {
-      lowest = root_W;
+    if (root_W + 2 < lowest) {
+      lowest = root_W + 2;
     }
   }
 
   if (lowest < oldlabel) {
     *changed = 1;
     data[w * y + x] = lowest;
-    if (ok_N && root_N > lowest) {
-      data[root_N - 2] = lowest;
+    if (ok_N && root_N + 2 > lowest) {
+      data[root_N] = lowest;
     }
-    if (ok_E && root_E > lowest) {
-      data[root_E - 2] = lowest;
+    if (ok_E && root_E + 2 > lowest) {
+      data[root_E] = lowest;
     }
-    if (ok_S && root_S > lowest) {
-      data[root_S - 2] = lowest;
+    if (ok_S && root_S + 2 > lowest) {
+      data[root_S] = lowest;
     }
-    if (ok_W && root_W > lowest) {
-      data[root_W - 2] = lowest;
+    if (ok_W && root_W + 2 > lowest) {
+      data[root_W] = lowest;
     }
   }
 }

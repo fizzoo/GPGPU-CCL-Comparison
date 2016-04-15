@@ -26,14 +26,13 @@ void CPUOnePass::execute() {
   }
 }
 
-int CPUUnionFind::findset(int loc) {
+int CPUUnionFind::find_set(int loc) {
   // All loc of found elements should be in range.  Also assuming there are no
   // cycles in the links.  We stop when we encounter a root pixel, such that
   // it's label is its own index+2.
   while (loc != l.data[loc] - 2) {
     loc = l.data[loc] - 2;
   }
-
   return loc;
 }
 
@@ -51,8 +50,8 @@ void CPUUnionFind::execute() {
       if (d[locCur] == 1) {
         if (x > 0 && y > 0 && d[locN] && d[locW]) {
           // Both foreground
-          int N = findset(locN);
-          int W = findset(locW);
+          int N = find_set(locN);
+          int W = find_set(locW);
 
           if (N + 2 < W) { // Less is more
             d[locCur] = N + 2;
@@ -75,7 +74,7 @@ void CPUUnionFind::execute() {
   for (size_t y = 0; y < h; ++y) {
     for (size_t x = 0; x < w; ++x) {
       if (d[w * y + x]) {
-        d[w * y + x] = findset(w * y + x) + 2;
+        d[w * y + x] = find_set(w * y + x) + 2;
       }
     }
   }
