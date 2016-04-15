@@ -27,14 +27,14 @@ void CPUOnePass::execute() {
 }
 
 int CPUUnionFind::findset(int loc) {
-  // All loc of found elements should be in range.
-  // Also assuming there are no cycles in the links.
+  // All loc of found elements should be in range.  Also assuming there are no
+  // cycles in the links.  We stop when we encounter a root pixel, such that
+  // it's label is its own index+2.
   while (loc != l.data[loc] - 2) {
     loc = l.data[loc] - 2;
   }
 
-  // +2 is the correct LABEL of root at LOCATION loc
-  return loc + 2;
+  return loc;
 }
 
 void CPUUnionFind::execute() {
@@ -44,8 +44,9 @@ void CPUUnionFind::execute() {
 
   for (size_t y = 0; y < h; ++y) {
     for (size_t x = 0; x < w; ++x) {
-      int locCur = w * y + x, locN = w * (y - 1) + (x),
-          locW = w * (y) + (x - 1);
+      int locCur = w * y + x;
+      int locN = w * (y - 1) + (x);
+      int locW = w * (y) + (x - 1);
 
       if (d[locCur] == 1) {
         if (x > 0 && y > 0 && d[locN] && d[locW]) {
@@ -53,12 +54,12 @@ void CPUUnionFind::execute() {
           int N = findset(locN);
           int W = findset(locW);
 
-          if (N < W) { // Less is more
-            d[locCur] = N;
-            d[W - 2] = N;
+          if (N + 2 < W) { // Less is more
+            d[locCur] = N + 2;
+            d[W] = N + 2;
           } else {
-            d[locCur] = W;
-            d[N - 2] = W;
+            d[locCur] = W + 2;
+            d[N] = W + 2;
           }
         } else if (x > 0 && d[locW]) {
           d[locCur] = d[locW];
@@ -74,7 +75,7 @@ void CPUUnionFind::execute() {
   for (size_t y = 0; y < h; ++y) {
     for (size_t x = 0; x < w; ++x) {
       if (d[w * y + x]) {
-        d[w * y + x] = findset(w * y + x);
+        d[w * y + x] = findset(w * y + x) + 2;
       }
     }
   }
@@ -133,11 +134,9 @@ void CPULinearTwoScan::execute() {
         unsigned int v = rl_table[uP];
         // this part resolves potential label equivalence
         if (u > 1 && v > 1 && u != v) {
-
-          // can uncomment this section if we prefer lower labels
-          /*if (v < u) {
+          if (v < u) {
               std::swap(u, v);
-          }*/
+          }
 
           // this part is coded exactly as shown with pseudo code in the paper
           int i = v;
