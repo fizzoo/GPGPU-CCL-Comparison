@@ -76,7 +76,7 @@ public:
  */
 class CPUOnePass : public CPUBase {
 public:
-  virtual std::string name() { return "CPU one-pass"; }
+  virtual std::string name() { return "CPU One-pass"; }
   virtual void execute();
 };
 
@@ -87,7 +87,7 @@ public:
  */
 class CPUUnionFind : public CPUBase {
 public:
-  virtual std::string name() { return "CPU union-find"; }
+  virtual std::string name() { return "CPU Union-find"; }
   virtual void execute();
   int find_set(int location);
 };
@@ -119,7 +119,7 @@ private:
   std::vector<unsigned int> t_label;
 
 public:
-  virtual std::string name() { return "CPU linear two-scan"; }
+  virtual std::string name() { return "CPU Linear two-scan"; }
   virtual void execute();
   virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
                        cl::CommandQueue *);
@@ -140,7 +140,7 @@ private:
   std::vector<int> labelConnT;
 
 public:
-  virtual std::string name() { return "CPU front back scan"; }
+  virtual std::string name() { return "CPU Front back scan"; }
   virtual void execute();
   virtual void copy_to(const LabelData *, cl::Context *, cl::Program *,
                        cl::CommandQueue *);
@@ -177,7 +177,7 @@ public:
  */
 class GPUNeighbourPropagation : public GPUBase {
 public:
-  virtual std::string name() { return "GPU neighbour propagation"; }
+  virtual std::string name() { return "GPU Neighbour propagation"; }
   virtual void execute();
 };
 
@@ -186,7 +186,7 @@ public:
  */
 class GPUNeighbourPropagation_Localer : public GPUBase {
 public:
-  virtual std::string name() { return "GPU neighbour propagation +local"; }
+  virtual std::string name() { return "GPU Neighbour propagation +local"; }
   virtual void execute();
 };
 
@@ -196,7 +196,7 @@ public:
  */
 class GPUPlusPropagation : public GPUBase {
 public:
-  virtual std::string name() { return "GPU plus propagation"; }
+  virtual std::string name() { return "GPU Plus propagation"; }
   virtual void execute();
 };
 
@@ -210,7 +210,7 @@ public:
  */
 class GPUUnionFind : public GPUBase {
 public:
-  virtual std::string name() { return "GPU union-find"; }
+  virtual std::string name() { return "GPU Union-find"; }
   virtual void execute();
 };
 
@@ -219,7 +219,7 @@ public:
  */
 class GPUUnionFind_Localer : public GPUBase {
 public:
-  virtual std::string name() { return "GPU union-find +local"; }
+  virtual std::string name() { return "GPU Union-find +local"; }
   virtual void execute();
 };
 
@@ -228,16 +228,16 @@ public:
  */
 class GPULineEditing : public GPUBase {
 public:
-  virtual std::string name() { return "GPU line editing"; }
+  virtual std::string name() { return "GPU Line editing"; }
   virtual void execute();
 };
 
 /**
  * Traverses row/column and reads the entire connected part before writing.
  */
-class GPULines : public GPUBase {
+class GPULookaheadLineEditing : public GPUBase {
 public:
-  virtual std::string name() { return "GPU lines"; }
+  virtual std::string name() { return "GPU Lookahead line editing"; }
   virtual void execute();
 };
 
@@ -250,7 +250,7 @@ public:
  */
 class GPUStackOnePass : public GPUBase {
 public:
-  virtual std::string name() { return "GPU stack-based"; }
+  virtual std::string name() { return "GPU Stack-based"; }
   virtual void execute();
 };
 

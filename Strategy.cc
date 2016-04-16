@@ -728,7 +728,7 @@ void GPULineEditing::execute() {
   }
 }
 
-void GPULines::execute() {
+void GPULookaheadLineEditing::execute() {
   cl_int err;
 
   const int wgs = 2;
