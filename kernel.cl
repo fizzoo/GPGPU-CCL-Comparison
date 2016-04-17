@@ -642,58 +642,38 @@ kernel void recursively_win(global int *data, int w, int h,
         if (data[NORTH] > thistmp) {
           data[NORTH] = thistmp;
           own_pointer = atomic_inc(stack_ptr);
-          if (own_pointer >= BUFFS) {
-            atomic_dec(stack_ptr);
-          } else {
-            stack_x[own_pointer] = x;
-            stack_y[own_pointer] = y - 1;
-          }
+          stack_x[own_pointer] = x;
+          stack_y[own_pointer] = y - 1;
         }
       }
       if (OK_EAST) {
         if (data[EAST] > thistmp) {
           data[EAST] = thistmp;
           own_pointer = atomic_inc(stack_ptr);
-          if (own_pointer >= BUFFS) {
-            atomic_dec(stack_ptr);
-          } else {
-            stack_x[own_pointer] = x + 1;
-            stack_y[own_pointer] = y;
-          }
+          stack_x[own_pointer] = x + 1;
+          stack_y[own_pointer] = y;
         }
       }
       if (OK_SOUTH) {
         if (data[SOUTH] > thistmp) {
           data[SOUTH] = thistmp;
           own_pointer = atomic_inc(stack_ptr);
-          if (own_pointer >= BUFFS) {
-            atomic_dec(stack_ptr);
-          } else {
-            stack_x[own_pointer] = x;
-            stack_y[own_pointer] = y + 1;
-          }
+          stack_x[own_pointer] = x;
+          stack_y[own_pointer] = y + 1;
         }
       }
       if (OK_WEST) {
         if (data[WEST] > thistmp) {
           data[WEST] = thistmp;
           own_pointer = atomic_inc(stack_ptr);
-          if (own_pointer >= BUFFS) {
-            atomic_dec(stack_ptr);
-          } else {
-            stack_x[own_pointer] = x - 1;
-            stack_y[own_pointer] = y;
-          }
+          stack_x[own_pointer] = x - 1;
+          stack_y[own_pointer] = y;
         }
       }
     }
 
     thistmp = *lowest; // For unlucky threads to participate
 
-    if (lx == 0 && ly == 0 && thistmp == 0) {
-      *changed = 0;
-      return;
-    }
     while (1) {
       // Test-if-there's-work-at-all phase
       barrier(CLK_LOCAL_MEM_FENCE);
